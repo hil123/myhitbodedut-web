@@ -1,0 +1,313 @@
+/*
+  L'apparence de l'application Android, en CSS. Les couleurs viennent de
+  palettes.css (construit depuis colors.xml et palettes.xml) ; les mesures
+  reprennent les dp d'Android en px CSS, qui ont la même taille à l'œil.
+
+  Aucune police n'est chargée : celle du système, comme sur Android. Sur
+  iPhone, l'hébreu s'affiche ainsi dans la police hébraïque d'iOS.
+*/
+
+* { box-sizing: border-box; }
+
+:root { color-scheme: light; }
+:root[data-mode="sombre"] { color-scheme: dark; }
+@media (prefers-color-scheme: dark) { :root[data-mode="auto"] { color-scheme: dark; } }
+
+html, body { margin: 0; height: 100%; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font: 15px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans Hebrew", "Arial Hebrew", sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior: none;
+  /* Un appui long ne sélectionne pas le texte (Copier, Rechercher…) : comme
+     sur Android, les textes de l'application se lisent, ils ne se copient pas. */
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+input, textarea { -webkit-user-select: text; user-select: text; }
+button { font: inherit; color: inherit; }
+
+#app { height: 100%; display: flex; flex-direction: column; }
+
+/* --- Écran et défilement ------------------------------------------------- */
+.ecran { flex: 1; display: flex; flex-direction: column; min-height: 0; }
+.defile {
+  flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch;
+  padding-top: env(safe-area-inset-top);
+}
+.contenu {
+  width: 100%; max-width: 560px; margin: 0 auto;
+  padding: 20px calc(16px + env(safe-area-inset-right)) 24px calc(16px + env(safe-area-inset-left));
+}
+[hidden] { display: none !important; }
+
+/* --- En-tête d'un écran secondaire ---------------------------------------- */
+.barre {
+  display: flex; align-items: center; gap: 4px;
+  padding: calc(8px + env(safe-area-inset-top)) 8px 4px;
+  max-width: 560px; margin: 0 auto; width: 100%;
+}
+.barre h1 { font-size: 22px; margin: 0; font-weight: 700; }
+.retour {
+  width: 44px; height: 44px; border: 0; background: none; border-radius: 22px;
+  display: grid; place-items: center; cursor: pointer; color: var(--brand);
+}
+.retour::before {
+  content: ""; width: 22px; height: 22px; background: currentColor;
+  -webkit-mask: url(icones/ic_chevron.svg) center / contain no-repeat;
+  mask: url(icones/ic_chevron.svg) center / contain no-repeat;
+  transform: scaleX(-1);
+}
+[dir="rtl"] .retour::before { transform: none; }
+
+/* --- Accueil -------------------------------------------------------------------- */
+.marque { color: var(--muted); font-size: 13px; letter-spacing: 0.08em; }
+.salut { margin-top: 8px; font-size: 26px; font-weight: 700; }
+.statut { margin-top: 4px; color: var(--muted); font-size: 15px; }
+.statut.titre { color: var(--ink); font-size: 24px; font-weight: 700; }
+.serie { display: flex; gap: 10px; color: var(--muted); font-size: 15px; }
+.serie .total { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.detail { margin-top: 4px; color: var(--brand); font-size: 14px; }
+
+.jauge { position: relative; width: 236px; height: 236px; margin: 18px auto 0; }
+.jauge svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+[dir="rtl"] .jauge svg { transform: scaleX(-1); }
+.jauge .piste { stroke: var(--day-todo); }
+.jauge .anneau-jour .arc { stroke: var(--brand); }
+.jauge .anneau-semaine .arc { stroke: var(--ring-week); }
+.jauge .anneau-serie .arc { stroke: var(--ring-streak); }
+.jauge .arc.second-tour { filter: brightness(0.72); }
+.jauge .anneau.efface { opacity: 0.28; }
+.jauge .anneau { transition: opacity 250ms; cursor: pointer; }
+.jauge .arc { transition: stroke-dashoffset 900ms cubic-bezier(0.2, 0.7, 0.3, 1); }
+@media (prefers-reduced-motion: reduce) { .jauge .arc, .jauge .anneau { transition: none; } }
+/* 34px : trois anneaux de 8, deux écarts de 3, et un peu d'air. */
+.plaque {
+  position: absolute; inset: 34px; border-radius: 50%; overflow: hidden; border: 0;
+  background: var(--stage-soft); padding: 12px 14px 4px; cursor: pointer;
+}
+.plaque img { width: 100%; height: 100%; object-fit: contain; display: block; transform-origin: 50% 100%; }
+.plaque img.salut { animation: salut 640ms ease-out; }
+@keyframes salut {
+  0% { transform: none; }
+  35% { transform: translateY(-10px) scale(1.04, 1.06) rotate(-3deg); }
+  70% { transform: translateY(0) rotate(3deg); }
+  100% { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) { .plaque img.salut { animation: none; } }
+.jauge-legende { margin-top: 6px; text-align: center; color: var(--muted); font-size: 13px; }
+.jauge-legende.legende-jour { color: var(--brand); }
+.jauge-legende.legende-semaine { color: var(--ring-week); }
+.jauge-legende.legende-serie { color: var(--ring-streak); }
+
+.principal {
+  display: block; width: 100%; margin-top: 16px; padding: 17px 16px;
+  border: 0; border-radius: 999px; background: var(--brand); color: var(--on-brand);
+  font-size: 17px; font-weight: 600; cursor: pointer;
+}
+.principal:active { filter: brightness(0.92); }
+
+.pastilles {
+  display: flex; gap: 8px; margin: 12px -16px 0; padding: 0 16px;
+  overflow-x: auto; scrollbar-width: none;
+}
+.pastilles::-webkit-scrollbar { display: none; }
+.pastille {
+  flex: none; display: flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 14px;
+  border: 1px solid var(--line); border-radius: 999px; background: var(--card); cursor: pointer;
+  font-size: 13px;
+}
+.pastille .libelle { color: var(--muted); }
+.pastille .valeur {
+  color: var(--brand); font-weight: 700; max-width: 160px;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+
+.semaine { display: flex; margin-top: 16px; }
+.jour {
+  flex: 1; margin: 0 2px; padding: 10px 0; border-radius: 12px; background: var(--day-todo);
+  display: flex; flex-direction: column; align-items: center;
+}
+.jour .nom { color: var(--muted); font-size: 11px; }
+.jour .marque-jour { color: var(--ink); font-size: 16px; font-weight: 700; min-height: 22px; }
+.jour.fait { background: var(--day-done); }
+.jour.fait .nom, .jour.fait .marque-jour { color: var(--white); }
+.jour.exempte { background: var(--day-exempt); }
+.jour.repos .marque-jour { color: var(--brand); }
+
+.texte-bouton {
+  display: block; width: 100%; margin-top: 6px; padding: 12px; border: 0; background: none;
+  color: var(--brand); font-weight: 600; font-size: 15px; cursor: pointer; border-radius: 999px;
+}
+
+/* --- Cartes et lignes ----------------------------------------------------------- */
+.titre-ecran { font-size: 24px; font-weight: 700; margin: 0; }
+.section {
+  margin: 20px 0 0; color: var(--muted); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+}
+.carte {
+  margin-top: 14px; padding: 8px 18px; background: var(--card);
+  border: 1px solid var(--line); border-radius: 20px;
+}
+.section + .carte { margin-top: 8px; }
+.ligne {
+  display: flex; align-items: center; gap: 12px; width: 100%; min-height: 56px; padding: 10px 0;
+  border: 0; background: none; text-align: start; cursor: pointer;
+}
+.ligne + .ligne { border-top: 1px solid var(--line); }
+.ligne .corps { flex: 1; min-width: 0; }
+button.corps { border: 0; background: none; padding: 0; text-align: start; cursor: pointer; }
+.ligne .nom { font-size: 16px; color: var(--ink); }
+.ligne .etat { font-size: 13px; color: var(--muted); margin-top: 2px; }
+.chevron {
+  flex: none; width: 22px; height: 22px; background: var(--brand);
+  -webkit-mask: url(icones/ic_chevron.svg) center / contain no-repeat;
+  mask: url(icones/ic_chevron.svg) center / contain no-repeat;
+}
+[dir="rtl"] .chevron { transform: scaleX(-1); }
+/* Ce que la version web ne sait pas encore faire : visible, mais inerte. */
+.a-venir { opacity: 0.45; pointer-events: none; }
+
+/* --- Interrupteur, curseur ------------------------------------------------------- */
+.interrupteur {
+  flex: none; appearance: none; -webkit-appearance: none; margin: 0;
+  width: 52px; height: 32px; border-radius: 16px; background: var(--line); position: relative; cursor: pointer;
+  transition: background 150ms;
+}
+.interrupteur::after {
+  content: ""; position: absolute; top: 4px; inset-inline-start: 4px; width: 24px; height: 24px;
+  border-radius: 50%; background: var(--card); box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  transition: inset-inline-start 150ms;
+}
+.interrupteur:checked { background: var(--brand); }
+.interrupteur:checked::after { inset-inline-start: 24px; background: var(--on-brand); }
+input[type="range"] { width: 100%; accent-color: var(--brand); }
+
+.indice { color: var(--muted); font-size: 13px; margin: 4px 0 0; }
+
+/* --- Morceaux ------------------------------------------------------------------------ */
+.morceau.choisi .nom { color: var(--brand); font-weight: 700; }
+.ecouter {
+  flex: none; border: 1px solid var(--line); background: var(--card); color: var(--brand);
+  border-radius: 999px; padding: 6px 14px; font-size: 13px; font-weight: 600; cursor: pointer;
+}
+.ecouter[aria-pressed="true"] { background: var(--brand); color: var(--on-brand); border-color: var(--brand); }
+
+/* --- Onglets ------------------------------------------------------------------------- */
+.onglets {
+  display: flex; background: var(--card); border-top: 1px solid var(--line);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.onglet {
+  flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px;
+  padding: 10px 0 8px; border: 0; background: none; color: var(--muted); font-size: 12px; cursor: pointer;
+}
+.onglet .icone {
+  width: 56px; height: 30px; border-radius: 15px; display: grid; place-items: center;
+}
+.onglet .icone::before {
+  content: ""; width: 24px; height: 24px; background: currentColor;
+  -webkit-mask: var(--icone) center / contain no-repeat; mask: var(--icone) center / contain no-repeat;
+}
+.onglet[aria-current="page"] { color: var(--brand); font-weight: 600; }
+.onglet[aria-current="page"] .icone { background: var(--line); }
+.onglet[data-onglet="aujourdhui"] { --icone: url(icones/ic_nav_today.svg); }
+.onglet[data-onglet="textes"] { --icone: url(icones/ic_nav_texts.svg); }
+.onglet[data-onglet="journal"] { --icone: url(icones/ic_nav_journal.svg); }
+.onglet[data-onglet="reglages"] { --icone: url(icones/ic_nav_settings.svg); }
+
+/* --- Feuille de choix (les AlertDialog d'Android) --------------------------------------- */
+.voile {
+  position: fixed; inset: 0; background: rgba(0, 0, 0, 0.4); display: flex; align-items: flex-end;
+  justify-content: center; z-index: 10;
+}
+.feuille {
+  width: 100%; max-width: 560px; max-height: 80%; overflow-y: auto; background: var(--card);
+  border-radius: 20px 20px 0 0; padding: 18px 18px calc(12px + env(safe-area-inset-bottom));
+}
+.feuille h2 { font-size: 18px; margin: 0 0 8px; }
+.feuille .choix {
+  display: block; width: 100%; text-align: start; padding: 14px 4px; border: 0; background: none;
+  font-size: 16px; cursor: pointer; border-top: 1px solid var(--line);
+}
+.feuille .choix[aria-checked="true"] { color: var(--brand); font-weight: 700; }
+.feuille input[type="number"] {
+  width: 100%; font: inherit; font-size: 18px; padding: 12px; border-radius: 12px;
+  border: 1px solid var(--line); background: var(--paper); color: var(--ink);
+}
+.feuille .actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 14px; }
+.feuille .actions button {
+  border: 0; background: none; color: var(--brand); font-weight: 600; padding: 10px 14px; cursor: pointer;
+}
+
+/* --- Séance (activity_session.xml) ------------------------------------------------ */
+.seance { background: var(--brand-dark); color: var(--mint); }
+.seance .barre { color: var(--mint); padding-bottom: 0; }
+.seance .retour { color: var(--mint); }
+.seance .contenu { text-align: center; padding-top: 0; }
+.seance-titre { font-size: 13px; letter-spacing: 0.14em; color: var(--mint); }
+/* La plaque claire sous le personnage : le fond blanc des illustrations s'y fond. */
+.scene { margin-top: 16px; padding: 10px; background: var(--mint); border-radius: 28px; }
+.seance .scene img { display: block; width: 100%; height: 130px; object-fit: contain; }
+@media (min-height: 480px) { .seance .scene img { height: 190px; } }
+.decompte { margin-top: 18px; color: var(--white); font-size: 56px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.legende { margin: 8px 0 0; color: var(--mint); font-size: 15px; }
+.legende.petite { margin-top: 6px; font-size: 13px; }
+.texte-clair {
+  display: block; width: 100%; margin-top: 4px; padding: 12px; border: 0; background: none;
+  color: var(--mint); font-size: 15px; font-weight: 600; cursor: pointer; border-radius: 999px;
+}
+.durees { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 20px; }
+.duree {
+  padding: 10px 4px; border: 1px solid color-mix(in srgb, var(--mint) 45%, transparent); border-radius: 999px;
+  background: none; color: var(--mint); font-size: 13px; font-weight: 600; cursor: pointer; white-space: nowrap;
+}
+.seance .principal { margin-top: 22px; padding: 14px 16px; font-size: 16px; }
+
+/* --- Carte de ’hizouk (view_chizuk.xml) ---------------------------------------------- */
+.chizuk {
+  margin-top: 18px; padding: 16px; text-align: start; color: var(--ink);
+  background: var(--card); border: 1px solid var(--line); border-radius: 20px;
+}
+.chizuk-tete { display: flex; align-items: center; gap: 12px; }
+.chizuk-art { flex: none; width: 64px; height: 64px; border-radius: 16px; background: var(--stage-soft); padding: 4px; }
+.chizuk-art img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.chizuk-moment { margin: 0; color: var(--brand); font-size: 14px; font-weight: 700; }
+.chizuk-he, .chizuk-trad { margin: 12px 0 0; overflow: hidden; line-height: 1.35; }
+.chizuk-he { --corps-max: 19; height: 108px; color: var(--ink); text-align: start; }
+.chizuk-trad { --corps-max: 15; height: 84px; margin-top: 0; color: var(--muted); }
+@media (min-height: 480px) { .chizuk-he { height: 150px; } .chizuk-trad { height: 116px; } }
+.chizuk hr { border: 0; border-top: 1px solid var(--line); margin: 10px 0; }
+.chizuk-ref { margin: 8px 0 0; color: var(--muted); font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.chizuk.compacte .chizuk-he { --corps-max: 17; height: 96px; }
+.chizuk.compacte .chizuk-trad { --corps-max: 14; height: 72px; }
+
+/* --- Bravo (activity_celebration.xml) ----------------------------------------------- */
+.bravo .contenu { display: flex; flex-direction: column; align-items: stretch; min-height: 100%; text-align: center; padding-top: calc(22px + env(safe-area-inset-top)); }
+.bravo .defile { padding-top: 0; }
+.scene.danse { position: relative; flex: 1; min-height: 200px; max-height: 420px; padding: 14px; overflow: hidden; margin-top: 0; }
+.danseur { position: absolute; inset: 32px 14px 14px; transform-origin: 50% 100%; }
+.danseur img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+.pose-b { opacity: 0; }
+.note { position: absolute; color: var(--on-plate); pointer-events: none; }
+.bravo-titre { margin: 22px 0 0; font-size: 30px; font-weight: 700; color: var(--ink); }
+.bravo-sous-titre { margin: 6px 0 0; font-size: 16px; color: var(--muted); }
+.bravo .principal { margin-top: 22px; padding: 14px 16px; font-size: 16px; }
+
+/* --- Boîtes de dialogue ------------------------------------------------------------ */
+.feuille .message { margin: 0; color: var(--muted); font-size: 15px; }
+.feuille textarea {
+  width: 100%; font: inherit; font-size: 16px; padding: 12px; border-radius: 12px; resize: vertical;
+  border: 1px solid var(--line); background: var(--paper); color: var(--ink);
+}
+.note-art { display: block; width: 100%; height: 120px; object-fit: contain; margin-bottom: 10px; }
+
+/* --- Message bref (Toast) ------------------------------------------------------------ */
+.toast {
+  position: fixed; left: 50%; bottom: calc(90px + env(safe-area-inset-bottom)); transform: translateX(-50%);
+  max-width: calc(100% - 32px); padding: 12px 18px; border-radius: 999px; z-index: 20;
+  background: var(--ink); color: var(--paper); font-size: 14px; text-align: center;
+}
