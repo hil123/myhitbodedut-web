@@ -1,0 +1,1221 @@
+{
+  "_meta": {
+    "version": "0.2",
+    "date": "2026-09-20",
+    "remplace": "chizuk.json v0.1 (18/09/2026) pour les items hitbodedout",
+    "statuts": {
+      "verifie_texte": "hébreu copié depuis l'API Sefaria, édition et licence relevées, recoupé avec au moins une source indépendante"
+    },
+    "traductions": "FR et EN originales (Claude, 20/09/2026). Aucune reprise des traductions protégées (Breslov Research Institute, Greenbaum). relu=false tant que non relues.",
+    "noms_divins": "en toutes lettres, comme dans les sources (décision du propriétaire, 04/10/2026)",
+    "nikkoud": "he = texte vocalisé de l'édition ; he_sans_nikkoud fourni quand la licence de l'édition numérique n'est pas déclarée (Sichot HaRan, Shivchei HaRan, Likutei Etzot, Likutei Tefilot)",
+    "ellipses": "« … » marque une coupe dans le texte source",
+    "moments": {
+      "ouverture": "début de séance",
+      "blocage": "quand les mots ne viennent pas (bouton pendant la séance)",
+      "lieu": "réglages lieu et moment, futur mode champ",
+      "porte": "écran de porte ; seulement les items de 15 s de lecture ou moins",
+      "relance": "après une rupture de série ou une pause",
+      "cloture": "fin de séance"
+    },
+    "regle_publication": "release : statut_verif == 'verifie_texte' ET relu == true. Hébreu affiché : he si editions[edition].nikkoud_ok, sinon he_sans_nikkoud.",
+    "editions": {
+      "lm": {
+        "titre": "Likutei Moharan Tinyana — rabenubook.com (via API Sefaria)",
+        "licence": "Public Domain",
+        "nikkoud_ok": true
+      },
+      "lm1": {
+        "titre": "Likutei Moharan — rabenubook.com (via API Sefaria)",
+        "licence": "Public Domain",
+        "nikkoud_ok": true
+      },
+      "sh": {
+        "titre": "Sichot HaRan — rabenubook (via API Sefaria)",
+        "licence": "unknown",
+        "nikkoud_ok": false
+      },
+      "shr": {
+        "titre": "Shivchei HaRan — rabenubook (via API Sefaria)",
+        "licence": "unknown",
+        "nikkoud_ok": false
+      },
+      "cm": {
+        "titre": "Chayei Moharan — OYW / tora.ws (via API Sefaria)",
+        "licence": "Public Domain",
+        "nikkoud_ok": true
+      },
+      "rambam": {
+        "titre": "Mishneh Torah — Torat Emet 370 (via API Sefaria)",
+        "licence": "Public Domain",
+        "nikkoud_ok": true
+      },
+      "tanakh": {
+        "titre": "Tanach with Nikkud — tanach.us (via API Sefaria)",
+        "licence": "Public Domain",
+        "nikkoud_ok": true
+      },
+      "le": {
+        "titre": "Likutei Etzot — rabenubook.com (via export Sefaria)",
+        "licence": "unknown",
+        "nikkoud_ok": false
+      },
+      "lt": {
+        "titre": "Likutei Tefilot — Maleh Vigadish 2021 (via export Sefaria)",
+        "licence": "unknown",
+        "nikkoud_ok": false
+      }
+    },
+    "corrections_v01": [
+      "LM II, 100 : texte trouvé en II, 100:1 (v0.1 le marquait introuvable).",
+      "« Répéter un seul mot » : LM II, 96:1:3 (marqué à vérifier dans la spec du 17/09).",
+      "« L'eau use la pierre » : Si'hot HaRan 234.",
+      "Paraphrases v0.1 des items hitbodedout remplacées par des extraits réels.",
+      "Items généraux v0.1 (Berakhot 10a, Roch Hachana 16a, Avot 2:16…) non repris : hors périmètre, textes réels à établir."
+    ],
+    "verification": {
+      "date": "2026-09-20",
+      "hebreu": "Confronte mecaniquement a l'edition Sefaria citee par chaque item (corpus public sefaria-export). 37/37 : 15 identiques au caractere pres, 18 extraits dont les fragments se retrouvent dans l'ordre, 4 citations exactes arretees avant la fin du segment. Aucune divergence textuelle.",
+      "editions": "Les 7 versionTitle et les 7 licences de _meta.editions correspondent au catalogue Sefaria. nikkoud_ok=false porte exactement sur les deux editions dont la licence est declaree unknown.",
+      "references": "37/37 coherentes entre ref et ref_sefaria.",
+      "traductions": "Lues une a une le 20/09/2026 par leur propre auteur : ce n'est donc pas une relecture independante. Une correction appliquee : rambam-tefila-1-3, ou « רגיל » etait lu « avoir l'habitude » en francais alors que l'anglais lisait « fluent » ; le francais perdait l'opposition avec « ערל שפתים » qui suit. Une relecture par un tiers reste souhaitable.",
+      "reserve": "11 items s'arretent avant la fin du segment cite sans porter le « … » que _meta.ellipses annonce. Aucun mot n'y est faux ; c'est la convention qui n'est pas tenue.",
+      "relecture": {
+        "par": "Claude, auteur des traductions",
+        "independante": false,
+        "date": "2026-09-20",
+        "reserve": "Les traductions ont ete lues une a une par leur propre auteur : ce n'est pas une relecture independante. Une lecture par un tiers reste souhaitable. Detail dans _meta.verification.traductions."
+      },
+      "ajouts_2026_09_28": {
+        "items": [
+          "sh-3-ne-pas-desesperer-de-crier",
+          "cm-431-desirer-quand-rien-ne-reussit",
+          "lm2-48-point-bon",
+          "lm2-112-reparer",
+          "michle-24-16",
+          "lm1-261-recommencer",
+          "lm1-78-la-parole",
+          "le-hitchazkut-42-cri",
+          "lt2-39-aucun-desespoir"
+        ],
+        "choix": "Selection du proprietaire le 28/09/2026 (textes sur le desespoir, moment « relance »), a partir de l'hebreu et d'une traduction presentes dans la conversation.",
+        "hebreu": "Chaque fragment decoupe mecaniquement dans l'edition citee (export public Sefaria sur storage.googleapis.com, le 28/09/2026) : 9/9 retrouves au caractere pres, vocalisation comprise.",
+        "recoupement": "Au moins un temoin independant par item (voir le champ recoupement). Pour Likoutei Tefilot II, 39, le second temoin est le livre imprime du proprietaire, qui a confirme le texte le 28/09/2026.",
+        "traductions": "FR et EN originales (Claude, 28/09/2026), elargies a partir des traductions courtes presentees au proprietaire ; relecture par un tiers souhaitable."
+      }
+    }
+  },
+  "items": [
+    {
+      "id": "lm2-25-fondement",
+      "moments": [
+        "ouverture"
+      ],
+      "theme": "fondement",
+      "edition": "lm",
+      "ref": "Likoutei Moharan II, 25",
+      "ref_sefaria": "Likutei Moharan, Part II 25:1:1",
+      "url": "https://www.sefaria.org/Likutei_Moharan%2C_Part_II.25.1.1",
+      "he": "הַהִתְבּוֹדְדוּת הוּא מַעֲלָה עֶלְיוֹנָה וּגְדוֹלָה מִן הַכֹּל, דְּהַיְנוּ לִקְבֹּעַ לוֹ עַל־כָּל־פָּנִים שָׁעָה אוֹ יוֹתֵר לְהִתְבּוֹדֵד לְבַדּוֹ בְּאֵיזֶה חֶדֶר אוֹ בַּשָּׂדֶה, וּלְפָרֵשׁ שִׂיחָתוֹ בֵּינוֹ לְבֵין קוֹנוֹ בִּטְעָנוֹת וַאֲמַתְלָאוֹת, בְּדִבְרֵי חֵן וְרִצּוּי וּפִיּוּס, לְבַקֵּשׁ וּלְהִתְחַנֵּן מִלְּפָנָיו יִתְבָּרַךְ, שֶׁיְּקָרְבוֹ אֵלָיו לַעֲבוֹדָתוֹ בֶּאֱמֶת.",
+      "fr": "La hitbodedout est un degré suprême, plus grand que tout. C’est se fixer au moins une heure, ou davantage, pour s’isoler seul dans une pièce ou dans les champs. Là, on épanche sa parole entre soi et son Créateur, avec des arguments et des justifications, avec des mots de grâce, de conciliation et d’apaisement. On demande et on supplie devant Lui, béni soit-Il, qu’Il nous rapproche de Lui et de Son service, en vérité.",
+      "en": "Hitbodedut is a supreme level, greater than everything. It means setting aside at least an hour, or more, to be alone in a room or in the fields, and there to pour out one’s words between oneself and one’s Maker, with arguments and reasons, with words of grace, conciliation and appeasement, asking and imploring Him, blessed be He, to draw one close to Him and to His service, in truth.",
+      "yiddish": null,
+      "recoupement": [
+        "azamra.org — trad. A. Greenbaum, page « Hitbodedut » (même passage, même référence)",
+        "Article « התבודדות: איך עושים את זה? ולמה? » (N. N. Salama, 2024) — cite le même passage, même référence"
+      ],
+      "note": null,
+      "tags": [],
+      "duree_lecture_sec": 23,
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "lm2-25-langue",
+      "moments": [
+        "ouverture"
+      ],
+      "theme": "langue",
+      "edition": "lm",
+      "ref": "Likoutei Moharan II, 25",
+      "ref_sefaria": "Likutei Moharan, Part II 25:1:2",
+      "url": "https://www.sefaria.org/Likutei_Moharan%2C_Part_II.25.1.2",
+      "he": "וּתְפִלָּה וְשִׂיחָה זוֹ יִהְיֶה בַּלָּשׁוֹן שֶׁמְּדַבְּרִים בּוֹ, דְּהַיְנוּ בִּלְשׁוֹן אַשְׁכְּנַז (בִּמְדִינָתֵנוּ), כִּי בִּלְשׁוֹן־הַקֹּדֶשׁ קָשֶׁה לוֹ לְפָרֵשׁ כָּל שִׂיחָתוֹ, וְגַם אֵין הַלֵּב נִמְשָׁךְ אַחֲרֵי הַדִּבּוּרִים … אֲבָל בִּלְשׁוֹן אַשְׁכְּנַז, שֶׁמְּסַפְּרִים וּמְדַבְּרִים בּוֹ, קַל וְקָרוֹב יוֹתֵר לְשַׁבֵּר לִבּוֹ.",
+      "fr": "Cette prière et cette conversation doivent se faire dans la langue que l’on parle, c’est-à-dire en yiddish dans notre pays. Car en langue sainte, il est difficile d’exprimer tout ce qu’on a à dire, et le cœur ne suit pas les mots… Mais en yiddish, la langue où l’on raconte et où l’on parle, il est plus facile, et plus naturel, de briser son cœur.",
+      "en": "This prayer and conversation should be in the language one speaks, that is, Yiddish in our country. For in the Holy Tongue it is hard to express everything one has to say, and the heart is not drawn after the words… But in Yiddish, the language in which people tell and talk, it is easier and more natural to break one’s heart.",
+      "yiddish": null,
+      "recoupement": [
+        "azamra.org — trad. A. Greenbaum, page « Hitbodedut » (même passage, même référence)",
+        "Article « התבודדות: איך עושים את זה? ולמה? » (N. N. Salama, 2024) — cite le même passage, même référence",
+        "Feuille Sefaria 203099 (même texte)"
+      ],
+      "note": "« La langue que l'on parle » : le yiddish à l'époque. Le principe vaut pour la langue de chacun.",
+      "tags": [],
+      "duree_lecture_sec": 20,
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "lm2-25-tout-dire",
+      "moments": [
+        "ouverture"
+      ],
+      "theme": "contenu",
+      "edition": "lm",
+      "ref": "Likoutei Moharan II, 25",
+      "ref_sefaria": "Likutei Moharan, Part II 25:1:3",
+      "url": "https://www.sefaria.org/Likutei_Moharan%2C_Part_II.25.1.3",
+      "he": "וְאֶת כָּל אֲשֶׁר עִם לְבָבוֹ יָשִׂיחַ וִיסַפֵּר לְפָנָיו יִתְבָּרַךְ, הֵן חֲרָטָה וּתְשׁוּבָה עַל הֶעָבָר, וְהֵן בַּקָּשַׁת תַחֲנוּנִים לִזְכּוֹת לְהִתְקָרֵב אֵלָיו יִתְבָּרַךְ מֵהַיּוֹם וְהָלְאָה בֶּאֱמֶת, וְכַיּוֹצֵא בָּזֶה כָּל חַד לְפוּם דַּרְגֵּהּ.",
+      "fr": "Tout ce qu’il a sur le cœur, qu’il le dise et le raconte devant Lui, béni soit-Il : le regret et la techouva sur le passé, et les supplications pour mériter de se rapprocher de Lui, à partir d’aujourd’hui, en vérité. Et ainsi de suite, chacun selon son niveau.",
+      "en": "Whatever is in his heart, let him speak it and tell it before Him, blessed be He: regret and teshuvah for the past, and pleas to merit drawing close to Him from this day on, in truth. And so on, each according to his level.",
+      "yiddish": null,
+      "recoupement": [
+        "azamra.org — trad. A. Greenbaum, page « Hitbodedut » (même passage, même référence)",
+        "Article « התבודדות: איך עושים את זה? ולמה? » (N. N. Salama, 2024) — cite le même passage, même référence",
+        "Feuille Sefaria 203099 (même texte)"
+      ],
+      "note": null,
+      "tags": [],
+      "duree_lecture_sec": 15,
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "lm2-25-mots-bloques",
+      "moments": [
+        "blocage"
+      ],
+      "theme": "blocage",
+      "edition": "lm",
+      "ref": "Likoutei Moharan II, 25",
+      "ref_sefaria": "Likutei Moharan, Part II 25:1:7-8",
+      "url": "https://www.sefaria.org/Likutei_Moharan%2C_Part_II.25.1.7-8",
+      "he": "וַאֲפִלּוּ אִם לִפְעָמִים נִסְתַּתְּמִין דְּבָרָיו, וְאֵינוֹ יָכוֹל לִפְתֹּחַ פִּיו לְדַבֵּר לְפָנָיו יִתְבָּרַךְ כְּלָל, אַף־עַל־פִּי־כֵן זֶה בְּעַצְמוֹ טוֹב מְאֹד, דְּהַיְנוּ הַהֲכָנָה שֶׁהוּא מוּכָן וְעוֹמֵד לְפָנָיו יִתְבָּרַךְ, וְחָפֵץ וּמִשְׁתּוֹקֵק לְדַבֵּר, אַךְ שֶׁאֵינוֹ יָכוֹל, זֶה בְּעַצְמוֹ גַם־כֵּן טוֹב מְאֹד, וְגַם יוּכַל לַעֲשׂוֹת לוֹ שִׂיחָה וּתְפִלָּה מִזֶּה בְּעַצְמוֹ. וְעַל זֶה בְּעַצְמוֹ יִצְעֹק וְיִתְחַנֵּן לְפָנָיו יִתְבָּרַךְ, שֶׁנִּתְרַחֵק כָּל־כָּךְ, עַד שֶׁאֵינוֹ יָכוֹל אֲפִלּוּ לְדַבֵּר.",
+      "fr": "Et même si parfois ses paroles se bloquent et qu’il ne peut pas du tout ouvrir la bouche devant Lui, béni soit-Il, cela même est très bon. La préparation, le fait de se tenir prêt devant Lui, de vouloir et de désirer parler sans le pouvoir : cela aussi est très bon. Il peut même en faire une conversation et une prière. Qu’il crie et supplie devant Lui justement de s’être tant éloigné qu’il ne peut même plus parler.",
+      "en": "And even if at times his words are blocked and he cannot open his mouth before Him at all, that itself is very good: the preparation, standing ready before Him, wanting and longing to speak but unable, that too is very good. He can even make a conversation and a prayer out of this very thing: let him cry out and plead before Him about having grown so distant that he cannot even speak.",
+      "yiddish": null,
+      "recoupement": [
+        "azamra.org — trad. A. Greenbaum, page « Hitbodedut » (même passage, même référence)",
+        "Article « התבודדות: איך עושים את זה? ולמה? » (N. N. Salama, 2024) — cite le même passage, même référence"
+      ],
+      "note": null,
+      "tags": [],
+      "duree_lecture_sec": 24,
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "lm2-25-pour-tous",
+      "moments": [
+        "porte"
+      ],
+      "theme": "pour_tous",
+      "edition": "lm",
+      "ref": "Likoutei Moharan II, 25",
+      "ref_sefaria": "Likutei Moharan, Part II 25:1:9",
+      "url": "https://www.sefaria.org/Likutei_Moharan%2C_Part_II.25.1.9",
+      "he": "וְהוּא דָּבָר הַשָּׁוֶה לְכָל נֶפֶשׁ מִקָּטֹן וְעַד גָּדוֹל, כִּי כֻּלָּם יְכוֹלִים לִנְהֹג הַנְהָגָה זוֹ, וְעַל־יְדֵי זֶה יָבוֹאוּ לְמַעְלָה גְּדוֹלָה. אַשְׁרֵי שֶׁיֹּאחַז בָּזֶה.",
+      "fr": "C’est une chose accessible à toute âme, du plus petit au plus grand. Tous peuvent adopter cette pratique, et par elle ils parviendront à un haut degré. Heureux celui qui s’y tient.",
+      "en": "It is something equally open to every soul, from the smallest to the greatest. Everyone can take up this practice, and through it they will reach a high level. Happy is the one who holds on to it.",
+      "yiddish": null,
+      "recoupement": [
+        "azamra.org — trad. A. Greenbaum, page « Hitbodedut » (même passage, même référence)",
+        "Article « התבודדות: איך עושים את זה? ולמה? » (N. N. Salama, 2024) — cite le même passage, même référence"
+      ],
+      "note": null,
+      "tags": [],
+      "duree_lecture_sec": 10,
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "lm2-25-joie",
+      "moments": [
+        "cloture"
+      ],
+      "theme": "joie",
+      "edition": "lm",
+      "ref": "Likoutei Moharan II, 25",
+      "ref_sefaria": "Likutei Moharan, Part II 25:1:4",
+      "url": "https://www.sefaria.org/Likutei_Moharan%2C_Part_II.25.1.4",
+      "he": "וְיִזָּהֵר מְאֹד לְהַרְגִּיל עַצְמוֹ לְהַתְמִיד בָּזֶה מִדֵּי יוֹם בְּיוֹם שָׁעָה מְיֻחֶדֶת כַּנַּ\"ל, וּשְׁאָר הַיּוֹם יִהְיֶה בְּשִׂמְחָה כַּנַּ\"ל.",
+      "fr": "Qu’il veille bien à s’habituer à y persévérer chaque jour, à une heure réservée, et que le reste de la journée soit dans la joie.",
+      "en": "Let him take great care to accustom himself to keep this up every day, at a set hour, and let the rest of the day be in joy.",
+      "yiddish": null,
+      "recoupement": [
+        "azamra.org — trad. A. Greenbaum, page « Hitbodedut » (même passage, même référence)",
+        "Article « התבודדות: איך עושים את זה? ולמה? » (N. N. Salama, 2024) — cite le même passage, même référence"
+      ],
+      "note": null,
+      "tags": [],
+      "duree_lecture_sec": 8,
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "lm2-25-torah-priere",
+      "moments": [
+        "cloture"
+      ],
+      "theme": "torah_priere",
+      "edition": "lm",
+      "ref": "Likoutei Moharan II, 25",
+      "ref_sefaria": "Likutei Moharan, Part II 25:2:1",
+      "url": "https://www.sefaria.org/Likutei_Moharan%2C_Part_II.25.2.1",
+      "he": "גַּם טוֹב לַעֲשׂוֹת מֵהַתּוֹרָה תְּפִלָּה. דְּהַיְנוּ כְּשֶׁלּוֹמֵד אוֹ שׁוֹמֵעַ אֵיזֶה מַאֲמַר תּוֹרָה מִצַּדִּיק הָאֱמֶת, אֲזַי יַעֲשֶׂה מִזֶּה תְּפִלָּה, דְּהַיְנוּ לְבַקֵּשׁ וּלְהִתְחַנֵּן לְפָנָיו יִתְבָּרַךְ עַל כָּל מַה שֶּׁנֶּאֱמַר שָׁם בְּאוֹתוֹ הַמַּאֲמָר, מָתַי יִזְכֶּה גַּם הוּא לָבוֹא לְכָל זֶה, וְכַמָּה הוּא רָחוֹק מִזֶּה.",
+      "fr": "Il est bon aussi de faire de la Torah une prière. Quand on étudie ou qu’on entend un enseignement de Torah d’un vrai tsadik, on en fait une prière. On demande et on supplie devant Lui, béni soit-Il, au sujet de tout ce qui est dit dans cet enseignement : quand on méritera soi aussi d’y parvenir, et combien on en est loin.",
+      "en": "It is also good to make a prayer out of Torah. When one studies or hears a Torah teaching from a true tsadik, one should make a prayer of it, asking and pleading before Him, blessed be He, about everything said in that teaching: when he too will merit to reach all of it, and how far he is from it.",
+      "yiddish": null,
+      "recoupement": [
+        "azamra.org — trad. A. Greenbaum, page « Hitbodedut » (même passage, même référence)",
+        "Hamichlol, article « ליקוטי תפילות » (cite LM II, 25)"
+      ],
+      "note": "Principe à la base des Likoutei Tefilot de Rabbi Natan.",
+      "tags": [
+        "torah_priere"
+      ],
+      "duree_lecture_sec": 20,
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "lm2-24-mitsva-joie",
+      "moments": [
+        "cloture"
+      ],
+      "theme": "joie",
+      "edition": "lm",
+      "ref": "Likoutei Moharan II, 24",
+      "ref_sefaria": "Likutei Moharan, Part II 24:1:1",
+      "url": "https://www.sefaria.org/Likutei_Moharan%2C_Part_II.24.1.1",
+      "he": "מִצְוָה גְּדוֹלָה לִהְיוֹת בְּשִׂמְחָה תָּמִיד, וּלְהִתְגַּבֵּר לְהַרְחִיק הָעַצְבוּת וְהַמָּרָה שְׁחֹרָה בְּכָל כֹּחוֹ.",
+      "fr": "C’est une grande mitsva d’être toujours dans la joie, et de s’efforcer de toutes ses forces d’éloigner la tristesse et la mélancolie.",
+      "en": "It is a great mitzvah to be happy always, and to strive with all one’s strength to drive away sadness and melancholy.",
+      "yiddish": null,
+      "recoupement": [
+        "Breslov Research Institute, notes sur LM II, 25 (renvoi à II, 24)",
+        "Renvoi interne : LM II, 25:1:4 (« כנ\"ל »)"
+      ],
+      "note": null,
+      "tags": [],
+      "duree_lecture_sec": 7,
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "lm2-24-coeur-brise",
+      "moments": [
+        "cloture"
+      ],
+      "theme": "joie",
+      "edition": "lm",
+      "ref": "Likoutei Moharan II, 24",
+      "ref_sefaria": "Likutei Moharan, Part II 24:2:2",
+      "url": "https://www.sefaria.org/Likutei_Moharan%2C_Part_II.24.2.2",
+      "he": "אַף שֶׁגַּם לֵב נִשְׁבָּר הוּא טוֹב מְאֹד, עִם כָּל זֶה הוּא רַק בְּאֵיזוֹ שָׁעָה, וְרָאוּי לִקְבֹּעַ לוֹ אֵיזֶה שָׁעָה בַּיּוֹם לְשַׁבֵּר לִבּוֹ וּלְפָרֵשׁ שִׂיחָתוֹ לְפָנָיו יִתְבָּרַךְ … אֲבָל כָּל הַיּוֹם כֻּלּוֹ צָרִיךְ לִהְיוֹת בְּשִׂמְחָה.",
+      "fr": "Même si le cœur brisé est lui aussi très bon, ce n’est que pour un temps. Il convient de se fixer un moment dans la journée pour briser son cœur et épancher sa parole devant Lui, béni soit-Il… mais tout au long de la journée, il faut être dans la joie.",
+      "en": "Although a broken heart is also very good, it is only for a certain time. It is fitting to set oneself some time each day to break one’s heart and pour out one’s words before Him, blessed be He… but the whole day long one must be in joy.",
+      "yiddish": null,
+      "recoupement": [
+        "Breslov Research Institute, notes sur LM II, 25 (renvoi à II, 24)"
+      ],
+      "note": null,
+      "tags": [],
+      "duree_lecture_sec": 16,
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "lm2-96-une-parole",
+      "moments": [
+        "blocage"
+      ],
+      "theme": "blocage",
+      "edition": "lm",
+      "ref": "Likoutei Moharan II, 96",
+      "ref_sefaria": "Likutei Moharan, Part II 96:1:3",
+      "url": "https://www.sefaria.org/Likutei_Moharan%2C_Part_II.96.1.3",
+      "he": "וְאָמַר: שֶׁאֲפִלּוּ אִם אֵינוֹ יָכוֹל לְדַבֵּר רַק דִּבּוּר אֶחָד, יִהְיֶה חָזָק בְּדַעְתּוֹ, וִידַבֵּר אוֹתוֹ הַדִּבּוּר כַּמָּה וְכַמָּה פְּעָמִים בְּלִי שִׁעוּר וָעֵרֶךְ, וַאֲפִלּוּ אִם יְבַלֶּה כַּמָּה וְכַמָּה יָמִים בְּדִּבּוּר זֶה לְבַד גַּם זֶה טוֹב … עַד שֶׁיְּרַחֵם עָלָיו הַשֵּׁם יִתְבָּרַךְ, וְיִפְתַּח פִּיו, וְיוּכַל לְפָרֵשׁ שִׂיחָתוֹ.",
+      "fr": "Il disait : même s’il ne peut dire qu’un seul mot, qu’il reste ferme dans son esprit et répète ce mot encore et encore, sans limite ni mesure. Même s’il passe plusieurs jours sur ce seul mot, c’est bien aussi… jusqu’à ce que Hachem, béni soit-Il, ait pitié de lui, lui ouvre la bouche, et qu’il puisse épancher sa parole.",
+      "en": "He said: even if one can say only a single word, let him be firm in his mind and say that word over and over, without limit or measure. Even if he spends several days on that one word alone, that too is good… until Hashem, blessed be He, has mercy on him and opens his mouth, and he is able to pour out his words.",
+      "yiddish": null,
+      "recoupement": [
+        "azamra.org — trad. A. Greenbaum, page « Hitbodedut » (même passage, même référence)"
+      ],
+      "note": "Source du principe « répéter un seul mot », marqué à vérifier dans la spec du 17/09.",
+      "tags": [],
+      "duree_lecture_sec": 19,
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "lm2-96-une-heure",
+      "moments": [
+        "porte"
+      ],
+      "theme": "duree",
+      "edition": "lm",
+      "ref": "Likoutei Moharan II, 96",
+      "ref_sefaria": "Likutei Moharan, Part II 96:1:6",
+      "url": "https://www.sefaria.org/Likutei_Moharan%2C_Part_II.96.1.6",
+      "he": "וְאָמַר: שֶׁרְצוֹנוֹ שֶׁיִּהְיֶה לָנוּ כָּל הַיּוֹם כֻּלּוֹ הִתְבּוֹדְדוּת, וּלְבַלּוֹת כָּל הַיּוֹם עַל זֶה, אַךְ לָאו כָּל אָדָם יָכוֹל לְקַיֵּם זֹאת. עַל־כֵּן בְּהֶכְרֵחַ לְצַוּוֹת לָהֶם שֶׁיִּהְיֶה לָהֶם עַל־כָּל־פָּנִים אֵיזֶה שָׁעָה הִתְבּוֹדְדוּת, כִּי גַּם זֶה טוֹב מְאֹד.",
+      "fr": "Il disait qu’il aurait voulu que nous fassions la hitbodedout toute la journée, et que nous y passions la journée entière. Mais tout le monde ne peut pas tenir cela. C’est pourquoi il a fallu leur prescrire au moins une heure de hitbodedout, car cela aussi est très bon.",
+      "en": "He said he would want us to have hitbodedut the whole day and to spend the entire day on it, but not everyone can do that. So he had to instruct them to have at least an hour of hitbodedut, for that too is very good.",
+      "yiddish": null,
+      "recoupement": [
+        "breslov.org, « Hitbodedut: when and where? » (LM II, 96)",
+        "Chayei Moharan 438 (même enseignement)"
+      ],
+      "note": "« אֵיזֶה שָׁעָה » rendu par « une heure » (lecture courante).",
+      "tags": [
+        "chemin_vers_l_heure"
+      ],
+      "duree_lecture_sec": 15,
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "lm2-97-chemin-neuf",
+      "moments": [
+        "ouverture"
+      ],
+      "theme": "parole_propre",
+      "edition": "lm",
+      "ref": "Likoutei Moharan II, 97",
+      "ref_sefaria": "Likutei Moharan, Part II 97:1:3-4",
+      "url": "https://www.sefaria.org/Likutei_Moharan%2C_Part_II.97.1.3-4",
+      "he": "…הַשִּׂיחָה שֶׁמְּדַבֵּר הָאָדָם עַצְמוֹ בֵּינוֹ לְבֵין קוֹנוֹ, הוּא דֶּרֶךְ חָדָשׁ וּתְפִלָּה חֲדָשָׁה, שֶׁהָאָדָם אוֹמְרָהּ מִלִּבּוֹ מֵחָדָשׁ, עַל־כֵּן אֵין הַמְקַטְרְגִים מְצוּיִים כָּל־כָּךְ לֶאֱרֹב. וְאַף־עַל־פִּי־כֵן הִזְהִיר מְאֹד גַּם עַל אֲמִירַת שְׁאָר תְּחִנּוֹת וּבַקָּשׁוֹת…",
+      "fr": "La conversation que l’homme tient lui-même entre lui et son Créateur est un chemin neuf et une prière neuve, qu’il dit de son cœur, à nouveau. C’est pourquoi les accusateurs n’y sont pas autant présents pour lui tendre une embuscade. Malgré cela, il insistait beaucoup pour qu’on dise aussi les autres supplications et prières.",
+      "en": "The conversation a person speaks himself, between himself and his Maker, is a new road and a new prayer that he says from his heart afresh. That is why the accusers are not so present there to lie in wait. Even so, he strongly urged saying the other supplications and prayers as well.",
+      "yiddish": null,
+      "recoupement": [
+        "azamra.org — trad. A. Greenbaum, page « Hitbodedut » (même passage, même référence)"
+      ],
+      "note": "Contexte : image du grand chemin où guettent les brigands (97:1:1-2).",
+      "tags": [],
+      "duree_lecture_sec": 17,
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "lm2-99-ami",
+      "moments": [
+        "porte"
+      ],
+      "theme": "relation",
+      "edition": "lm",
+      "ref": "Likoutei Moharan II, 99",
+      "ref_sefaria": "Likutei Moharan, Part II 99:1:3",
+      "url": "https://www.sefaria.org/Likutei_Moharan%2C_Part_II.99.1.3",
+      "he": "וְאָמַר: הֲלוֹא כְּשֶׁהַשֵּׁם יִתְבָּרַךְ עוֹזֵר בְּהִתְבּוֹדְדוּת, אֲזַי הַהִתְבּוֹדְדוּת הוּא כַּאֲשֶׁר יְדַבֵּר אִישׁ אֶל רֵעֵהוּ.",
+      "fr": "Il disait : quand Hachem, béni soit-Il, aide dans la hitbodedout, alors la hitbodedout est comme un homme qui parle à son ami.",
+      "en": "He said: when Hashem, blessed be He, helps in hitbodedut, then hitbodedut is like a man speaking to his friend.",
+      "yiddish": null,
+      "recoupement": [
+        "azamra.org — trad. A. Greenbaum, page « Hitbodedut » (même passage, même référence)"
+      ],
+      "note": null,
+      "tags": [],
+      "duree_lecture_sec": 7,
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "lm2-100-tsadikim",
+      "moments": [
+        "porte"
+      ],
+      "theme": "autorite",
+      "edition": "lm",
+      "ref": "Likoutei Moharan II, 100",
+      "ref_sefaria": "Likutei Moharan, Part II 100:1:1",
+      "url": "https://www.sefaria.org/Likutei_Moharan%2C_Part_II.100.1.1",
+      "he": "סִפְּרוּ לִי שֶׁאָמַר, שֶׁמִּקָּטֹן וְעַד גָּדוֹל אִי אֶפְשָׁר לִהְיוֹת אִישׁ כָּשֵׁר בֶּאֱמֶת, כִּי־אִם עַל־יְדֵי הִתְבּוֹדְדוּת. וְהָיָה מַזְכִּיר כַּמָּה וְכַמָּה צַדִּיקִים מְפֻרְסָמִים אֲמִתִּיִּים, וְאָמַר, שֶׁכֻּלָּם לֹא בָּאוּ לְמַדְרֵגָתָם כִּי־אִם עַל־יְדֵי הִתְבּוֹדְדוּת.",
+      "fr": "On m’a rapporté qu’il disait : du plus petit au plus grand, il est impossible d’être vraiment un homme intègre, si ce n’est par la hitbodedout. Il citait de nombreux tsadikim authentiques et renommés, et disait qu’ils ne sont tous parvenus à leur niveau que par la hitbodedout.",
+      "en": "I was told that he said: from the smallest to the greatest, it is impossible to be truly upright except through hitbodedut. He would name many genuine, famous tsadikim and say that all of them reached their level only through hitbodedut.",
+      "yiddish": null,
+      "recoupement": [
+        "azamra.org — trad. A. Greenbaum, page « Hitbodedut » (même passage, même référence) — attribué par erreur à « I, 100 »"
+      ],
+      "note": "Corrige v0.1 : l'item « LM II, 100 » marqué introuvable est bien en II, 100:1.",
+      "tags": [],
+      "duree_lecture_sec": 15,
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "lm2-95-larmes",
+      "moments": [
+        "blocage"
+      ],
+      "theme": "larmes",
+      "edition": "lm",
+      "ref": "Likoutei Moharan II, 95",
+      "ref_sefaria": "Likutei Moharan, Part II 95:1:3-5",
+      "url": "https://www.sefaria.org/Likutei_Moharan%2C_Part_II.95.1.3-5",
+      "he": "אֲבָל אָמַר, שֶׁכְּשֶׁהָאָדָם אוֹמֵר תְּחִנּוֹת וּבַקָּשׁוֹת וְחוֹשֵׁב בְּלִבּוֹ וּמְצַפֶּה שֶׁיִּבְכֶּה, זֹאת הַמַּחֲשָׁבָה אֵינָהּ טוֹבָה … כִּי הָעִקָּר – לְדַבֵּר הַדִּבּוּר בֶּאֱמֶת לִפְנֵי הַשֵּׁם יִתְבָּרַךְ בְּלִי שׁוּם מַחֲשָׁבוֹת אֲחֵרוֹת כְּלָל כַּנַּ\"ל. וְאִם יִזְכֶּה לִבְכִיָּה בֶּאֱמֶת – מַה טּוֹב, וְאִם לָאו – לָאו, וְלֹא יְבַלְבֵּל אֲמִירָתוֹ בִּשְׁבִיל זֶה.",
+      "fr": "Mais il disait : quand on dit des supplications et des prières en pensant dans son cœur et en attendant de pleurer, cette pensée n’est pas bonne… Car l’essentiel est de dire la parole en vérité devant Hachem, béni soit-Il, sans aucune autre pensée. Si l’on mérite de pleurer vraiment, tant mieux. Sinon, qu’il en soit ainsi : qu’on ne trouble pas sa parole pour cela.",
+      "en": "But he said: when a person says supplications and prayers while thinking in his heart and waiting to cry, that thought is not good… For the main thing is to speak the words truthfully before Hashem, blessed be He, with no other thoughts at all. If he merits real tears, how good; if not, then not, and let him not disturb his words over it.",
+      "yiddish": null,
+      "recoupement": [
+        "azamra.org — trad. A. Greenbaum, page « Hitbodedut » (même passage, même référence)"
+      ],
+      "note": null,
+      "tags": [],
+      "duree_lecture_sec": 20,
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "lm2-78-desespoir",
+      "moments": [
+        "relance"
+      ],
+      "theme": "espoir",
+      "edition": "lm",
+      "ref": "Likoutei Moharan II, 78",
+      "ref_sefaria": "Likutei Moharan, Part II 78:7:1, 78:7:3",
+      "url": "https://www.sefaria.org/Likutei_Moharan%2C_Part_II.78.7",
+      "he": "וְהַכְּלָל, כִּי אָסוּר לְיָאֵשׁ עַצְמוֹ … וְהָעִקָּר – לְחַזֵּק עַצְמוֹ בְּכָל מַה שֶּׁאֶפְשָׁר, כִּי אֵין שׁוּם יֵאוּשׁ בָּעוֹלָם כְּלָל.",
+      "fr": "La règle : il est interdit de désespérer… L’essentiel est de se renforcer par tout ce qui est possible, car il n’existe aucun désespoir au monde.",
+      "en": "The rule is: it is forbidden to despair… The main thing is to strengthen oneself in every way possible, for there is no despair in the world at all.",
+      "yiddish": "קַיין יִאוּשׁ אִיז גָאר נִיט פַאר הַאנְדִין",
+      "recoupement": [
+        "breslev.com, « There is no such thing as despair » (LM II, 78)",
+        "breslov.org, cours sur Tinyana 78"
+      ],
+      "note": "Dans l'édition, la phrase est entre crochets : Rabbi Natan y rapporte que le Rabbi l'a dite en yiddish, en appuyant chaque mot.",
+      "tags": [],
+      "duree_lecture_sec": 8,
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "lm2-11-champs",
+      "moments": [
+        "lieu"
+      ],
+      "theme": "champs",
+      "edition": "lm",
+      "ref": "Likoutei Moharan II, 11",
+      "ref_sefaria": "Likutei Moharan, Part II 11:1:1",
+      "url": "https://www.sefaria.org/Likutei_Moharan%2C_Part_II.11.1.1",
+      "he": "דַּע, כְּשֶׁהָאָדָם מִתְפַּלֵּל בַּשָּׂדֶה, אֲזַי כָּל הָעֲשָׂבִים כֻּלָּם בָּאִין בְּתוֹךְ הַתְּפִלָּה, וּמְסַיְּעִין לוֹ, וְנוֹתְנִין לוֹ כֹּחַ בִּתְפִלָּתוֹ.",
+      "fr": "Sachez que, lorsqu’un homme prie dans les champs, toutes les herbes entrent dans la prière. Elles l’aident et lui donnent de la force dans sa prière.",
+      "en": "Know that when a person prays in the field, all the grasses come into the prayer, helping him and giving him strength in his prayer.",
+      "yiddish": null,
+      "recoupement": [
+        "azamra.org — trad. A. Greenbaum, page « Hitbodedut » (même passage, même référence)"
+      ],
+      "note": "Le même passage (11:1:2) explique que la prière est appelée « si'ha » (שיח השדה).",
+      "tags": [],
+      "duree_lecture_sec": 8,
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "lm1-52-nuit",
+      "moments": [
+        "lieu"
+      ],
+      "theme": "moment_lieu",
+      "edition": "lm1",
+      "ref": "Likoutei Moharan I, 52",
+      "ref_sefaria": "Likutei Moharan 52:3:3-4",
+      "url": "https://www.sefaria.org/Likutei_Moharan.52.3.3-4",
+      "he": "אַךְ עִקַּר הַהִתְבּוֹדְדוּת הוּא בַּלַּיְלָה, בְּעֵת שֶׁהָעוֹלָם פָּנוּי מִטִּרְדַּת הָעוֹלָם הַזֶּה … וְגַם צְרִיכִין שֶׁיִּהְיֶה הַהִתְבּוֹדְדוּת בְּמָקוֹם מְיֻחָד, דְּהַיְנוּ חוּץ מֵהָעִיר בְּדֶרֶךְ יְחִידִי, בְּמָקוֹם שֶׁאֵין הוֹלְכִים שָׁם בְּנֵי אָדָם.",
+      "fr": "Mais l’essentiel de la hitbodedout se fait la nuit, quand le monde est libéré des tracas de ce monde-ci… Il faut aussi que la hitbodedout ait lieu dans un endroit à part : hors de la ville, sur un chemin solitaire, là où les gens ne passent pas.",
+      "en": "But the essence of hitbodedut is at night, when the world is free of the busyness of this world… The hitbodedut should also be in a special place: outside the town, on a solitary path, where people do not go.",
+      "yiddish": null,
+      "recoupement": [
+        "azamra.org — trad. A. Greenbaum, page « Hitbodedut » (même passage, même référence)",
+        "breslov.org, « Hitbodedut: when and where? » (LM I, 52)",
+        "Article « התבודדות: איך עושים את זה? ולמה? » (N. N. Salama, 2024) — cite le même passage, même référence"
+      ],
+      "note": "Afficher avec la mention de prudence du mode champ : texte d'inspiration, pas consigne de sécurité.",
+      "tags": [],
+      "duree_lecture_sec": 15,
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "sh-7-enfant",
+      "moments": [
+        "ouverture"
+      ],
+      "theme": "relation",
+      "edition": "sh",
+      "ref": "Si'hot HaRan 7",
+      "ref_sefaria": "Sichot HaRan 7:1-2",
+      "url": "https://www.sefaria.org/Sichot_HaRan.7",
+      "he": "טוֹב מְאֹד מִי שֶׁיָּכוֹל לִשְׁפֹּךְ שִׂיחוֹ לִפְנֵי הַשֵּׁם יִתְבָּרַךְ בְּרַחֲמִים וְתַחֲנוּנִים כְּבֵן הַמִּתְחַטֵּא לִפְנֵי אָבִיו … וְאַף אִם נִדְמֶה לְהָאָדָם, שֶׁלְּפִי מַעֲשָׂיו, אֵינוֹ כְּבֵן לְפָנָיו יִתְבָּרַךְ, עִם כָּל זֶה הֲלֹא הַשֵּׁם יִתְבָּרַךְ קְרָאָנוּ בָּנִים.",
+      "fr": "Il est très bon de pouvoir épancher sa parole devant Hachem, béni soit-Il, en implorant miséricorde, comme un enfant qui cajole son père… Et même s’il semble à l’homme que, d’après ses actes, il n’est pas comme un enfant devant Lui, béni soit-Il, Hachem nous a pourtant appelés Ses enfants.",
+      "en": "It is very good when one can pour out his words before Hashem, blessed be He, pleading for mercy, like a child coaxing his father… And even if it seems to a person that, by his deeds, he is not like a child before Him, still Hashem, blessed be He, has called us His children.",
+      "yiddish": null,
+      "recoupement": [
+        "azamra.org — trad. A. Greenbaum, page « Hitbodedut » (même passage, même référence)"
+      ],
+      "note": null,
+      "tags": [],
+      "duree_lecture_sec": 16,
+      "he_sans_nikkoud": "טוב מאד מי שיכול לשפך שיחו לפני השם יתברך ברחמים ותחנונים כבן המתחטא לפני אביו … ואף אם נדמה להאדם, שלפי מעשיו, אינו כבן לפניו יתברך, עם כל זה הלא השם יתברך קראנו בנים.",
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "sh-16-cri-silencieux",
+      "moments": [
+        "blocage"
+      ],
+      "theme": "voix",
+      "edition": "sh",
+      "ref": "Si'hot HaRan 16",
+      "ref_sefaria": "Sichot HaRan 16:1, 16:3",
+      "url": "https://www.sefaria.org/Sichot_HaRan.16",
+      "he": "דַּע, שֶׁיְּכוֹלִין לִצְעֹק בְּקוֹל דְּמָמָה דַּקָּה בִּצְעָקָה גְּדוֹלָה מְאֹד וְלֹא יִשְׁמַע שׁוּם אָדָם כְּלָל, כִּי אֵינוֹ מוֹצִיא שׁוּם קוֹל כְּלָל, רַק הַצְּעָקָה הִיא בְּקוֹל דְּמָמָה דַּקָּה, וְזֶה יוּכַל כָּל אָדָם … וְיוּכַל לַעֲמֹד בֵּין כַּמָּה בְּנֵי אָדָם וְיִצְעַק מְאֹד וְשׁוּם אָדָם לֹא יִשְׁמַע.",
+      "fr": "Sachez qu’on peut crier d’un très grand cri, « d’une voix de fin silence », sans que personne n’entende rien, car on n’émet aucun son : le cri se fait d’une voix de fin silence. Tout homme en est capable… On peut se tenir parmi beaucoup de gens, crier fort, et personne n’entendra.",
+      "en": "Know that one can scream a very great scream in a still, small voice without anyone hearing at all, for no sound comes out; the scream is in a still, small voice. Everyone can do this… One can stand among many people and scream intensely, and no one will hear.",
+      "yiddish": null,
+      "recoupement": [
+        "azamra.org — trad. A. Greenbaum, page « Hitbodedut » (même passage, même référence)"
+      ],
+      "note": null,
+      "tags": [],
+      "duree_lecture_sec": 17,
+      "he_sans_nikkoud": "דע, שיכולין לצעק בקול דממה דקה בצעקה גדולה מאד ולא ישמע שום אדם כלל, כי אינו מוציא שום קול כלל, רק הצעקה היא בקול דממה דקה, וזה יוכל כל אדם … ויוכל לעמד בין כמה בני אדם ויצעק מאד ושום אדם לא ישמע.",
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "sh-68-perseverer",
+      "moments": [
+        "relance"
+      ],
+      "theme": "perseverance",
+      "edition": "sh",
+      "ref": "Si'hot HaRan 68",
+      "ref_sefaria": "Sichot HaRan 68:4-5",
+      "url": "https://www.sefaria.org/Sichot_HaRan.68",
+      "he": "…מִי שֶׁיַּרְגִּיל עַצְמוֹ לִנְהֹג הַנְהָגָה זוֹ בְּכָל יוֹם, עַל־כָּל־פָּנִים שָׁעָה אַחַת, בְּוַדַּאי יִזְכֶּה לְהִתְקָרֵב אֵלָיו יִתְבָּרַךְ בֶּאֱמֶת. וְאַף אִם לִפְעָמִים הוּא רוֹאֶה שֶׁמְּקַיֵּם הַנְהָגָה זוֹ יָמִים וְשָׁנִים וְאַף־עַל־פִּי־כֵן עֲדַיִן לֹא זָכָה לְהִתְקָרְבוּת כָּרָאוּי, אַף־עַל־פִּי־כֵן יְחַזֵּק עַצְמוֹ יוֹתֵר וְיוֹתֵר, כִּי סוֹף כָּל סוֹף יוֹעִיל לוֹ בְּוַדַּאי.",
+      "fr": "Celui qui s’habitue à cette pratique chaque jour, au moins une heure, méritera sûrement de se rapprocher de Lui en vérité. Et même s’il voit parfois qu’il la pratique depuis des jours et des années sans être encore rapproché comme il faut, qu’il se renforce toujours plus : à la fin des fins, cela l’aidera sûrement.",
+      "en": "Whoever accustoms himself to this practice every day, at least one hour, will certainly merit drawing close to Him in truth. And even if at times he sees that he has kept it for days and years and still has not come close as he should, let him strengthen himself more and more, for in the end it will surely help him.",
+      "yiddish": null,
+      "recoupement": [
+        "azamra.org — trad. A. Greenbaum, page « Hitbodedut » (même passage, même référence)"
+      ],
+      "note": null,
+      "tags": [
+        "chemin_vers_l_heure"
+      ],
+      "duree_lecture_sec": 17,
+      "he_sans_nikkoud": "…מי שירגיל עצמו לנהג הנהגה זו בכל יום, על־כל־פנים שעה אחת, בודאי יזכה להתקרב אליו יתברך באמת. ואף אם לפעמים הוא רואה שמקים הנהגה זו ימים ושנים ואף־על־פי־כן עדין לא זכה להתקרבות כראוי, אף־על־פי־כן יחזק עצמו יותר ויותר, כי סוף כל סוף יועיל לו בודאי.",
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "sh-234-eau-pierre",
+      "moments": [
+        "relance"
+      ],
+      "theme": "perseverance",
+      "edition": "sh",
+      "ref": "Si'hot HaRan 234",
+      "ref_sefaria": "Sichot HaRan 234:2-3",
+      "url": "https://www.sefaria.org/Sichot_HaRan.234",
+      "he": "אָמַר: שֶׁאֲפִלּוּ אִם עוֹבְרִים יָמִים וְשָׁנִים הַרְבֵּה, וְנִדְמֶה לוֹ שֶׁלֹּא פָּעַל עֲדַיִן בְּשִׂיחָתוֹ וְדִבּוּרָיו כְּלוּם, אַף עַל פִּי כֵן אַל יִפֹּל מִזֶּה כְּלָל! כִּי בֶּאֱמֶת בְּוַדַּאי עוֹשִׂים הַדִּבּוּרִים רֹשֶׁם … כְּשֶׁהַמַּיִם יוֹרְדִים עַל הָאֶבֶן כַּמָּה וְכַמָּה זְמַנִּים רְצוּפִים הֵם עוֹשִׂים נֶקֶב בְּהָאֶבֶן.",
+      "fr": "Il disait : même si passent beaucoup de jours et d’années, et qu’il lui semble n’avoir encore rien accompli par sa conversation et ses paroles, qu’il ne se laisse pas du tout abattre ! Car en vérité, les paroles laissent sûrement une trace… Quand l’eau tombe sur la pierre de nombreuses fois de suite, elle finit par la percer.",
+      "en": "He said: even if many days and years pass and it seems to him that he has not yet achieved anything with his conversation and words, let him not be discouraged by this at all! For in truth the words certainly leave an impression… When water drips on a stone many times in a row, it makes a hole in the stone.",
+      "yiddish": null,
+      "recoupement": [
+        "azamra.org — trad. A. Greenbaum, page « Hitbodedut » (même passage, même référence)"
+      ],
+      "note": "Source de l'image « l'eau use la pierre » : Si'hot HaRan 234 (pas Likoutei Moharan).",
+      "tags": [],
+      "duree_lecture_sec": 18,
+      "he_sans_nikkoud": "אמר: שאפלו אם עוברים ימים ושנים הרבה, ונדמה לו שלא פעל עדין בשיחתו ודבוריו כלום, אף על פי כן אל יפל מזה כלל! כי באמת בודאי עושים הדבורים רשם … כשהמים יורדים על האבן כמה וכמה זמנים רצופים הם עושים נקב בהאבן.",
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "sh-275-sous-le-talit",
+      "moments": [
+        "lieu"
+      ],
+      "theme": "lieu",
+      "edition": "sh",
+      "ref": "Si'hot HaRan 275",
+      "ref_sefaria": "Sichot HaRan 275:2-4",
+      "url": "https://www.sefaria.org/Sichot_HaRan.275",
+      "he": "אֲפִלּוּ אִם אֵין זוֹכִין שֶׁיִּהְיֶה לוֹ חֶדֶר מְיֻחָד, אַף עַל פִּי כֵן יְכוֹלִין לְהִתְבּוֹדֵד וּלְדַבֵּר בֵּינוֹ לְבֵין קוֹנוֹ. וְאָמַר רַבֵּנוּ ז\"ל: שֶׁתַּחַת הַטַּלִּית הוּא גַּם כֵּן חֶדֶר מְיֻחָד … גַּם יְכוֹלִין לְהִתְבּוֹדֵד וּלְפָרֵשׁ שִׂיחָתוֹ כְּשֶׁשּׁוֹכֵב עַל מִטָּתוֹ וּמְכַסֶּה עַצְמוֹ בְּהַסָּדִין.",
+      "fr": "Même si l’on n’a pas la chance d’avoir une pièce à soi, on peut quand même s’isoler et parler entre soi et son Créateur. Notre Rabbi disait que sous le talit, c’est aussi une pièce à part… On peut aussi s’isoler et épancher sa parole couché dans son lit, en se couvrant du drap.",
+      "en": "Even if one is not privileged to have a room of one’s own, one can still seclude oneself and speak between oneself and one’s Maker. Our Rabbi said that under the tallit is also a private room… One can also seclude oneself and pour out one’s words while lying in bed, covered with the sheet.",
+      "yiddish": null,
+      "recoupement": [
+        "azamra.org — trad. A. Greenbaum, page « Hitbodedut » (même passage, même référence)",
+        "Koren, extrait publié (même passage)"
+      ],
+      "note": "Le talit concerne surtout les hommes ; le lit vaut pour tous.",
+      "tags": [],
+      "duree_lecture_sec": 17,
+      "he_sans_nikkoud": "אפלו אם אין זוכין שיהיה לו חדר מיחד, אף על פי כן יכולין להתבודד ולדבר בינו לבין קונו. ואמר רבנו ז\"ל: שתחת הטלית הוא גם כן חדר מיחד … גם יכולין להתבודד ולפרש שיחתו כששוכב על מטתו ומכסה עצמו בהסדין.",
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "cm-437-commencer",
+      "moments": [
+        "ouverture",
+        "relance"
+      ],
+      "theme": "recommencer",
+      "edition": "cm",
+      "ref": "'Hayé Moharan 437",
+      "ref_sefaria": "Chayei Moharan 437",
+      "url": "https://www.sefaria.org/Chayei_Moharan.437",
+      "he": "אָמַר, שֶׁטּוֹב שֶׁיֹּאמַר הָאָדָם בִּשְׁעַת הַהִתְבּוֹדְדוּת כְּשֶׁמִּתְבּוֹדֵד בֵּינוֹ לְבֵין קוֹנוֹ, יֹאמַר: הַיּוֹם אֲנִי מַתְחִיל לִדָּבֵק בְּךָ. וְיַעֲשֶׂה בְּכָל פַּעַם הַתְחָלָה, כִּי כָּל הַהַמְשָׁכוֹת הוֹלְכִין אַחַר הַהַתְחָלוֹת … כִּי מִמָּה נַפְשָׁךְ אִם הָיָה מִקֹּדֶם טוֹב, עַכְשָׁו יִהְיֶה טוֹב יוֹתֵר, וְאִם חַס וְשָׁלוֹם מִקֹּדֶם לֹא הָיָה טוֹב, בְּוַדַּאי צָרִיךְ וּמֻכְרָח לַעֲשׂוֹת הַתְחָלָה חֲדָשָׁה.",
+      "fr": "Il disait qu’il est bon de dire, au moment où l’on s’isole avec son Créateur : « Aujourd’hui, je commence à m’attacher à Toi. » Qu’on fasse à chaque fois un commencement, car toutes les suites vont d’après les commencements… Dans tous les cas : si c’était bien avant, ce sera encore mieux maintenant ; et si, que Hachem nous en préserve, ce n’était pas bien, il faut absolument prendre un nouveau départ.",
+      "en": "He said it is good for a person to say during hitbodedut, when alone with his Maker: “Today I am beginning to cleave to You.” One should make a beginning each time, for everything that follows goes after the beginnings… Either way: if things were good before, now they will be even better; and if, heaven forbid, they were not good, one certainly must make a new beginning.",
+      "yiddish": null,
+      "recoupement": [
+        "azamra.org — trad. A. Greenbaum, page « Hitbodedut » (même passage, même référence)"
+      ],
+      "note": "Rapporté « d'après les écrits des compagnons » (מכתב החברים).",
+      "tags": [],
+      "duree_lecture_sec": 22,
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "cm-440-ribono",
+      "moments": [
+        "blocage",
+        "porte"
+      ],
+      "theme": "blocage",
+      "edition": "cm",
+      "ref": "'Hayé Moharan 440",
+      "ref_sefaria": "Chayei Moharan 440",
+      "url": "https://www.sefaria.org/Chayei_Moharan.440",
+      "he": "אָמַר אֲפִילוּ כְּשֶׁאֵין יְכוֹלִין לְדַבֵּר בְּהִתְבּוֹדְדוּת רַק תֵּבַת רִבּוֹנוֹ שֶׁל עוֹלָם גַּם־כֵּן טוֹב מְאֹד.",
+      "fr": "Il disait : même quand on ne peut dire dans la hitbodedout que les mots « Ribono chel olam » (Maître du monde), c’est aussi très bon.",
+      "en": "He said: even when all one can say in hitbodedut is the words “Ribbono shel Olam” (Master of the world), that too is very good.",
+      "yiddish": null,
+      "recoupement": [
+        "azamra.org — trad. A. Greenbaum, page « Hitbodedut » (même passage, même référence)",
+        "Article « התבודדות: איך עושים את זה? ולמה? » (N. N. Salama, 2024) — cite le même passage, même référence"
+      ],
+      "note": null,
+      "tags": [],
+      "duree_lecture_sec": 9,
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "shr-10-langue",
+      "moments": [
+        "ouverture",
+        "lieu"
+      ],
+      "theme": "pratique_du_rabbi",
+      "edition": "shr",
+      "ref": "Chiv'hei HaRan 10",
+      "ref_sefaria": "Shivchei HaRan 10:2",
+      "url": "https://www.sefaria.org/Shivchei_HaRan.10",
+      "he": "וְעִקַּר מַה שֶּׁהוֹעִיל לוֹ הָיוּ הַתְּפִלּוֹת שֶׁהִתְפַּלֵּל בִּלְשׁוֹן 'אַשְׁכְּנַז', שֶׁהָיָה רָגִיל מְאֹד לְיַחֵד לוֹ אֵיזֶה מָקוֹם שֶׁמָּצָא שֶׁאֵין שָׁם בְּנֵי אָדָם וְהָיָה מְפָרֵשׁ שִׂיחָתוֹ לִפְנֵי יְהֹוָה יִתְבָּרַךְ בַּלָּשׁוֹן שֶׁמְּדַבְּרִים בּוֹ, (דְּהַיְנוּ בִּלְשׁוֹן אַשְׁכְּנַז).",
+      "fr": "Ce qui l’a surtout aidé, ce sont les prières qu’il disait en yiddish. Il avait l’habitude de se réserver un endroit où il n’y avait personne, et là il épanchait sa parole devant Hachem, béni soit-Il, dans la langue que l’on parle, c’est-à-dire en yiddish.",
+      "en": "What helped him most were the prayers he said in Yiddish. He was accustomed to set aside for himself some place he found where no one was, and there he would pour out his words before Hashem, blessed be He, in the language people speak, that is, Yiddish.",
+      "yiddish": null,
+      "recoupement": [
+        "Article « התבודדות: איך עושים את זה? ולמה? » (N. N. Salama, 2024) — cite le même passage, même référence"
+      ],
+      "note": "Récit de Rabbi Natan sur la pratique du Rabbi.",
+      "tags": [],
+      "duree_lecture_sec": 14,
+      "he_sans_nikkoud": "ועקר מה שהועיל לו היו התפלות שהתפלל בלשון 'אשכנז', שהיה רגיל מאד ליחד לו איזה מקום שמצא שאין שם בני אדם והיה מפרש שיחתו לפני יהוה יתברך בלשון שמדברים בו, (דהינו בלשון אשכנז).",
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "shr-10-grenier",
+      "moments": [
+        "lieu"
+      ],
+      "theme": "lieu",
+      "edition": "shr",
+      "ref": "Chiv'hei HaRan 10",
+      "ref_sefaria": "Shivchei HaRan 10:4",
+      "url": "https://www.sefaria.org/Shivchei_HaRan.10",
+      "he": "גַּם הָיָה מַטְמִין עַצְמוֹ עַל גַּבֵּי בֵּית אָבִיו, תַּחַת הַגַּג, שֶׁהָיָה שָׁם כְּמוֹ חֶדֶר בִּמְחִצָּה שֶׁל קָנִּים שֶׁמַּחֲזִיקִין שָׁם תֶּבֶן וּמִסְפּוֹא, וְשָׁם הָיָה מַטְמִין עַצְמוֹ וְהָיָה אוֹמֵר תְּהִלִּים וְהָיָה צוֹעֵק בְּלַחַשׁ לַיהֹוָה יִתְבָּרַךְ שֶׁיְּזַכֵּהוּ לְקָרְבוֹ אֵלָיו יִתְבָּרַךְ.",
+      "fr": "Il se cachait aussi en haut de la maison de son père, sous le toit, où il y avait comme une pièce fermée par une cloison de roseaux, où l’on gardait la paille et le fourrage. Il s’y cachait, disait des Tehilim et criait tout bas vers Hachem, béni soit-Il, pour qu’Il lui accorde de se rapprocher de Lui.",
+      "en": "He would also hide himself up in his father’s house, under the roof, where there was something like a room partitioned with reeds where straw and fodder were kept. There he would hide, say Tehillim, and cry out in a whisper to Hashem, blessed be He, to grant him to draw close to Him.",
+      "yiddish": null,
+      "recoupement": [
+        "Article « התבודדות: איך עושים את זה? ולמה? » (N. N. Salama, 2024) — cite le même passage, même référence"
+      ],
+      "note": null,
+      "tags": [],
+      "duree_lecture_sec": 18,
+      "he_sans_nikkoud": "גם היה מטמין עצמו על גבי בית אביו, תחת הגג, שהיה שם כמו חדר במחצה של קנים שמחזיקין שם תבן ומספוא, ושם היה מטמין עצמו והיה אומר תהלים והיה צועק בלחש ליהוה יתברך שיזכהו לקרבו אליו יתברך.",
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "shr-11-ecrire",
+      "moments": [
+        "cloture"
+      ],
+      "theme": "journal",
+      "edition": "shr",
+      "ref": "Chiv'hei HaRan 11",
+      "ref_sefaria": "Shivchei HaRan 11:1",
+      "url": "https://www.sefaria.org/Shivchei_HaRan.11",
+      "he": "וְכַמָּה פְּעָמִים הָיָה מְדַבֵּר לִפְנֵי יְהֹוָה יִתְבָּרַךְ דִּבְרֵי תְּחִנּוֹת וּבַקָּשׁוֹת מִלִּבּוֹ, וְנִזְדַּמֵּן לוֹ בְּתוֹךְ דִּבּוּרָיו טְעָנוֹת יָפוֹת וּתְפִלּוֹת נְכוֹנוֹת וּמְסֻדָּרוֹת וְהוּטְבוּ בְּעֵינָיו, וְהָיָה כּוֹתְבָם אֶצְלוֹ לְזִכָּרוֹן לְמַעַן יִהְיֶה רָגִיל לְהִתְפַּלֵּל אוֹתָם גַּם אַחַר־כָּךְ.",
+      "fr": "Bien des fois, il disait devant Hachem, béni soit-Il, des supplications et des demandes venues de son cœur. Au milieu de ses paroles lui venaient de beaux arguments et des prières justes et bien ordonnées qui lui plaisaient. Il les notait pour s’en souvenir, afin de pouvoir les prier encore par la suite.",
+      "en": "Many times he would speak supplications and requests from his heart before Hashem, blessed be He, and in the midst of his words there came to him fine arguments and well-ordered, fitting prayers that pleased him. He would write them down as a reminder, so he could pray them again later.",
+      "yiddish": null,
+      "recoupement": [
+        "Article « התבודדות: איך עושים את זה? ולמה? » (N. N. Salama, 2024) — cite le même passage, même référence"
+      ],
+      "note": null,
+      "tags": [
+        "journal"
+      ],
+      "duree_lecture_sec": 17,
+      "he_sans_nikkoud": "וכמה פעמים היה מדבר לפני יהוה יתברך דברי תחנות ובקשות מלבו, ונזדמן לו בתוך דבוריו טענות יפות ותפלות נכונות ומסדרות והוטבו בעיניו, והיה כותבם אצלו לזכרון למען יהיה רגיל להתפלל אותם גם אחר־כך.",
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "shr-12-rejet",
+      "moments": [
+        "relance"
+      ],
+      "theme": "perseverance",
+      "edition": "shr",
+      "ref": "Chiv'hei HaRan 12",
+      "ref_sefaria": "Shivchei HaRan 12:1-4",
+      "url": "https://www.sefaria.org/Shivchei_HaRan.12",
+      "he": "וְאַף־עַל־פִּי־כֵן, הָיָה נִדְמֶה לוֹ תָּמִיד שֶׁאֵין מִסְתַּכְּלִין עָלָיו כְּלָל וְאֵין שׁוֹמְעִין לוֹ כְּלָל … אַךְ אַף־עַל־פִּי־כֵן הָיָה מְחַזֵּק עַצְמוֹ מְאֹד וְלֹא הִנִּיחַ אֶת מְקוֹמוֹ … וּמֵחֲמַת זֶה נָפַל לִפְעָמִים בְּדַעְתּוֹ וְלֹא הָיָה מְדַבֵּר עוֹד כָּל־כָּךְ בֵּינוֹ לְבֵין קוֹנוֹ אֵיזֶה יָמִים. אַחַר־כָּךְ נִזְכַּר בְּעַצְמוֹ וְהִתְבַּיֵּשׁ בְּעַצְמוֹ עַל שֶׁהִרְהֵר אַחַר מִדּוֹתָיו יִתְבָּרַךְ … וְחָזַר וְנִתְחַזֵּק בְּדַעְתּוֹ, וְהִתְחִיל שׁוּב לְהַעְתִּיר וּלְדַבֵּר לִפְנֵי יְהֹוָה יִתְבָּרַךְ כַּנַּ\"ל. וְכֵן הָיָה כַּמָּה פְּעָמִים.",
+      "fr": "Et malgré tout, il lui semblait toujours qu’on ne le regardait pas du tout et qu’on ne l’écoutait pas du tout… Mais il se renforçait beaucoup et ne lâchait pas sa place… Parfois, à cause de cela, il se décourageait et, pendant quelques jours, il ne parlait plus autant avec son Créateur. Ensuite il se reprenait et avait honte d’avoir douté des voies de Hachem… Il se renforçait de nouveau et recommençait à supplier et à parler devant Hachem, béni soit-Il. Et cela lui est arrivé bien des fois.",
+      "en": "And yet it always seemed to him that no one was paying attention to him and no one was listening to him at all… But he strengthened himself greatly and did not abandon his place… Sometimes, because of this, he fell into discouragement and for a few days did not speak as much between himself and his Maker. Then he came back to himself and was ashamed of having doubted Hashem’s ways… He strengthened himself again and started once more to entreat and speak before Hashem, blessed be He. And so it happened many times.",
+      "yiddish": null,
+      "recoupement": [
+        "Article « התבודדות: איך עושים את זה? ולמה? » (N. N. Salama, 2024) — cite le même passage, même référence"
+      ],
+      "note": null,
+      "tags": [],
+      "duree_lecture_sec": 27,
+      "he_sans_nikkoud": "ואף־על־פי־כן, היה נדמה לו תמיד שאין מסתכלין עליו כלל ואין שומעין לו כלל … אך אף־על־פי־כן היה מחזק עצמו מאד ולא הניח את מקומו … ומחמת זה נפל לפעמים בדעתו ולא היה מדבר עוד כל־כך בינו לבין קונו איזה ימים. אחר־כך נזכר בעצמו והתביש בעצמו על שהרהר אחר מדותיו יתברך … וחזר ונתחזק בדעתו, והתחיל שוב להעתיר ולדבר לפני יהוה יתברך כנ\"ל. וכן היה כמה פעמים.",
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "rambam-tefila-1-2",
+      "moments": [
+        "ouverture"
+      ],
+      "theme": "structure",
+      "edition": "rambam",
+      "ref": "Rambam, Hilkhot Tefila 1:2",
+      "ref_sefaria": "Mishneh Torah, Prayer and the Priestly Blessing 1:2",
+      "url": "https://www.sefaria.org/Mishneh_Torah%2C_Prayer_and_the_Priestly_Blessing.1.2",
+      "he": "…חִיּוּב מִצְוָה זוֹ כָּךְ הוּא שֶׁיְּהֵא אָדָם מִתְחַנֵּן וּמִתְפַּלֵּל בְּכָל יוֹם וּמַגִּיד שִׁבְחוֹ שֶׁל הַקָּדוֹשׁ בָּרוּךְ הוּא וְאַחַר כָּךְ שׁוֹאֵל צְרָכָיו שֶׁהוּא צָרִיךְ לָהֶם בְּבַקָּשָׁה וּבִתְחִנָּה וְאַחַר כָּךְ נוֹתֵן שֶׁבַח וְהוֹדָיָה לַיהֹוָה עַל הַטּוֹבָה שֶׁהִשְׁפִּיעַ לוֹ כָּל אֶחָד לְפִי כֹּחוֹ.",
+      "fr": "…L’obligation de cette mitsva est la suivante : que l’homme supplie et prie chaque jour. Il dit la louange du Saint, béni soit-Il ; ensuite il demande ce dont il a besoin, par la requête et la supplication ; ensuite il rend louange et grâce à Hachem pour le bien qu’Il lui a accordé. Chacun selon ses forces.",
+      "en": "…The obligation of this mitzvah is this: that a person should plead and pray every day, declaring the praise of the Holy One, blessed be He; then asking for what he needs, with request and supplication; then giving praise and thanks to Hashem for the good He has bestowed on him, each according to his strength.",
+      "yiddish": null,
+      "recoupement": [
+        "yeshiva.org.il (texte vocalisé du Rambam)",
+        "Aroukh HaChoulhan 89:1 (Wikisource) cite le passage"
+      ],
+      "note": "Le Ramban tient que l'obligation quotidienne n'est pas de la Torah : ne pas présenter ce point comme consensuel.",
+      "tags": [
+        "structure_seance"
+      ],
+      "duree_lecture_sec": 18,
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "rambam-tefila-1-3",
+      "moments": [
+        "blocage"
+      ],
+      "theme": "simplicite",
+      "edition": "rambam",
+      "ref": "Rambam, Hilkhot Tefila 1:3",
+      "ref_sefaria": "Mishneh Torah, Prayer and the Priestly Blessing 1:3",
+      "url": "https://www.sefaria.org/Mishneh_Torah%2C_Prayer_and_the_Priestly_Blessing.1.3",
+      "he": "אִם הָיָה רָגִיל מַרְבֶּה בִּתְחִנָּה וּבַקָּשָׁה וְאִם הָיָה עֲרַל שְׂפָתַיִם מְדַבֵּר כְּפִי יְכָלְתּוֹ וּבְכָל עֵת שֶׁיִּרְצֶה.",
+      "fr": "S’il a la parole aisée, il multiplie supplications et demandes ; s’il est « incirconcis des lèvres », c’est-à-dire peu éloquent, il parle selon ses moyens, et à tout moment qu’il le souhaite.",
+      "en": "If he is fluent, he multiplies supplication and request; if he is of uncircumcised lips, not eloquent, he speaks as best he can, and whenever he wishes.",
+      "yiddish": null,
+      "recoupement": [
+        "he.wikisource.org, Rambam Hilkhot Tefila 1:3",
+        "Feuille Sefaria 329595 (même texte)"
+      ],
+      "note": null,
+      "tags": [],
+      "duree_lecture_sec": 8,
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "tehilim-62-9",
+      "moments": [
+        "ouverture"
+      ],
+      "theme": "epancher",
+      "edition": "tanakh",
+      "ref": "Tehilim 62:9",
+      "ref_sefaria": "Psalms 62:9",
+      "url": "https://www.sefaria.org/Psalms.62.9",
+      "he": "בִּטְחוּ בוֹ בְכָל־עֵת עָם שִׁפְכוּ־לְפָנָיו לְבַבְכֶם אֱלֹהִים מַחֲסֶה־לָּנוּ סֶלָה׃",
+      "fr": "Confiez-vous en Lui en tout temps, ô peuple ; épanchez votre cœur devant Lui : Hachem est pour nous un refuge, sélah.",
+      "en": "Trust in Him at all times, O people; pour out your hearts before Him; Hashem is a refuge for us, Selah.",
+      "yiddish": null,
+      "recoupement": [
+        "Deux éditions numériques indépendantes : tanach.us (codex de Leningrad) et MAM (codex d'Alep)"
+      ],
+      "note": "Nom divin en toutes lettres.",
+      "tags": [],
+      "duree_lecture_sec": 7,
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "tehilim-142-3",
+      "moments": [
+        "ouverture",
+        "porte"
+      ],
+      "theme": "epancher",
+      "edition": "tanakh",
+      "ref": "Tehilim 142:3",
+      "ref_sefaria": "Psalms 142:3",
+      "url": "https://www.sefaria.org/Psalms.142.3",
+      "he": "אֶשְׁפֹּךְ לְפָנָיו שִׂיחִי צָרָתִי לְפָנָיו אַגִּיד׃",
+      "fr": "Je répands devant Lui ma plainte ; ma détresse, devant Lui je la dis.",
+      "en": "I pour out my speech before Him; my trouble I declare before Him.",
+      "yiddish": null,
+      "recoupement": [
+        "Deux éditions numériques indépendantes : tanach.us (codex de Leningrad) et MAM (codex d'Alep)"
+      ],
+      "note": "« Si'hi » : même mot que la « si'ha » de la hitbodedout (cf. LM II, 11:1:2).",
+      "tags": [],
+      "duree_lecture_sec": 5,
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "eikha-2-19",
+      "moments": [
+        "lieu"
+      ],
+      "theme": "nuit",
+      "edition": "tanakh",
+      "ref": "Eikha 2:19",
+      "ref_sefaria": "Lamentations 2:19",
+      "url": "https://www.sefaria.org/Lamentations.2.19",
+      "he": "קוּמִי רֹנִּי בַלַּיְלָה לְרֹאשׁ אַשְׁמֻרוֹת שִׁפְכִי כַמַּיִם לִבֵּךְ נֹכַח פְּנֵי אֲדֹנָי",
+      "fr": "Levez-vous, criez dans la nuit, au début des veilles ; répandez votre cœur comme de l’eau devant la face de Hachem.",
+      "en": "Arise, cry out in the night, at the beginning of the watches; pour out your heart like water before the face of Hashem.",
+      "yiddish": null,
+      "recoupement": [
+        "Deux éditions numériques indépendantes : tanach.us (codex de Leningrad) et MAM (codex d'Alep)"
+      ],
+      "note": "Qeré בַלַּיְלָה retenu (ketiv בליל). Nom divin en toutes lettres.",
+      "tags": [
+        "nuit"
+      ],
+      "duree_lecture_sec": 7,
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "tehilim-145-18",
+      "moments": [
+        "ouverture",
+        "porte"
+      ],
+      "theme": "proximite",
+      "edition": "tanakh",
+      "ref": "Tehilim 145:18",
+      "ref_sefaria": "Psalms 145:18",
+      "url": "https://www.sefaria.org/Psalms.145.18",
+      "he": "קָרוֹב יְהֹוָה לְכָל־קֹרְאָיו לְכֹל אֲשֶׁר יִקְרָאֻהוּ בֶאֱמֶת׃",
+      "fr": "Hachem est proche de tous ceux qui L’appellent, de tous ceux qui L’appellent en vérité.",
+      "en": "Hashem is near to all who call upon Him, to all who call upon Him in truth.",
+      "yiddish": null,
+      "recoupement": [
+        "Deux éditions numériques indépendantes : tanach.us (codex de Leningrad) et MAM (codex d'Alep)",
+        "Article « התבודדות: איך עושים את זה? ולמה? » (N. N. Salama, 2024) — cite le même passage, même référence (réf. imprimée « קמד, יח » : erreur)"
+      ],
+      "note": "L'extrait d'Achèr BaNa'hal cité dans l'article donne « קמד, יח » ; la bonne référence est Tehilim 145:18.",
+      "tags": [],
+      "duree_lecture_sec": 5,
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "tehilim-51-19",
+      "moments": [
+        "relance"
+      ],
+      "theme": "coeur_brise",
+      "edition": "tanakh",
+      "ref": "Tehilim 51:19",
+      "ref_sefaria": "Psalms 51:19",
+      "url": "https://www.sefaria.org/Psalms.51.19",
+      "he": "זִבְחֵי אֱלֹהִים רוּחַ נִשְׁבָּרָה לֵב־נִשְׁבָּר וְנִדְכֶּה אֱלֹהִים לֹא תִבְזֶה׃",
+      "fr": "Les sacrifices de Hachem, c’est un esprit brisé. Un cœur brisé et broyé, Hachem, Tu ne le méprises pas.",
+      "en": "The sacrifices of Hashem are a broken spirit; a broken and contrite heart, Hashem, You will not despise.",
+      "yiddish": null,
+      "recoupement": [
+        "Deux éditions numériques indépendantes : tanach.us (codex de Leningrad) et MAM (codex d'Alep)",
+        "Article « התבודדות: איך עושים את זה? ולמה? » (N. N. Salama, 2024) — cite le même passage, même référence"
+      ],
+      "note": "Nom divin en toutes lettres.",
+      "tags": [],
+      "duree_lecture_sec": 6,
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "tehilim-34-19",
+      "moments": [
+        "relance"
+      ],
+      "theme": "coeur_brise",
+      "edition": "tanakh",
+      "ref": "Tehilim 34:19",
+      "ref_sefaria": "Psalms 34:19",
+      "url": "https://www.sefaria.org/Psalms.34.19",
+      "he": "קָרוֹב יְהֹוָה לְנִשְׁבְּרֵי־לֵב וְאֶת־דַּכְּאֵי־רוּחַ יוֹשִׁיעַ׃",
+      "fr": "Hachem est proche des cœurs brisés, et Il sauve ceux dont l’esprit est abattu.",
+      "en": "Hashem is near to the brokenhearted, and saves those crushed in spirit.",
+      "yiddish": null,
+      "recoupement": [
+        "Deux éditions numériques indépendantes : tanach.us (codex de Leningrad) et MAM (codex d'Alep)",
+        "Article « התבודדות: איך עושים את זה? ולמה? » (N. N. Salama, 2024) — cite le même passage, même référence"
+      ],
+      "note": null,
+      "tags": [],
+      "duree_lecture_sec": 5,
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "sh-3-ne-pas-desesperer-de-crier",
+      "moments": [
+        "relance"
+      ],
+      "theme": "espoir",
+      "edition": "sh",
+      "ref": "Si'hot HaRan 3",
+      "ref_sefaria": "Sichot HaRan 3:6-7",
+      "url": "https://www.sefaria.org/Sichot_HaRan.3",
+      "he": "וַאֲפִלּוּ כְּשֶׁנּוֹפְלִים מְאֹד ח\"ו, וְכָל אֶחָד נָפַל לְמָקוֹם שֶׁנָּפַל רַחֲמָנָא לִצְלָן, אַף־עַל־פִּי־כֵן אָסוּר לְיָאֵשׁ עַצְמוֹ. כִּי תְּשׁוּבָה גָּבוֹהַּ לְמַעְלָה מִן הַתּוֹרָה, עַל־כֵּן אֵין שׁוּם יֵאוּשׁ בָּעוֹלָם! … וְהָעִקָּר שֶׁהַכֹּל תָּלוּי בּוֹ: שֶׁלֹּא יִהְיֶה מְיָאֵשׁ עַצְמוֹ מִלִּצְעֹק אֶל יְהֹוָה וּלְהִתְחַנֵּן וּלְהִתְפַּלֵּל אֵלָיו יִתְבָּרַךְ תָּמִיד.",
+      "fr": "Même quand on tombe très bas, chacun là où il est tombé, il est pourtant interdit de désespérer de soi. Car la techouva est plus haute que la Torah : c’est pourquoi il n’y a aucun désespoir au monde ! … L’essentiel, dont tout dépend : ne jamais renoncer à crier vers Hachem, à Le supplier et à Le prier.",
+      "en": "Even when one falls very low, each person wherever he has fallen, it is still forbidden to despair of oneself. For teshuvah is higher than the Torah; therefore there is no despair in the world at all! … The main thing, on which everything depends: never to give up crying out to Hashem, pleading and praying to Him always.",
+      "yiddish": null,
+      "recoupement": [
+        "he.wikisource.org, « שיחות הר\"ן/ג » (même passage, même numéro)"
+      ],
+      "note": null,
+      "tags": [],
+      "duree_lecture_sec": 20,
+      "he_sans_nikkoud": "ואפלו כשנופלים מאד ח\"ו, וכל אחד נפל למקום שנפל רחמנא לצלן, אף על פי כן אסור ליאש עצמו. כי תשובה גבוה למעלה מן התורה, על כן אין שום יאוש בעולם! … והעקר שהכל תלוי בו: שלא יהיה מיאש עצמו מלצעק אל יהוה ולהתחנן ולהתפלל אליו יתברך תמיד.",
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "cm-431-desirer-quand-rien-ne-reussit",
+      "moments": [
+        "relance"
+      ],
+      "theme": "perseverance",
+      "edition": "cm",
+      "ref": "'Hayé Moharan 431",
+      "ref_sefaria": "Chayei Moharan 431",
+      "url": "https://www.sefaria.org/Chayei_Moharan.431",
+      "he": "… רַק שֶׁצְּרִיכִין לְהִתְגַּעְגֵּעַ וְלִכְסֹף לְהַשֵּׁם יִתְבָּרַךְ תָּמִיד גַּם בָּעֵת שֶׁאֵין עוֹלֶה בְּיָדוֹ עֲבוֹדַת הַשֵּׁם כָּרָאוּי. וְלִבְלִי לְיַאֵשׁ עַצְמוֹ כְּלָל מִשּׁוּם דָּבָר.",
+      "fr": "… Il faut seulement languir après Hachem et aspirer à Lui toujours, même quand le service de Hachem ne réussit pas comme il le faudrait, et ne désespérer de soi pour rien au monde.",
+      "en": "… One need only long and yearn for Hashem always, even when one’s service of Hashem does not succeed as it should, and never despair of oneself over anything at all.",
+      "yiddish": null,
+      "recoupement": [
+        "breslev.eip.co.il, 'Hayé Moharan « תל – שלא להתעקש על שום דבר » (même passage)"
+      ],
+      "note": "Sefaria numérote ce passage 431 ; l'édition imprimée suivie par breslev.eip le numérote תל (430).",
+      "tags": [],
+      "duree_lecture_sec": 12,
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "lm2-48-point-bon",
+      "moments": [
+        "relance"
+      ],
+      "theme": "point_bon",
+      "edition": "lm",
+      "ref": "Likoutei Moharan II, 48",
+      "ref_sefaria": "Likutei Moharan, Part II 48:4:1-2",
+      "url": "https://www.sefaria.org/Likutei_Moharan%2C_Part_II.48.4",
+      "he": "… לְבַקֵּשׁ וּלְחַפֵּשׂ לִמְצֹא בְּעַצְמוֹ אֵיזֶה זְכוּת וְאֵיזֶה נְקֻדָּה טוֹבָה. וּבָזֶה הַמְּעַט טוֹב שֶׁמּוֹצֵא בְּעַצְמוֹ יִשְׂמַח וִיחַזֵּק עַצְמוֹ, וְאַל יַנִּיחַ אֶת מְקוֹמוֹ, אַף אִם נָפַל לְמַה שֶּׁנָּפַל … עַד הֵיכָן אַתָּה צָרִיךְ לְהִתְחַזֵּק וְלִבְלִי לְיָאֵשׁ עַצְמְךָ, חַס וְשָׁלוֹם, אַף אִם יִהְיֶה מַה שֶּׁיִּהְיֶה.",
+      "fr": "… Chercher et chercher encore à trouver en soi un mérite, un point de bien. Et de ce peu de bien qu’on trouve en soi, se réjouir et se renforcer, sans quitter sa place, même si l’on est tombé là où l’on est tombé… Comprenez jusqu’où vous devez vous renforcer et ne pas désespérer de vous-même, quoi qu’il arrive.",
+      "en": "… To search and seek to find in oneself some merit, some good point. And with that little good one finds in oneself, to rejoice and strengthen oneself, and not leave one’s place, even if one has fallen wherever one has fallen… Understand how far you must strengthen yourself and not despair of yourself, whatever may happen.",
+      "yiddish": null,
+      "recoupement": [
+        "he.wikisource.org, « לקוטי מוהר\"ן תנינא מח »",
+        "rabenubook.com, Likoutei Moharan Tinyana 48"
+      ],
+      "note": null,
+      "tags": [],
+      "duree_lecture_sec": 20,
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "lm2-112-reparer",
+      "moments": [
+        "relance"
+      ],
+      "theme": "reparer",
+      "edition": "lm",
+      "ref": "Likoutei Moharan II, 112",
+      "ref_sefaria": "Likutei Moharan, Part II 112:1",
+      "url": "https://www.sefaria.org/Likutei_Moharan%2C_Part_II.112",
+      "he": "לְעִנְיַן הִתְחַזְּקוּת לְבַל יִפֹּל הָאָדָם בְּדַעְתּוֹ מֵחֲמַת רִבּוּי הַפְּגָמִים וְהַקִּלְקוּלִים שֶׁקִּלְקֵל עַל־יְדֵי מַעֲשָׂיו, עָנָה וְאָמַר: אִם אַתָּה מַאֲמִין, שֶׁיְּכוֹלִין לְקַלְקֵל, תַּאֲמִין שֶׁיְּכוֹלִין לְתַקֵּן",
+      "fr": "Sur la manière de se renforcer pour ne pas perdre courage à cause de tout ce qu’on a abîmé par ses actes, il répondit : si vous croyez qu’on peut abîmer, croyez qu’on peut réparer.",
+      "en": "On strengthening oneself so as not to lose heart over all the damage one has done through one’s deeds, he answered: if you believe that one can damage, believe that one can repair.",
+      "yiddish": null,
+      "recoupement": [
+        "he.wikisource.org, « לקוטי מוהר\"ן תנינא קיב »",
+        "breslev.eip.co.il, Likoutei Moharan II, 112"
+      ],
+      "note": null,
+      "tags": [],
+      "duree_lecture_sec": 10,
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "michle-24-16",
+      "moments": [
+        "relance"
+      ],
+      "theme": "se_relever",
+      "edition": "tanakh",
+      "ref": "Michlé 24:16",
+      "ref_sefaria": "Proverbs 24:16",
+      "url": "https://www.sefaria.org/Proverbs.24.16",
+      "he": "כִּי שֶׁבַע יִפּוֹל צַדִּיק וָקָם …",
+      "fr": "Car le juste tombe sept fois et se relève…",
+      "en": "For a righteous man falls seven times and rises…",
+      "yiddish": null,
+      "recoupement": [
+        "tanach.us (codex de Leningrad), texte de l'export Sefaria"
+      ],
+      "note": "Le verset continue sur les méchants ; l'extrait s'arrête à la première moitié.",
+      "tags": [],
+      "duree_lecture_sec": 4,
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "lm1-261-recommencer",
+      "moments": [
+        "relance"
+      ],
+      "theme": "recommencer",
+      "edition": "lm1",
+      "ref": "Likoutei Moharan I, 261",
+      "ref_sefaria": "Likutei Moharan 261:1",
+      "url": "https://www.sefaria.org/Likutei_Moharan.261",
+      "he": "כְּשֶׁנּוֹפֵל אָדָם מִמַּדְרֵגָתוֹ, יֵדַע שֶׁמִּן הַשָּׁמַיִם הוּא, כִּי הִתְרַחֲקוּת – תְּחִלַּת הִתְקָרְבוּת, עַל־כֵּן נָפַל, שֶׁיִּתְעוֹרֵר יוֹתֵר לְהִתְקָרֵב לְהַשֵּׁם יִתְבָּרַךְ. וַעֲצָתוֹ – שֶׁיַּתְחִיל מֵחָדָשׁ לִכָּנֵס בַּעֲבוֹדַת הַשֵּׁם, כְּאִלּוּ לֹא הִתְחִיל עֲדַיִן כְּלָל מֵעוֹלָם. וְזֶה כְּלָל גָּדוֹל בַּעֲבוֹדַת הַשֵּׁם, שֶׁצְּרִיכִין מַמָּשׁ בְּכָל יוֹם לְהַתְחִיל מֵחָדָשׁ.",
+      "fr": "Quand on tombe de son niveau, qu’on sache que cela vient du Ciel : l’éloignement est le début du rapprochement. On est tombé pour s’éveiller davantage à se rapprocher de Hachem. Le conseil : recommencer à entrer dans le service de Hachem comme si l’on n’avait encore jamais commencé. C’est une grande règle du service de Hachem : il faut vraiment, chaque jour, recommencer à neuf.",
+      "en": "When a person falls from his level, let him know that it is from Heaven: distance is the beginning of drawing near. He fell so that he would be stirred to come closer to Hashem. The advice is to begin anew to enter the service of Hashem, as if he had never yet begun at all. This is a great principle in serving Hashem: one must truly begin anew every single day.",
+      "yiddish": null,
+      "recoupement": [
+        "Likoutei Etsot, Hit'hazkout 25 (Rabbi Natan reprend le passage et cite LM I, 261)"
+      ],
+      "note": null,
+      "tags": [],
+      "duree_lecture_sec": 22,
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "lm1-78-la-parole",
+      "moments": [
+        "relance",
+        "blocage"
+      ],
+      "theme": "parole",
+      "edition": "lm1",
+      "ref": "Likoutei Moharan I, 78",
+      "ref_sefaria": "Likutei Moharan 78:8:2",
+      "url": "https://www.sefaria.org/Likutei_Moharan.78.8.2",
+      "he": "… שֶׁאֲפִלּוּ אִם הוּא בַּמָּקוֹם שֶׁהוּא, אִם יִתְחַזֵּק גַּם שָׁם לְדַבֵּר עַל־כָּל־פָּנִים דִּבּוּרִים קְדוֹשִׁים שֶׁל תּוֹרָה וּתְפִלָּה וְהִתְבּוֹדְדוּת, יָכוֹל לְהַזְכִּיר אֶת עַצְמוֹ בְּהַשֵּׁם יִתְבָּרַךְ … כִּי הַדִּבּוּר אֵינוֹ מַנִּיחַ אוֹתוֹ לִשְׁכֹּחַ אֶת הַשֵּׁם יִתְבָּרַךְ.",
+      "fr": "… Même là où il se trouve, s’il se renforce pour dire au moins quelques paroles saintes, de Torah, de prière et de hitbodedout, il peut se rappeler Hachem… car la parole ne le laisse pas oublier Hachem.",
+      "en": "… Even where he is, if he strengthens himself to speak at least some holy words of Torah, prayer and hitbodedut, he can remind himself of Hashem… for speech does not let him forget Hashem.",
+      "yiddish": null,
+      "recoupement": [
+        "Likoutei Etsot, Hit'hazkout 21 (résumé du même passage, cite LM I, 78)"
+      ],
+      "note": "Le passage nomme la hitbodedout en toutes lettres.",
+      "tags": [],
+      "duree_lecture_sec": 14,
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "le-hitchazkut-42-cri",
+      "moments": [
+        "relance"
+      ],
+      "theme": "cri",
+      "edition": "le",
+      "ref": "Likoutei Etsot, Hit'hazkout 42",
+      "ref_sefaria": "Likkutei Etzot, Strengthening 42",
+      "url": "https://www.sefaria.org/Likkutei_Etzot%2C_Strengthening.42",
+      "he": "… כִּי גַּם צְעָקָה מִשְּׁאוֹל תַּחְתִּיּוֹת אֵינָהּ נֶאֱבֶדֶת לְעוֹלָם. וְיִצְעַק וְיִצְעַק וְיִצְעַק וְלֹא יִתְיָאֵשׁ עַצְמוֹ מִן הַצְּעָקָה לְעוֹלָם, רַק יִצְעַק וְיִתְחַנֵּן לִפְנֵי הַשֵּׁם יִתְבָּרַךְ תָּמִיד יִהְיֶה אֵיךְ שֶׁיִּהְיֶה",
+      "fr": "… Car même un cri du fond du Chéol n’est jamais perdu. Qu’il crie, qu’il crie et qu’il crie encore, et ne renonce jamais à crier ; qu’il crie et supplie Hachem toujours, quoi qu’il arrive.",
+      "en": "… For even a cry from the depths of Sheol is never lost. Let him cry out, and cry out, and cry out, and never give up crying out; let him cry and plead before Hashem always, whatever may be.",
+      "yiddish": null,
+      "recoupement": [
+        "na-nach.net (même formule, attribuée à l'enseignement de Rabbi Nahman)"
+      ],
+      "note": "Formulation de Rabbi Natan dans Likoutei Etsot, d'après Likoutei Moharan II, 78 ; la phrase sur le cri n'est pas mot pour mot dans Likoutei Moharan.",
+      "tags": [],
+      "duree_lecture_sec": 14,
+      "he_sans_nikkoud": "… כי גם צעקה משאול תחתיות אינה נאבדת לעולם. ויצעק ויצעק ויצעק ולא יתיאש עצמו מן הצעקה לעולם, רק יצעק ויתחנן לפני השם יתברך תמיד יהיה איך שיהיה",
+      "statut_verif": "verifie_texte",
+      "relu": true
+    },
+    {
+      "id": "lt2-39-aucun-desespoir",
+      "moments": [
+        "relance"
+      ],
+      "theme": "espoir",
+      "edition": "lt",
+      "ref": "Likoutei Tefilot II, 39",
+      "ref_sefaria": "Likutei Tefilot, Volume II 39:72",
+      "url": "https://www.sefaria.org/Likutei_Tefilot%2C_Volume_II.39.72",
+      "he": "וְאֵדַע וְאַאֲמִין בֶּאֱמוּנָה שְׁלֵמָה וַחֲזָקָה תָמִיד, שֶׁאֵין שׁוּם יֵאוּשׁ בָּעוֹלָם כְּלָל, אֵיךְ שֶׁהוּא, אֵיךְ שֶׁהוּא, כִּי רַחֲמֶיךָ לֹא כָלִים לְעוֹלָם.",
+      "fr": "Que je sache et que je croie toujours, d’une émouna entière et forte, qu’il n’y a aucun désespoir au monde, quoi qu’il en soit, quoi qu’il en soit, car Ta miséricorde ne s’épuise jamais.",
+      "en": "May I know and believe always, with complete and strong emunah, that there is no despair in the world at all, however it may be, however it may be, for Your mercies never end.",
+      "yiddish": null,
+      "recoupement": [
+        "Livre imprimé du propriétaire (Likoutei Tefilot, 2e partie, tefila 39), confirmé par lui le 28/09/2026"
+      ],
+      "note": "Prière de Rabbi Natan, à la première personne.",
+      "tags": [],
+      "duree_lecture_sec": 10,
+      "he_sans_nikkoud": "ואדע ואאמין באמונה שלמה וחזקה תמיד, שאין שום יאוש בעולם כלל, איך שהוא, איך שהוא, כי רחמיך לא כלים לעולם.",
+      "statut_verif": "verifie_texte",
+      "relu": true
+    }
+  ]
+}

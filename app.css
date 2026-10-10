@@ -1,0 +1,603 @@
+/*
+  L'apparence de l'application Android, en CSS. Les couleurs viennent de
+  palettes.css (construit depuis colors.xml et palettes.xml) ; les mesures
+  reprennent les dp d'Android en px CSS, qui ont la même taille à l'œil.
+
+  Aucune police n'est chargée : celle du système, comme sur Android. Sur
+  iPhone, l'hébreu s'affiche ainsi dans la police hébraïque d'iOS.
+*/
+
+/* La police des textes saints en hébreu (res/font/hebreu_serif.xml) : Noto Serif Hebrew,
+   SIL Open Font License 1.1 (polices/OFL-NotoSerifHebrew.txt). */
+@font-face { font-family: "Hebreu Serif"; font-weight: 400; font-display: swap; src: url(polices/hebreu_serif_regular.woff2) format("woff2"); }
+@font-face { font-family: "Hebreu Serif"; font-weight: 700; font-display: swap; src: url(polices/hebreu_serif_bold.woff2) format("woff2"); }
+.chizuk-he, .lecture .psaume, .lecture .psaume-titre, .siddour .priere, .siddour .consigne, .nom-he { font-family: "Hebreu Serif", "Noto Serif Hebrew", "Times New Roman", serif; }
+
+* { box-sizing: border-box; }
+
+:root { color-scheme: light; }
+:root[data-mode="sombre"] { color-scheme: dark; }
+@media (prefers-color-scheme: dark) { :root[data-mode="auto"] { color-scheme: dark; } }
+
+html, body { margin: 0; height: 100%; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font: 15px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans Hebrew", "Arial Hebrew", sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior: none;
+  /* Un appui long ne sélectionne pas le texte (Copier, Rechercher…) : comme
+     sur Android, les textes de l'application se lisent, ils ne se copient pas. */
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+input, textarea { -webkit-user-select: text; user-select: text; }
+button { font: inherit; color: inherit; }
+
+#app { height: 100%; display: flex; flex-direction: column; }
+
+/* --- Écran et défilement ------------------------------------------------- */
+.ecran { flex: 1; display: flex; flex-direction: column; min-height: 0; }
+.defile {
+  flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch;
+  padding-top: env(safe-area-inset-top);
+}
+.contenu {
+  width: 100%; max-width: 560px; margin: 0 auto;
+  padding: 20px calc(16px + env(safe-area-inset-right)) 24px calc(16px + env(safe-area-inset-left));
+}
+[hidden] { display: none !important; }
+
+/* --- En-tête d'un écran secondaire ---------------------------------------- */
+.barre {
+  display: flex; align-items: center; gap: 4px;
+  padding: calc(8px + env(safe-area-inset-top)) 8px 4px;
+  max-width: 560px; margin: 0 auto; width: 100%;
+}
+.barre h1 { font-size: 22px; margin: 0; font-weight: 700; }
+.retour {
+  width: 44px; height: 44px; border: 0; background: none; border-radius: 22px;
+  display: grid; place-items: center; cursor: pointer; color: var(--brand);
+}
+.retour::before {
+  content: ""; width: 22px; height: 22px; background: currentColor;
+  -webkit-mask: url(icones/ic_chevron.svg) center / contain no-repeat;
+  mask: url(icones/ic_chevron.svg) center / contain no-repeat;
+  transform: scaleX(-1);
+}
+[dir="rtl"] .retour::before { transform: none; }
+
+/* --- Accueil -------------------------------------------------------------------- */
+.marque { color: var(--muted); font-size: 13px; letter-spacing: 0.08em; }
+.salut { margin-top: 8px; font-size: 26px; font-weight: 700; }
+.statut { margin-top: 4px; color: var(--muted); font-size: 15px; }
+.statut.titre { color: var(--ink); font-size: 24px; font-weight: 700; }
+.serie { display: flex; gap: 10px; color: var(--muted); font-size: 15px; }
+.serie { font-variant-numeric: tabular-nums; }
+.serie .separateur { flex: none; }
+.serie .total { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.detail { margin-top: 4px; color: var(--brand); font-size: 14px; }
+
+.jauge { position: relative; width: 236px; height: 236px; margin: 18px auto 0; }
+/* Écran haut : les anneaux prennent la place libre (values-h720dp). */
+@media (min-height: 720px) { .jauge { width: 268px; height: 268px; } .jauge .plaque { inset: 38px; } }
+.jauge svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+[dir="rtl"] .jauge svg { transform: scaleX(-1); }
+.jauge .piste { stroke: var(--day-todo); }
+/* La piste vide prend la couleur de son anneau, très pâle (AnneauxDessin.TEINTE_PISTE). */
+.jauge .anneau-jour .piste { stroke: color-mix(in srgb, var(--brand) 22%, var(--day-todo)); }
+.jauge .anneau-semaine .piste { stroke: color-mix(in srgb, var(--ring-week) 22%, var(--day-todo)); }
+.jauge .anneau-serie .piste { stroke: color-mix(in srgb, var(--ring-streak) 22%, var(--day-todo)); }
+.jauge .anneau-jour .arc { stroke: var(--brand); }
+.jauge .anneau-semaine .arc { stroke: var(--ring-week); }
+.jauge .anneau-serie .arc { stroke: var(--ring-streak); }
+.jauge .arc.second-tour { filter: brightness(0.72); }
+.jauge .anneau.efface { opacity: 0.28; }
+.jauge .anneau { transition: opacity 250ms; cursor: pointer; }
+.jauge .arc { transition: stroke-dashoffset 900ms cubic-bezier(0.2, 0.7, 0.3, 1); }
+@media (prefers-reduced-motion: reduce) { .jauge .arc, .jauge .anneau { transition: none; } }
+/* 34px : trois anneaux de 8, deux écarts de 3, et un peu d'air. */
+.plaque {
+  position: absolute; inset: 34px; border-radius: 50%; overflow: hidden; border: 0;
+  background: var(--stage-soft); padding: 12px 14px 4px; cursor: pointer;
+}
+.plaque img { width: 100%; height: 100%; object-fit: contain; display: block; transform-origin: 50% 100%; }
+.plaque img.salut { animation: salut 640ms ease-out var(--sauts, 1); }
+/* Le centre des anneaux tourne comme une pièce, et montre vos chiffres (Plaque). */
+.plaque.sortie { animation: plaque-sortie 140ms ease-in forwards; }
+.plaque.entree { animation: plaque-entree 200ms ease-out; }
+@keyframes plaque-sortie { from { transform: perspective(600px) rotateY(0); } to { transform: perspective(600px) rotateY(90deg); } }
+@keyframes plaque-entree { from { transform: perspective(600px) rotateY(-90deg); } to { transform: perspective(600px) rotateY(0); } }
+.plaque .face { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding-bottom: 8px; text-align: center; }
+.face-valeur { font-size: 30px; font-weight: 700; line-height: 1.1; color: var(--ink); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.face-valeur.valeur-jour { color: var(--brand); }
+.face-valeur.valeur-semaine { color: var(--ring-week); }
+.face-valeur.valeur-serie { color: var(--ring-streak); }
+.face-legende { margin-top: 2px; font-size: 12px; line-height: 1.3; color: var(--muted); }
+/* La fête d'un anneau fermé : la jauge bat deux fois. */
+.jauge.fete { animation: fete 440ms ease-out 2; }
+@keyframes fete {
+  0% { transform: none; }
+  40% { transform: scale(1.07); }
+  100% { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) { .jauge.fete { animation: none; } }
+@keyframes salut {
+  0% { transform: none; }
+  35% { transform: translateY(-10px) scale(1.04, 1.06) rotate(-3deg); }
+  70% { transform: translateY(0) rotate(3deg); }
+  100% { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) { .plaque img.salut { animation: none; } }
+.jauge-legende { margin-top: 6px; text-align: center; color: var(--muted); font-size: 13px; }
+.jauge-legende.legende-jour { color: var(--brand); }
+.jauge-legende.legende-semaine { color: var(--ring-week); }
+.jauge-legende.legende-serie { color: var(--ring-streak); }
+
+.principal {
+  display: block; width: 100%; margin-top: 16px; padding: 17px 16px;
+  border: 0; border-radius: 999px; background: var(--brand); color: var(--on-brand);
+  font-size: 17px; font-weight: 600; cursor: pointer;
+}
+.principal:active { filter: brightness(0.92); }
+
+.pastilles {
+  display: flex; gap: 8px; margin: 12px -16px 0; padding: 0 16px;
+  overflow-x: auto; scrollbar-width: none;
+  /* Un fondu aux bords : la rangée qui déborde se lit comme une rangée qui défile. */
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 16px, #000 calc(100% - 28px), transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, #000 16px, #000 calc(100% - 28px), transparent 100%);
+}
+.pastilles::-webkit-scrollbar { display: none; }
+.pastille {
+  flex: none; display: flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 14px;
+  border: 1px solid var(--line); border-radius: 999px; background: var(--card); cursor: pointer;
+  font-size: 13px;
+}
+.pastille .libelle { color: var(--muted); }
+.pastille .valeur {
+  color: var(--brand); font-weight: 700; max-width: 160px;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+
+.semaine { display: flex; margin-top: 16px; }
+.jour {
+  flex: 1; margin: 0 2px; padding: 10px 0; border-radius: 12px; background: var(--day-todo);
+  display: flex; flex-direction: column; align-items: center;
+}
+.jour .nom { color: var(--muted); font-size: 11px; }
+.jour .marque-jour { margin-top: 2px; color: var(--ink); font-size: 16px; font-weight: 700; min-height: 22px; font-variant-numeric: tabular-nums; }
+.jour.avenir .marque-jour { color: var(--muted); }
+.jour.aujourdhui { box-shadow: inset 0 0 0 1.5px var(--brand); }
+.jour.fait { background: var(--day-done); }
+.jour.fait .nom, .jour.fait .marque-jour { color: var(--white); }
+.jour.exempte { background: var(--day-exempt); }
+.jour.repos .marque-jour { color: var(--brand); }
+
+.texte-bouton {
+  display: block; width: 100%; margin-top: 6px; padding: 12px; border: 0; background: none;
+  color: var(--brand); font-weight: 600; font-size: 15px; cursor: pointer; border-radius: 999px;
+}
+
+/* --- Cartes et lignes ----------------------------------------------------------- */
+.titre-ecran { font-size: 24px; font-weight: 700; margin: 0; }
+.section {
+  margin: 20px 0 0; color: var(--muted); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+}
+.carte {
+  margin-top: 14px; padding: 8px 18px; background: var(--card);
+  border: 1px solid var(--line); border-radius: 20px;
+}
+.section + .carte { margin-top: 8px; }
+.ligne {
+  display: flex; align-items: center; gap: 12px; width: 100%; min-height: 56px; padding: 10px 0;
+  border: 0; background: none; text-align: start; cursor: pointer;
+}
+.ligne + .ligne { border-top: 1px solid var(--line); }
+.ligne .corps { flex: 1; min-width: 0; }
+button.corps { border: 0; background: none; padding: 0; text-align: start; cursor: pointer; }
+.ligne .nom { font-size: 16px; color: var(--ink); }
+.ligne .etat { font-size: 13px; color: var(--muted); margin-top: 2px; }
+.chevron {
+  flex: none; width: 22px; height: 22px; background: var(--brand);
+  -webkit-mask: url(icones/ic_chevron.svg) center / contain no-repeat;
+  mask: url(icones/ic_chevron.svg) center / contain no-repeat;
+}
+[dir="rtl"] .chevron { transform: scaleX(-1); }
+/* Ce que la version web ne sait pas encore faire : visible, mais inerte. */
+.a-venir { opacity: 0.45; pointer-events: none; }
+
+/* --- Interrupteur, curseur ------------------------------------------------------- */
+.interrupteur {
+  flex: none; appearance: none; -webkit-appearance: none; margin: 0;
+  width: 52px; height: 32px; border-radius: 16px; background: var(--line); position: relative; cursor: pointer;
+  transition: background 150ms;
+}
+.interrupteur::after {
+  content: ""; position: absolute; top: 4px; inset-inline-start: 4px; width: 24px; height: 24px;
+  border-radius: 50%; background: var(--card); box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  transition: inset-inline-start 150ms;
+}
+.interrupteur:checked { background: var(--brand); }
+.interrupteur:checked::after { inset-inline-start: 24px; background: var(--on-brand); }
+input[type="range"] { width: 100%; accent-color: var(--brand); }
+
+.indice { color: var(--muted); font-size: 13px; margin: 4px 0 0; }
+
+/* --- Morceaux ------------------------------------------------------------------------ */
+.morceau.choisi .nom { color: var(--brand); font-weight: 700; }
+.ecouter {
+  flex: none; border: 1px solid var(--line); background: var(--card); color: var(--brand);
+  border-radius: 999px; padding: 6px 14px; font-size: 13px; font-weight: 600; cursor: pointer;
+}
+.ecouter[aria-pressed="true"] { background: var(--brand); color: var(--on-brand); border-color: var(--brand); }
+
+/* --- Onglets ------------------------------------------------------------------------- */
+.onglets {
+  display: flex; background: var(--card); border-top: 1px solid var(--line);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.onglets { justify-content: center; }
+.onglet {
+  flex: 1; max-width: 186px; display: flex; flex-direction: column; align-items: center; gap: 4px;
+  padding: 10px 0 8px; border: 0; background: none; color: var(--muted); font-size: 12px; cursor: pointer;
+}
+.onglet .icone {
+  width: 56px; height: 30px; border-radius: 15px; display: grid; place-items: center;
+}
+.onglet .icone::before {
+  content: ""; width: 24px; height: 24px; background: currentColor;
+  -webkit-mask: var(--icone) center / contain no-repeat; mask: var(--icone) center / contain no-repeat;
+}
+.onglet[aria-current="page"] { color: var(--brand); font-weight: 600; }
+.onglet[aria-current="page"] .icone { background: var(--line); }
+.onglet[data-onglet="aujourdhui"] { --icone: url(icones/ic_nav_today_off.svg); }
+.onglet[data-onglet="textes"] { --icone: url(icones/ic_nav_texts_off.svg); }
+.onglet[data-onglet="journal"] { --icone: url(icones/ic_nav_journal_off.svg); }
+.onglet[data-onglet="reglages"] { --icone: url(icones/ic_nav_settings_off.svg); }
+/* L'onglet actif : le dessin plein (ic_nav_*_on), comme sur Android. */
+.onglet[aria-current="page"][data-onglet="aujourdhui"] { --icone: url(icones/ic_nav_today_on.svg); }
+.onglet[aria-current="page"][data-onglet="textes"] { --icone: url(icones/ic_nav_texts_on.svg); }
+.onglet[aria-current="page"][data-onglet="journal"] { --icone: url(icones/ic_nav_journal_on.svg); }
+.onglet[aria-current="page"][data-onglet="reglages"] { --icone: url(icones/ic_nav_settings_on.svg); }
+
+/* Grand écran (tablette couchée, ordinateur) : les onglets passent en colonne
+   sur le côté, au début de la ligne (à droite en hébreu), et l'accueil
+   s'élargit. Sur téléphone, rien ne change : la barre reste en bas, ses
+   onglets resserrés au milieu comme le contenu. */
+/* Le téléphone couché y a droit aussi : la hauteur y est trop rare pour une barre en bas. */
+@media (min-width: 900px), (orientation: landscape) and (max-height: 500px) {
+  .ecran.avec-onglets { flex-direction: row; }
+  .ecran.avec-onglets .onglets {
+    order: -1; flex: none; flex-direction: column; justify-content: flex-start; gap: 8px; width: 104px;
+    border-top: 0; border-inline-end: 1px solid var(--line);
+    padding: calc(20px + env(safe-area-inset-top)) 0 calc(12px + env(safe-area-inset-bottom));
+    padding-inline-start: env(safe-area-inset-left);
+  }
+  .ecran.avec-onglets .onglet { flex: none; max-width: none; padding: 8px 0; }
+  .ecran.avec-onglets .contenu { max-width: 720px; }
+  .toast { bottom: calc(24px + env(safe-area-inset-bottom)); }
+}
+
+/* Téléphone couché : les anneaux à côté de l'en-tête et des actions, pour que
+   le bouton « Commencer » se voie sans faire défiler. */
+@media (orientation: landscape) and (max-height: 500px) {
+  .accueil {
+    display: grid; grid-template-columns: auto minmax(0, 1fr); grid-template-areas: "jauge tete" "jauge actions";
+    column-gap: 24px; align-items: start; padding-top: 12px; padding-bottom: 12px;
+  }
+  .accueil-tete { grid-area: tete; }
+  .accueil-jauge { grid-area: jauge; align-self: center; }
+  .accueil-actions { grid-area: actions; }
+  .accueil .jauge { width: 196px; height: 196px; margin-top: 0; }
+  .accueil .jauge .plaque { inset: 30px; }
+  .accueil .principal { margin-top: 12px; padding-block: 14px; }
+  .accueil .semaine { margin-top: 12px; }
+
+  /* La séance : la scène et le minuteur à gauche ; à droite, le bouton
+     principal d'abord, puis les durées, et le mot de chizuk en dernier. */
+  .seance .contenu { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 24px; align-items: start; }
+  .seance-actions { display: flex; flex-direction: column; padding-top: 16px; }
+  .seance-actions .principal { order: -1; margin-top: 0; }
+  .seance-actions .chizuk, .seance-actions .blocage { order: 2; }
+  .seance-actions .durees { margin-top: 12px; }
+
+  /* Le bravo : la scène de danse se resserre pour laisser voir « Continuer ». */
+  .bravo .scene.danse { min-height: 150px; }
+}
+
+/* --- Feuille de choix (les AlertDialog d'Android) --------------------------------------- */
+.voile {
+  position: fixed; inset: 0; background: rgba(0, 0, 0, 0.4); display: flex; align-items: flex-end;
+  justify-content: center; z-index: 10;
+}
+.feuille {
+  width: 100%; max-width: 560px; max-height: 80%; overflow-y: auto; background: var(--card);
+  border-radius: 20px 20px 0 0; padding: 18px 18px calc(12px + env(safe-area-inset-bottom));
+}
+.feuille h2 { font-size: 18px; margin: 0 0 8px; }
+.feuille .choix {
+  display: block; width: 100%; text-align: start; padding: 14px 4px; border: 0; background: none;
+  font-size: 16px; cursor: pointer; border-top: 1px solid var(--line);
+}
+.feuille .choix[aria-checked="true"] { color: var(--brand); font-weight: 700; }
+.feuille input[type="number"] {
+  width: 100%; font: inherit; font-size: 18px; padding: 12px; border-radius: 12px;
+  border: 1px solid var(--line); background: var(--paper); color: var(--ink);
+}
+.feuille .actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 14px; }
+.feuille .actions button {
+  border: 0; background: none; color: var(--brand); font-weight: 600; padding: 10px 14px; cursor: pointer;
+}
+
+/* --- Séance (activity_session.xml) ------------------------------------------------ */
+.seance { background: var(--brand-dark); color: var(--mint); }
+.seance .barre { color: var(--mint); padding-bottom: 0; }
+.seance .retour { color: var(--mint); }
+.seance .contenu { text-align: center; padding-top: 0; }
+.seance-titre { font-size: 13px; letter-spacing: 0.14em; color: var(--mint); }
+/* La plaque claire sous le personnage : le fond blanc des illustrations s'y fond. */
+.scene { margin-top: 16px; padding: 10px; background: var(--mint); border-radius: 28px; }
+.seance .scene img { display: block; width: 100%; height: 130px; object-fit: contain; }
+@media (min-height: 480px) { .seance .scene img { height: 190px; } }
+.decompte { margin-top: 18px; color: var(--white); font-size: 56px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.legende { margin: 8px 0 0; color: var(--mint); font-size: 15px; }
+.legende.petite { margin-top: 6px; font-size: 13px; }
+.texte-clair {
+  display: block; width: 100%; margin-top: 4px; padding: 12px; border: 0; background: none;
+  color: var(--mint); font-size: 15px; font-weight: 600; cursor: pointer; border-radius: 999px;
+}
+.durees { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 20px; }
+.duree {
+  padding: 10px 4px; border: 1px solid color-mix(in srgb, var(--mint) 45%, transparent); border-radius: 999px;
+  background: none; color: var(--mint); font-size: 13px; font-weight: 600; cursor: pointer; white-space: nowrap;
+}
+.seance .principal { margin-top: 22px; padding: 14px 16px; font-size: 16px; }
+
+/* --- Carte de ’hizouk (view_chizuk.xml) ---------------------------------------------- */
+.chizuk {
+  margin-top: 18px; padding: 16px; text-align: start; color: var(--ink);
+  background: var(--card); border: 1px solid var(--line); border-radius: 20px;
+}
+.chizuk-tete { display: flex; align-items: center; gap: 12px; }
+.chizuk-art { flex: none; width: 64px; height: 64px; border-radius: 16px; background: var(--stage-soft); padding: 4px; }
+.chizuk-art img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.chizuk-moment { margin: 0; color: var(--brand); font-size: 14px; font-weight: 700; }
+.chizuk-he, .chizuk-trad { margin: 12px 0 0; overflow: hidden; line-height: 1.35; }
+.chizuk-he { --corps-max: 19; height: 108px; color: var(--ink); text-align: start; }
+.chizuk-trad { --corps-max: 15; height: 84px; margin-top: 0; color: var(--muted); }
+@media (min-height: 480px) { .chizuk-he { height: 150px; } .chizuk-trad { height: 116px; } }
+.chizuk hr { border: 0; border-top: 1px solid var(--line); margin: 10px 0; }
+.chizuk-ref { margin: 8px 0 0; color: var(--muted); font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.chizuk.compacte .chizuk-he { --corps-max: 17; height: 96px; }
+.chizuk.compacte .chizuk-trad { --corps-max: 14; height: 72px; }
+
+/* --- Bravo (activity_celebration.xml) ----------------------------------------------- */
+.bravo .contenu { display: flex; flex-direction: column; align-items: stretch; min-height: 100%; text-align: center; padding-top: calc(22px + env(safe-area-inset-top)); }
+.bravo .defile { padding-top: 0; }
+.scene.danse { position: relative; flex: 1; min-height: 200px; max-height: 420px; padding: 14px; overflow: hidden; margin-top: 0; }
+.danseur { position: absolute; inset: 32px 14px 14px; transform-origin: 50% 100%; }
+.danseur img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+.pose-b { opacity: 0; }
+.note { position: absolute; color: var(--on-plate); pointer-events: none; }
+.bravo-titre { margin: 22px 0 0; font-size: 30px; font-weight: 700; color: var(--ink); }
+.bravo-sous-titre { margin: 6px 0 0; font-size: 16px; color: var(--muted); }
+.bravo .principal { margin-top: 22px; padding: 14px 16px; font-size: 16px; }
+
+/* --- Boîtes de dialogue ------------------------------------------------------------ */
+.feuille .message { margin: 0; color: var(--muted); font-size: 15px; }
+.feuille textarea {
+  width: 100%; font: inherit; font-size: 16px; padding: 12px; border-radius: 12px; resize: vertical;
+  border: 1px solid var(--line); background: var(--paper); color: var(--ink);
+}
+.note-art { display: block; width: 100%; height: 120px; object-fit: contain; margin-bottom: 10px; }
+
+/* --- Message bref (Toast) ------------------------------------------------------------ */
+.toast {
+  position: fixed; left: 50%; bottom: calc(90px + env(safe-area-inset-bottom)); transform: translateX(-50%);
+  max-width: calc(100% - 32px); padding: 12px 18px; border-radius: 999px; z-index: 20;
+  background: var(--ink); color: var(--paper); font-size: 14px; text-align: center;
+}
+
+/* --- Tehilim (TehilimActivity, TehilimLectureActivity) --------------------------------- */
+.grille-psaumes { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin-top: 8px; }
+.case-psaume {
+  height: 48px; border: 0; border-radius: 12px; background: var(--day-todo); color: var(--ink);
+  font-size: 16px; font-variant-numeric: tabular-nums; cursor: pointer;
+}
+.case-psaume:active { filter: brightness(0.94); }
+.lecture .psaume-titre { margin: 26px 0 6px; color: var(--brand); font-size: calc(20px * var(--echelle, 1)); font-weight: 700; text-align: start; }
+.lecture .psaume-titre:first-of-type { margin-top: 8px; }
+.lecture .verset { margin: 0 0 8px; color: var(--ink); font-size: calc(19px * var(--echelle, 1)); line-height: 1.75; text-align: start; }
+.lecture .verset .num { color: var(--muted); font-size: 0.7em; }
+.lecture-nav { display: flex; gap: 12px; padding: 8px 16px calc(12px + env(safe-area-inset-bottom)); background: var(--paper); }
+@media (min-width: 600px) { .lecture-nav { padding-inline: calc((100% - 560px) / 2 + 16px); } }
+.lecture-nav button { flex: 1; margin: 0; }
+.secondaire {
+  display: block; width: 100%; padding: 14px 16px; border: 1px solid var(--line); border-radius: 999px;
+  background: var(--card); color: var(--brand); font-size: 16px; font-weight: 700; cursor: pointer;
+}
+.lecture-nav .principal, .lecture-nav .secondaire { padding: 14px 12px; font-size: 15px; }
+
+/* --- Siddour (SiddurActivity, SiddurLectureActivity) ------------------------------------ */
+.ligne-he .nom-he { font-size: 22px; color: var(--ink); text-align: start; }
+.siddour .priere { margin: 0 0 10px; color: var(--ink); font-size: calc(19px * var(--echelle, 1)); line-height: 1.75; text-align: start; }
+.siddour .consigne { margin: 14px 0 4px; color: var(--muted); font-size: calc(14px * var(--echelle, 1)); line-height: 1.5; text-align: start; }
+.siddour small { font-size: 0.8em; }
+
+/* --- Le Tikoun d'un trait (TikkunFlowActivity) ---------------------------------------------- */
+.lecture .paragraphe { font-size: calc(18px * var(--echelle, 1)); }
+.lecture .arret { margin: 0 0 8px; color: var(--muted); font-size: calc(15px * var(--echelle, 1)); line-height: 1.6; text-align: start; }
+
+/* --- Une source de la bibliothèque (LibraryEntryActivity) ----------------------------------- */
+.source-tete {
+  display: flex; align-items: center; gap: 14px; padding: 20px 18px;
+  background: var(--brand-dark); color: var(--white); border-radius: 28px;
+}
+.source-titres { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; }
+.badge { margin-bottom: 8px; padding: 3px 12px; border-radius: 999px; background: rgba(255, 255, 255, 0.2); color: var(--white); font-size: 11px; }
+.source-titre { align-self: stretch; margin: 0; font-size: 21px; line-height: 1.35; font-weight: 700; color: var(--white); text-align: start; }
+.source-ref { margin: 6px 0 0; color: var(--mint); font-size: 13px; }
+.plateau-source { width: 72px; height: 88px; padding: 5px; }
+.carte-texte { margin-top: 14px; padding: 18px; }
+.lecture .paragraphe-source { margin: 14px 0 0; font-size: calc(17px * var(--echelle, 1)); line-height: 1.7; }
+.lecture .paragraphe-source:first-child { margin-top: 0; }
+.lien-sefaria { text-align: center; text-decoration: none; padding: 13px 16px; font-size: 15px; }
+
+/* --- Bandeau (bg_hero) : l'en-tête aux couleurs de l'application ------------------------ */
+.avec-bandeau .defile { padding-top: 0; }
+.bandeau {
+  flex: none; display: flex; align-items: center; gap: 6px;
+  background: var(--brand-dark); color: var(--white); border-radius: 0 0 28px 28px;
+  padding-top: calc(14px + env(safe-area-inset-top)); padding-bottom: 18px;
+  padding-inline: calc(6px + env(safe-area-inset-left)) calc(16px + env(safe-area-inset-right));
+}
+/* Sur grand écran, le fond va d'un bord à l'autre ; ce qu'il porte s'aligne sur la colonne du contenu. */
+@media (min-width: 600px) { .bandeau { padding-inline: calc((100% - 560px) / 2 + 6px) calc((100% - 560px) / 2 + 16px); } }
+.bandeau .retour { align-self: flex-start; margin-top: -7px; color: var(--white); }
+.bandeau-corps { flex: 1; min-width: 0; }
+.bandeau h1 { margin: 0; font-size: 24px; line-height: 1.25; font-weight: 700; color: var(--white); }
+.bandeau-sous-titre { margin: 4px 0 0; color: var(--mint); font-size: 14px; line-height: 1.35; }
+/* Le nusah, posé sur le bandeau : un voile clair, quelle que soit la couleur choisie (bg_hero_chip). */
+.puce-bandeau {
+  margin-top: 8px; display: inline-flex; align-items: center; gap: 4px; min-height: 36px; max-width: 100%;
+  padding-inline: 14px 8px; border-radius: 999px; cursor: pointer;
+  background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.35); color: var(--white); font-size: 14px;
+}
+.puce-bandeau span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.puce-bandeau svg { flex: none; width: 20px; height: 20px; }
+.puce-bandeau:active { background: rgba(255, 255, 255, 0.25); }
+.puce-bandeau:focus-visible { outline: 2px solid var(--white); outline-offset: 2px; }
+
+/* Le personnage sur son panneau clair (bg_stage) : le fond blanc des illustrations s'y fond. */
+.plateau { flex: none; display: block; padding: 4px; background: var(--mint); border-radius: 28px; }
+.plateau img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.plateau-bandeau { width: 64px; height: 78px; padding: 5px; }
+
+/* --- La liste du siddour (SiddurActivity, 04/10) ------------------------------------------ */
+.liste-siddour { padding-top: 0; }
+.serif-he, .maintenant-he, .livre-he, .source-titre { font-family: "Hebreu Serif", "Noto Serif Hebrew", "Times New Roman", serif; }
+.maintenant {
+  display: flex; align-items: center; gap: 16px; width: 100%; margin-top: 16px;
+  padding: 14px; padding-inline-end: 18px; text-align: start; cursor: pointer; color: inherit;
+  background: var(--card); border: 1px solid var(--line); border-radius: 20px;
+}
+.plateau-maintenant { width: 72px; height: 86px; }
+.maintenant-corps { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.maintenant-libelle { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--brand); }
+.maintenant-he { padding-top: 2px; font-size: 26px; line-height: 1.3; color: var(--ink); text-align: start; }
+.maintenant-trad { font-size: 14px; color: var(--muted); }
+
+.livres { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; }
+.livre {
+  display: flex; flex-direction: column; align-items: center; padding: 14px 12px; cursor: pointer; color: inherit; text-align: center;
+  background: var(--card); border: 1px solid var(--line); border-radius: 20px;
+}
+.plateau-livre { width: 56px; height: 66px; }
+.livre-he { padding-top: 8px; font-size: 19px; line-height: 1.3; color: var(--ink); }
+.livre-trad { font-size: 13px; color: var(--muted); }
+.maintenant:active, .livre:active, .ligne-he:active { filter: brightness(0.96); }
+
+/* Le nom du groupe en hébreu, à la couleur choisie ; sa traduction à côté. */
+.entete-groupe {
+  display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 10px; margin: 22px 4px 0;
+  font-size: 17px; line-height: 1.3; font-weight: 700; color: var(--brand);
+}
+.entete-trad { font-size: 13px; font-weight: 400; color: var(--muted); }
+.sous-entete {
+  display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 10px; margin: 14px 4px 0;
+  font-size: 16px; line-height: 1.3; font-weight: 700; color: var(--ink);
+}
+.entete-groupe + .carte, .sous-entete + .carte { margin-top: 8px; }
+.carte-sections { padding: 2px 0; padding-inline: 18px 12px; }
+.ligne-he { min-height: 60px; padding: 8px 0; }
+.ligne-he .corps { display: flex; flex-direction: column; }
+.ligne-he .nom-he { font-size: 20px; line-height: 1.35; color: var(--ink); text-align: start; }
+
+/* --- Choix du nusah : trois boutons radio (setSingleChoiceItems) ---------------------------- */
+.feuille .choix-radio { display: flex; align-items: center; gap: 14px; }
+.choix-radio .radio {
+  flex: none; width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--muted); display: grid; place-items: center;
+}
+.choix-radio[aria-checked="true"] .radio { border-color: var(--brand); }
+.choix-radio[aria-checked="true"] .radio::after { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--brand); }
+.sources { margin-top: 20px; font-size: 12px; }
+
+/* --- Le bouton de lecture (ReglagesLecture) : aux couleurs de l'utilisateur ----------------- */
+.ecran.lu { position: relative; }
+.lu-zone { position: relative; flex: 1; min-height: 0; display: flex; flex-direction: column; }
+/* Le bas du texte passe au-dessus du bouton, jamais dessous. */
+.lu-zone .lecture { padding-bottom: 84px; }
+.lecture-ctrl {
+  position: absolute; left: 50%; bottom: 16px; z-index: 5; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; max-width: calc(100% - 16px);
+}
+.lu-zone.sans-pied .lecture-ctrl { bottom: calc(16px + env(safe-area-inset-bottom)); }
+.lecture-pastille, .lecture-barre {
+  border: 0; background: var(--brand); color: var(--on-brand);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18), 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+.lecture-pastille {
+  height: 36px; padding: 0 14px; border-radius: 18px; cursor: pointer;
+  font: 700 15px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; letter-spacing: 0.02em;
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+.lecture-pastille.cachee { opacity: 0; transform: translateY(24px); pointer-events: none; }
+.lecture-barre {
+  height: 48px; padding: 0 4px; border-radius: 24px; display: flex; align-items: center; gap: 0;
+  max-width: 100%; overflow-x: auto; scrollbar-width: none;
+  animation: lecture-ouvre 160ms ease-out;
+}
+.lecture-barre::-webkit-scrollbar { display: none; }
+@keyframes lecture-ouvre { from { opacity: 0; transform: scale(0.92); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .lecture-pastille, .lecture-barre { transition: none; animation: none; } }
+.lecture-barre button {
+  flex: none; height: 40px; min-width: 38px; padding: 0 8px; border: 0; border-radius: 20px;
+  background: none; color: inherit; display: grid; place-items: center; cursor: pointer;
+  font-size: 15px; font-weight: 700; white-space: nowrap;
+}
+.lecture-barre button:active { background: color-mix(in srgb, var(--on-brand) 16%, transparent); }
+.lecture-barre button:disabled { opacity: 0.4; cursor: default; }
+.lecture-barre .lettres { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+.lecture-barre .taille { min-width: 56px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.lecture-barre .icone-bouton { padding: 0; width: 40px; }
+.lecture-barre svg { width: 22px; height: 22px; }
+.lecture-barre button[aria-pressed="true"] { background: var(--on-brand); color: var(--brand); }
+.lecture-barre .lecture-nusah-bouton { font-weight: 600; font-size: 14px; padding: 0 10px; }
+.lecture-barre .lecture-nusah-bouton[aria-expanded="true"] { background: color-mix(in srgb, var(--on-brand) 20%, transparent); }
+.lecture-sep { flex: none; width: 1px; height: 22px; margin: 0 4px; background: var(--on-brand); opacity: 0.35; }
+.lecture-barre button:focus-visible, .lecture-pastille:focus-visible { outline: 2px solid var(--on-brand); outline-offset: -4px; }
+.lecture-nusah {
+  margin-bottom: 8px; min-width: 200px; padding: 4px 0;
+  background: var(--card); border: 1px solid var(--line); border-radius: 16px; overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+.lecture-nusah button {
+  display: flex; align-items: center; gap: 8px; width: 100%; padding: 11px 16px; border: 0; background: none;
+  color: var(--ink); text-align: start; font-size: 15px; cursor: pointer;
+}
+.lecture-nusah .coche { flex: none; width: 20px; height: 20px; color: var(--brand); }
+.lecture-nusah .coche svg { width: 20px; height: 20px; display: block; }
+.lecture-nusah button[aria-checked="true"] { color: var(--brand); font-weight: 700; }
+
+/* Le message « bouton masqué », avec son action. */
+.toast.toast-action { display: flex; align-items: center; gap: 12px; width: max-content; padding: 8px 8px 8px 18px; border-radius: 24px; text-align: start; }
+[dir="rtl"] .toast.toast-action { padding: 8px 18px 8px 8px; }
+.toast-action button {
+  flex: none; border: 0; border-radius: 18px; padding: 9px 14px; cursor: pointer;
+  background: var(--brand); color: var(--on-brand); font-size: 14px; font-weight: 700;
+}
+
+/* --- La lecture de nuit : fond noir, lettres claires ------------------------------------ */
+.ecran.lu.nuit { background: var(--lecture-nuit-fond, #000); color: var(--lecture-nuit-texte, #F2F0EA); }
+.ecran.lu.nuit .barre h1 { color: var(--lecture-nuit-texte, #F2F0EA); }
+.ecran.lu.nuit .lecture .verset, .ecran.lu.nuit .siddour .priere { color: var(--lecture-nuit-texte, #F2F0EA); }
+.ecran.lu.nuit .lecture .psaume-titre { color: var(--lecture-nuit-titre, #D6C28C); }
+.ecran.lu.nuit .siddour .consigne, .ecran.lu.nuit .indice, .ecran.lu.nuit .lecture .verset .num, .ecran.lu.nuit .lecture .arret { color: var(--lecture-nuit-discret, #A3A8A5); }
+.ecran.lu.nuit .lecture-nav { background: var(--lecture-nuit-fond, #000); }
+.ecran.lu.nuit .lecture-nav .secondaire { background: none; border-color: color-mix(in srgb, var(--lecture-nuit-texte, #F2F0EA) 25%, transparent); }
+/* Sur le noir, la couleur de l'utilisateur s'éclaircit pour rester lisible. */
+.ecran.lu.nuit .retour, .ecran.lu.nuit .lecture-nav .secondaire { color: color-mix(in srgb, var(--brand) 55%, var(--lecture-nuit-texte, #F2F0EA)); }
+.ecran.lu.nuit .carte-texte { background: none; border-color: color-mix(in srgb, var(--lecture-nuit-texte, #F2F0EA) 18%, transparent); }

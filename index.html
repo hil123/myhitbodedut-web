@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="fr" data-mode="auto" data-fond="vert" data-accent="vert">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <!-- Aucune ressource ne vient d'ailleurs que de ce site : rien ne quitte le téléphone.
+       'unsafe-inline' pour les styles seulement : WebKit refuse sinon les styles
+       internes de son propre lecteur audio. Un style ne charge rien hors du site. -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; img-src 'self' data:; media-src 'self' blob:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <title>MyHitbodedut</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="MyHitbodedut">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#F4F7F2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#101A16" media="(prefers-color-scheme: dark)">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icones/apple-touch-icon.png">
+  <link rel="icon" href="icones/icon-192.png">
+  <link rel="stylesheet" href="palettes.css">
+  <link rel="stylesheet" href="app.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <div id="app" aria-live="polite"></div>
+  <noscript>MyHitbodedut</noscript>
+</body>
+</html>
