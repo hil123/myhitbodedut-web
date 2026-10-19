@@ -1,0 +1,1366 @@
+/*
+  L'apparence de l'application Android, en CSS. Les couleurs viennent de
+  palettes.css (construit depuis colors.xml et palettes.xml) ; les mesures
+  reprennent les dp d'Android en px CSS, qui ont la même taille à l'œil.
+
+  Aucune police n'est chargée : celle du système, comme sur Android. Sur
+  iPhone, l'hébreu s'affiche ainsi dans la police hébraïque d'iOS.
+*/
+
+/* La police des textes saints en hébreu (res/font/hebreu_serif.xml) : Noto Serif Hebrew,
+   SIL Open Font License 1.1 (polices/OFL-NotoSerifHebrew.txt). */
+/* La police des textes (12/10), au choix dans le bouton « Aa » : voir appliquerPolice (app.js). */
+:root { --police-texte: "Hebreu Serif", "Noto Serif Hebrew", "Times New Roman", serif; }
+@font-face { font-family: "Hebreu Serif"; font-weight: 400; font-display: swap; src: url(polices/hebreu_serif_regular.woff2) format("woff2"); }
+/* Les lignes d'état de l'accueil (10/10) : Varela Round, fichier d'origine, OFL (polices/OFL-VarelaRound.txt). */
+@font-face { font-family: "Varela Round"; font-weight: 400; font-display: swap; src: url(polices/varela_round.ttf) format("truetype"); }
+@font-face { font-family: "Hebreu Serif"; font-weight: 700; font-display: swap; src: url(polices/hebreu_serif_bold.woff2) format("woff2"); }
+@font-face { font-family: "Frank Ruhl Libre"; font-weight: 300 900; font-display: swap; src: url(polices/frank_ruhl.ttf) format("truetype"); }
+@font-face { font-family: "David Libre"; font-weight: 400; font-display: swap; src: url(polices/david_libre.ttf) format("truetype"); }
+@font-face { font-family: "David Libre"; font-weight: 700; font-display: swap; src: url(polices/david_libre_bold.ttf) format("truetype"); }
+@font-face { font-family: "Noto Rashi Hebrew"; font-weight: 100 900; font-display: swap; src: url(polices/noto_rashi.ttf) format("truetype"); }
+@font-face { font-family: "Miriam Libre"; font-weight: 400 700; font-display: swap; src: url(polices/miriam_libre.ttf) format("truetype"); }
+.statut:not(.titre), .serie, .detail { font-family: "Varela Round", system-ui, sans-serif; }
+.chizuk-he, .lecture .psaume, .lecture .psaume-titre, .siddour .priere, .siddour .consigne, .nom-he, .signet { font-family: var(--police-texte); }
+
+* { box-sizing: border-box; }
+
+:root { color-scheme: light; }
+:root[data-mode="sombre"] { color-scheme: dark; }
+@media (prefers-color-scheme: dark) { :root[data-mode="auto"] { color-scheme: dark; } }
+
+html, body { margin: 0; height: 100%; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font: 15px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans Hebrew", "Arial Hebrew", sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior: none;
+  /* Un appui long ne sélectionne pas le texte (Copier, Rechercher…) : comme
+     sur Android, les textes de l'application se lisent, ils ne se copient pas. */
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+input, textarea { -webkit-user-select: text; user-select: text; }
+button { font: inherit; color: inherit; }
+
+#app { height: 100%; display: flex; flex-direction: column; }
+
+/* --- Écran et défilement ------------------------------------------------- */
+.ecran { flex: 1; display: flex; flex-direction: column; min-height: 0; }
+.defile {
+  flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch;
+  padding-top: env(safe-area-inset-top);
+}
+.contenu {
+  width: 100%; max-width: 560px; margin: 0 auto;
+  padding: 20px calc(16px + env(safe-area-inset-right)) 24px calc(16px + env(safe-area-inset-left));
+}
+[hidden] { display: none !important; }
+
+/* --- En-tête d'un écran secondaire ---------------------------------------- */
+.barre {
+  display: flex; align-items: center; gap: 4px;
+  padding: calc(8px + env(safe-area-inset-top)) 8px 4px;
+  max-width: 560px; margin: 0 auto; width: 100%;
+}
+.barre h1 { font-size: 22px; margin: 0; font-weight: 700; }
+.retour {
+  width: 44px; height: 44px; border: 0; background: none; border-radius: 20px;
+  display: grid; place-items: center; cursor: pointer; color: var(--brand);
+}
+.retour::before {
+  content: ""; width: 22px; height: 22px; background: currentColor;
+  -webkit-mask: url(icones/ic_chevron.svg) center / contain no-repeat;
+  mask: url(icones/ic_chevron.svg) center / contain no-repeat;
+  transform: scaleX(-1);
+}
+[dir="rtl"] .retour::before { transform: none; }
+
+/* --- Accueil -------------------------------------------------------------------- */
+.marque { color: var(--muted); font-size: 13px; letter-spacing: 0.08em; }
+.salut { margin-top: 8px; font-size: 26px; font-weight: 700; }
+.statut { margin-top: 4px; color: var(--muted); font-size: 15px; }
+.statut.titre { color: var(--ink); font-size: 20px; font-weight: 700; }
+.serie { display: flex; gap: 8px; color: var(--muted); font-size: 15px; }
+.serie { font-variant-numeric: tabular-nums; }
+.serie .separateur { flex: none; }
+/* La ligne de série passe à la ligne plutôt que d'être coupée (comme status_total, Android). */
+.serie { flex-wrap: wrap; row-gap: 0; }
+.serie .total { flex: 0 1 auto; min-width: 0; }
+.detail { margin-top: 4px; color: var(--brand); font-size: 16px; }
+
+.jauge { position: relative; width: 260px; height: 260px; margin: 18px auto 0; }
+/* Écran haut : les anneaux prennent la place libre (values-h720dp). */
+@media (min-height: 720px) { .jauge { width: 292px; height: 292px; } .jauge .plaque { inset: 38px; } }
+/* Écran bas (iPhone SE, petits Android ; 15/10) : des anneaux plus petits, pour
+   que « Commencer » se voie au-dessus des onglets sans défiler. */
+@media (max-height: 640px) {
+  .jauge { width: 176px; height: 176px; margin-top: 4px; } .jauge .plaque { inset: 26px; padding: 4px 8px 0px; }
+  /* Le titre de l'accueil sur deux lignes au plus (polices du CI, plus larges : 15/10). */
+  .statut.titre { font-size: 18px; }
+}
+.jauge svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+[dir="rtl"] .jauge svg { transform: scaleX(-1); }
+.jauge .piste { stroke: var(--day-todo); }
+/* La piste vide prend la couleur de son anneau, très pâle (AnneauxDessin.TEINTE_PISTE). */
+.jauge .anneau-jour .piste { stroke: color-mix(in srgb, var(--brand) 22%, var(--day-todo)); }
+.jauge .anneau-semaine .piste { stroke: color-mix(in srgb, var(--ring-week) 22%, var(--day-todo)); }
+.jauge .anneau-serie .piste { stroke: color-mix(in srgb, var(--ring-streak) 22%, var(--day-todo)); }
+.jauge .anneau-jour .arc { stroke: var(--brand); }
+.jauge .anneau-semaine .arc { stroke: var(--ring-week); }
+.jauge .anneau-serie .arc { stroke: var(--ring-streak); }
+.jauge .arc.second-tour { filter: brightness(0.72); }
+.jauge .anneau.efface { opacity: 0.28; }
+.jauge .anneau { transition: opacity 250ms; cursor: pointer; }
+.jauge .arc { transition: stroke-dashoffset 900ms cubic-bezier(0.2, 0.7, 0.3, 1); }
+@media (prefers-reduced-motion: reduce) { .jauge .arc, .jauge .anneau { transition: none; } }
+/* 34px : trois anneaux de 8, deux écarts de 3, et un peu d'air. */
+.plaque {
+  position: absolute; inset: 34px; border-radius: 50%; overflow: hidden; border: 0;
+  background: var(--stage-soft); padding: 12px 12px 4px; cursor: pointer;
+}
+.plaque img { width: 100%; height: 100%; object-fit: contain; display: block; transform-origin: 50% 100%; }
+.plaque img.salut { animation: salut 640ms ease-out var(--sauts, 1); }
+/* Le centre des anneaux tourne comme une pièce, et montre vos chiffres (Plaque). */
+.plaque.sortie { animation: plaque-sortie 140ms ease-in forwards; }
+.plaque.entree { animation: plaque-entree 200ms ease-out; }
+@keyframes plaque-sortie { from { transform: perspective(600px) rotateY(0); } to { transform: perspective(600px) rotateY(90deg); } }
+@keyframes plaque-entree { from { transform: perspective(600px) rotateY(-90deg); } to { transform: perspective(600px) rotateY(0); } }
+.plaque .face { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding-bottom: 8px; text-align: center; }
+.face-valeur { font-size: 30px; font-weight: 700; line-height: 1.1; color: var(--ink); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.face-valeur.valeur-jour { color: var(--brand); }
+.face-valeur.valeur-semaine { color: var(--ring-week); }
+.face-valeur.valeur-serie { color: var(--ring-streak); }
+.face-legende { margin-top: 0px; font-size: 12px; line-height: 1.3; color: var(--muted); }
+/* La fête d'un anneau fermé : la jauge bat deux fois. */
+.jauge.fete { animation: fete 440ms ease-out 2; }
+@keyframes fete {
+  0% { transform: none; }
+  40% { transform: scale(1.07); }
+  100% { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) { .jauge.fete { animation: none; } }
+@keyframes salut {
+  0% { transform: none; }
+  35% { transform: translateY(-10px) scale(1.04, 1.06) rotate(-3deg); }
+  70% { transform: translateY(0) rotate(3deg); }
+  100% { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) { .plaque img.salut { animation: none; } }
+.jauge-legende { margin-top: 4px; text-align: center; color: var(--muted); font-size: 16px; }
+.jauge-legende.legende-jour { color: var(--brand); }
+.jauge-legende.legende-semaine { color: var(--ring-week); }
+.jauge-legende.legende-serie { color: var(--ring-streak); }
+
+.principal {
+  display: block; width: 100%; margin-top: 16px; padding: 16px 16px;
+  border: 0; border-radius: 999px; background: var(--brand); color: var(--on-brand);
+  font-size: 17px; font-weight: 600; cursor: pointer;
+}
+.principal:active { filter: brightness(0.92); }
+
+.pastilles {
+  display: flex; gap: 8px; margin: 12px -16px 0; padding: 0 16px;
+  overflow-x: auto; scrollbar-width: none;
+  /* Un fondu aux bords : la rangée qui déborde se lit comme une rangée qui défile. */
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 16px, #000 calc(100% - 28px), transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, #000 16px, #000 calc(100% - 28px), transparent 100%);
+}
+.pastilles::-webkit-scrollbar { display: none; }
+.pastille {
+  flex: none; display: flex; align-items: center; gap: 4px; min-height: 40px; padding: 0 12px;
+  border: 1px solid var(--line); border-radius: 999px; background: var(--card); cursor: pointer;
+  font-size: 13px;
+}
+.pastille .libelle { color: var(--muted); }
+.pastille .valeur {
+  color: var(--brand); font-weight: 700; max-width: 160px;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+
+.semaine { display: flex; margin-top: 16px; }
+.jour {
+  flex: 1; margin: 0 2px; padding: 8px 0; border-radius: 12px; background: var(--day-todo);
+  display: flex; flex-direction: column; align-items: center;
+}
+.jour .nom { color: var(--muted); font-size: 11px; }
+.jour .marque-jour { margin-top: 0px; color: var(--ink); font-size: 16px; font-weight: 700; min-height: 22px; font-variant-numeric: tabular-nums; }
+.jour.avenir .marque-jour { color: var(--muted); }
+.jour.aujourdhui { box-shadow: inset 0 0 0 1.5px var(--brand); }
+.jour.fait { background: var(--day-done); }
+.jour.fait .nom, .jour.fait .marque-jour { color: var(--white); }
+/* Un jour fait se touche : sa durée remplace le ✓ (14/10). */
+button.jour { font: inherit; border: 0; cursor: pointer; }
+.jour.montre-duree .marque-jour { font-size: 13px; white-space: nowrap; }
+.jour.exempte { background: var(--day-exempt); }
+.jour.repos .marque-jour { color: var(--brand); }
+
+.texte-bouton {
+  display: block; width: 100%; margin-top: 4px; padding: 12px; border: 0; background: none;
+  color: var(--brand); font-weight: 600; font-size: 15px; cursor: pointer; border-radius: 999px;
+}
+
+/* --- Cartes et lignes ----------------------------------------------------------- */
+.titre-ecran { font-size: 24px; font-weight: 700; margin: 0; }
+.section {
+  margin: 16px 0 0; color: var(--muted); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+}
+.carte {
+  margin-top: 12px; padding: 8px 16px; background: var(--card);
+  border: 1px solid var(--line); border-radius: 20px;
+}
+.section + .carte { margin-top: 8px; }
+.ligne {
+  display: flex; align-items: center; gap: 12px; width: 100%; min-height: 56px; padding: 8px 0;
+  border: 0; background: none; text-align: start; cursor: pointer;
+}
+.ligne + .ligne { border-top: 1px solid var(--line); }
+.ligne .corps { flex: 1; min-width: 0; }
+button.corps { border: 0; background: none; padding: 0; text-align: start; cursor: pointer; }
+.ligne .nom { font-size: 16px; color: var(--ink); }
+.ligne .etat { font-size: 13px; color: var(--muted); margin-top: 0px; }
+.chevron {
+  flex: none; width: 22px; height: 22px; background: var(--brand);
+  -webkit-mask: url(icones/ic_chevron.svg) center / contain no-repeat;
+  mask: url(icones/ic_chevron.svg) center / contain no-repeat;
+}
+[dir="rtl"] .chevron { transform: scaleX(-1); }
+/* Ce que la version web ne sait pas encore faire : visible, mais inerte. */
+.a-venir { opacity: 0.45; pointer-events: none; }
+
+/* --- Interrupteur, curseur ------------------------------------------------------- */
+.interrupteur {
+  flex: none; appearance: none; -webkit-appearance: none; margin: 0;
+  width: 52px; height: 32px; border-radius: 16px; background: var(--line); position: relative; cursor: pointer;
+  transition: background 150ms;
+}
+.interrupteur::after {
+  content: ""; position: absolute; top: 4px; inset-inline-start: 4px; width: 24px; height: 24px;
+  border-radius: 50%; background: var(--card); box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  transition: inset-inline-start 150ms;
+}
+.interrupteur:checked { background: var(--brand); }
+.interrupteur:checked::after { inset-inline-start: 24px; background: var(--on-brand); }
+input[type="range"] { width: 100%; accent-color: var(--brand); }
+
+.indice { color: var(--muted); font-size: 13px; margin: 4px 0 0; }
+
+/* --- Morceaux ------------------------------------------------------------------------ */
+.morceau.choisi .nom { color: var(--brand); font-weight: 700; }
+.ecouter {
+  flex: none; border: 1px solid var(--line); background: var(--card); color: var(--brand);
+  border-radius: 999px; padding: 4px 12px; font-size: 13px; font-weight: 600; cursor: pointer;
+}
+.ecouter[aria-pressed="true"] { background: var(--brand); color: var(--on-brand); border-color: var(--brand); }
+
+/* --- Onglets ------------------------------------------------------------------------- */
+.onglets {
+  display: flex; background: var(--card); border-top: 1px solid var(--line);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.onglets { justify-content: center; }
+.onglet {
+  flex: 1; max-width: 186px; display: flex; flex-direction: column; align-items: center; gap: 4px;
+  padding: 8px 0 8px; border: 0; background: none; color: var(--muted); font-size: 12px; cursor: pointer;
+}
+.onglet .icone {
+  width: 56px; height: 30px; border-radius: 12px; display: grid; place-items: center;
+}
+.onglet .icone::before {
+  content: ""; width: 24px; height: 24px; background: currentColor;
+  -webkit-mask: var(--icone) center / contain no-repeat; mask: var(--icone) center / contain no-repeat;
+}
+.onglet[aria-current="page"] { color: var(--brand); font-weight: 600; }
+.onglet[aria-current="page"] .icone { background: var(--line); }
+.onglet[data-onglet="aujourdhui"] { --icone: url(icones/ic_nav_today_off.svg); }
+.onglet[data-onglet="textes"] { --icone: url(icones/ic_nav_texts_off.svg); }
+.onglet[data-onglet="journal"] { --icone: url(icones/ic_nav_journal_off.svg); }
+.onglet[data-onglet="reglages"] { --icone: url(icones/ic_nav_settings_off.svg); }
+.onglet[data-onglet="zmanim"] { --icone: url(icones/ic_nav_zmanim_off.svg); }
+/* L'onglet actif : le dessin plein (ic_nav_*_on), comme sur Android. */
+.onglet[aria-current="page"][data-onglet="aujourdhui"] { --icone: url(icones/ic_nav_today_on.svg); }
+.onglet[aria-current="page"][data-onglet="textes"] { --icone: url(icones/ic_nav_texts_on.svg); }
+.onglet[aria-current="page"][data-onglet="journal"] { --icone: url(icones/ic_nav_journal_on.svg); }
+.onglet[aria-current="page"][data-onglet="reglages"] { --icone: url(icones/ic_nav_settings_on.svg); }
+
+/* Grand écran (tablette couchée, ordinateur) : les onglets passent en colonne
+   sur le côté, au début de la ligne (à droite en hébreu), et l'accueil
+   s'élargit. Sur téléphone, rien ne change : la barre reste en bas, ses
+   onglets resserrés au milieu comme le contenu. */
+/* Le téléphone couché y a droit aussi : la hauteur y est trop rare pour une barre en bas. */
+@media (min-width: 900px), (orientation: landscape) and (max-height: 500px) {
+  .ecran.avec-onglets { flex-direction: row; }
+  .ecran.avec-onglets .onglets {
+    order: -1; flex: none; flex-direction: column; justify-content: flex-start; gap: 8px; width: 104px;
+    border-top: 0; border-inline-end: 1px solid var(--line);
+    padding: calc(20px + env(safe-area-inset-top)) 0 calc(12px + env(safe-area-inset-bottom));
+    padding-inline-start: env(safe-area-inset-left);
+  }
+  .ecran.avec-onglets .onglet { flex: none; max-width: none; padding: 8px 0; }
+  .ecran.avec-onglets .contenu { max-width: 720px; }
+  .toast { bottom: calc(24px + env(safe-area-inset-bottom)); }
+}
+
+/* Téléphone couché : les anneaux à côté de l'en-tête et des actions, pour que
+   le bouton « Commencer » se voie sans faire défiler. */
+@media (orientation: landscape) and (max-height: 500px) {
+  .accueil {
+    /* Colonne des anneaux bornée (15/10) : « auto » la calait sur la légende la plus longue,
+       sans retour à la ligne, et l'en-tête de droite se retrouvait écrasé (WebKit, CI). */
+    display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr); grid-template-areas: "jauge tete" "jauge actions";
+    column-gap: 24px; align-items: start; padding-top: 12px; padding-bottom: 12px;
+  }
+  .accueil-tete { grid-area: tete; }
+  .accueil-jauge { grid-area: jauge; align-self: center; }
+  .accueil-actions { grid-area: actions; }
+  .accueil .jauge { width: 196px; height: 196px; margin-top: 0; }
+  .accueil .jauge .plaque { inset: 30px; }
+  .accueil .principal { margin-top: 12px; padding-block: 12px; }
+  .accueil .semaine { margin-top: 12px; }
+
+  /* La séance : la scène et le minuteur à gauche ; à droite, le bouton
+     principal d'abord, puis les durées, et le mot de chizuk en dernier. */
+  .seance .contenu { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 24px; align-items: start; }
+  .seance-actions { padding-top: 16px; }
+  .seance-actions .principal { margin-top: 0; }
+  .seance-actions .durees { margin-top: 12px; }
+
+  /* Le bravo : la scène de danse se resserre pour laisser voir « Continuer ». */
+  .bravo .scene.danse { min-height: 150px; }
+}
+
+/* --- Feuille de choix (les AlertDialog d'Android) --------------------------------------- */
+.voile {
+  position: fixed; inset: 0; background: rgba(0, 0, 0, 0.4); display: flex; align-items: flex-end;
+  justify-content: center; z-index: 45; /* au-dessus du mini-lecteur (30) et des écrans plein cadre (40) */
+}
+.feuille {
+  width: 100%; max-width: 560px; max-height: 80%; overflow-y: auto; background: var(--card);
+  border-radius: 20px 20px 0 0; padding: 18px 18px calc(12px + env(safe-area-inset-bottom));
+}
+.feuille h2 { font-size: 18px; margin: 0 0 8px; }
+.feuille .choix {
+  display: block; width: 100%; text-align: start; padding: 12px 4px; border: 0; background: none;
+  font-size: 16px; cursor: pointer; border-top: 1px solid var(--line);
+}
+.feuille .choix[aria-checked="true"] { color: var(--brand); font-weight: 700; }
+.feuille input[type="number"] {
+  width: 100%; font: inherit; font-size: 18px; padding: 12px; border-radius: 12px;
+  border: 1px solid var(--line); background: var(--paper); color: var(--ink);
+}
+.feuille .actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 12px; }
+.feuille .actions button {
+  border: 0; background: none; color: var(--brand); font-weight: 600; padding: 8px 12px; min-height: 44px; cursor: pointer;
+}
+
+/* --- Séance (activity_session.xml) ------------------------------------------------ */
+.seance { background: var(--brand-dark); color: var(--mint); }
+.seance .barre { color: var(--mint); padding-bottom: 0; }
+.seance .retour { color: var(--mint); }
+.seance .contenu { text-align: center; padding-top: 0; }
+.seance-titre { font-size: 13px; letter-spacing: 0.14em; color: var(--mint); }
+/* La plaque claire sous le personnage : le fond blanc des illustrations s'y fond. */
+.scene { margin-top: 16px; padding: 8px; background: var(--mint); border-radius: 20px; }
+.seance .scene img { display: block; width: 100%; height: 130px; object-fit: contain; }
+@media (min-height: 480px) { .seance .scene img { height: 190px; } }
+.decompte { margin-top: 16px; color: var(--white); font-size: 56px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.legende { margin: 8px 0 0; color: var(--mint); font-size: 15px; }
+.legende.petite { margin-top: 4px; font-size: 13px; }
+.texte-clair {
+  display: block; width: 100%; margin-top: 4px; padding: 12px; border: 0; background: none;
+  color: var(--mint); font-size: 15px; font-weight: 600; cursor: pointer; border-radius: 999px;
+}
+.durees { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; margin-top: 16px; }
+.duree {
+  padding: 8px 4px; border: 1px solid color-mix(in srgb, var(--mint) 45%, transparent); border-radius: 999px;
+  background: none; color: var(--mint); font-size: 13px; font-weight: 600; cursor: pointer; white-space: nowrap;
+}
+.seance .principal { margin-top: 24px; padding: 12px 16px; font-size: 16px; }
+/* Le bouton principal juste sous le minuteur, debout comme couché (demande
+   du 11/10) : « Commencer » ou « Terminer » se voit sans défiler. Le sujet
+   et les durées suivent, le mot de 'hizouk en dernier. */
+.seance-actions { display: flex; flex-direction: column; }
+.seance-actions .principal { order: -1; }
+.seance-actions .chizuk, .seance-actions .blocage { order: 2; }
+
+/* --- Carte de ’hizouk (view_chizuk.xml) ---------------------------------------------- */
+.chizuk {
+  margin-top: 16px; padding: 16px; text-align: start; color: var(--ink);
+  background: var(--card); border: 1px solid var(--line); border-radius: 20px;
+}
+.chizuk-tete { display: flex; align-items: center; gap: 12px; }
+.chizuk-art { flex: none; width: 64px; height: 64px; border-radius: 12px; background: var(--stage-soft); padding: 4px; }
+.chizuk-art img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.chizuk-moment { margin: 0; color: var(--brand); font-size: 14px; font-weight: 700; }
+.chizuk-he, .chizuk-trad { margin: 12px 0 0; overflow: hidden; line-height: 1.35; }
+.chizuk-he { --corps-max: 19; height: 108px; color: var(--ink); text-align: start; }
+.chizuk-trad { --corps-max: 15; height: 84px; margin-top: 0; color: var(--muted); }
+@media (min-height: 480px) { .chizuk-he { height: 150px; } .chizuk-trad { height: 116px; } }
+.chizuk hr { border: 0; border-top: 1px solid var(--line); margin: 8px 0; }
+.chizuk-ref { margin: 8px 0 0; color: var(--muted); font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.chizuk.compacte .chizuk-he { --corps-max: 17; height: 96px; }
+.chizuk.compacte .chizuk-trad { --corps-max: 14; height: 72px; }
+
+/* --- Bravo (activity_celebration.xml) ----------------------------------------------- */
+.bravo .contenu { display: flex; flex-direction: column; align-items: stretch; min-height: 100%; text-align: center; padding-top: calc(22px + env(safe-area-inset-top)); }
+.bravo .defile { padding-top: 0; }
+.scene.danse { position: relative; flex: 1; min-height: 200px; max-height: 420px; padding: 12px; overflow: hidden; margin-top: 0; }
+.danseur { position: absolute; inset: 32px 14px 14px; transform-origin: 50% 100%; }
+.danseur img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+.pose-b { opacity: 0; }
+.note { position: absolute; color: var(--on-plate); pointer-events: none; }
+.bravo-titre { margin: 24px 0 0; font-size: 30px; font-weight: 700; color: var(--ink); }
+.bravo-sous-titre { margin: 4px 0 0; font-size: 16px; color: var(--muted); }
+.bravo .principal { margin-top: 24px; padding: 12px 16px; font-size: 16px; }
+
+/* --- Boîtes de dialogue ------------------------------------------------------------ */
+.feuille .message { margin: 0; color: var(--muted); font-size: 15px; }
+.feuille textarea {
+  width: 100%; font: inherit; font-size: 16px; padding: 12px; border-radius: 12px; resize: vertical;
+  border: 1px solid var(--line); background: var(--paper); color: var(--ink);
+}
+.note-art { display: block; width: 100%; height: 120px; object-fit: contain; margin-bottom: 8px; }
+
+/* --- Message bref (Toast) ------------------------------------------------------------ */
+.toast {
+  position: fixed; left: 50%; bottom: calc(90px + env(safe-area-inset-bottom)); transform: translateX(-50%);
+  max-width: calc(100% - 32px); padding: 12px 16px; border-radius: 999px; z-index: 20;
+  background: var(--ink); color: var(--paper); font-size: 14px; text-align: center;
+}
+
+/* --- Tehilim (TehilimActivity, TehilimLectureActivity) --------------------------------- */
+.grille-psaumes { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; margin-top: 8px; }
+.case-psaume {
+  height: 48px; border: 0; border-radius: 12px; background: var(--day-todo); color: var(--ink);
+  font-size: 16px; font-variant-numeric: tabular-nums; cursor: pointer;
+}
+.case-psaume:active { filter: brightness(0.94); }
+.lecture .psaume-titre { margin: 24px 0 4px; color: var(--brand); font-size: calc(20px * var(--echelle, 1)); font-weight: 700; text-align: start; }
+.lecture .psaume-titre:first-of-type { margin-top: 8px; }
+.lecture .verset { margin: 0 0 18px; color: var(--ink); font-size: calc(19px * var(--echelle, 1)); line-height: 1.75; text-align: start; }
+.lecture .verset .num { color: var(--muted); font-size: 0.7em; }
+.lecture-nav { display: flex; gap: 12px; padding: 8px 16px calc(12px + env(safe-area-inset-bottom)); background: var(--paper); }
+@media (min-width: 600px) { .lecture-nav { padding-inline: calc((100% - 560px) / 2 + 16px); } }
+.lecture-nav button { flex: 1; margin: 0; }
+.secondaire {
+  display: block; width: 100%; padding: 12px 16px; border: 1px solid var(--line); border-radius: 999px;
+  background: var(--card); color: var(--brand); font-size: 16px; font-weight: 700; cursor: pointer;
+}
+.lecture-nav .principal, .lecture-nav .secondaire { padding: 12px 12px; font-size: 15px; }
+
+/* --- Siddour (SiddurActivity, SiddurLectureActivity) ------------------------------------ */
+.ligne-he .nom-he { font-size: 22px; color: var(--ink); text-align: start; }
+.siddour .priere { margin: 0 0 26px; color: var(--ink); font-size: calc(19px * var(--echelle, 1)); line-height: 1.75; text-align: start; }
+.siddour .consigne { margin: 30px 0 8px; color: var(--muted); font-size: calc(12px * var(--echelle, 1)); line-height: 1.5; text-align: start; }
+.siddour small { font-size: 0.8em; }
+
+/* --- Le Tikoun d'un trait (TikkunFlowActivity) ---------------------------------------------- */
+.lecture .paragraphe { font-size: calc(18px * var(--echelle, 1)); }
+.lecture .arret { margin: 0 0 8px; color: var(--muted); font-size: calc(15px * var(--echelle, 1)); line-height: 1.6; text-align: start; }
+
+/* --- Une source de la bibliothèque (LibraryEntryActivity) ----------------------------------- */
+.source-tete {
+  display: flex; align-items: center; gap: 12px; padding: 16px 16px;
+  background: var(--brand-dark); color: var(--white); border-radius: 20px;
+}
+.source-titres { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; }
+.badge { margin-bottom: 8px; padding: 4px 12px; border-radius: 999px; background: rgba(255, 255, 255, 0.2); color: var(--white); font-size: 11px; }
+.source-titre { align-self: stretch; margin: 0; font-size: 21px; line-height: 1.35; font-weight: 700; color: var(--white); text-align: start; }
+.source-ref { margin: 4px 0 0; color: var(--mint); font-size: 13px; }
+.plateau-source { width: 72px; height: 88px; padding: 4px; }
+.carte-texte { margin-top: 12px; padding: 16px; }
+.lecture .paragraphe-source { margin: 24px 0 0; font-size: calc(17px * var(--echelle, 1)); line-height: 1.75; }
+.lecture .paragraphe-source:first-child { margin-top: 0; }
+.lien-sefaria { text-align: center; text-decoration: none; padding: 12px 16px; font-size: 15px; }
+
+/* --- Bandeau (bg_hero) : l'en-tête aux couleurs de l'application ------------------------ */
+.avec-bandeau .defile { padding-top: 0; }
+.bandeau {
+  flex: none; display: flex; align-items: center; gap: 4px;
+  background: var(--brand-dark); color: var(--white); border-radius: 0 0 28px 28px;
+  padding-top: calc(14px + env(safe-area-inset-top)); padding-bottom: 16px;
+  padding-inline: calc(6px + env(safe-area-inset-left)) calc(16px + env(safe-area-inset-right));
+}
+/* Sur grand écran, le fond va d'un bord à l'autre ; ce qu'il porte s'aligne sur la colonne du contenu. */
+@media (min-width: 600px) { .bandeau { padding-inline: calc((100% - 560px) / 2 + 6px) calc((100% - 560px) / 2 + 16px); } }
+.bandeau .retour { align-self: flex-start; margin-top: -8px; color: var(--white); }
+.bandeau-corps { flex: 1; min-width: 0; }
+.bandeau h1 { margin: 0; font-size: 24px; line-height: 1.25; font-weight: 700; color: var(--white); }
+.bandeau-sous-titre { margin: 4px 0 0; color: var(--mint); font-size: 14px; line-height: 1.35; }
+/* Le nusah, posé sur le bandeau : un voile clair, quelle que soit la couleur choisie (bg_hero_chip). */
+.puce-bandeau {
+  margin-top: 8px; display: inline-flex; align-items: center; gap: 4px; min-height: 36px; max-width: 100%;
+  padding-inline: 12px 8px; border-radius: 999px; cursor: pointer;
+  background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.35); color: var(--white); font-size: 14px;
+}
+.puce-bandeau span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.puce-bandeau svg { flex: none; width: 20px; height: 20px; }
+.puce-bandeau:active { background: rgba(255, 255, 255, 0.25); }
+.puce-bandeau:focus-visible { outline: 2px solid var(--white); outline-offset: 2px; }
+
+/* Le personnage sur son panneau clair (bg_stage) : le fond blanc des illustrations s'y fond. */
+.plateau { flex: none; display: block; padding: 4px; background: var(--mint); border-radius: 20px; }
+.plateau img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.plateau-bandeau { width: 64px; height: 78px; padding: 4px; }
+
+/* --- La liste du siddour (SiddurActivity, 04/10) ------------------------------------------ */
+.liste-siddour { padding-top: 0; }
+.serif-he, .maintenant-he, .livre-he, .source-titre { font-family: var(--police-texte); }
+.maintenant {
+  display: flex; align-items: center; gap: 16px; width: 100%; margin-top: 16px;
+  padding: 12px; padding-inline-end: 16px; text-align: start; cursor: pointer; color: inherit;
+  background: var(--card); border: 1px solid var(--line); border-radius: 20px;
+}
+.plateau-maintenant { width: 72px; height: 86px; }
+.maintenant-corps { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.maintenant-libelle { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--brand); }
+.maintenant-he { padding-top: 0px; font-size: 26px; line-height: 1.3; color: var(--ink); text-align: start; }
+.maintenant-mot { font-size: 13px; color: var(--muted); text-align: start; }
+.maintenant-trad { font-size: 14px; color: var(--muted); }
+
+.livres { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; }
+.livre {
+  display: flex; flex-direction: column; align-items: center; padding: 12px 12px; cursor: pointer; color: inherit; text-align: center;
+  background: var(--card); border: 1px solid var(--line); border-radius: 20px;
+}
+.plateau-livre { width: 56px; height: 66px; }
+.livre-he { padding-top: 8px; font-size: 19px; line-height: 1.3; color: var(--ink); }
+.livre-trad { font-size: 13px; color: var(--muted); }
+.maintenant:active, .livre:active, .ligne-he:active { filter: brightness(0.96); }
+
+/* Le nom du groupe en hébreu, à la couleur choisie ; sa traduction à côté. */
+.entete-groupe {
+  display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 8px; margin: 24px 4px 0;
+  font-size: 17px; line-height: 1.3; font-weight: 700; color: var(--brand);
+}
+.entete-trad { font-size: 13px; font-weight: 400; color: var(--muted); }
+.sous-entete {
+  display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 8px; margin: 12px 4px 0;
+  font-size: 16px; line-height: 1.3; font-weight: 700; color: var(--ink);
+}
+.entete-groupe + .carte, .sous-entete + .carte { margin-top: 8px; }
+.carte-sections { padding: 0px 0; padding-inline: 16px 12px; }
+.ligne-he { min-height: 60px; padding: 8px 0; }
+.ligne-he .corps { display: flex; flex-direction: column; }
+.ligne-he .nom-he { font-size: 20px; line-height: 1.35; color: var(--ink); text-align: start; }
+
+/* --- Choix du nusah : trois boutons radio (setSingleChoiceItems) ---------------------------- */
+.feuille .choix-radio { display: flex; align-items: center; gap: 12px; }
+.choix-radio .radio {
+  flex: none; width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--muted); display: grid; place-items: center;
+}
+.choix-radio[aria-checked="true"] .radio { border-color: var(--brand); }
+.choix-radio[aria-checked="true"] .radio::after { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--brand); }
+.sources { margin-top: 16px; font-size: 12px; }
+
+/* --- Le bouton de lecture (ReglagesLecture) : aux couleurs de l'utilisateur ----------------- */
+.ecran.lu { position: relative; }
+.lu-zone { position: relative; flex: 1; min-height: 0; display: flex; flex-direction: column; }
+/* Le bas du texte passe au-dessus du bouton, jamais dessous. */
+.lu-zone .lecture, .lu-zone.reglable .contenu { padding-bottom: 84px; }
+.lecture-ctrl {
+  position: absolute; left: 50%; bottom: 16px; z-index: 5; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; max-width: calc(100% - 16px);
+}
+.lu-zone.sans-pied .lecture-ctrl { bottom: calc(16px + env(safe-area-inset-bottom)); }
+.lecture-pastille, .lecture-barre {
+  border: 0; background: var(--brand); color: var(--on-brand);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18), 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+.lecture-pastille {
+  height: 36px; padding: 0 12px; border-radius: 20px; cursor: pointer;
+  font: 700 15px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; letter-spacing: 0.02em;
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+.lecture-pastille.cachee { opacity: 0; transform: translateY(24px); pointer-events: none; }
+.lecture-barre {
+  height: 48px; padding: 0 4px; border-radius: 20px; display: flex; align-items: center; gap: 0;
+  max-width: 100%; overflow-x: auto; scrollbar-width: none;
+  animation: lecture-ouvre 160ms ease-out;
+}
+.lecture-barre::-webkit-scrollbar { display: none; }
+@keyframes lecture-ouvre { from { opacity: 0; transform: scale(0.92); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .lecture-pastille, .lecture-barre { transition: none; animation: none; } }
+.lecture-barre button {
+  flex: none; height: 40px; min-width: 38px; padding: 0 8px; border: 0; border-radius: 20px;
+  background: none; color: inherit; display: grid; place-items: center; cursor: pointer;
+  font-size: 15px; font-weight: 700; white-space: nowrap;
+}
+.lecture-barre button:active { background: color-mix(in srgb, var(--on-brand) 16%, transparent); }
+.lecture-barre button:disabled { opacity: 0.4; cursor: default; }
+.lecture-barre .lettres { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+.lecture-barre .taille { min-width: 56px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.lecture-barre .icone-bouton { padding: 0; width: 40px; }
+.lecture-barre svg { width: 22px; height: 22px; }
+.lecture-barre button[aria-pressed="true"] { background: var(--on-brand); color: var(--brand); }
+.lecture-barre .lecture-nusah-bouton { font-weight: 600; font-size: 14px; padding: 0 8px; }
+.lecture-barre .lecture-nusah-bouton[aria-expanded="true"] { background: color-mix(in srgb, var(--on-brand) 20%, transparent); }
+.lecture-sep { flex: none; width: 1px; height: 22px; margin: 0 4px; background: var(--on-brand); opacity: 0.35; }
+.lecture-barre button:focus-visible, .lecture-pastille:focus-visible { outline: 2px solid var(--on-brand); outline-offset: -4px; }
+.lecture-nusah {
+  margin-bottom: 8px; min-width: 200px; padding: 4px 0;
+  background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+.lecture-nusah button {
+  display: flex; align-items: center; gap: 8px; width: 100%; padding: 12px 16px; border: 0; background: none;
+  color: var(--ink); text-align: start; font-size: 15px; cursor: pointer;
+}
+.lecture-nusah .coche { flex: none; width: 20px; height: 20px; color: var(--brand); }
+.lecture-nusah .coche svg { width: 20px; height: 20px; display: block; }
+.lecture-nusah button[aria-checked="true"] { color: var(--brand); font-weight: 700; }
+
+/* Le message « bouton masqué », avec son action. */
+.toast.toast-action { display: flex; align-items: center; gap: 12px; width: max-content; padding: 8px 8px 8px 16px; border-radius: 20px; text-align: start; }
+[dir="rtl"] .toast.toast-action { padding: 8px 16px 8px 8px; }
+.toast-action button {
+  flex: none; border: 0; border-radius: 20px; padding: 8px 12px; cursor: pointer;
+  background: var(--brand); color: var(--on-brand); font-size: 14px; font-weight: 700;
+}
+
+/* --- La lecture de nuit : fond noir, lettres claires ------------------------------------ */
+/* La bande de signets du siddour (10/10) : discrète, du ton de la page, un
+   trait fin dessous ; seule la section en cours se marque d'une pastille pâle. */
+.signets {
+  position: relative; flex: none; display: flex; gap: 0px; overflow-x: auto; padding: 4px 8px;
+  background: var(--paper); border-bottom: 1px solid color-mix(in srgb, var(--muted) 25%, transparent);
+  scrollbar-width: none; -webkit-overflow-scrolling: touch;
+}
+.signets::-webkit-scrollbar { display: none; }
+.signet {
+  flex: none; margin: 0; min-height: 44px; padding: 4px 8px; border: 0; border-radius: 999px; background: none;
+  color: var(--muted); font-size: 14px; line-height: 1.4; white-space: nowrap; cursor: pointer;
+}
+.signet[aria-current="true"] { color: var(--brand); background: color-mix(in srgb, var(--brand) 14%, transparent); }
+.ecran.lu.nuit .signets { background: var(--lecture-nuit-fond, #000); border-bottom-color: color-mix(in srgb, var(--lecture-nuit-discret, #A3A8A5) 25%, transparent); }
+.ecran.lu.nuit .signet { color: var(--lecture-nuit-discret, #A3A8A5); }
+.ecran.lu.nuit .signet[aria-current="true"] { color: var(--lecture-nuit-titre, #D6C28C); background: color-mix(in srgb, var(--lecture-nuit-titre, #D6C28C) 15%, transparent); }
+/* Les ajouts du jour (10/10) : en évidence ; les autres, repliés derrière une flèche. */
+.lecture .note-ajouts { margin-top: -4px; }
+.ajout.du-jour {
+  margin: 4px -8px 8px; padding: 4px 8px 0px; border-radius: 12px;
+  border-inline-start: 3px solid var(--brand); background: color-mix(in srgb, var(--brand) 8%, transparent);
+  animation: ajout-lueur 1.8s ease-out 1;
+}
+/* À l'ouverture du texte, l'ajout du jour s'éclaire une fois, puis se pose. */
+@keyframes ajout-lueur {
+  0% { background: color-mix(in srgb, var(--brand) 0%, transparent); }
+  35% { background: color-mix(in srgb, var(--brand) 20%, transparent); }
+  100% { background: color-mix(in srgb, var(--brand) 8%, transparent); }
+}
+.ajout-etiquette { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin: 4px 0 0px; color: var(--brand); font-size: 12px; font-weight: 600; letter-spacing: .02em; }
+.ajout-pastille { padding: 2px 8px; border-radius: 999px; background: var(--brand); color: var(--on-brand); }
+/* Les ajouts repliés (19/10) : un bandeau franc, un chevron qui tourne, un panneau qui glisse. */
+.ajout.replie { margin: 8px 0 12px; }
+.replie-bouton {
+  display: flex; align-items: center; gap: 12px; width: 100%; min-height: 56px; margin: 0; padding: 10px 16px;
+  border: 1px solid color-mix(in srgb, var(--brand) 22%, transparent); border-radius: 16px;
+  background: color-mix(in srgb, var(--brand) 6%, transparent); color: var(--muted);
+  font: inherit; font-size: 14px; text-align: start; cursor: pointer;
+  transition: background .2s ease, border-radius .25s ease, transform .12s ease;
+}
+.replie-bouton:hover { background: color-mix(in srgb, var(--brand) 11%, transparent); }
+.replie-bouton:active { transform: scale(.985); }
+.replie-bouton:focus-visible, .replie-bas:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+.replie-icone {
+  flex: none; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%;
+  background: color-mix(in srgb, var(--brand) 14%, transparent); color: var(--brand);
+  transition: transform .3s cubic-bezier(.2,.7,.2,1);
+}
+.replie-icone svg { width: 20px; height: 20px; }
+.replie-bouton .replie-icone { transform: rotate(-90deg); }
+:root[dir="rtl"] .replie-bouton .replie-icone { transform: rotate(90deg); }
+.replie-bouton[aria-expanded="true"] .replie-icone, :root[dir="rtl"] .replie-bouton[aria-expanded="true"] .replie-icone { transform: none; }
+.replie-texte { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.replie-nom { color: var(--ink); font-size: 15px; font-weight: 600; }
+.replie-etat { font-size: 12.5px; }
+.ajout.ouvert .replie-bouton { border-end-start-radius: 0; border-end-end-radius: 0; border-bottom-color: transparent; background: color-mix(in srgb, var(--brand) 12%, transparent); }
+.ajout-corps {
+  overflow: clip; padding: 8px 12px 0; border: 1px solid color-mix(in srgb, var(--brand) 22%, transparent); border-top: 0;
+  border-radius: 0 0 16px 16px; background: color-mix(in srgb, var(--brand) 4%, transparent);
+}
+.replie-bas {
+  display: flex; align-items: center; justify-content: center; gap: 6px; width: 100%; min-height: 48px; margin: 4px 0 0; padding: 8px;
+  border: 0; border-top: 1px dashed color-mix(in srgb, var(--brand) 25%, transparent); background: none;
+  color: var(--brand); font: inherit; font-size: 14px; font-weight: 600; cursor: pointer;
+}
+.replie-bas .replie-icone { width: 24px; height: 24px; background: none; transform: rotate(180deg); }
+.ajout-corps .hors-jour { opacity: .9; }
+.hors-jour { opacity: .55; }
+@media (prefers-reduced-motion: reduce) {
+  .ajout.du-jour { animation: none; }
+  .replie-bouton, .replie-icone { transition: none; }
+}
+.seul-carte { margin: 8px 0 16px; padding: 14px 16px; border-radius: 16px; border: 1px solid color-mix(in srgb, var(--brand) 22%, transparent);
+  background: color-mix(in srgb, var(--brand) 6%, transparent); }
+.seul-etiquette { display: inline-block; margin: 0 0 6px; padding: 2px 10px; border-radius: 999px; font-size: 12px; font-weight: 600;
+  background: color-mix(in srgb, var(--brand) 14%, transparent); color: var(--brand); }
+.seul-consigne { margin: 0 0 6px; color: var(--muted); font-size: calc(13px * var(--echelle, 1)); line-height: 1.6; }
+.seul-texte { margin: 0; font-family: var(--police-texte); font-size: calc(19px * var(--echelle, 1)); line-height: 1.75; color: var(--ink); }
+.ecran.lu.nuit .seul-carte { border-color: color-mix(in srgb, var(--lecture-nuit-titre, #D6C28C) 30%, transparent); background: color-mix(in srgb, var(--lecture-nuit-titre, #D6C28C) 6%, transparent); }
+.ecran.lu.nuit .seul-etiquette { color: var(--lecture-nuit-titre, #D6C28C); background: color-mix(in srgb, var(--lecture-nuit-titre, #D6C28C) 15%, transparent); }
+.ecran.lu.nuit .seul-consigne { color: var(--lecture-nuit-discret, #A3A8A5); }
+.ecran.lu.nuit .seul-texte { color: var(--lecture-nuit-texte, #F2F0EA); }
+.indice-jour {
+  display: inline-block; margin: -0px 0 8px; padding: 4px 12px; border-radius: 999px;
+  background: color-mix(in srgb, var(--brand) 14%, transparent); color: var(--brand); font-size: 12px;
+}
+.ecran.lu.nuit .ajout.du-jour { border-inline-start-color: var(--lecture-nuit-titre, #D6C28C); background: color-mix(in srgb, var(--lecture-nuit-titre, #D6C28C) 10%, transparent); }
+.ecran.lu.nuit .ajout-etiquette, .ecran.lu.nuit .replie-icone, .ecran.lu.nuit .replie-bas { color: var(--lecture-nuit-titre, #D6C28C); }
+.ecran.lu.nuit .ajout-pastille { background: var(--lecture-nuit-titre, #D6C28C); color: var(--lecture-nuit-fond, #000); }
+.ecran.lu.nuit .replie-bouton { color: var(--lecture-nuit-discret, #A3A8A5); border-color: color-mix(in srgb, var(--lecture-nuit-titre, #D6C28C) 30%, transparent); background: color-mix(in srgb, var(--lecture-nuit-titre, #D6C28C) 7%, transparent); }
+.ecran.lu.nuit .ajout.ouvert .replie-bouton { background: color-mix(in srgb, var(--lecture-nuit-titre, #D6C28C) 13%, transparent); border-bottom-color: transparent; }
+.ecran.lu.nuit .replie-icone { background: color-mix(in srgb, var(--lecture-nuit-titre, #D6C28C) 15%, transparent); }
+.ecran.lu.nuit .replie-bas .replie-icone { background: none; }
+.ecran.lu.nuit .ajout-corps { border-color: color-mix(in srgb, var(--lecture-nuit-titre, #D6C28C) 30%, transparent); background: color-mix(in srgb, var(--lecture-nuit-titre, #D6C28C) 4%, transparent); }
+.ecran.lu.nuit .replie-bas { border-top-color: color-mix(in srgb, var(--lecture-nuit-titre, #D6C28C) 30%, transparent); }
+.ecran.lu.nuit .replie-nom { color: var(--lecture-nuit-texte, #F2F0EA); }
+.renvoi-jour { display: block; width: 100%; margin: 4px 0 16px; padding: 12px 12px; border: 0; border-radius: 12px; text-align: start; cursor: pointer;
+  font: inherit; font-family: var(--police-texte); font-size: calc(16px * var(--echelle, 1)); font-weight: 700;
+  color: var(--brand); background: color-mix(in srgb, var(--brand) 11%, transparent); }
+.ecran.lu.nuit .renvoi-jour { color: var(--lecture-nuit-titre, #D6C28C); background: color-mix(in srgb, var(--lecture-nuit-titre, #D6C28C) 15%, transparent); }
+.ecran.lu.nuit .indice-jour { color: var(--lecture-nuit-titre, #D6C28C); background: color-mix(in srgb, var(--lecture-nuit-titre, #D6C28C) 15%, transparent); }
+.ecran.lu.nuit { background: var(--lecture-nuit-fond, #000); color: var(--lecture-nuit-texte, #F2F0EA); }
+.ecran.lu.nuit .barre h1 { color: var(--lecture-nuit-texte, #F2F0EA); }
+.ecran.lu.nuit .lecture .verset, .ecran.lu.nuit .siddour .priere { color: var(--lecture-nuit-texte, #F2F0EA); }
+.ecran.lu.nuit .lecture .psaume-titre { color: var(--lecture-nuit-titre, #D6C28C); }
+.ecran.lu.nuit .siddour .consigne, .ecran.lu.nuit .indice, .ecran.lu.nuit .lecture .verset .num, .ecran.lu.nuit .lecture .arret { color: var(--lecture-nuit-discret, #A3A8A5); }
+.ecran.lu.nuit .lecture-nav { background: var(--lecture-nuit-fond, #000); }
+.ecran.lu.nuit .lecture-nav .secondaire { background: none; border-color: color-mix(in srgb, var(--lecture-nuit-texte, #F2F0EA) 25%, transparent); }
+/* Sur le noir, la couleur de l'utilisateur s'éclaircit pour rester lisible. */
+.ecran.lu.nuit .retour, .ecran.lu.nuit .lecture-nav .secondaire { color: color-mix(in srgb, var(--brand) 55%, var(--lecture-nuit-texte, #F2F0EA)); }
+.ecran.lu.nuit .carte-texte { background: none; border-color: color-mix(in srgb, var(--lecture-nuit-texte, #F2F0EA) 18%, transparent); }
+
+/* --- Zmanim et calendrier (10/10) --------------------------------------------- */
+.carte-jour { padding: 16px; }
+.jour-hebreu { margin: 0; font-family: var(--police-texte); font-size: 26px; font-weight: 700; color: var(--brand); text-align: start; }
+.jour-civil { margin: 0px 0 0; color: var(--muted); font-size: 14px; }
+.jour-marques { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 8px; }
+.jour-marques .marque { padding: 4px 8px; border-radius: 999px; background: color-mix(in srgb, var(--brand) 12%, transparent); color: color-mix(in srgb, var(--brand) 75%, var(--ink)); font-size: 13px; }
+.jour-sous-titre { margin: 12px 0 0px; font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+.jour-ajouts { margin: 0; color: var(--ink); font-size: 15px; line-height: 1.5; }
+.bouton-calendrier { margin: 12px 0; }
+/* Écran Zmanim (14/10) : trois boutons sous le jour, puis les horaires ; Levana, hilloula, halakha après. */
+.boutons-jour { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: 12px 0; }
+.boutons-jour .secondaire { width: 100%; min-width: 0; padding: 12px 4px; font-size: 14px; white-space: normal; line-height: 1.2; }
+.carte-sous-horaires { margin-top: 12px; }
+.carte-sous-horaires > .levana, .carte-sous-horaires > .jour-sous-titre:first-child { margin-top: 0; }
+/* Le livre de la halakha (14/10) : trois puces, une cochée. */
+.puces-choix { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 8px; }
+.puce-choix { border: 1px solid var(--line); background: transparent; border-radius: 999px; padding: 8px 12px; color: var(--ink); cursor: pointer; }
+.puce-choix[aria-checked="true"] { background: var(--brand); border-color: var(--brand); color: var(--on-brand, #fff); font-weight: 600; }
+.carte-zmanim { padding: 4px 16px; }
+.zman { padding: 8px 0; border-bottom: 1px solid var(--line); }
+.zman:last-child { border-bottom: 0; }
+.zman-tete { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.zman-nom { color: var(--ink); font-size: 15px; }
+.zman-heure { color: var(--ink); font-size: 17px; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.zman-methode { margin-top: 0px; color: var(--muted); font-size: 12px; }
+.zman-chabbat .zman-nom, .zman-chabbat .zman-heure { color: var(--brand); }
+.carte-calendrier { padding: 12px; }
+.mois-tete { display: flex; align-items: center; gap: 8px; }
+.mois-titres { flex: 1; text-align: center; }
+.vue-calendrier { display: flex; gap: 4px; margin: 0 auto 10px; padding: 4px; width: fit-content; border-radius: 999px; background: color-mix(in srgb, var(--brand) 9%, transparent); }
+.vue-calendrier button { min-height: 44px; padding: 4px 16px; border: 0; border-radius: 999px; background: none; color: var(--brand); font-size: 14px; cursor: pointer; }
+.vue-calendrier button.actif { background: var(--brand); color: var(--on-brand); font-weight: 600; }
+.mois-principal { margin: 0; font-weight: 700; font-size: 17px; text-transform: capitalize; }
+.mois-second { margin: 0px 0 0; color: var(--brand); font-size: 14px; }
+.mois-hebreu { font-family: var(--police-texte); text-align: center; }
+.mois-principal.mois-hebreu { font-size: 20px; color: var(--ink); }
+.mois-second.mois-hebreu { font-size: 15px; }
+.mois-tete .icone-bouton { width: 40px; height: 40px; border: 0; border-radius: 999px; background: none; color: var(--brand); font-size: 26px; line-height: 1; cursor: pointer; }
+.grille-jours { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; margin-top: 8px; }
+.jour-initiale { text-align: center; color: var(--muted); font-size: 12px; padding-bottom: 0px; }
+.case { display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 0; aspect-ratio: 1 / 1.1;
+  margin: 0; padding: 0px 0; border: 0; border-radius: 8px; background: none; color: var(--ink); cursor: pointer; }
+.case.vide { cursor: default; }
+.case-haut { font-size: 15px; font-variant-numeric: tabular-nums; }
+.case-haut.case-hebreu { font-size: 17px; }
+.case-bas { font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.case-hebreu { font-family: var(--police-texte); }
+.case.chome { background: color-mix(in srgb, var(--brand) 9%, transparent); }
+.case.fete .case-haut::after { content: ""; display: block; width: 5px; height: 5px; margin: 1px auto 0; border-radius: 50%; background: var(--brand); }
+.case.aujourdhui .case-haut { font-weight: 700; color: var(--brand); }
+.case.choisi { outline: 2px solid var(--brand); outline-offset: -2px; }
+.lien-aujourdhui { display: block; margin: 10px auto 0; min-height: 44px; padding: 4px 12px; border: 0; background: none; color: var(--brand); font-weight: 600; cursor: pointer; }
+
+/* La carte du jour (11/10) : l'illustration de fête, la hilloula, les liens. */
+.jour-illustration { display: block; height: 150px; max-width: 100%; margin: 0 auto 10px; object-fit: contain; border-radius: 12px; }
+.jour-hilloula { margin: 0px 0 0; font-size: 15px; }
+.jour-lien { display: inline-block; margin-top: 4px; padding: 8px 0; color: var(--brand); font-weight: 700; text-decoration: none; }
+
+/* Les paliers d'objectifs (11/10). */
+.ligne-paliers { display: block; width: 100%; margin: 4px 0 0; padding: 4px 8px; background: none; border: 0; color: var(--brand); font: inherit; font-size: 15px; font-weight: 700; text-align: center; cursor: pointer; }
+.carte-palier .palier-nom { margin: 0; color: var(--muted); font-size: 14px; font-weight: 700; }
+.carte-palier .palier-valeur { margin: 0px 0 0; font-size: 26px; font-weight: 800; }
+.palier-barre { height: 10px; margin-top: 8px; border-radius: 999px; background: color-mix(in srgb, var(--brand) 19%, transparent); overflow: hidden; }
+.palier-barre > span { display: block; height: 100%; border-radius: 999px; background: var(--brand); }
+.palier-prochain { margin: 8px 0 0; color: var(--brand); font-weight: 700; }
+.palier-atteints { margin: 8px 0 0; color: var(--muted); font-size: 13px; }
+.palier-pastilles { display: flex; gap: 4px; margin-top: 4px; overflow-x: auto; }
+.palier-pastille { flex: none; padding: 4px 12px; border-radius: 999px; background: var(--brand); color: var(--on-brand); font-size: 13px; font-weight: 700; }
+.palier-record { margin: 4px 0 0; }
+
+/* L'écran des hilloulot (11/10). */
+.jour-hilloula { margin: 0px 0 0; font-size: 14px; line-height: 1.55; }
+.jour-hilloula-reste { display: block; color: var(--muted); font-size: 12px; }
+.lien-bouton { background: none; border: 0; font: inherit; font-weight: 700; cursor: pointer; padding-inline: 0; }
+.champ-recherche { width: 100%; box-sizing: border-box; margin-top: 8px; padding: 8px 12px; border: 1px solid var(--line, #ccd); border-radius: 12px; font: inherit; background: transparent; color: inherit; }
+/* Hilloulot en plus petit (14/10). */
+.carte-hilloula .hilloula-nom { margin: 0; font-family: var(--police-texte); font-size: calc(18px * var(--echelle-texte, 1)); font-weight: 700; }
+.carte-hilloula .hilloula-traduit { margin: 0px 0 0; color: var(--muted); font-size: 13px; }
+.carte-hilloula .hilloula-annee { margin: 4px 0 0; color: var(--muted); font-size: 12px; }
+.carte-hilloula .hilloula-description { margin: 8px 0 0; white-space: pre-line; font-family: var(--police-texte); font-size: calc(14px * var(--echelle-texte, 1)); line-height: 1.7; }
+.carte-hilloula .hilloula-description.replie { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 8; line-clamp: 8; overflow: hidden; }
+.carte-hilloula .hilloula-plus { display: block; margin: 4px 0 0; font-weight: 700; }
+.carte-hilloula .hilloula-source { display: flex; align-items: center; min-height: 44px; margin: 0; color: var(--brand); font-size: 12px; text-decoration: none; }
+
+/* La halakha du jour (Ben Ish 'Haï, 11/10) */
+.jour-halakha { margin: 0px 0 0; font-size: 16px; line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+.carte-hilloula .halakha-source { margin: 0; font-family: var(--police-texte); font-size: calc(13px * var(--echelle-texte, 1)); font-weight: 700; color: var(--brand); }
+.carte-hilloula .halakha-texte { margin: 8px 0 0; font-family: var(--police-texte); font-size: calc(18px * var(--echelle-texte, 1)); line-height: 1.85; white-space: pre-line; }
+.note-halakha { margin: 12px 4px 0; font-size: 12px; color: var(--muted); text-align: center; }
+
+/* Les trophées et les confettis (11/10) */
+.bouton-trophees { display: block; width: 100%; margin: 16px 0 4px; padding: 12px 16px; border: 1.5px solid var(--brand); border-radius: 999px; background: transparent; color: var(--brand); font: inherit; font-weight: 700; cursor: pointer; }
+.trophees-tete { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+.trophees-compte { margin: 0; color: var(--brand); font-weight: 700; font-size: 14px; }
+.trophees-grille { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px 8px; margin-top: 12px; }
+/* Les médailles (12/10) : bronze, argent, or ; gagnées en couleur, à gagner en gris avec leur progression. */
+.trophee { --clair: #F0B986; --fonce: #9C5A2B; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 4px; min-width: 0; }
+.trophee.argent { --clair: #EEF1F4; --fonce: #8C96A0; }
+.trophee.or { --clair: #F6D86B; --fonce: #B8860B; }
+.trophee.platine { --clair: #F4F7FF; --fonce: #6F86A8; }
+.trophee-niveau { font-size: 11px; font-weight: 700; color: var(--brand); }
+/* Médaille en relief (12/10) : une tranche biseautée (dégradé conique), une face bombée (dégradé radial
+   éclairé en haut à gauche), un reflet, une ombre portée ; un léger basculement au toucher. */
+.trophee { perspective: 400px; }
+.trophee-icone { position: relative; display: grid; place-items: center; width: 66px; height: 66px; border-radius: 50%; font-size: 30px; font-weight: 700;
+  color: #8A8F94; filter: grayscale(1); opacity: .6;
+  background: radial-gradient(circle at 35% 30%, #FAFAFA 0, #D9DCDF 45%, #B9BDC1 100%);
+  box-shadow: inset 0 0 0 4px #C9CDD1, inset 0 0 0 6px #A9AEB3, inset 2px 3px 4px rgba(255,255,255,.7), inset -3px -4px 6px rgba(0,0,0,.18), 0 3px 6px rgba(0,0,0,.18);
+  transition: transform .5s ease-out; }
+.trophee-icone::after { content: ""; position: absolute; inset: 6px; border-radius: 50%; pointer-events: none;
+  background: linear-gradient(140deg, rgba(255,255,255,.55) 0, rgba(255,255,255,0) 42%); }
+.trophee.gagne .trophee-icone { opacity: 1; filter: none; color: var(--fonce); text-shadow: 0 1px 0 rgba(255,255,255,.6), 0 -1px 0 rgba(0,0,0,.25);
+  background: radial-gradient(circle at 35% 30%, #FFFFFF 0, var(--clair) 38%, var(--fonce) 100%);
+  box-shadow: inset 0 0 0 4px var(--clair), inset 0 0 0 6px var(--fonce), inset 3px 4px 5px rgba(255,255,255,.75), inset -4px -5px 8px rgba(0,0,0,.28),
+    0 6px 10px color-mix(in srgb, var(--fonce) 45%, transparent), 0 2px 3px rgba(0,0,0,.25); }
+.trophee.gagne:active .trophee-icone, .trophee.gagne:hover .trophee-icone { transform: rotateY(-18deg) rotateX(8deg); }
+@media (prefers-reduced-motion: reduce) { .trophee-icone { transition: none; } .trophee.gagne:active .trophee-icone, .trophee.gagne:hover .trophee-icone { transform: none; } }
+.trophee-nom { font-size: 13px; font-weight: 700; color: var(--muted); }
+.trophee.gagne .trophee-nom { color: var(--ink); }
+.trophee-desc { font-size: 11px; color: var(--muted); }
+.trophee-progres { font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.trophee-barre { width: 100%; height: 8px; margin-top: 8px; border-radius: 999px; background: color-mix(in srgb, var(--muted) 30%, transparent); overflow: hidden; }
+.trophee-barre.petite { width: 70%; height: 4px; margin-top: 4px; }
+.trophee-barre span { display: block; height: 100%; border-radius: inherit; background: var(--brand); }
+.paliers-titre { margin: 24px 0 0; text-align: center; font-size: 20px; }
+.paliers-sous-titre { margin: 4px 0 0; text-align: center; color: var(--muted); }
+.confettis { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1000; }
+
+/* Réinitialiser l'application (12/10) ; partager une séance. */
+.carte-reinit h3 { margin: 0 0 4px; font-size: 16px; }
+.bouton-danger { width: 100%; margin-top: 8px; padding: 12px; border-radius: 12px; border: 1px solid currentColor; background: transparent; color: #B3261E; font: inherit; font-weight: 700; cursor: pointer; }
+@media (prefers-color-scheme: dark) { :root[data-mode="auto"] .bouton-danger { color: #F2B8B5; } }
+:root[data-mode="sombre"] .bouton-danger { color: #F2B8B5; }
+.bravo-partage { display: block; margin: 12px auto 0; color: var(--brand); font-size: 16px; }
+
+/* Trophées attrayants (12/10) : la scène avec l'avatar, le ruban, l'épaisseur de la pièce, l'éclat qui passe. */
+.trophees-scene { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); align-items: end; gap: 8px;
+  margin: 12px 0 12px; padding: 12px 8px 8px; border-radius: 20px; overflow: hidden;
+  background: radial-gradient(ellipse at 65% 20%, color-mix(in srgb, var(--brand) 22%, transparent), transparent 65%),
+              linear-gradient(180deg, color-mix(in srgb, var(--brand) 10%, transparent), color-mix(in srgb, var(--brand) 3%, transparent)); }
+.trophees-scene.or { background: radial-gradient(ellipse at 65% 20%, rgba(246,216,107,.45), transparent 65%), linear-gradient(180deg, rgba(246,216,107,.18), transparent); }
+.trophees-scene.platine { background: radial-gradient(ellipse at 65% 20%, rgba(170,200,255,.5), transparent 65%), linear-gradient(180deg, rgba(170,200,255,.2), transparent); }
+.scene-avatar { width: 100%; max-height: 190px; object-fit: contain; object-position: bottom; filter: drop-shadow(0 6px 6px rgba(0,0,0,.18)); }
+.scene-podium { display: flex; flex-direction: column; align-items: center; text-align: center; min-width: 0; }
+.trophee.vedette { perspective: 500px; }
+.trophee.vedette .trophee-icone { width: 104px; height: 104px; font-size: 48px; animation: tourne 8s ease-in-out infinite; }
+@keyframes tourne { 0%, 100% { transform: rotateY(-22deg) rotateX(6deg); } 50% { transform: rotateY(22deg) rotateX(6deg); } }
+.piedestal { width: 120px; height: 22px; margin-top: 8px; border-radius: 8px 6px 3px 3px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--ink) 10%, var(--paper, #fff)), color-mix(in srgb, var(--ink) 28%, var(--paper, #fff)));
+  box-shadow: 0 10px 14px -6px rgba(0,0,0,.35), inset 0 2px 0 rgba(255,255,255,.5); clip-path: polygon(8% 0, 92% 0, 100% 100%, 0 100%); }
+.scene-titre { margin: 8px 0 0; font-size: 12px; color: var(--muted); }
+.scene-nom { margin: 0px 0 0; font-size: 14px; font-weight: 700; color: var(--ink); }
+/* L'épaisseur de la pièce, sous sa face. */
+.trophee.gagne .trophee-icone { box-shadow: inset 0 0 0 4px var(--clair), inset 0 0 0 6px var(--fonce), inset 3px 4px 5px rgba(255,255,255,.75), inset -4px -5px 8px rgba(0,0,0,.28),
+  0 4px 0 color-mix(in srgb, var(--fonce) 80%, #000), 0 9px 12px color-mix(in srgb, var(--fonce) 45%, transparent); }
+.trophee.platine.gagne .trophee-icone { box-shadow: inset 0 0 0 4px var(--clair), inset 0 0 0 6px var(--fonce), inset 3px 4px 5px rgba(255,255,255,.8), inset -4px -5px 8px rgba(0,0,0,.25),
+  0 4px 0 color-mix(in srgb, var(--fonce) 80%, #000), 0 0 18px rgba(150,190,255,.75); }
+/* Le ruban, deux pans au-dessus de la médaille. */
+.trophee { position: relative; }
+.ruban { display: block; width: 34px; height: 22px; margin-bottom: -8px; z-index: 0;
+  background: linear-gradient(90deg, var(--fonce) 0 48%, var(--clair) 48% 52%, var(--fonce) 52%); clip-path: polygon(0 0, 100% 0, 78% 100%, 50% 70%, 22% 100%); }
+.trophee.vedette .ruban { width: 46px; height: 30px; margin-bottom: -8px; }
+.trophee-icone { overflow: hidden; z-index: 1; }
+/* L'éclat qui traverse la face, de temps en temps. */
+.eclat { position: absolute; inset: 0; border-radius: 50%; pointer-events: none;
+  background: linear-gradient(105deg, transparent 35%, rgba(255,255,255,.65) 50%, transparent 65%) no-repeat; background-size: 250% 100%; background-position: 150% 0;
+  animation: eclat 6s ease-out infinite; }
+@keyframes eclat { 0%, 70% { background-position: 150% 0; } 100% { background-position: -60% 0; } }
+@media (prefers-reduced-motion: reduce) { .trophee.vedette .trophee-icone, .eclat { animation: none; } }
+
+/* Pas que des pièces (12/10) : la coupe, l'écusson, la gemme. La forme découpe l'objet ; son ombre et son
+   épaisseur passent par un filtre sur l'enveloppe, qu'une découpe n'efface pas. */
+.objet { display: inline-block; perspective: 500px; }
+.trophee.coupe .trophee-icone, .trophee.ecusson .trophee-icone, .trophee.gemme .trophee-icone { border-radius: 0; box-shadow: none; }
+.trophee.coupe .trophee-icone { clip-path: polygon(4% 4%, 96% 4%, 90% 38%, 70% 58%, 58% 64%, 58% 78%, 76% 84%, 76% 98%, 24% 98%, 24% 84%, 42% 78%, 42% 64%, 30% 58%, 10% 38%);
+  padding-bottom: 30%; box-sizing: border-box; font-size: 26px; }
+.trophee.ecusson .trophee-icone { clip-path: polygon(50% 2%, 96% 14%, 94% 58%, 50% 98%, 6% 58%, 4% 14%); }
+.trophee.gemme .trophee-icone { clip-path: polygon(26% 4%, 74% 4%, 98% 50%, 74% 96%, 26% 96%, 2% 50%); }
+.trophee.coupe.gagne .objet, .trophee.ecusson.gagne .objet, .trophee.gemme.gagne .objet {
+  filter: drop-shadow(0 3px 0 color-mix(in srgb, var(--fonce) 80%, #000)) drop-shadow(0 6px 6px color-mix(in srgb, var(--fonce) 45%, transparent)); }
+.trophee.platine.gagne .objet { filter: drop-shadow(0 3px 0 #4C5F7C) drop-shadow(0 0 10px rgba(150,190,255,.8)); }
+.trophee.coupe:not(.gagne) .objet, .trophee.ecusson:not(.gagne) .objet, .trophee.gemme:not(.gagne) .objet { filter: drop-shadow(0 2px 0 rgba(0,0,0,.15)); }
+/* La gemme : des facettes. */
+.trophee.gemme.gagne .trophee-icone { background: conic-gradient(from 30deg, var(--clair), var(--fonce), var(--clair), var(--fonce), var(--clair), var(--fonce), var(--clair)); }
+/* L'écusson : un bandeau en travers. */
+.trophee.ecusson.gagne .trophee-icone { background: radial-gradient(circle at 35% 25%, #fff 0, var(--clair) 35%, var(--fonce) 100%); }
+.trophee.coupe.gagne .trophee-icone { background: linear-gradient(90deg, var(--fonce) 0, var(--clair) 35%, #fff 45%, var(--clair) 60%, var(--fonce) 100%); }
+
+/* L'étagère des trophées (12/10, d'après les planches envoyées) : des objets variés posés sur des socles à plaque,
+   une bulle au-dessus, une planche de verre dessous. */
+.etagere { margin-top: 16px; }
+.etagere-objets, .etagere-details { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.etagere-objets { align-items: end; }
+.etagere .trophee { opacity: 1; gap: 0px; }
+.etagere .trophee:not(.gagne) .objet { opacity: .55; filter: grayscale(1); }
+.objet { position: relative; display: grid; place-items: center; }
+.objet-svg { display: block; overflow: visible; filter: drop-shadow(0 4px 4px rgba(0,0,0,.22)); }
+.objet.gagne .objet-svg { filter: drop-shadow(0 5px 6px rgba(0,0,0,.28)); }
+.trophee.platine .objet-svg, .objet.vedette.gagne .objet-svg { filter: drop-shadow(0 0 10px rgba(150,190,255,.6)) drop-shadow(0 5px 6px rgba(0,0,0,.25)); }
+.objet .eclat { inset: 10% 14%; border-radius: 30%; mix-blend-mode: screen; }
+.bulle { position: relative; display: inline-block; max-width: 100%; margin-bottom: 4px; padding: 4px 8px; border-radius: 999px; font-size: 11px; font-weight: 700;
+  color: #4A3410; background: linear-gradient(180deg, #FFF3C4, #F2D477); box-shadow: 0 2px 4px rgba(0,0,0,.15); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.bulle::after { content: ""; position: absolute; left: 50%; bottom: -5px; width: 10px; height: 10px; margin-left: -4px; transform: rotate(45deg); background: #F2D477; z-index: -1; }
+.bulle.argent { color: #33404C; background: linear-gradient(180deg, #FFFFFF, #D9E0E6); } .bulle.argent::after { background: #D9E0E6; }
+.bulle.bronze { color: #4A2810; background: linear-gradient(180deg, #FFE2C8, #E8A874); } .bulle.bronze::after { background: #E8A874; }
+.bulle.platine { color: #22324C; background: linear-gradient(180deg, #FFFFFF, #CFDBF2); } .bulle.platine::after { background: #CFDBF2; }
+.bulle.aucun { color: var(--muted); background: color-mix(in srgb, var(--muted) 18%, var(--paper, #fff)); box-shadow: none; } .bulle.aucun::after { background: color-mix(in srgb, var(--muted) 18%, var(--paper, #fff)); }
+.trophee-socle { position: relative; width: 84%; margin-top: -0px; padding: 4px 4px 8px; border-radius: 8px 6px 3px 3px; text-align: center;
+  background: linear-gradient(180deg, #6B4A2E, #3E2915); box-shadow: inset 0 2px 0 rgba(255,255,255,.18), 0 4px 6px rgba(0,0,0,.25); }
+.trophee-socle.argent, .trophee-socle.platine { background: linear-gradient(180deg, #59626C, #2E343A); }
+.trophee-socle.aucun { background: linear-gradient(180deg, #A9ADB1, #80858A); }
+.trophee-socle.grand { width: 120px; }
+.socle-plaque { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding: 0px 4px; border-radius: 8px; font-size: 10px; font-weight: 700; color: #3A2A08;
+  background: linear-gradient(180deg, #FFE9A3, #D9AE3A); box-shadow: inset 0 1px 0 rgba(255,255,255,.6); }
+.trophee-socle.argent .socle-plaque, .trophee-socle.platine .socle-plaque { color: #232A31; background: linear-gradient(180deg, #F4F6F8, #B9C1C9); }
+.trophee-socle.aucun .socle-plaque { color: #4E5357; background: linear-gradient(180deg, #E6E8EA, #C4C8CB); }
+.planche { height: 4px; opacity: .45; /* fine : épaisse, elle se lisait comme une barre (15/10) */ margin: 0 -4px; border-radius: 8px; background: linear-gradient(180deg, rgba(255,255,255,.95), rgba(220,230,240,.75));
+  box-shadow: 0 8px 14px -6px rgba(0,0,0,.25), inset 0 1px 0 #fff, inset 0 -2px 0 rgba(150,170,190,.35); }
+.etagere-details { margin-top: 8px; }
+.trophee-details { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 4px; min-width: 0; }
+.trophees-scene .bulle { font-size: 12px; }
+.trophees-scene .objet-svg { animation: flotte 6s ease-in-out infinite; }
+@keyframes flotte { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-5px) rotate(2deg); } }
+@media (prefers-reduced-motion: reduce) { .trophees-scene .objet-svg { animation: none; } }
+
+/* L'écran d'ouverture (15/10) : le 'hassid debout devant le היכל הציון, une seconde et demie.
+   Le fond (la photo sur un vert sombre uni) est centré : l'inscription reste entière. */
+#ouverture { position: fixed; inset: 0; z-index: 1000; background: #1E3A30; overflow: hidden; transition: opacity 350ms ease-out; }
+#ouverture .fond { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
+#ouverture::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 55%, rgba(16, 40, 32, 0.6)); }
+#ouverture .hassid { position: absolute; z-index: 1; left: 0; bottom: 3vh; height: 50vh; width: auto; max-width: 70vw; object-fit: contain; object-position: left bottom; }
+#ouverture.fin { opacity: 0; pointer-events: none; }
+@media (prefers-reduced-motion: reduce) { #ouverture { transition: none; } }
+
+/* La banderole qui s'efface au défilement (13/10). */
+.bandeau { max-height: 320px; overflow: hidden; transition: opacity 220ms ease-out, max-height 260ms ease-out, padding 260ms ease-out; }
+.bandeau-cache .bandeau { opacity: 0; max-height: 0; padding-top: 0; padding-bottom: 0; pointer-events: none; }
+@media (prefers-reduced-motion: reduce) { .bandeau { transition: none; } }
+
+/* Birkat haLevana sur la carte du jour (Levana.kt, 13/10) : un fil, la fenêtre en or, le soir en point. */
+.levana { margin-top: 12px; }
+/* Birkat haLevana (14/10) : la lune de ce soir à côté de l'état. La lune garde ses couleurs dans les deux thèmes. */
+.levana-tete { display: flex; align-items: center; gap: 12px; }
+.levana-corps { min-width: 0; flex: 1; }
+.levana-tete .jour-sous-titre { margin: 0; }
+.levana-etat { margin: 0px 0 0; font-size: 17px; font-weight: 700; color: var(--ink); }
+.levana-etat.ouvert { color: var(--brand); }
+.levana-lune { margin: 0px 0 0; font-size: 13px; color: var(--muted); }
+.levana-conseil { margin: 4px 0 0; font-size: 13px; color: var(--brand); }
+.lune { width: 56px; height: 56px; flex: none; }
+.lune-ombre { fill: #3a3f4a; }
+.lune-clair { fill: #f4efd8; }
+.lune-mer { fill: rgba(107, 100, 80, .18); }
+.lune-bord { fill: none; stroke: rgba(255, 255, 255, .2); stroke-width: 1; }
+.levana-fenetre { margin: 8px 0 0; font-size: 14px; color: var(--ink); }
+.levana-jauge { position: relative; height: 18px; margin: 8px 8px 0; }
+.levana-fil { position: absolute; inset-inline: 0; top: 7.5px; height: 3px; border-radius: 8px; background: var(--line); }
+.levana-or { position: absolute; top: 6px; height: 6px; border-radius: 8px; background: var(--ring-streak, #B8780F); }
+.levana-point { position: absolute; top: 2px; width: 14px; height: 14px; margin-inline-start: -8px; border-radius: 50%; background: var(--brand); box-shadow: 0 0 0 2px var(--card); }
+.levana-source { margin: 4px 0 0; font-size: 11px; color: var(--muted); }
+
+/* Le choix de la police (14/10) : le nom, puis un verset vocalisé dans la police même. */
+.choix-police-corps { display: flex; flex-direction: column; align-items: flex-start; gap: 0px; min-width: 0; }
+.choix-police-exemple { font-size: 20px; line-height: 1.5; color: var(--ink); }
+
+/* L'accueil selon l'heure (14/10). */
+.accueil-moment { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+
+/* Recherche, favoris (14/10). */
+.bouton-recherche { margin: 4px 0 12px; text-align: start; font-weight: 400; color: var(--muted); }
+.resultat-recherche { display: flex; flex-direction: column; gap: 4px; width: 100%; min-height: 44px; text-align: start; border: 0; cursor: pointer; margin-top: 8px; }
+.resultat-titre { font-size: 17px; font-weight: 700; color: var(--ink); font-family: var(--police-texte); }
+.resultat-extrait { font-size: 13px; color: var(--muted); display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden; }
+.barre .favori { margin-inline-start: auto; background: none; border: 0; font-size: 24px; color: inherit; cursor: pointer; padding: 4px 8px; }
+
+/* Trophées (15/10) : le niveau, en clair ; la plaque du socle sur deux lignes. */
+.trophee-niveau { display: block; font-size: 11px; font-weight: 700; color: var(--ink); }
+.trophees-explication { margin: 4px 0 0; font-size: 13px; color: var(--muted); }
+.socle-plaque { white-space: normal !important; overflow: hidden !important; text-overflow: clip !important; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+
+/* Marque-page (15/10) : un trait de la couleur des titres au début du paragraphe. */
+.lecture .marque-page { position: relative; border-inline-start: 4px solid var(--brand); padding-inline-start: 8px; padding-inline-end: 24px; }
+/* L'icône au bout du paragraphe marqué : ruban en contour (prière), livre ouvert et ruban (étude). */
+.lecture .marque-page::after { content: ''; position: absolute; inset-inline-end: 0; top: .35em; width: 16px; height: 16px; background: var(--brand);
+  -webkit-mask: var(--icone-marque) center / contain no-repeat; mask: var(--icone-marque) center / contain no-repeat;
+  --icone-marque: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6.5 3.5h11v16.6l-5.5-4.1-5.5 4.1z' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E"); }
+.lecture .marque-page.marque-etude::after { --icone-marque: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M2.5 6.5c3-1.3 6.2-1.3 9.5.8v12.2c-3.3-2-6.5-2-9.5-.8z M21.5 6.5c-3-1.3-6.2-1.3-9.5.8v12.2c3.3-2 6.5-2 9.5-.8z' fill='none' stroke='black' stroke-width='1.7' stroke-linejoin='round'/%3E%3Cpath d='M15 6.4h3.4v8.4l-1.7-1.3-1.7 1.3z'/%3E%3C/svg%3E"); }
+.nom-marque { display: inline-flex; align-items: center; gap: 8px; color: var(--ink); }
+.nom-marque .icone-marque { color: var(--brand); flex: none; }
+
+/* Trophées, version simple (15/10) : le prochain, deux onglets, une liste. */
+.trophee-prochain .trophee-ligne { margin-top: 8px; }
+.trophee-ligne { display: flex; align-items: center; gap: 12px; }
+.trophee-liste { display: flex; flex-direction: column; gap: 12px; }
+.trophee-texte { flex: 1; min-width: 0; }
+.trophee-but { margin: 0; font-size: 15px; color: var(--ink); }
+.trophee-but.grand { font-size: 20px; font-weight: 700; }
+.trophee-but.gagne { font-weight: 700; }
+.trophee-compte { margin: 4px 0 0; font-size: 14px; font-weight: 700; color: var(--brand); }
+.trophee-compte.petit { margin-top: 0px; font-size: 12px; font-weight: 400; color: var(--muted); }
+.trophee-objet { flex: none; display: inline-flex; opacity: .45; }
+.trophee-objet.gagne { opacity: 1; }
+.trophee-barre.grande { height: 10px; margin-top: 8px; }
+.trophee-onglets { display: flex; gap: 8px; margin: 16px 0 0; }
+.trophee-onglet { flex: 1; padding: 8px 12px; border-radius: 999px; border: 1px solid var(--brand); background: transparent; color: var(--brand); font: inherit; font-weight: 700; cursor: pointer; }
+.trophee-onglet.choisi { background: var(--brand); color: var(--white); }
+.trophee-coche { color: var(--brand); font-size: 20px; font-weight: 700; }
+
+/* Trophées en ligne (15/10) : le grade, la ligne, « Tu es ici », les bannières de grade. */
+.grade-tete { display: flex; align-items: center; gap: 12px; }
+.grade-nom { margin: 0; font-size: 18px; font-weight: 800; color: var(--ink); }
+.grade-sous { margin: 0px 0 0; font-size: 13px; color: var(--muted); }
+.grade-barre { height: 6px; margin-top: 4px; border-radius: 8px; background: color-mix(in srgb, var(--muted) 25%, transparent); overflow: hidden; }
+.grade-barre span { display: block; height: 100%; background: var(--brand); }
+.grade-barre.bronze span { background: linear-gradient(90deg, #F3C49A, #A0602E); }
+.grade-barre.argent span { background: linear-gradient(90deg, #F4F6F8, #9AA3AC); }
+.grade-barre.or span { background: linear-gradient(90deg, #FFE48A, #C9961A); }
+.grade-barre.platine span { background: linear-gradient(90deg, #F7FAFF, #8CA2C4); }
+.medaille-grade { flex: none; display: inline-flex; }
+.ligne-trophees { display: flex; flex-direction: column; margin: 12px 0; }
+.ligne-etape { display: flex; align-items: center; gap: 12px; }
+.ligne-noeud { position: relative; flex: none; width: 60px; height: 72px; display: flex; align-items: center; justify-content: center; }
+.ligne-noeud svg { position: relative; z-index: 1; }
+.ligne-noeud.avenir svg { opacity: .5; }
+.ligne-trait { position: absolute; inset-block: 0; left: 27px; width: 6px; border-radius: 8px; background: color-mix(in srgb, var(--muted) 30%, transparent); }
+.ligne-noeud.bronze .ligne-trait { background: linear-gradient(#F3C49A, #A0602E); }
+.ligne-noeud.argent .ligne-trait { background: linear-gradient(#F4F6F8, #9AA3AC); }
+.ligne-noeud.or .ligne-trait { background: linear-gradient(#FFE48A, #C9961A); }
+.ligne-noeud.platine .ligne-trait { background: linear-gradient(#F7FAFF, #8CA2C4); }
+.ligne-etape:not(.gagne) .trophee-but { color: var(--muted); }
+.ligne-etape.gagne .trophee-but { font-weight: 700; }
+.ligne-ici { margin: 8px 0; border: 2px solid var(--brand); box-shadow: 0 0 0 6px color-mix(in srgb, var(--brand) 12%, transparent); }
+.ici-tag { margin: 0 0 8px; font-size: 11px; font-weight: 800; letter-spacing: .06em; color: var(--brand); }
+.grade-banniere { display: flex; align-items: center; gap: 8px; margin: 4px 0; padding: 8px 12px; border-radius: 12px; color: #1a1306; }
+.grade-banniere strong { display: block; font-size: 15px; }
+.grade-banniere small { display: block; font-size: 12px; opacity: .75; }
+.grade-banniere.bronze { background: linear-gradient(90deg, #F3C49A, #A0602E); }
+.grade-banniere.argent { background: linear-gradient(90deg, #F4F6F8, #9AA3AC); }
+.grade-banniere.or { background: linear-gradient(90deg, #FFE48A, #C9961A); }
+.grade-banniere.platine { background: linear-gradient(90deg, #F7FAFF, #8CA2C4); }
+.grade-banniere.avenir { background: color-mix(in srgb, var(--muted) 12%, transparent); color: var(--muted); }
+.ligne-fin { text-align: center; margin-top: 12px; }
+.grade-fete { position: fixed; inset: 0; z-index: 50; display: flex; align-items: center; justify-content: center; padding: 24px;
+  background: radial-gradient(circle at 50% 38%, color-mix(in srgb, #f6d86b 25%, var(--paper)), var(--paper) 65%); }
+.grade-fete-carte { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 4px; max-width: 340px; }
+.grade-fete-carte h2 { margin: 12px 0 0; font-size: 26px; color: var(--ink); }
+.grade-fete-carte .principal { margin-top: 16px; }
+
+/* --- Cibles tactiles (audit du 16/10) ------------------------------------------------
+   44 px au moins (Apple ; Android en demande 48 dp). Là où grandir déplacerait la mise
+   en page, une zone invisible élargit la cible sans rien changer à l'œil. */
+.pastille { min-height: 44px; }
+.duree { padding-block: 12px; }
+.secondaire { min-height: 48px; }
+button.corps { min-height: 44px; }
+.puce-bandeau { min-height: 44px; }
+.mois-tete .icone-bouton { width: 44px; height: 44px; }
+.ecouter, .jour-lien, .ligne-paliers, .lien-bouton, .puce-choix, .lecture-pastille, .interrupteur, .lecture-barre .icone-bouton { position: relative; }
+.ecouter::before, .jour-lien::before, .ligne-paliers::before, .lien-bouton::before, .puce-choix::before, .lecture-pastille::before, .lecture-barre .icone-bouton::before {
+  content: ""; position: absolute; inset: -8px 0;
+}
+.interrupteur::before { content: ""; position: absolute; inset: -8px -4px; }
+/* Texte à 200 % (zoom du navigateur, audit du 16/10) : quatre onglets tiennent encore. */
+.onglet { min-width: 0; }
+@media (max-width: 240px) {
+  .onglet .icone { width: 100%; max-width: 56px; }
+  .onglet { font-size: 10px; overflow-wrap: anywhere; }
+}
+.champ-recherche { min-height: 44px; }
+
+/* --- La pratique calme (16/10) ---------------------------------------------------------
+   Après six secondes sans toucher : le reste s'efface, le fond s'assombrit, le minuteur
+   reste avec sa lueur, qui grandit en quatre secondes et décroît en six. */
+.seance { transition: background-color 250ms ease-out; }
+.seance .barre, .seance-titre, .seance .scene, .seance .legende, .seance .chizuk, .seance .texte-clair { transition: opacity 250ms ease-out; }
+.seance.calme { background: color-mix(in srgb, var(--brand-dark) 45%, #000); transition-duration: 900ms; }
+.seance.calme .barre, .seance.calme .seance-titre, .seance.calme .scene, .seance.calme .legende,
+.seance.calme .chizuk, .seance.calme .texte-clair { transition-duration: 900ms; }
+.seance.calme .barre, .seance.calme .seance-titre, .seance.calme .scene, .seance.calme .legende,
+.seance.calme .chizuk, .seance.calme .texte-clair { opacity: 0; pointer-events: none; }
+.decompte-cadre { position: relative; isolation: isolate; }
+.decompte-vide { height: 64px; }
+.souffle {
+  position: absolute; z-index: -1; left: 50%; top: 50%; width: min(84vmin, 380px); aspect-ratio: 1;
+  border-radius: 50%; pointer-events: none; translate: -50% -50%;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--mint) 42%, transparent),
+    color-mix(in srgb, var(--mint) 15%, transparent) 55%, transparent);
+  animation: souffle 10s infinite;
+}
+@keyframes souffle {
+  0% { transform: scale(0.78); opacity: 0.38; animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1); }
+  40% { transform: scale(1); opacity: 1; animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1); }
+  100% { transform: scale(0.78); opacity: 0.38; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .souffle { animation: none; transform: scale(0.9); opacity: 0.7; }
+  .seance, .seance .barre, .seance-titre, .seance .scene, .seance .legende, .seance .chizuk, .seance .texte-clair { transition: none; }
+}
+
+/* --- La présentation du premier lancement (16/10) ------------------------------------- */
+.presentation {
+  position: fixed; inset: 0; z-index: 40; background: var(--paper); overflow-y: auto;
+  padding: max(16px, env(safe-area-inset-top)) 16px max(16px, env(safe-area-inset-bottom));
+}
+.presentation-page { max-width: 520px; min-height: 100%; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+.presentation-etape { align-self: flex-start; padding: 4px 12px; border-radius: 999px; background: var(--mint); color: var(--on-plate); font-size: 12px; }
+.presentation-scene { position: relative; flex: 1; min-height: 160px; max-height: 340px; border-radius: 20px; background: var(--stage-soft); }
+.presentation-scene img { position: absolute; inset: 12px; width: calc(100% - 24px); height: calc(100% - 24px); object-fit: contain; }
+.presentation-titre { margin: 8px 0 0; font-size: 24px; color: var(--ink); text-wrap: balance; }
+.presentation-corps { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.5; }
+.presentation-choix { display: flex; flex-wrap: wrap; gap: 8px; }
+.presentation-choix .puce-choix { min-height: 44px; flex: 1; white-space: nowrap; padding-inline: 8px; }
+.presentation .principal { margin-top: 8px; }
+.presentation-bas { display: flex; justify-content: space-between; }
+.presentation-bas .texte-lien { background: none; border: 0; color: var(--brand); font: inherit; font-weight: 600; min-height: 44px; padding: 0 8px; cursor: pointer; }
+
+/* --- Les trophées, lot du 16/10 -------------------------------------------------------- */
+.grade-tete { display: block; }
+.grade-ligne { display: flex; align-items: center; gap: 12px; }
+.grade-barre span, .trophee-barre span[data-largeur] { width: 0; transition: width 700ms cubic-bezier(.2, .7, .2, 1); }
+.grade-proches { margin-top: 12px; display: flex; flex-direction: column; gap: 0px; }
+.grade-proches-titre { margin: 0 0 4px; font-size: 12px; font-weight: 700; letter-spacing: .04em; color: var(--muted); text-transform: uppercase; }
+.proche { display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 4px 0; background: none; border: 0; font: inherit; color: var(--ink); text-align: start; cursor: pointer; }
+.proche-objet { flex: none; display: inline-flex; opacity: .6; }
+.proche-texte { flex: 1; min-width: 0; font-size: 14px; }
+.proche-compte { flex: none; font-size: 13px; font-weight: 700; color: var(--brand); font-variant-numeric: tabular-nums; }
+.grade-partager { display: block; margin: 10px auto 0; color: var(--brand); }
+.filtre-trophees { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; margin: 12px -16px 0; padding: 4px 16px; }
+.filtre-trophees::-webkit-scrollbar { display: none; }
+.filtre-trophees .puce-choix { flex: none; min-height: 40px; white-space: nowrap; }
+.ligne-etape, .ligne-ici { width: 100%; background: none; border: 0; padding: 0; font: inherit; color: inherit; text-align: start; cursor: pointer; }
+.ligne-ici { display: block; background: var(--card); padding: 12px 16px; border: 2px solid var(--brand); }
+.ligne-etape .trophee-but, .ligne-etape .trophee-compte, .ligne-ici .trophee-but, .ligne-ici .trophee-compte, .ici-tag, .ligne-ici .trophee-barre { display: block; }
+.ligne-objet { position: relative; z-index: 1; display: inline-flex; }
+.ligne-grade { display: flex; align-items: center; justify-content: center; gap: 8px; }
+/* B : la ligne se remplit — chaque trait pousse vers le bas, la médaille apparaît. */
+.ligne-etape.pousse .ligne-trait { animation: trait-pousse 260ms ease-out both; animation-delay: var(--retard, 0ms); transform-origin: top; }
+.ligne-etape.pousse .ligne-objet { animation: objet-parait 300ms ease-out both; animation-delay: calc(var(--retard, 0ms) + 120ms); }
+@keyframes trait-pousse { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+@keyframes objet-parait { from { opacity: 0; transform: scale(.7); } to { opacity: 1; transform: none; } }
+/* A : le nouveau trophée se retourne, puis un reflet le traverse. */
+.ligne-etape.neuf .ligne-objet, .neuf-retourne { animation: retourne 650ms cubic-bezier(.3, .7, .3, 1) 400ms both; overflow: hidden; border-radius: 50%; }
+.ligne-etape.neuf .ligne-objet::after, .neuf-retourne::after {
+  content: ""; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 35%, rgba(255,255,255,.75) 50%, transparent 65%);
+  transform: translateX(-120%); animation: reflet 700ms ease-out 1050ms both; pointer-events: none;
+}
+.detail-objet { position: relative; display: flex; justify-content: center; margin: 4px auto 8px; width: 120px; }
+@keyframes retourne { from { transform: perspective(400px) rotateY(-180deg); } to { transform: perspective(400px) rotateY(0); } }
+@keyframes reflet { to { transform: translateX(120%); } }
+/* D : le presque-atteint pulse une fois. */
+.ligne-ici.presque .trophee-barre { animation: pulse 900ms ease-in-out 900ms 1; }
+@keyframes pulse { 50% { box-shadow: 0 0 0 5px color-mix(in srgb, var(--brand) 25%, transparent); } }
+/* E : des étincelles du grade. */
+.etincelle { position: absolute; left: 50%; top: 50%; width: 7px; height: 7px; margin: -4px; border-radius: 50%; z-index: 3; pointer-events: none;
+  animation: etincelle 900ms ease-out both; }
+@keyframes etincelle { 0% { transform: translate(0, 0) scale(.4); opacity: 0; } 25% { opacity: 1; } 100% { transform: translate(var(--dx), var(--dy)) scale(1); opacity: 0; } }
+.medaille-grade, .grade-morph { position: relative; }
+/* C : le changement de grade — rayons lents, l'ancien matériau se fond dans le nouveau. */
+.grade-morph { width: 140px; height: 140px; display: grid; place-items: center; }
+.grade-morph > span:not(.rayons):not(.etincelle) { grid-area: 1 / 1; position: relative; }
+.grade-fete-carte h2 { position: relative; }
+.rayons { position: absolute; left: 50%; top: 50%; width: 300px; height: 300px; margin: -150px 0 0 -150px; border-radius: 50%; opacity: .55; pointer-events: none;
+  background: repeating-conic-gradient(from 0deg, color-mix(in srgb, #f6d86b 70%, transparent) 0 6deg, transparent 6deg 18deg);
+  -webkit-mask: radial-gradient(closest-side, #000 35%, transparent); mask: radial-gradient(closest-side, #000 35%, transparent);
+  animation: rayons 12s linear infinite, rayons-entree 1.5s ease-out both; }
+.morph-ancien { animation: morph-sort 1.2s ease-in-out 300ms both; }
+.morph-nouveau { animation: morph-entre 1.2s ease-in-out 300ms both; }
+@keyframes rayons { to { rotate: 360deg; } }
+@keyframes rayons-entree { from { opacity: 0; scale: .6; } to { opacity: .55; scale: 1; } }
+@keyframes morph-sort { from { opacity: 1; transform: scale(1); } to { opacity: 0; transform: scale(.85); } }
+@keyframes morph-entre { from { opacity: 0; transform: scale(1.15); } to { opacity: 1; transform: scale(1); } }
+.feuille-trophee h2, .feuille-bilan h2 { text-align: center; }
+.detail-famille { margin: 0; text-align: center; color: var(--muted); font-size: 14px; }
+.detail-date { margin: 8px 0 0; text-align: center; font-weight: 700; color: var(--brand); }
+.bilan-total { margin: 0; font-size: 17px; font-weight: 700; color: var(--ink); }
+.bilan-record { margin: 4px 0 0; font-weight: 700; color: var(--brand); }
+.bilan-trophees { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+@media (prefers-reduced-motion: reduce) {
+  .grade-barre span, .trophee-barre span[data-largeur] { transition: none; }
+  .ligne-etape.pousse .ligne-trait, .ligne-etape.pousse .ligne-objet, .ligne-etape.neuf .ligne-objet, .neuf-retourne,
+  .ligne-etape.neuf .ligne-objet::after, .neuf-retourne::after, .ligne-ici.presque .trophee-barre, .rayons, .morph-ancien, .morph-nouveau { animation: none; }
+  .morph-ancien { opacity: 0; }
+}
+/* Ajouter du temps à un jour passé (16/10). */
+.feuille .actions { flex-wrap: wrap; }
+.feuille .actions button.fort { font-weight: 800; }
+.ajout-temps { margin-top: 12px; }
+
+/* Les rappels de tefila (16/10). */
+.rappel-tefila { text-align: center; }
+.rappel-titre { margin: 0; font-size: 20px; color: var(--ink); text-wrap: balance; }
+.rappel-corps { margin: 8px 0 0; font-size: 16px; line-height: 1.5; color: var(--ink); text-wrap: pretty; }
+.rappel-source { margin: 8px 0 0; font-size: 12px; color: var(--muted); }
+
+/* --- Les bannières, lot du 16/10 ------------------------------------------------------------
+   Toutes : un dégradé profond plutôt qu'un aplat, un halo doux du côté de l'illustration, une
+   ligne de lumière en bas ; la couleur reste celle choisie (brand-dark, brand). */
+.bandeau {
+  position: relative; isolation: isolate;
+  background:
+    radial-gradient(120% 140% at 100% 0%, color-mix(in srgb, var(--brand) 55%, transparent) 0%, transparent 55%),
+    linear-gradient(160deg, color-mix(in srgb, var(--brand-dark) 88%, var(--brand)) 0%, var(--brand-dark) 70%);
+  box-shadow: 0 6px 18px -10px color-mix(in srgb, var(--brand-dark) 70%, transparent);
+}
+.bandeau::after {
+  content: ""; position: absolute; z-index: -1; left: 24px; right: 24px; bottom: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--mint) 45%, transparent), transparent);
+}
+.bandeau h1 { letter-spacing: -0.01em; text-wrap: balance; }
+.plateau-bandeau { box-shadow: 0 0 0 3px color-mix(in srgb, var(--mint) 25%, transparent), 0 8px 18px -8px rgba(0, 0, 0, .45); }
+/* La bannière d'une prière : titre hébreu, étiquettes, horaire, actions. */
+.bandeau-priere { flex-direction: column; align-items: stretch; gap: 0px; padding-top: calc(6px + env(safe-area-inset-top)); }
+.bandeau-haut { display: flex; align-items: center; justify-content: space-between; }
+.bandeau-priere .retour { margin-top: 0; }
+.bandeau-priere .bandeau-corps { padding-inline: 8px 0; }
+.titre-priere { font-family: var(--police-texte); font-size: 30px !important; line-height: 1.2 !important; text-align: right; }
+.etiquettes-bandeau { display: flex; flex-wrap: wrap; justify-content: right; gap: 4px; margin-top: 8px; }
+.etiquette-bandeau { padding: 4px 8px; border-radius: 999px; font-size: 13px; color: var(--white);
+  background: rgba(255, 255, 255, .13); border: 1px solid rgba(255, 255, 255, .25); }
+.horaire-bandeau { margin: 8px 0 0; font-size: 14px; color: var(--mint); text-align: right; }
+.horaire-bandeau::before { content: "◷ "; opacity: .8; }
+.bandeau-actions { display: flex; gap: 8px; }
+.bandeau-actions .favori { display: grid; place-items: center; padding: 0; margin: 0; color: var(--white); background: rgba(255, 255, 255, .12); border: 1px solid rgba(255, 255, 255, .22); border-radius: 50%; width: 44px; height: 44px; }
+[dir="ltr"] .titre-priere, [dir="ltr"] .horaire-bandeau { text-align: right; }
+
+/* --- Le mini-lecteur de la pratique (MiniLecteur.kt, 19/10) --- */
+.mini-lecteur { position: fixed; inset-inline: 0; bottom: 0; z-index: 9; /* sous le voile des feuilles (10) */ display: flex; justify-content: flex-end;
+  padding: 16px; padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px)); pointer-events: none; }
+.mini-lecteur > * { pointer-events: auto; }
+body.avec-mini .seance .contenu { padding-bottom: calc(104px + env(safe-area-inset-bottom, 0px)); }
+.mini-disque { width: 64px; height: 64px; padding: 4px 4px 2px; border: 2px solid var(--mint); border-radius: 50%;
+  background: var(--mint); overflow: hidden; cursor: pointer; box-shadow: 0 4px 12px rgb(0 0 0 / 0.35); flex: none; }
+.mini-disque img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.mini-disque img.pochette { object-fit: cover; }
+.mini-lecteur:has(.pochette) .mini-disque { padding: 0; }
+.mini-petit { width: 48px; height: 48px; box-shadow: none; cursor: default; }
+.mini-lecteur.joue .mini-disque { animation: mini-tourne 12s linear infinite; }
+@keyframes mini-tourne { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .mini-lecteur.joue .mini-disque { animation: none; } }
+.mini-panneau { display: none; width: 100%; max-width: 480px; margin-inline: auto; padding: 12px 16px; direction: ltr;
+  border-radius: 20px; background: #121a17; border: 1px solid rgb(255 255 255 / 0.2); color: #fff;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.4); }
+.mini-lecteur.deplie .mini-panneau { display: block; }
+.mini-lecteur.deplie .mini-replie { display: none; }
+.mini-tete { display: flex; align-items: center; gap: 12px; }
+.mini-titre { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 15px; unicode-bidi: plaintext; }
+.mini-bouton { width: 48px; height: 48px; display: grid; place-items: center; border: 0; border-radius: 50%; background: none; color: #fff; cursor: pointer; }
+.mini-bouton svg { width: 28px; height: 28px; }
+.mini-tete .mini-bouton { color: rgb(255 255 255 / 0.7); }
+.mini-barre { width: 100%; margin: 8px 0 0; accent-color: var(--mint); }
+.mini-temps { display: flex; justify-content: space-between; font-size: 12px; color: rgb(255 255 255 / 0.7); font-variant-numeric: tabular-nums; }
+.mini-commandes { display: flex; align-items: center; justify-content: center; gap: 24px; margin-top: 4px; }
+.mini-commandes .mini-lecture { width: 64px; height: 64px; background: #fff; color: #121a17; }
+.mini-commandes .mini-lecture svg { width: 32px; height: 32px; }
+.seance .contenu { padding-bottom: 104px; }
+.puces-recherche { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+/* Paragraphes d'un texte long (19/10) : un écart entre eux, pas entre les lignes. */
+.para { display: block; }
+.para + .para { margin-top: 0.7em; }
+
+/* « J'ai besoin de ’hizouk » (19/10) */
+.hizouk-actions { display: flex; gap: 8px; margin-top: 12px; }
+.hizouk-actions button { flex: 1; }
+.contenu.hizouk > .principal { width: 100%; margin-top: 8px; }
+.hizouk-garde { display: block; width: 100%; text-align: start; padding: 12px 4px; border: 0; background: none; color: var(--ink); font: inherit; font-size: 15px; cursor: pointer; }
+.hizouk-garde-texte { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.hizouk-garde + .hizouk-garde { border-top: 1px solid var(--line); }
+.hizouk-ref { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
+
+/* La source du jour (19/10) */
+.source-du-jour { padding: 12px 16px 10px; }
+.source-du-jour-texte { margin: 8px 0 4px; font-family: var(--police-texte); font-size: 19px; line-height: 1.6; color: var(--ink); text-align: start; }
+.source-du-jour-ref { margin: 0; color: var(--muted); font-size: 13px; font-style: italic; }
+.source-du-jour-actions { display: flex; gap: 8px; margin-top: 10px; }
+
+/* Mon parcours (19/10) */
+.parcours-ligne { display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; }
+.parcours-ligne + .parcours-ligne { border-top: 1px solid var(--line); }
+.parcours-ligne strong { color: var(--brand); }
+.parcours-vide { margin: 8px 0; color: var(--muted); }
+
+/* « Je ne sais pas quoi dire » et « Commencer simplement » (19/10) */
+.question-seance { order: 2; margin-top: 8px; padding: 12px 16px; border-radius: 16px; background: rgba(255, 255, 255, 0.08); text-align: start; }
+.question-rang { margin: 0; font-size: 12px; color: var(--mint); }
+.question-texte { margin: 6px 0 0; font-size: 19px; line-height: 1.5; color: #fff; }
+.question-seance .texte-clair { display: block; margin-inline-start: auto; }
+.simplement { display: flex; justify-content: center; flex-wrap: wrap; }
+.simplement .texte-clair { flex: 1 1 0; min-width: 0; }
+
+/* Design du 19/10 : boutons du bas côte à côte, « Mon parcours » en tuiles et en barres */
+.boutons-bas { display: flex; gap: 8px; }
+.boutons-bas .bouton-trophees { flex: 1 1 0; min-width: 0; }
+.tuiles-parcours { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; }
+.tuile-parcours { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 14px 16px; }
+.tuile-pastille { display: block; width: 22px; height: 5px; border-radius: 3px; margin-bottom: 10px; }
+.tuile-valeur { font-size: 28px; font-weight: 700; color: var(--ink); line-height: 1.1; }
+.tuile-unite { font-size: 14px; font-weight: 400; color: var(--muted); }
+.tuile-libelle { margin-top: 4px; font-size: 13px; color: var(--muted); }
+.parcours-moyenne { margin: 10px 0 0; text-align: center; font-size: 13px; color: var(--muted); }
+.sujet-parcours { padding: 8px 0; }
+.sujet-tete { display: flex; justify-content: space-between; gap: 12px; color: var(--ink); }
+.sujet-fois { color: var(--muted); font-size: 13px; }
+.sujet-piste { margin-top: 6px; height: 8px; border-radius: 4px; background: var(--line); overflow: hidden; }
+.sujet-plein { height: 100%; border-radius: 4px; background: var(--brand); }
+.source-du-jour-actions button { flex: 1 1 0; }
+.source-du-jour-actions .principal { padding: 10px 16px; font-size: 15px; margin: 0; }
+.boutons-bas .bouton-trophees { font-size: 14px; padding: 10px 12px; }
+
+/* --- Effets (19/10, « ajoute des effets professionnels ») -----------------------------
+   Discrets et courts, sur la courbe des écrans Material (décélération) : l'écran qu'on
+   ouvre glisse de 12 px en s'éclaircissant, ses blocs suivent à 45 ms d'écart ; une
+   carte qui change de texte se fond ; un bouton se creuse sous le doigt ; les barres
+   de « Mon parcours » se remplissent. Rien ne bouge quand le téléphone le demande. */
+@keyframes ecran-entre { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+@keyframes bloc-entre { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes fondu-neuf { from { opacity: 0; transform: translateY(6px) scale(.99); } to { opacity: 1; transform: none; } }
+@keyframes barre-remplit { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.ecran.entree:not(.seance) .defile { animation: ecran-entre 280ms cubic-bezier(.2, .8, .2, 1) both; }
+.ecran.entree:not(.seance) .contenu > * { animation: bloc-entre 420ms cubic-bezier(.2, .8, .2, 1) both; animation-delay: calc(var(--rang, 0) * 45ms + 60ms); }
+.fondu-neuf { animation: fondu-neuf 320ms cubic-bezier(.2, .8, .2, 1) both; }
+.ecran.entree .sujet-plein { transform-origin: left center; animation: barre-remplit 700ms cubic-bezier(.2, .8, .2, 1) 300ms both; }
+[dir="rtl"] .ecran.entree .sujet-plein { transform-origin: right center; }
+.principal, .secondaire, .bouton-trophees, .duree, .maintenant, .livre, .ligne, .pastille { transition: transform 120ms ease-out, filter 120ms ease-out; }
+.principal:active, .secondaire:active, .bouton-trophees:active, .duree:active, .pastille:active { transform: scale(.97); }
+.maintenant:active, .livre:active { transform: scale(.985); }
+.tuile-parcours, .carte, .maintenant { box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 8px 20px -12px rgba(0, 0, 0, 0.22); }
+@media (prefers-reduced-motion: reduce) {
+  .ecran.entree .defile, .ecran.entree:not(.seance) .contenu > *, .fondu-neuf, .ecran.entree .sujet-plein { animation: none; }
+  .principal:active, .secondaire:active, .bouton-trophees:active, .duree:active, .pastille:active, .maintenant:active, .livre:active { transform: none; }
+}

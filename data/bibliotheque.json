@@ -1,0 +1,1483 @@
+{
+  "_meta": {
+    "version": "0.1",
+    "date": "2026-09-20",
+    "regle": "type 'source' : texte intégral affichable (œuvre du domaine public). type 'article' : fiche seulement ; texte_integral reste null tant que autorisation est null (test bloquant).",
+    "editions": {
+      "lm": {
+        "titre": "Likutei Moharan Tinyana — rabenubook.com (via API Sefaria)",
+        "licence": "Public Domain",
+        "nikkoud_ok": true
+      },
+      "lm1": {
+        "titre": "Likutei Moharan — rabenubook.com (via API Sefaria)",
+        "licence": "Public Domain",
+        "nikkoud_ok": true
+      },
+      "sh": {
+        "titre": "Sichot HaRan — rabenubook (via API Sefaria)",
+        "licence": "unknown",
+        "nikkoud_ok": false
+      },
+      "shr": {
+        "titre": "Shivchei HaRan — rabenubook (via API Sefaria)",
+        "licence": "unknown",
+        "nikkoud_ok": false
+      },
+      "cm": {
+        "titre": "Chayei Moharan — OYW / tora.ws (via API Sefaria)",
+        "licence": "Public Domain",
+        "nikkoud_ok": true
+      },
+      "rambam": {
+        "titre": "Mishneh Torah — Torat Emet 370 (via API Sefaria)",
+        "licence": "Public Domain",
+        "nikkoud_ok": true
+      },
+      "tanakh": {
+        "titre": "Tanach with Nikkud — tanach.us (via API Sefaria)",
+        "licence": "Public Domain",
+        "nikkoud_ok": true
+      },
+      "lt": {
+        "titre": "Likutei Tefilot — Maleh Vigadish 2021 (via export Sefaria)",
+        "licence": "unknown",
+        "nikkoud_ok": false,
+        "note": "Texte de Rabbi Natan de Breslev (m. 1844) : domaine public. La vocalisation est un travail editorial de l'edition 2021, dont Sefaria ne declare pas la licence — on ne la reprend donc pas."
+      }
+    }
+  },
+  "sections": [
+    {
+      "id": "sichat-chaverim",
+      "titre": {
+        "he": "שיחת חברים",
+        "fr": "Conversation entre amis",
+        "en": "A Conversation Among Friends"
+      },
+      "sous_sections": [
+        {
+          "id": "hitbodedut-ma-velama",
+          "titre": {
+            "he": "התבודדות מה ולמה",
+            "fr": "Hitbodedout : quoi et pourquoi",
+            "en": "Hitbodedut: what and why"
+          },
+          "entrees": [
+            {
+              "id": "src-lm2-25",
+              "type": "source",
+              "titre_he": "ליקוטי מוהר״ן תניינא, סימן כ״ה",
+              "ref": "Likoutei Moharan II, 25",
+              "ref_sefaria": "Likutei Moharan, Part II 25",
+              "url": "https://www.sefaria.org/Likutei_Moharan%2C_Part_II.25",
+              "edition": "lm",
+              "paragraphes": [
+                "הַהִתְבּוֹדְדוּת הוּא מַעֲלָה עֶלְיוֹנָה וּגְדוֹלָה מִן הַכֹּל, דְּהַיְנוּ לִקְבֹּעַ לוֹ עַל־כָּל־פָּנִים שָׁעָה אוֹ יוֹתֵר לְהִתְבּוֹדֵד לְבַדּוֹ בְּאֵיזֶה חֶדֶר אוֹ בַּשָּׂדֶה, וּלְפָרֵשׁ שִׂיחָתוֹ בֵּינוֹ לְבֵין קוֹנוֹ בִּטְעָנוֹת וַאֲמַתְלָאוֹת, בְּדִבְרֵי חֵן וְרִצּוּי וּפִיּוּס, לְבַקֵּשׁ וּלְהִתְחַנֵּן מִלְּפָנָיו יִתְבָּרַךְ, שֶׁיְּקָרְבוֹ אֵלָיו לַעֲבוֹדָתוֹ בֶּאֱמֶת.",
+                "וּתְפִלָּה וְשִׂיחָה זוֹ יִהְיֶה בַּלָּשׁוֹן שֶׁמְּדַבְּרִים בּוֹ, דְּהַיְנוּ בִּלְשׁוֹן אַשְׁכְּנַז (בִּמְדִינָתֵנוּ), כִּי בִּלְשׁוֹן־הַקֹּדֶשׁ קָשֶׁה לוֹ לְפָרֵשׁ כָּל שִׂיחָתוֹ, וְגַם אֵין הַלֵּב נִמְשָׁךְ אַחֲרֵי הַדִּבּוּרִים, מֵחֲמַת שֶׁאֵינוֹ מֻרְגָּל כָּל־כָּךְ בְּהַלָּשׁוֹן, כִּי אֵין דַּרְכֵּנוּ לְדַבֵּר בִּלְשׁוֹן־הַקֹּדֶשׁ. אֲבָל בִּלְשׁוֹן אַשְׁכְּנַז, שֶׁמְּסַפְּרִים וּמְדַבְּרִים בּוֹ, קַל וְקָרוֹב יוֹתֵר לְשַׁבֵּר לִבּוֹ, כִּי הַלֵּב נִמְשָׁךְ וְקָרוֹב יוֹתֵר אֶל לְשׁוֹן אַשְׁכְּנַז, מֵחֲמַת שֶׁהוּא מֻרְגָּל בּוֹ.",
+                "וּבִלְשׁוֹן אַשְׁכְּנַז יָכוֹל לְפָרֵשׁ כָּל שִׂיחָתוֹ. וְאֶת כָּל אֲשֶׁר עִם לְבָבוֹ יָשִׂיחַ וִיסַפֵּר לְפָנָיו יִתְבָּרַךְ, הֵן חֲרָטָה וּתְשׁוּבָה עַל הֶעָבָר, וְהֵן בַּקָּשַׁת תַחֲנוּנִים לִזְכּוֹת לְהִתְקָרֵב אֵלָיו יִתְבָּרַךְ מֵהַיּוֹם וְהָלְאָה בֶּאֱמֶת, וְכַיּוֹצֵא בָּזֶה כָּל חַד לְפוּם דַּרְגֵּהּ.",
+                "וְיִזָּהֵר מְאֹד לְהַרְגִּיל עַצְמוֹ לְהַתְמִיד בָּזֶה מִדֵּי יוֹם בְּיוֹם שָׁעָה מְיֻחֶדֶת כַּנַּ\"ל, וּשְׁאָר הַיּוֹם יִהְיֶה בְּשִׂמְחָה כַּנַּ\"ל.",
+                "וְהַנְהָגָה זוֹ הִיא גְּדוֹלָה בְּמַעֲלָה מְאֹד מְאֹד, וְהוּא דֶּרֶךְ וְעֵצָה טוֹבָה מְאֹד לְהִתְקָרֵב אֵלָיו יִתְבָּרַךְ, כִּי זֹאת הִיא עֵצָה כְּלָלִיוּת, שֶׁכּוֹלֵל הַכֹּל.",
+                "כִּי עַל כָּל מַה שֶּׁיֶּחְסַר לוֹ בַּעֲבוֹדַת הַשֵּׁם, אוֹ אִם הוּא רָחוֹק לְגַמְרֵי מִכֹּל וָכֹל מֵעֲבוֹדָתוֹ יִתְבָּרַךְ – עַל הַכֹּל יְפָרֵשׁ שִׂיחָתוֹ וִיבַקֵּשׁ מֵאִתּוֹ יִתְבָּרַךְ כַּנַּ\"ל.",
+                "וַאֲפִלּוּ אִם לִפְעָמִים נִסְתַּתְּמִין דְּבָרָיו, וְאֵינוֹ יָכוֹל לִפְתֹּחַ פִּיו לְדַבֵּר לְפָנָיו יִתְבָּרַךְ כְּלָל, אַף־עַל־פִּי־כֵן זֶה בְּעַצְמוֹ טוֹב מְאֹד, דְּהַיְנוּ הַהֲכָנָה שֶׁהוּא מוּכָן וְעוֹמֵד לְפָנָיו יִתְבָּרַךְ, וְחָפֵץ וּמִשְׁתּוֹקֵק לְדַבֵּר, אַךְ שֶׁאֵינוֹ יָכוֹל, זֶה בְּעַצְמוֹ גַם־כֵּן טוֹב מְאֹד,",
+                "וְגַם יוּכַל לַעֲשׂוֹת לוֹ שִׂיחָה וּתְפִלָּה מִזֶּה בְּעַצְמוֹ. וְעַל זֶה בְּעַצְמוֹ יִצְעֹק וְיִתְחַנֵּן לְפָנָיו יִתְבָּרַךְ, שֶׁנִּתְרַחֵק כָּל־כָּךְ, עַד שֶׁאֵינוֹ יָכוֹל אֲפִלּוּ לְדַבֵּר. וִיבַקֵּשׁ מֵאִתּוֹ יִתְבָּרַךְ רַחֲמִים וְתַחֲנוּנִים, שֶׁיַּחֲמֹל עָלָיו וְיִפְתַּח פִּיו, שֶׁיּוּכַל לְפָרֵשׁ שִׂיחָתוֹ לְפָנָיו.",
+                "וְדַע, שֶׁכַּמָּה וְכַמָּה צַדִּיקִים גְּדוֹלִים מְפֻרְסָמִים סִפְּרוּ, שֶׁלֹּא בָּאוּ לְמַדְרֵגָתָם, רַק עַל־יְדֵי הַנְהָגָה זוֹ. וְהַמַּשְׂכִּיל יָבִין מֵעַצְמוֹ גֹּדֶל מַעֲלַת הַנְהָגָה זוֹ, הָעוֹלָה לְמַעְלָה לְמַעְלָה, וְהוּא דָּבָר הַשָּׁוֶה לְכָל נֶפֶשׁ מִקָּטֹן וְעַד גָּדוֹל, כִּי כֻּלָּם יְכוֹלִים לִנְהֹג הַנְהָגָה זוֹ, וְעַל־יְדֵי זֶה יָבוֹאוּ לְמַעְלָה גְּדוֹלָה. אַשְׁרֵי שֶׁיֹּאחַז בָּזֶה:",
+                "גַּם טוֹב לַעֲשׂוֹת מֵהַתּוֹרָה תְּפִלָּה. דְּהַיְנוּ כְּשֶׁלּוֹמֵד אוֹ שׁוֹמֵעַ אֵיזֶה מַאֲמַר תּוֹרָה מִצַּדִּיק הָאֱמֶת, אֲזַי יַעֲשֶׂה מִזֶּה תְּפִלָּה, דְּהַיְנוּ לְבַקֵּשׁ וּלְהִתְחַנֵּן לְפָנָיו יִתְבָּרַךְ עַל כָּל מַה שֶּׁנֶּאֱמַר שָׁם בְּאוֹתוֹ הַמַּאֲמָר, מָתַי יִזְכֶּה גַּם הוּא לָבוֹא לְכָל זֶה, וְכַמָּה הוּא רָחוֹק מִזֶּה. וִיבַקֵּשׁ מֵאִתּוֹ יִתְבָּרַךְ, שֶׁיְּזַכֵּהוּ לָבוֹא לְכָל הַנֶּאֱמָר שָׁם בְּאוֹתוֹ הַמַּאֲמָר.",
+                "וְהַמַּשְׂכִּיל וְהֶחָפֵץ בֶּאֱמֶת, יוֹלִיכוֹ יְהֹוָה בְּדֶרֶךּ אֱמֶת וְיָבִין בְּעַצְמוֹ דָּבָר מִתּוֹךְ דָּבָר, אֵיךְ לְהִתְנַהֵג בָּזֶה, בְּאֹפֶן שֶׁיִּהְיוּ דְּבָרָיו דִּבְרֵי חֵן וּטְעָנוֹת נְכוֹנוֹת, לְרַצּוֹתוֹ יִתְבָּרַךְ שֶׁיְּקָרְבֵהוּ לַעֲבוֹדָתוֹ בֶּאֱמֶת.",
+                "וְעִנְיָן הַשִּׂיחָה זוֹ עוֹלָה לְמָקוֹם גָּבוֹהַּ מְאֹד, וּבִפְרָט כְּשֶׁעוֹשֶׂה מִתּוֹרָה תְּפִלָּה, מִזֶּה נַעֲשֶׂה שַׁעֲשׁוּעִים גְּדוֹלִים מְאֹד לְמַעְלָה:"
+              ],
+              "liens_chizuk": [
+                "lm2-25-fondement",
+                "lm2-25-langue",
+                "lm2-25-tout-dire",
+                "lm2-25-joie",
+                "lm2-25-mots-bloques",
+                "lm2-25-pour-tous",
+                "lm2-25-torah-priere"
+              ],
+              "note": "Paragraphes 1 à 9 = section 1 ; paragraphes 10 à 12 = section 2. « בְּדֶרֶךּ » (dagesh final) reproduit tel quel depuis l'édition numérique.",
+              "statut_verif": "verifie_texte",
+              "recoupement": [
+                "azamra.org (trad. Greenbaum)",
+                "article ברסלב סיטי (copie avec coquilles)",
+                "feuille Sefaria 203099"
+              ]
+            },
+            {
+              "id": "src-lm1-52-3",
+              "type": "source",
+              "titre_he": "ליקוטי מוהר״ן, סימן נ״ב, אות ג׳ (קטעים)",
+              "ref": "Likoutei Moharan I, 52:3",
+              "ref_sefaria": "Likutei Moharan 52:3:2-4",
+              "url": "https://www.sefaria.org/Likutei_Moharan.52.3.2-4",
+              "edition": "lm1",
+              "paragraphes": [
+                "וְאִי אֶפְשָׁר לָבוֹא לִידֵי בִּטּוּל, כִּי־אִם עַל־יְדֵי הִתְבּוֹדְדוּת, כִּי עַל־יְדֵי שֶׁמִּתְבּוֹדֵד וּמְפָרֵשׁ שִׂיחָתוֹ בֵּינוֹ לְבֵין קוֹנוֹ, עַל־יְדֵי־זֶה הוּא זוֹכֶה לְבַטֵּל כָּל הַתַּאֲווֹת וְהַמִּדּוֹת רָעוֹת, עַד שֶׁזּוֹכֶה לְבַטֵּל כָּל גַּשְׁמִיּוּתוֹ, וּלְהִכָּלֵל בְּשָׁרְשׁוֹ.",
+                "אַךְ עִקַּר הַהִתְבּוֹדְדוּת הוּא בַּלַּיְלָה, בְּעֵת שֶׁהָעוֹלָם פָּנוּי מִטִּרְדַּת הָעוֹלָם הַזֶּה. כִּי בַּיּוֹם, עַל־יְדֵי שֶׁרוֹדְפִין הָעוֹלָם אַחַר הָעוֹלָם הַזֶּה, הוּא מְבַטֵּל וּמְבַלְבֵּל אֶת הָאָדָם מִלְּהִתְדַּבֵּק וּלְהִכָּלֵל בְּהַשֵּׁם יִתְבָּרַךְ. וַאֲפִלּוּ אִם הוּא בְּעַצְמוֹ אֵינוֹ טָרוּד, אַף־עַל־פִּי־כֵן מֵאַחַר שֶׁהָעוֹלָם טְרוּדִים אָז וְרוֹדְפִים אָז אַחַר הַבְלֵי הָעוֹלָם הַזֶּה, עַל־יְדֵי־זֶה קָשֶׁה אָז לָבוֹא לִידֵי בִּטּוּל:",
+                "וְגַם צְרִיכִין שֶׁיִּהְיֶה הַהִתְבּוֹדְדוּת בְּמָקוֹם מְיֻחָד, דְּהַיְנוּ חוּץ מֵהָעִיר בְּדֶרֶךְ יְחִידִי, בְּמָקוֹם שֶׁאֵין הוֹלְכִים שָׁם בְּנֵי אָדָם, כִּי בְּמָקוֹם שֶׁהוֹלְכִים שָׁם בְּנֵי אָדָם בַּיּוֹם, הָרוֹדְפִים אַחַר הָעוֹלָם הַזֶּה, אַף־עַל־פִּי שֶׁכָּעֵת אֵינָם הוֹלְכִים שָׁם, הוּא מְבַלְבֵּל גַּם כֵּן הַהִתְבּוֹדְדוּת, וְאֵינוֹ יָכוֹל לְהִתְבַּטֵּל וּלְהִכָּלֵל בּוֹ יִתְבָּרַךְ. עַל־כֵּן צָרִיךְ שֶׁיֵּלֵךְ לְבַדּוֹ בַּלַּיְלָה, בְּדֶרֶךְ יְחִידִי, בְּמָקוֹם שֶׁאֵין שָׁם אָדָם, וְשָׁם יֵלֵךְ וְיִתְבּוֹדֵד, וִיפַנֶּה לִבּוֹ וְדַעְתּוֹ מִכָּל עִסְקֵי עוֹלָם הַזֶּה, וִיבַטֵּל הַכֹּל, עַד שֶׁיִּזְכֶּה לִבְחִינַת בִּטּוּל בֶּאֱמֶת."
+              ],
+              "liens_chizuk": [
+                "lm1-52-nuit"
+              ],
+              "note": "Extrait : segments 3:2 à 3:4. La suite de la section développe le bitoul.",
+              "statut_verif": "verifie_texte",
+              "recoupement": [
+                "azamra.org (trad. Greenbaum)",
+                "breslov.org « Hitbodedut: when and where? »",
+                "article ברסלב סיטי (résumé)"
+              ]
+            },
+            {
+              "id": "src-cm-438",
+              "type": "source",
+              "titre_he": "חיי מוהר״ן, תל״ח",
+              "ref": "'Hayé Moharan 438",
+              "ref_sefaria": "Chayei Moharan 438",
+              "url": "https://www.sefaria.org/Chayei_Moharan.438",
+              "edition": "cm",
+              "paragraphes": [
+                "פַּעַם אַחַת הָיָה מְדַבֵּר עִמָּנוּ, וְהָיָה מַרְבֶּה לְדַבֵּר אָז מֵעִנְיַן מַעֲלַת הַהִתְבּוֹדְדוּת, וְהָיָה מַפְלִיג מְאֹד בְּשֶׁבַח מַעֲלַת גְּדֻלַּת הַנְהָגָה זוֹ. וְאָמַר שֶׁאִי אֶפְשָׁר לְצַוּוֹת לַאֲנָשִׁים שֶׁיִּנְהֲגוּ הַנְהָגָה זוֹ כִּי־אִם שָׁעָה אַחַת בַּיּוֹם, כִּי אִי אֶפְשָׁר לְהַכְבִּיד עֲלֵיהֶם יוֹתֵר. אֲבָל בֶּאֱמֶת הָיוּ צְרִיכִים שֶׁיִּהְיֶה לָהֶם כָּל הַיּוֹם הִתְבּוֹדְדוּת. וְדִבֵּר אָז מְאֹד בְּעִנְיָן זֶה, וְכַמָּה שִׂיחוֹת נָאוֹת וְיָפוֹת נִשְׁמַע אָז מִפִּיו הַקָּדוֹשׁ מֵעִנְיַן מַעֲלַת הַהִתְבּוֹדְדוּת הָעוֹלָה עַל הַכֹּל. וְאָמַר, הֲלֹא יְכוֹלִים לִלְחֹשׁ עַל קְנֵי שְׂרֵפָה שֶׁקּוֹרִין בִּיקְס [רוֹבֶה] שֶׁלֹּא תִּהְיֶה מוֹרָה \"מֶען קָאן פַארְשְׁפְּרֶעכְן אַ בִּיקְס זִי זָאל נִיט שִׁיסְן\". כִּי הַדִּבּוּר יֵשׁ לוֹ כֹּחַ גָּדוֹל, וְהָבֵן הֵיטֵב. וְהָיָה מַאֲרִיךְ בְּשִׂיחָה זוֹ כָּל הַיּוֹם, אַשְׁרֵי שֶׁיֹּאחַז בָּזֶה:"
+              ],
+              "liens_chizuk": [
+                "lm2-96-une-heure"
+              ],
+              "note": "Marqueur de paragraphe « (ב) » de l'édition retiré.",
+              "statut_verif": "verifie_texte",
+              "recoupement": [
+                "article ברסלב סיטי (même texte, même référence)"
+              ]
+            },
+            {
+              "id": "src-cm-440",
+              "type": "source",
+              "titre_he": "חיי מוהר״ן, ת״מ",
+              "ref": "'Hayé Moharan 440",
+              "ref_sefaria": "Chayei Moharan 440",
+              "url": "https://www.sefaria.org/Chayei_Moharan.440",
+              "edition": "cm",
+              "paragraphes": [
+                "אָמַר אֲפִילוּ כְּשֶׁאֵין יְכוֹלִין לְדַבֵּר בְּהִתְבּוֹדְדוּת רַק תֵּבַת רִבּוֹנוֹ שֶׁל עוֹלָם גַּם־כֵּן טוֹב מְאֹד. אָמַר שֶׁיְּכוֹלִין לְהַכִּיר בְּאַחֵר אִם יֵשׁ לוֹ הִתְבּוֹדְדוּת:"
+              ],
+              "liens_chizuk": [
+                "cm-440-ribono"
+              ],
+              "note": "Marqueur de paragraphe « (ד) » de l'édition retiré.",
+              "statut_verif": "verifie_texte",
+              "recoupement": [
+                "azamra.org (trad. Greenbaum)",
+                "article ברסלב סיטי"
+              ]
+            },
+            {
+              "id": "src-shr-10",
+              "type": "source",
+              "titre_he": "שבחי הר״ן, סימן י׳",
+              "ref": "Chiv'hei HaRan 10",
+              "ref_sefaria": "Shivchei HaRan 10",
+              "url": "https://www.sefaria.org/Shivchei_HaRan.10",
+              "edition": "shr",
+              "paragraphes": [
+                "אַךְ עִקַּר עֲבוֹדָתוֹ אֲשֶׁר עַל יָדָהּ זָכָה לְמַה שֶּׁזָּכָה; הָיָה רַק רִבּוּי הַתְּפִלּוֹת וְהַתְּחִנּוֹת וְהַבַּקָּשׁוֹת וְהָרִצּוּיִים וְהַפִּיּוּסִים, שֶׁהָיָה רָגִיל מְאֹד לְהִתְפַּלֵּל וּלְהִתְחַנֵּן לְפָנָיו יִתְבָּרַךְ. וְהָיָה מְרַצֶּה וּמְפַיֵּס אוֹתוֹ יִתְבָּרַךְ בְּכַמָּה מִינֵי תְּחִנּוֹת וּבַקָּשׁוֹת שֶׁיְּזַכֵּהוּ בְּרַחֲמָיו לְקָרְבוֹ לַעֲבוֹדָתוֹ יִתְבָּרַךְ.",
+                "וְעִקַּר מַה שֶּׁהוֹעִיל לוֹ הָיוּ הַתְּפִלּוֹת שֶׁהִתְפַּלֵּל בִּלְשׁוֹן 'אַשְׁכְּנַז', שֶׁהָיָה רָגִיל מְאֹד לְיַחֵד לוֹ אֵיזֶה מָקוֹם שֶׁמָּצָא שֶׁאֵין שָׁם בְּנֵי אָדָם וְהָיָה מְפָרֵשׁ שִׂיחָתוֹ לִפְנֵי יְהֹוָה יִתְבָּרַךְ בַּלָּשׁוֹן שֶׁמְּדַבְּרִים בּוֹ, (דְּהַיְנוּ בִּלְשׁוֹן אַשְׁכְּנַז).",
+                "וְהָיָה מְרַצֶּה וּמְפַיֵּס אוֹתוֹ יִתְבָּרַךְ וּמְבַקֵּשׁ וּמִתְחַנֵּן לְפָנָיו יִתְבָּרַךְ בְּכַמָּה וְכַמָּה מִינֵי טְעָנוֹת וַאֲמַתְלָאוֹת שֶׁרָאוּי לוֹ יִתְבָּרַךְ שֶׁיְּקָרְבוֹ לַעֲבוֹדָתוֹ, וְהָיָה רָגִיל בָּזֶה מְאֹד מְאֹד וְהָיָה מְבַלֶּה יָמִים וְשָׁנִים עַל זֶה.",
+                "גַּם הָיָה מַטְמִין עַצְמוֹ עַל גַּבֵּי בֵּית אָבִיו, תַּחַת הַגַּג, שֶׁהָיָה שָׁם כְּמוֹ חֶדֶר בִּמְחִצָּה שֶׁל קָנִּים שֶׁמַּחֲזִיקִין שָׁם תֶּבֶן וּמִסְפּוֹא, וְשָׁם הָיָה מַטְמִין עַצְמוֹ וְהָיָה אוֹמֵר תְּהִלִּים וְהָיָה צוֹעֵק בְּלַחַשׁ לַיהֹוָה יִתְבָּרַךְ שֶׁיְּזַכֵּהוּ לְקָרְבוֹ אֵלָיו יִתְבָּרַךְ.",
+                "וְהַכְּלָל: שֶׁכָּל הַמִּינֵי בַּקָּשׁוֹת שֶׁבָּעוֹלָם שֶׁנִּמְצָאִים בְּאֵיזֶה סֵפֶר שֶׁיִּהְיֶה הַמָּצוּי בֵּינֵינוּ הַכֹּל כַּאֲשֶׁר לַכֹּל – לֹא הִנִּיחַ שׁוּם תְּחִנָּה וּבַקָּשָׁה שֶׁלֹּא אֲמָרָהּ כַּמָּה וְכַמָּה פְּעָמִים, הֵן תְּהִלִּים וְסֵפֶר \"שַׁעֲרֵי צִיּוֹן\" וְהַבַּקָּשׁוֹת הַנִּדְפָּסִים בְּהַסִּדּוּרִים הַגְּדוֹלִים וּשְׁאָר מִינֵי בַּקָּשׁוֹת וּתְחִנּוֹת, וַאֲפִלּוּ הַתְּחִנּוֹת הַנִּדְפָּסִים בִּלְשׁוֹן אַשְׁכְּנַז – כֻּלָּם לֹא הִנִּיחַ מִלְּאָמְרָם, וְהָיָה רָגִיל לוֹמַר כָּל הַתְּחִנּוֹת שֶׁאַחַר \"מַעֲמָדוֹת\" הַנִּדְפָּסִים אַחַר כָּל יוֹם וָיוֹם. וְהוּא הָיָה רָגִיל לוֹמַר כָּל הַתְּחִנּוֹת כֻּלָּם שֶׁל כָּל הַיָּמִים, בְּפַעַם אֶחָד.",
+                "גַּם הָיָה רָגִיל לִפְעָמִים לוֹמַר בַּתְּהִלִּים רַק הַפְּסוּקִים הַמְדַבְּרִים מִתְּחִנּוֹת וּבַקָּשׁוֹת וּצְעָקָה לַיהֹוָה יִתְבָּרַךְ, וְהָיָה אוֹמֵר רַק פְּסוּקִים אֵלּוּ וְהַשְּׁאָר לֹא הָיָה אוֹמֵר. וְהָיָה אוֹמֵר כָּל הַפְּסוּקִים הָאֵלּוּ מִכָּל סֵפֶר תְּהִלִּים בְּפַעַם אֶחָד.",
+                "וּמִלְּבַד כָּל זֶה, הָעִקָּר הָיָה, מַה שֶּׁהָיָה מִתְפַּלֵּל מֵעַצְמוֹ, דְּהַיְנוּ מַה שֶּׁהָיָה רָגִיל לְדַבֵּר מִלִּבּוֹ לִפְנֵי יְהֹוָה יִתְבָּרַךְ (בִּלְשׁוֹן אַשְׁכְּנַז), שֶׁהָיָה מִתְפַּלֵּל וְטוֹעֵן לִפְנֵי יְהֹוָה יִתְבָּרַךְ בְּכַמָּה וְכַמָּה מִינֵי טְעָנוֹת וּתְחִנּוֹת וּבַקָּשׁוֹת שֶׁאָמַר מִדַּעְתּוֹ וּמִלִּבּוֹ כַּנַּ\"ל שֶׁיְּזַכֵּהוּ יְהֹוָה יִתְבָּרַךְ לַעֲבוֹדָתוֹ.",
+                "וְזֶהוּ הָעִקָּר מַה שֶּׁהוֹעִיל לוֹ לִזְכּוֹת לְמַה שֶּׁזָּכָה. כָּךְ שָׁמַעְנוּ מִפִּיו הַקָּדוֹשׁ בְּפֵרוּשׁ."
+              ],
+              "liens_chizuk": [
+                "shr-10-langue",
+                "shr-10-grenier"
+              ],
+              "note": null,
+              "statut_verif": "verifie_texte",
+              "recoupement": [
+                "article ברסלב סיטי (même texte ; « ואמלאות » y est fautif)"
+              ],
+              "paragraphes_sans_nikkoud": [
+                "אך עקר עבודתו אשר על ידה זכה למה שזכה; היה רק רבוי התפלות והתחנות והבקשות והרצויים והפיוסים, שהיה רגיל מאד להתפלל ולהתחנן לפניו יתברך. והיה מרצה ומפיס אותו יתברך בכמה מיני תחנות ובקשות שיזכהו ברחמיו לקרבו לעבודתו יתברך.",
+                "ועקר מה שהועיל לו היו התפלות שהתפלל בלשון 'אשכנז', שהיה רגיל מאד ליחד לו איזה מקום שמצא שאין שם בני אדם והיה מפרש שיחתו לפני יהוה יתברך בלשון שמדברים בו, (דהינו בלשון אשכנז).",
+                "והיה מרצה ומפיס אותו יתברך ומבקש ומתחנן לפניו יתברך בכמה וכמה מיני טענות ואמתלאות שראוי לו יתברך שיקרבו לעבודתו, והיה רגיל בזה מאד מאד והיה מבלה ימים ושנים על זה.",
+                "גם היה מטמין עצמו על גבי בית אביו, תחת הגג, שהיה שם כמו חדר במחצה של קנים שמחזיקין שם תבן ומספוא, ושם היה מטמין עצמו והיה אומר תהלים והיה צועק בלחש ליהוה יתברך שיזכהו לקרבו אליו יתברך.",
+                "והכלל: שכל המיני בקשות שבעולם שנמצאים באיזה ספר שיהיה המצוי בינינו הכל כאשר לכל – לא הניח שום תחנה ובקשה שלא אמרה כמה וכמה פעמים, הן תהלים וספר \"שערי ציון\" והבקשות הנדפסים בהסדורים הגדולים ושאר מיני בקשות ותחנות, ואפלו התחנות הנדפסים בלשון אשכנז – כלם לא הניח מלאמרם, והיה רגיל לומר כל התחנות שאחר \"מעמדות\" הנדפסים אחר כל יום ויום. והוא היה רגיל לומר כל התחנות כלם של כל הימים, בפעם אחד.",
+                "גם היה רגיל לפעמים לומר בתהלים רק הפסוקים המדברים מתחנות ובקשות וצעקה ליהוה יתברך, והיה אומר רק פסוקים אלו והשאר לא היה אומר. והיה אומר כל הפסוקים האלו מכל ספר תהלים בפעם אחד.",
+                "ומלבד כל זה, העקר היה, מה שהיה מתפלל מעצמו, דהינו מה שהיה רגיל לדבר מלבו לפני יהוה יתברך (בלשון אשכנז), שהיה מתפלל וטוען לפני יהוה יתברך בכמה וכמה מיני טענות ותחנות ובקשות שאמר מדעתו ומלבו כנ\"ל שיזכהו יהוה יתברך לעבודתו.",
+                "וזהו העקר מה שהועיל לו לזכות למה שזכה. כך שמענו מפיו הקדוש בפרוש."
+              ]
+            },
+            {
+              "id": "src-shr-11",
+              "type": "source",
+              "titre_he": "שבחי הר״ן, סימן י״א",
+              "ref": "Chiv'hei HaRan 11",
+              "ref_sefaria": "Shivchei HaRan 11",
+              "url": "https://www.sefaria.org/Shivchei_HaRan.11",
+              "edition": "shr",
+              "paragraphes": [
+                "וְכַמָּה פְּעָמִים הָיָה מְדַבֵּר לִפְנֵי יְהֹוָה יִתְבָּרַךְ דִּבְרֵי תְּחִנּוֹת וּבַקָּשׁוֹת מִלִּבּוֹ, וְנִזְדַּמֵּן לוֹ בְּתוֹךְ דִּבּוּרָיו טְעָנוֹת יָפוֹת וּתְפִלּוֹת נְכוֹנוֹת וּמְסֻדָּרוֹת וְהוּטְבוּ בְּעֵינָיו, וְהָיָה כּוֹתְבָם אֶצְלוֹ לְזִכָּרוֹן לְמַעַן יִהְיֶה רָגִיל לְהִתְפַּלֵּל אוֹתָם גַּם אַחַר־כָּךְ.",
+                "וְכֵן הָיָה רָגִיל בְּעִנְיָן זֶה לְדַבֵּר בֵּינוֹ לְבֵין קוֹנוֹ הַרְבֵּה מְאֹד מְאֹד וְכָל תְּפִלּוֹתָיו הָיוּ; שֶׁיִּזְכֶּה לְהִתְקָרֵב לַיהֹוָה יִתְבָּרַךְ. וְהָיוּ לוֹ טְעָנוֹת גְּדוֹלוֹת לַיהֹוָה יִתְבָּרַךְ עַל זֶה."
+              ],
+              "liens_chizuk": [
+                "shr-11-ecrire"
+              ],
+              "note": null,
+              "statut_verif": "verifie_texte",
+              "recoupement": [
+                "article ברסלב סיטי (même texte)"
+              ],
+              "paragraphes_sans_nikkoud": [
+                "וכמה פעמים היה מדבר לפני יהוה יתברך דברי תחנות ובקשות מלבו, ונזדמן לו בתוך דבוריו טענות יפות ותפלות נכונות ומסדרות והוטבו בעיניו, והיה כותבם אצלו לזכרון למען יהיה רגיל להתפלל אותם גם אחר־כך.",
+                "וכן היה רגיל בענין זה לדבר בינו לבין קונו הרבה מאד מאד וכל תפלותיו היו; שיזכה להתקרב ליהוה יתברך. והיו לו טענות גדולות ליהוה יתברך על זה."
+              ]
+            },
+            {
+              "id": "src-shr-12",
+              "type": "source",
+              "titre_he": "שבחי הר״ן, סימן י״ב",
+              "ref": "Chiv'hei HaRan 12",
+              "ref_sefaria": "Shivchei HaRan 12",
+              "url": "https://www.sefaria.org/Shivchei_HaRan.12",
+              "edition": "shr",
+              "paragraphes": [
+                "וְאַף־עַל־פִּי־כֵן, הָיָה נִדְמֶה לוֹ תָּמִיד שֶׁאֵין מִסְתַּכְּלִין עָלָיו כְּלָל וְאֵין שׁוֹמְעִין לוֹ כְּלָל, רַק אַדְּרַבָּא, נִדְמֶה לוֹ שֶׁמַּרְחִיקִין אוֹתוֹ מֵעֲבוֹדָתוֹ יִתְבָּרַךְ בְּכָל מִינֵי הַרְחָקוֹת וּכְאִלּוּ אֵין רוֹצִין בּוֹ כְּלָל וּכְלָל. כִּי הָיָה רוֹאֶה שֶׁחוֹלְפִין וְעוֹבְרִין כַּמָּה וְכַמָּה יָמִים וְשָׁנִים וַעֲדַיִן הוּא רָחוֹק מֵיְהֹוָה יִתְבָּרַךְ וְלֹא זָכָה עֲדַיִן לְשׁוּם הִתְקָרְבוּת, עַל כֵּן נִדְמָה בְּעֵינָיו שֶׁאֵין שׁוֹמְעִין דְּבָרָיו כְּלָל וְאֵין מִסְתַּכְּלִין עָלָיו כְּלָל, רַק אַדְּרַבָּא – מַרְחִיקִין אוֹתוֹ בְּכָל מִינֵי הִתְרַחֲקוּת מֵעֲבוֹדָתוֹ יִתְבָּרַךְ.",
+                "אַךְ אַף־עַל־פִּי־כֵן הָיָה מְחַזֵּק עַצְמוֹ מְאֹד וְלֹא הִנִּיחַ אֶת מְקוֹמוֹ. וְכַמָּה פְּעָמִים הָיָה, שֶׁהָיָה נוֹפֵל בְּדַעְתּוֹ מֵחֲמַת זֶה שֶׁרָאָה שֶׁהוּא מִתְפַּלֵּל וּמַעְתִּיר וּמַפְצִיר כָּל כָּךְ שֶׁיִּתְקָרֵב לַעֲבוֹדַת־הַשֵּׁם־יִתְבָּרַךְ וְאֵין מִסְתַּכְּלִין עָלָיו כְּלָל.",
+                "וּמֵחֲמַת זֶה נָפַל לִפְעָמִים בְּדַעְתּוֹ וְלֹא הָיָה מְדַבֵּר עוֹד כָּל־כָּךְ בֵּינוֹ לְבֵין קוֹנוֹ אֵיזֶה יָמִים. אַחַר־כָּךְ נִזְכַּר בְּעַצְמוֹ וְהִתְבַּיֵּשׁ בְּעַצְמוֹ עַל שֶׁהִרְהֵר אַחַר מִדּוֹתָיו יִתְבָּרַךְ, כִּי בֶּאֱמֶת בְּוַדַּאי יְהֹוָה יִתְבָּרַךְ חַנּוּן וְרַחוּם וְכוּ' וּבְוַדַּאי הוּא רוֹצֶה לְקָרְבוֹ וְכוּ'.",
+                "וְחָזַר וְנִתְחַזֵּק בְּדַעְתּוֹ, וְהִתְחִיל שׁוּב לְהַעְתִּיר וּלְדַבֵּר לִפְנֵי יְהֹוָה יִתְבָּרַךְ כַּנַּ\"ל. וְכֵן הָיָה כַּמָּה פְּעָמִים."
+              ],
+              "liens_chizuk": [
+                "shr-12-rejet"
+              ],
+              "note": null,
+              "statut_verif": "verifie_texte",
+              "recoupement": [
+                "article ברסלב סיטי (même texte, une proposition manquante)"
+              ],
+              "paragraphes_sans_nikkoud": [
+                "ואף־על־פי־כן, היה נדמה לו תמיד שאין מסתכלין עליו כלל ואין שומעין לו כלל, רק אדרבא, נדמה לו שמרחיקין אותו מעבודתו יתברך בכל מיני הרחקות וכאלו אין רוצין בו כלל וכלל. כי היה רואה שחולפין ועוברין כמה וכמה ימים ושנים ועדין הוא רחוק מיהוה יתברך ולא זכה עדין לשום התקרבות, על כן נדמה בעיניו שאין שומעין דבריו כלל ואין מסתכלין עליו כלל, רק אדרבא – מרחיקין אותו בכל מיני התרחקות מעבודתו יתברך.",
+                "אך אף־על־פי־כן היה מחזק עצמו מאד ולא הניח את מקומו. וכמה פעמים היה, שהיה נופל בדעתו מחמת זה שראה שהוא מתפלל ומעתיר ומפציר כל כך שיתקרב לעבודת־השם־יתברך ואין מסתכלין עליו כלל.",
+                "ומחמת זה נפל לפעמים בדעתו ולא היה מדבר עוד כל־כך בינו לבין קונו איזה ימים. אחר־כך נזכר בעצמו והתביש בעצמו על שהרהר אחר מדותיו יתברך, כי באמת בודאי יהוה יתברך חנון ורחום וכו' ובודאי הוא רוצה לקרבו וכו'.",
+                "וחזר ונתחזק בדעתו, והתחיל שוב להעתיר ולדבר לפני יהוה יתברך כנ\"ל. וכן היה כמה פעמים."
+              ]
+            },
+            {
+              "id": "src-tehilim",
+              "type": "source",
+              "titre_he": "פסוקים (תהילים נ״א, קמ״ה, ל״ד)",
+              "ref": "Tehilim 51:19 ; 145:18 ; 34:19",
+              "ref_sefaria": "Psalms 51:19; 145:18; 34:19",
+              "url": "https://www.sefaria.org/Psalms.145.18",
+              "edition": "tanakh",
+              "paragraphes": [
+                "זִבְחֵי אֱלֹהִים רוּחַ נִשְׁבָּרָה לֵב־נִשְׁבָּר וְנִדְכֶּה אֱלֹהִים לֹא תִבְזֶה׃ (תהלים נא, יט)",
+                "קָרוֹב יְהֹוָה לְכָל־קֹרְאָיו לְכֹל אֲשֶׁר יִקְרָאֻהוּ בֶאֱמֶת׃ (תהלים קמה, יח)",
+                "קָרוֹב יְהֹוָה לְנִשְׁבְּרֵי־לֵב וְאֶת־דַּכְּאֵי־רוּחַ יוֹשִׁיעַ׃ (תהלים לד, יט)"
+              ],
+              "liens_chizuk": [
+                "tehilim-51-19",
+                "tehilim-145-18",
+                "tehilim-34-19"
+              ],
+              "note": "Nom divin en toutes lettres. Le passage d'Achèr BaNa'hal cité par l'article imprime « קמד, יח » : erreur, c'est 145:18.",
+              "statut_verif": "verifie_texte",
+              "recoupement": [
+                "tanach.us et MAM (deux éditions indépendantes)",
+                "citation dans la lettre d'Achèr BaNa'hal"
+              ]
+            },
+            {
+              "id": "art-bc-salama-2024",
+              "type": "article",
+              "titre": "התבודדות: איך עושים את זה? ולמה?",
+              "site": "ברסלב סיטי",
+              "date": "2024-07-18",
+              "url": null,
+              "resume_fr": "Présente la hitbodedout comme le cœur de l’enseignement de Rabbi Na’hman : la nuit et le lieu isolé (LM I, 52), la langue maternelle, la parole bloquée transformée en prière (LM II, 25). Rassemble ensuite les sources : LM II, 25, ’Hayé Moharan 438 et 440, Chiv’hei HaRan 10 à 12, et des lettres d’Acher BaNa’hal.",
+              "resume_en": "Presents hitbodedut as the heart of Rabbi Nahman’s teaching: night and the secluded place (LM I, 52), one’s mother tongue, blocked speech turned into prayer (LM II, 25). Then gathers the sources: LM II, 25, Hayei Moharan 438 and 440, Shivhei HaRan 10 to 12, and letters from Asher BaNahal.",
+              "resume_he": "מציג את ההתבודדות כלב תורתו של רבי נחמן: הלילה והמקום המבודד (ליקוטי מוהר״ן א׳, נ״ב), שפת האם, הדיבור החסום ההופך לתפילה (ליקוטי מוהר״ן תניינא, כ״ה). לאחר מכן אוסף את המקורות: ליקוטי מוהר״ן תניינא כ״ה, חיי מוהר״ן תל״ח ות״מ, שבחי הר״ן י׳ עד י״ב, ומכתבים מאשר בנחל.",
+              "droits_fr": "Article moderne protégé : seul un résumé est donné ici.",
+              "droits_en": "Modern article under copyright: only a summary is given here.",
+              "droits_he": "מאמר מודרני המוגן בזכויות יוצרים: כאן ניתן תקציר בלבד.",
+              "autorisation": null,
+              "texte_integral": null,
+              "sources_citees": [
+                "src-lm2-25",
+                "src-lm1-52-3",
+                "src-cm-438",
+                "src-cm-440",
+                "src-shr-10",
+                "src-shr-11",
+                "src-shr-12",
+                "src-tehilim"
+              ],
+              "erreurs_relevees_fr": [
+                "Attribue à « ליקוטי מוהר״ן א׳ סימן כה » le conseil de s’isoler dans une pièce ou un champ : c’est Tinyana (II) 25.",
+                "Copie de LM II, 25 : « ויפתח פניו » au lieu de « פיו » ; « יביו » au lieu de « יבין » ; « אשרי ישאחז » au lieu de « שיאחז ».",
+                "Copie de LM II, 25 : la phrase « וְעִנְיָן הַשִּׂיחָה זוֹ עוֹלָה לְמָקוֹם גָּבוֹהַּ מְאֹד » manque.",
+                "Chiv’hei HaRan 10 : « ואמלאות » au lieu de « ואמתלאות ». Chiv’hei HaRan 12 : « ואין שומעין לו כלל » manque.",
+                "Lettre d’Acher BaNa’hal citée : « (שם קמד, יח) » ; le verset est Tehilim 145:18.",
+                "Coquilles de référence : « סימז » pour « סימן » (deux fois)."
+              ],
+              "erreurs_relevees_en": [
+                "Attributes to “ליקוטי מוהר״ן א׳ סימן כה” the advice to seclude oneself in a room or a field: that is Tinyana (II) 25.",
+                "Copy of LM II, 25: “ויפתח פניו” instead of “פיו”; “יביו” instead of “יבין”; “אשרי ישאחז” instead of “שיאחז”.",
+                "Copy of LM II, 25: the sentence “וְעִנְיָן הַשִּׂיחָה זוֹ עוֹלָה לְמָקוֹם גָּבוֹהַּ מְאֹד” is missing.",
+                "Shivhei HaRan 10: “ואמלאות” instead of “ואמתלאות”. Shivhei HaRan 12: “ואין שומעין לו כלל” is missing.",
+                "Letter from Asher BaNahal quoted: “(שם קמד, יח)”; the verse is Tehillim 145:18.",
+                "Reference typos: “סימז” for “סימן” (twice)."
+              ],
+              "erreurs_relevees_he": [
+                "מייחס ל״ליקוטי מוהר״ן א׳ סימן כה״ את העצה להתבודד בחדר או בשדה: זהו תניינא (ב׳) כ״ה.",
+                "העתקה של ליקוטי מוהר״ן תניינא כ״ה: ״ויפתח פניו״ במקום ״פיו״; ״יביו״ במקום ״יבין״; ״אשרי ישאחז״ במקום ״שיאחז״.",
+                "העתקה של ליקוטי מוהר״ן תניינא כ״ה: המשפט ״וְעִנְיָן הַשִּׂיחָה זוֹ עוֹלָה לְמָקוֹם גָּבוֹהַּ מְאֹד״ חסר.",
+                "שבחי הר״ן י׳: ״ואמלאות״ במקום ״ואמתלאות״. שבחי הר״ן י״ב: ״ואין שומעין לו כלל״ חסר.",
+                "מכתב מאשר בנחל המצוטט: ״(שם קמד, יח)״; הפסוק הוא תהילים קמ״ה:י״ח.",
+                "שגיאות הפניה: ״סימז״ במקום ״סימן״ (פעמיים)."
+              ],
+              "serie": null,
+              "ordre": null,
+              "statut_reference": "d'après le texte collé par l'utilisateur ; erreurs vérifiées sur Sefaria"
+            },
+            {
+              "id": "art-abn-1-68",
+              "type": "article",
+              "titre": "אשר בנחל, חלק א׳, עמ׳ ס״ח",
+              "date": null,
+              "url": null,
+              "resume_fr": "Ne pas rester dans la tristesse et prendre sur soi de parler un peu chaque jour à Hachem ; s’appuie sur Tehilim 51:19, 145:18 et 34:19, et rappelle que le Rabbi attribuait son niveau à sa parole simple avec Hachem (Chiv’hei HaRan 10).",
+              "resume_en": "Do not remain in sadness, and take upon yourself to speak a little to Hashem each day; draws on Tehillim 51:19, 145:18 and 34:19, and recalls that the Rabbi attributed his level to his simple speech with Hashem (Shivhei HaRan 10).",
+              "resume_he": "לא להישאר בעצבות, ולקבל על עצמו לדבר קצת עם השם בכל יום; נסמך על תהילים נ״א:י״ט, קמ״ה:י״ח ול״ד:י״ט, ומזכיר שרבנו ייחס את מדרגתו לדיבורו הפשוט עם השם (שבחי הר״ן י׳).",
+              "droits_fr": "Acher BaNa’hal, œuvre moderne protégée : le texte n’est pas reproduit, seule la référence est donnée.",
+              "droits_en": "Asher BaNahal, a modern work under copyright: the text is not reproduced, only the reference is given.",
+              "droits_he": "אשר בנחל, יצירה מודרנית המוגנת בזכויות יוצרים: הטקסט אינו מובא, רק המקור מצוין.",
+              "autorisation": null,
+              "texte_integral": null,
+              "sources_citees": [],
+              "erreurs_relevees_fr": [],
+              "serie": null,
+              "ordre": null,
+              "statut_reference": "référence citée par l'article, non vérifiée sur l'original"
+            },
+            {
+              "id": "art-abn-1-87",
+              "type": "article",
+              "titre": "אשר בנחל, חלק א׳, עמ׳ פ״ז",
+              "date": null,
+              "url": null,
+              "resume_fr": "La joie rend la hitbodedout plus facile ; se réjouir des points bons en soi (Azamra, LM I, 282).",
+              "resume_en": "Joy makes hitbodedut easier; rejoicing in the good points within oneself (Azamra, LM I, 282).",
+              "resume_he": "השמחה מקלה את ההתבודדות; לשמוח בנקודות הטובות שבעצמו (אזמרה, ליקוטי מוהר״ן א׳, רפ״ב).",
+              "droits_fr": "Acher BaNa’hal, œuvre moderne protégée : le texte n’est pas reproduit, seule la référence est donnée.",
+              "droits_en": "Asher BaNahal, a modern work under copyright: the text is not reproduced, only the reference is given.",
+              "droits_he": "אשר בנחל, יצירה מודרנית המוגנת בזכויות יוצרים: הטקסט אינו מובא, רק המקור מצוין.",
+              "autorisation": null,
+              "texte_integral": null,
+              "sources_citees": [],
+              "erreurs_relevees_fr": [],
+              "serie": null,
+              "ordre": null,
+              "statut_reference": "référence citée par l'article, non vérifiée sur l'original"
+            },
+            {
+              "id": "art-abn-1-127",
+              "type": "article",
+              "titre": "אשר בנחל, חלק א׳, עמ׳ קכ״ז",
+              "date": null,
+              "url": null,
+              "resume_fr": "La hitbodedout comme porte principale : un lieu sans personne, sa propre langue, et tout demander, matériel et spirituel.",
+              "resume_en": "Hitbodedut as the main gate: a place with no one around, one’s own language, and asking for everything, material and spiritual.",
+              "resume_he": "ההתבודדות כשער הראשי: מקום שאין בו איש, השפה שלו, ולבקש הכול, גשמי ורוחני.",
+              "droits_fr": "Acher BaNa’hal, œuvre moderne protégée : le texte n’est pas reproduit, seule la référence est donnée.",
+              "droits_en": "Asher BaNahal, a modern work under copyright: the text is not reproduced, only the reference is given.",
+              "droits_he": "אשר בנחל, יצירה מודרנית המוגנת בזכויות יוצרים: הטקסט אינו מובא, רק המקור מצוין.",
+              "autorisation": null,
+              "texte_integral": null,
+              "sources_citees": [],
+              "erreurs_relevees_fr": [],
+              "serie": null,
+              "ordre": null,
+              "statut_reference": "référence citée par l'article, non vérifiée sur l'original"
+            },
+            {
+              "id": "art-abn-17-231",
+              "type": "article",
+              "titre": "אשר בנחל, חלק י״ז, עמ׳ רל״א",
+              "date": null,
+              "url": null,
+              "resume_fr": "Parler à Hachem comme à un ami protège de tout ; récit de Rabbi Natan resté joyeux au milieu de la persécution.",
+              "resume_en": "Speaking to Hashem as to a friend protects from everything; the story of Rabbi Natan who stayed joyful in the midst of persecution.",
+              "resume_he": "לדבר עם השם כמו עם חבר מגן מהכול; סיפור על רבי נתן שנשאר בשמחה בתוך הרדיפות.",
+              "droits_fr": "Acher BaNa’hal, œuvre moderne protégée : le texte n’est pas reproduit, seule la référence est donnée.",
+              "droits_en": "Asher BaNahal, a modern work under copyright: the text is not reproduced, only the reference is given.",
+              "droits_he": "אשר בנחל, יצירה מודרנית המוגנת בזכויות יוצרים: הטקסט אינו מובא, רק המקור מצוין.",
+              "autorisation": null,
+              "texte_integral": null,
+              "sources_citees": [],
+              "erreurs_relevees_fr": [],
+              "serie": null,
+              "ordre": null,
+              "statut_reference": "référence citée par l'article, non vérifiée sur l'original"
+            },
+            {
+              "id": "art-abn-84-253",
+              "type": "article",
+              "titre": "אשר בנחל, חלק פ״ד, עמ׳ רנ״ג",
+              "date": null,
+              "url": null,
+              "resume_fr": "Distingue la hitbodedout de Rabbi Na’hman, faite de parole et ouverte à tous, de la hitbodedout méditative des anciens ; décrit la pratique comme à la fois la plus facile et la plus difficile.",
+              "resume_en": "Distinguishes Rabbi Nahman’s hitbodedut, made of speech and open to everyone, from the meditative hitbodedut of the ancients; describes the practice as both the easiest and the hardest.",
+              "resume_he": "מבחין בין ההתבודדות של רבי נחמן, העשויה דיבור ופתוחה לכול, לבין ההתבודדות המדיטטיבית של הקדמונים; מתאר את התרגול כקל וקשה ביותר בעת ובעונה אחת.",
+              "droits_fr": "Acher BaNa’hal, œuvre moderne protégée : le texte n’est pas reproduit, seule la référence est donnée.",
+              "droits_en": "Asher BaNahal, a modern work under copyright: the text is not reproduced, only the reference is given.",
+              "droits_he": "אשר בנחל, יצירה מודרנית המוגנת בזכויות יוצרים: הטקסט אינו מובא, רק המקור מצוין.",
+              "autorisation": null,
+              "texte_integral": null,
+              "sources_citees": [],
+              "erreurs_relevees_fr": [],
+              "serie": null,
+              "ordre": null,
+              "statut_reference": "référence citée par l'article, non vérifiée sur l'original"
+            },
+            {
+              "id": "art-pgisha-01",
+              "type": "article",
+              "titre": "הפגישה: מבוא",
+              "auteur": null,
+              "site": "שער ברסלב (breslev.org)",
+              "date": "כ״ט בתמוז תשע״ט",
+              "url": "https://www.breslev.org/breslev-articles/%d7%94%d7%a4%d7%92%d7%99%d7%a9%d7%94-%d7%9e%d7%91%d7%95%d7%90/",
+              "resume_fr": "Introduction de la série : comment vivre une vraie rencontre avec le Créateur à une époque où tout fonctionne en automatique.",
+              "resume_en": "Introduction to the series: how to have a real encounter with the Creator in an age where everything runs on autopilot.",
+              "resume_he": "פתיחה לסדרה: איך לחוות מפגש אמיתי עם הבורא בעידן שבו הכול פועל אוטומטית.",
+              "droits_fr": "© Chaar Breslev 2016–2026 (breslev.org). Article protégé : seul un résumé est donné ici, l’article se lit sur le site.",
+              "droits_en": "© Shaar Breslev 2016–2026 (breslev.org). Protected article: only a summary is given here; the article is read on the site.",
+              "droits_he": "© שער ברסלב 2016–2026 (breslev.org). מאמר מוגן: כאן ניתן תקציר בלבד, והמאמר נקרא באתר.",
+              "autorisation": null,
+              "texte_integral": null,
+              "sources_citees": [],
+              "erreurs_relevees_fr": [],
+              "serie": "הפגישה",
+              "ordre": 1,
+              "statut_reference": "relevé sur le site"
+            },
+            {
+              "id": "art-pgisha-02",
+              "type": "article",
+              "titre": "הפגישה: היכן המטמון",
+              "auteur": null,
+              "site": "שער ברסלב (breslev.org)",
+              "date": "כ״ט בתמוז תשע״ט",
+              "url": "https://www.breslev.org/breslev-articles/%d7%94%d7%99%d7%9b%d7%9f-%d7%94%d7%9e%d7%98%d7%9e%d7%95%d7%9f/",
+              "resume_fr": "À l’ère de l’immédiat, où tout s’obtient d’un clic : où se trouve le vrai trésor ?",
+              "resume_en": "In an age of instant everything, where everything is obtained at the press of a button: where does the real treasure lie?",
+              "resume_he": "בעידן המיידיות, שבו הכול מתקבל בלחיצת כפתור: היכן נמצא האוצר האמיתי?",
+              "droits_fr": "© Chaar Breslev 2016–2026 (breslev.org). Article protégé : seul un résumé est donné ici, l’article se lit sur le site.",
+              "droits_en": "© Shaar Breslev 2016–2026 (breslev.org). Protected article: only a summary is given here; the article is read on the site.",
+              "droits_he": "© שער ברסלב 2016–2026 (breslev.org). מאמר מוגן: כאן ניתן תקציר בלבד, והמאמר נקרא באתר.",
+              "autorisation": null,
+              "texte_integral": null,
+              "sources_citees": [],
+              "erreurs_relevees_fr": [],
+              "serie": "הפגישה",
+              "ordre": 2,
+              "statut_reference": "relevé sur le site"
+            },
+            {
+              "id": "art-pgisha-03",
+              "type": "article",
+              "titre": "הפגישה: חלום אמיתי",
+              "auteur": null,
+              "site": "שער ברסלב (breslev.org)",
+              "date": "כ״ט בתמוז תשע״ט",
+              "url": "https://www.breslev.org/breslev-articles/%d7%97%d7%9c%d7%95%d7%9d-%d7%90%d7%9e%d7%99%d7%aa%d7%99/",
+              "resume_fr": "« Et à Lui tu t’attacheras » : l’obligation d’un lien étroit et constant avec Hachem.",
+              "resume_en": "“And to Him you shall cleave”: the obligation of a close and constant bond with Hashem.",
+              "resume_he": "״ובו תדבק״: החובה לקשר קרוב ותמידי עם השם.",
+              "droits_fr": "© Chaar Breslev 2016–2026 (breslev.org). Article protégé : seul un résumé est donné ici, l’article se lit sur le site.",
+              "droits_en": "© Shaar Breslev 2016–2026 (breslev.org). Protected article: only a summary is given here; the article is read on the site.",
+              "droits_he": "© שער ברסלב 2016–2026 (breslev.org). מאמר מוגן: כאן ניתן תקציר בלבד, והמאמר נקרא באתר.",
+              "autorisation": null,
+              "texte_integral": null,
+              "sources_citees": [],
+              "erreurs_relevees_fr": [],
+              "serie": "הפגישה",
+              "ordre": 3,
+              "statut_reference": "relevé sur le site"
+            },
+            {
+              "id": "art-pgisha-04",
+              "type": "article",
+              "titre": "הפגישה: קשר אמיתי",
+              "auteur": null,
+              "site": "שער ברסלב (breslev.org)",
+              "date": "כ״ט בתמוז תשע״ט",
+              "url": "https://www.breslev.org/breslev-articles/%d7%94%d7%a4%d7%92%d7%99%d7%a9%d7%94-%d7%a7%d7%a9%d7%a8-%d7%90%d7%9e%d7%99%d7%aa%d7%99/",
+              "resume_fr": "Un vrai lien naît de l’ouverture du cœur ; ce qui relie deux cœurs.",
+              "resume_en": "A real bond is born from the opening of the heart; what connects two hearts.",
+              "resume_he": "קשר אמיתי נולד מפתיחת הלב; מה שמחבר בין שני לבבות.",
+              "droits_fr": "© Chaar Breslev 2016–2026 (breslev.org). Article protégé : seul un résumé est donné ici, l’article se lit sur le site.",
+              "droits_en": "© Shaar Breslev 2016–2026 (breslev.org). Protected article: only a summary is given here; the article is read on the site.",
+              "droits_he": "© שער ברסלב 2016–2026 (breslev.org). מאמר מוגן: כאן ניתן תקציר בלבד, והמאמר נקרא באתר.",
+              "autorisation": null,
+              "texte_integral": null,
+              "sources_citees": [],
+              "erreurs_relevees_fr": [],
+              "serie": "הפגישה",
+              "ordre": 4,
+              "statut_reference": "relevé sur le site"
+            },
+            {
+              "id": "art-pgisha-05",
+              "type": "article",
+              "titre": "הפגישה: קשר אמיתי (ב)",
+              "auteur": null,
+              "site": "שער ברסלב (breslev.org)",
+              "date": "ג׳ באב תשע״ט",
+              "url": "https://www.breslev.org/breslev-articles/%d7%a7%d7%a9%d7%a8-%d7%90%d7%9e%d7%99%d7%aa%d7%99-%d7%91/",
+              "resume_fr": "Suite : l’ouverture du cœur et ce qui relie.",
+              "resume_en": "Continued: the opening of the heart and what connects.",
+              "resume_he": "המשך: פתיחת הלב ומה שמחבר.",
+              "droits_fr": "© Chaar Breslev 2016–2026 (breslev.org). Article protégé : seul un résumé est donné ici, l’article se lit sur le site.",
+              "droits_en": "© Shaar Breslev 2016–2026 (breslev.org). Protected article: only a summary is given here; the article is read on the site.",
+              "droits_he": "© שער ברסלב 2016–2026 (breslev.org). מאמר מוגן: כאן ניתן תקציר בלבד, והמאמר נקרא באתר.",
+              "autorisation": null,
+              "texte_integral": null,
+              "sources_citees": [],
+              "erreurs_relevees_fr": [],
+              "serie": "הפגישה",
+              "ordre": 5,
+              "statut_reference": "relevé sur le site"
+            },
+            {
+              "id": "art-pgisha-06",
+              "type": "article",
+              "titre": "הפגישה: קשר אמיתי (ג)",
+              "auteur": null,
+              "site": "שער ברסלב (breslev.org)",
+              "date": "י״ז באב תשע״ט",
+              "url": "https://www.breslev.org/breslev-articles/%d7%94%d7%a4%d7%92%d7%99%d7%a9%d7%94-%d7%a7%d7%a9%d7%a8-%d7%90%d7%9e%d7%99%d7%aa%d7%99-%d7%92/",
+              "resume_fr": "Suite du même thème.",
+              "resume_en": "Continuation of the same theme.",
+              "resume_he": "המשך אותו הנושא.",
+              "droits_fr": "© Chaar Breslev 2016–2026 (breslev.org). Article protégé : seul un résumé est donné ici, l’article se lit sur le site.",
+              "droits_en": "© Shaar Breslev 2016–2026 (breslev.org). Protected article: only a summary is given here; the article is read on the site.",
+              "droits_he": "© שער ברסלב 2016–2026 (breslev.org). מאמר מוגן: כאן ניתן תקציר בלבד, והמאמר נקרא באתר.",
+              "autorisation": null,
+              "texte_integral": null,
+              "sources_citees": [],
+              "erreurs_relevees_fr": [],
+              "serie": "הפגישה",
+              "ordre": 6,
+              "statut_reference": "relevé sur le site"
+            },
+            {
+              "id": "art-pgisha-07",
+              "type": "article",
+              "titre": "הפגישה: קשר אמיתי (ד)",
+              "auteur": null,
+              "site": "שער ברסלב (breslev.org)",
+              "date": "ג׳ באלול תשע״ט",
+              "url": "https://www.breslev.org/breslev-articles/%d7%94%d7%a4%d7%92%d7%99%d7%a9%d7%94-%d7%a7%d7%a9%d7%a8-%d7%90%d7%9e%d7%99%d7%aa%d7%99-%d7%93/",
+              "resume_fr": "La hitbodedout n’est pas seulement épancher son cœur : c’est parler avec Lui comme on parle à un ami.",
+              "resume_en": "Hitbodedut is not only pouring out one’s heart: it is speaking with Him as one speaks to a friend.",
+              "resume_he": "ההתבודדות אינה רק שפיכת הלב: היא לדבר איתו כמו שמדברים עם חבר.",
+              "droits_fr": "© Chaar Breslev 2016–2026 (breslev.org). Article protégé : seul un résumé est donné ici, l’article se lit sur le site.",
+              "droits_en": "© Shaar Breslev 2016–2026 (breslev.org). Protected article: only a summary is given here; the article is read on the site.",
+              "droits_he": "© שער ברסלב 2016–2026 (breslev.org). מאמר מוגן: כאן ניתן תקציר בלבד, והמאמר נקרא באתר.",
+              "autorisation": null,
+              "texte_integral": null,
+              "sources_citees": [],
+              "erreurs_relevees_fr": [],
+              "serie": "הפגישה",
+              "ordre": 7,
+              "statut_reference": "relevé sur le site"
+            },
+            {
+              "id": "art-pgisha-08",
+              "type": "article",
+              "titre": "הפגישה: קשר אמיתי (ה)",
+              "auteur": null,
+              "site": "שער ברסלב (breslev.org)",
+              "date": "ט׳ באלול תשע״ט",
+              "url": "https://www.breslev.org/breslev-articles/%d7%94%d7%a4%d7%92%d7%99%d7%a9%d7%94-%d7%a7%d7%a9%d7%a8-%d7%90%d7%9e%d7%99%d7%aa%d7%99-%d7%94/",
+              "resume_fr": "Si le Créateur sait tout et a voulu notre situation, pourquoi prier ?",
+              "resume_en": "If the Creator knows everything and willed our situation, why pray?",
+              "resume_he": "אם הבורא יודע הכול ורצה את מצבנו, למה להתפלל?",
+              "droits_fr": "© Chaar Breslev 2016–2026 (breslev.org). Article protégé : seul un résumé est donné ici, l’article se lit sur le site.",
+              "droits_en": "© Shaar Breslev 2016–2026 (breslev.org). Protected article: only a summary is given here; the article is read on the site.",
+              "droits_he": "© שער ברסלב 2016–2026 (breslev.org). מאמר מוגן: כאן ניתן תקציר בלבד, והמאמר נקרא באתר.",
+              "autorisation": null,
+              "texte_integral": null,
+              "sources_citees": [],
+              "erreurs_relevees_fr": [],
+              "serie": "הפגישה",
+              "ordre": 8,
+              "statut_reference": "relevé sur le site"
+            },
+            {
+              "id": "art-pgisha-09",
+              "type": "article",
+              "titre": "הפגישה: קשר אמיתי (ו)",
+              "auteur": null,
+              "site": "שער ברסלב (breslev.org)",
+              "date": "ט״ז באלול תשע״ט",
+              "url": "https://www.breslev.org/breslev-articles/%d7%94%d7%a4%d7%92%d7%99%d7%a9%d7%94-%d7%a7%d7%a9%d7%a8-%d7%90%d7%9e%d7%99%d7%aa%d7%99-%d7%95/",
+              "resume_fr": "Faire précéder chaque étape de la vie par une prière, sans attendre le problème.",
+              "resume_en": "Letting a prayer precede every step in life, rather than waiting for the problem.",
+              "resume_he": "להקדים תפילה לכל צעד בחיים, ולא לחכות לבעיה.",
+              "droits_fr": "© Chaar Breslev 2016–2026 (breslev.org). Article protégé : seul un résumé est donné ici, l’article se lit sur le site.",
+              "droits_en": "© Shaar Breslev 2016–2026 (breslev.org). Protected article: only a summary is given here; the article is read on the site.",
+              "droits_he": "© שער ברסלב 2016–2026 (breslev.org). מאמר מוגן: כאן ניתן תקציר בלבד, והמאמר נקרא באתר.",
+              "autorisation": null,
+              "texte_integral": null,
+              "sources_citees": [],
+              "erreurs_relevees_fr": [],
+              "serie": "הפגישה",
+              "ordre": 9,
+              "statut_reference": "relevé sur le site"
+            },
+            {
+              "id": "art-pgisha-10",
+              "type": "article",
+              "titre": "הפגישה: המטרה והאמצעי",
+              "auteur": null,
+              "site": "שער ברסלב (breslev.org)",
+              "date": "כ״ח בתשרי תש״פ",
+              "url": "https://www.breslev.org/breslev-articles/%d7%94%d7%9e%d7%98%d7%a8%d7%94-%d7%95%d7%94%d7%90%d7%9e%d7%a6%d7%a2%d7%99/",
+              "resume_fr": "Face à une difficulté, on cherche d’abord à la régler seul ; le but et le moyen.",
+              "resume_en": "Facing a difficulty, one first tries to solve it alone; the goal and the means.",
+              "resume_he": "מול קושי, מנסים תחילה לפתור אותו לבד; המטרה והאמצעי.",
+              "droits_fr": "© Chaar Breslev 2016–2026 (breslev.org). Article protégé : seul un résumé est donné ici, l’article se lit sur le site.",
+              "droits_en": "© Shaar Breslev 2016–2026 (breslev.org). Protected article: only a summary is given here; the article is read on the site.",
+              "droits_he": "© שער ברסלב 2016–2026 (breslev.org). מאמר מוגן: כאן ניתן תקציר בלבד, והמאמר נקרא באתר.",
+              "autorisation": null,
+              "texte_integral": null,
+              "sources_citees": [],
+              "erreurs_relevees_fr": [],
+              "serie": "הפגישה",
+              "ordre": 10,
+              "statut_reference": "relevé sur le site"
+            },
+            {
+              "id": "art-pgisha-11",
+              "type": "article",
+              "titre": "הפגישה: קשר אמיתי (ז) – מערכת יחסים תקינה",
+              "auteur": null,
+              "site": "שער ברסלב (breslev.org)",
+              "date": "י״ב במרחשוון תש״פ",
+              "url": "https://www.breslev.org/breslev-articles/%d7%94%d7%a4%d7%92%d7%99%d7%a9%d7%94-%d7%a7%d7%a9%d7%a8-%d7%90%d7%9e%d7%99%d7%aa%d7%99-%d7%96/",
+              "resume_fr": "Une relation saine : le sujet central de la rencontre.",
+              "resume_en": "A healthy relationship: the central subject of the encounter.",
+              "resume_he": "מערכת יחסים תקינה: הנושא המרכזי של המפגש.",
+              "droits_fr": "© Chaar Breslev 2016–2026 (breslev.org). Article protégé : seul un résumé est donné ici, l’article se lit sur le site.",
+              "droits_en": "© Shaar Breslev 2016–2026 (breslev.org). Protected article: only a summary is given here; the article is read on the site.",
+              "droits_he": "© שער ברסלב 2016–2026 (breslev.org). מאמר מוגן: כאן ניתן תקציר בלבד, והמאמר נקרא באתר.",
+              "autorisation": null,
+              "texte_integral": null,
+              "sources_citees": [],
+              "erreurs_relevees_fr": [],
+              "serie": "הפגישה",
+              "ordre": 11,
+              "statut_reference": "relevé sur le site"
+            },
+            {
+              "id": "art-pgisha-12",
+              "type": "article",
+              "titre": "הפגישה: התבודדות וגדולי ישראל",
+              "auteur": null,
+              "site": "שער ברסלב (breslev.org)",
+              "date": "כ״א במרחשוון תש״פ",
+              "url": "https://www.breslev.org/breslev-articles/%d7%94%d7%a4%d7%92%d7%99%d7%a9%d7%94-%d7%94%d7%94%d7%aa%d7%91%d7%95%d7%93%d7%93%d7%95%d7%aa-%d7%95%d7%92%d7%93%d7%95%d7%9c%d7%99-%d7%99%d7%a9%d7%a8%d7%90%d7%9c-%d7%9b%d7%94-%d7%a2%d7%a9%d7%95/",
+              "resume_fr": "Ce que les grands d’Israël ont écrit sur l’obligation et la valeur de la hitbodedout, de Rabbi Élazar Azikri au ’Hafets ’Haïm.",
+              "resume_en": "What the great ones of Israel wrote about the obligation and value of hitbodedut, from Rabbi Elazar Azikri to the Hafets Haim.",
+              "resume_he": "מה שכתבו גדולי ישראל על החובה והערך של ההתבודדות, מרבי אלעזר אזכרי ועד החפץ חיים.",
+              "droits_fr": "© Chaar Breslev 2016–2026 (breslev.org). Article protégé : seul un résumé est donné ici, l’article se lit sur le site.",
+              "droits_en": "© Shaar Breslev 2016–2026 (breslev.org). Protected article: only a summary is given here; the article is read on the site.",
+              "droits_he": "© שער ברסלב 2016–2026 (breslev.org). מאמר מוגן: כאן ניתן תקציר בלבד, והמאמר נקרא באתר.",
+              "autorisation": null,
+              "texte_integral": null,
+              "sources_citees": [],
+              "erreurs_relevees_fr": [],
+              "serie": "הפגישה",
+              "ordre": 12,
+              "statut_reference": "relevé sur le site"
+            },
+            {
+              "id": "art-pgisha-13",
+              "type": "article",
+              "titre": "הפגישה: מי לוקח על עצמו את האחריות?",
+              "auteur": null,
+              "site": "שער ברסלב (breslev.org)",
+              "date": "ל׳ במרחשוון תש״פ",
+              "url": "https://www.breslev.org/breslev-articles/%d7%94%d7%a4%d7%92%d7%99%d7%a9%d7%94-%d7%9e%d7%99-%d7%9c%d7%95%d7%a7%d7%97-%d7%a2%d7%9c-%d7%a2%d7%a6%d7%9e%d7%95-%d7%90%d7%aa-%d7%94%d7%90%d7%97%d7%a8%d7%99%d7%95%d7%aa/",
+              "resume_fr": "Réponse à l’objection « tant de temps en prières, c’est exagéré », à partir d’une guemara du traité Chabbat.",
+              "resume_en": "A reply to the objection that “so much time in prayer is excessive”, drawn from a Gemara in tractate Shabbat.",
+              "resume_he": "מענה לטענה ״כל כך הרבה זמן בתפילה זה מוגזם״, מתוך גמרא במסכת שבת.",
+              "droits_fr": "© Chaar Breslev 2016–2026 (breslev.org). Article protégé : seul un résumé est donné ici, l’article se lit sur le site.",
+              "droits_en": "© Shaar Breslev 2016–2026 (breslev.org). Protected article: only a summary is given here; the article is read on the site.",
+              "droits_he": "© שער ברסלב 2016–2026 (breslev.org). מאמר מוגן: כאן ניתן תקציר בלבד, והמאמר נקרא באתר.",
+              "autorisation": null,
+              "texte_integral": null,
+              "sources_citees": [],
+              "erreurs_relevees_fr": [],
+              "serie": "הפגישה",
+              "ordre": 13,
+              "statut_reference": "relevé sur le site"
+            },
+            {
+              "id": "art-pgisha-14",
+              "type": "article",
+              "titre": "הפגישה: אני בן תורה, מה הקשר שלי להתבודדות?!",
+              "auteur": null,
+              "site": "שער ברסלב (breslev.org)",
+              "date": "ה׳ בכסלו תש״פ",
+              "url": "https://www.breslev.org/breslev-articles/%d7%94%d7%a4%d7%92%d7%99%d7%a9%d7%94-%d7%90%d7%a0%d7%99-%d7%91%d7%9f-%d7%aa%d7%95%d7%a8%d7%94-%d7%9e%d7%94-%d7%94%d7%a7%d7%a9%d7%a8-%d7%a9%d7%9c%d7%99-%d7%9c%d7%94%d7%aa%d7%91%d7%95%d7%93%d7%93/",
+              "resume_fr": "Pourquoi celui qui étudie la Torah toute la journée a lui aussi besoin de hitbodedout.",
+              "resume_en": "Why someone who studies Torah all day also needs hitbodedut.",
+              "resume_he": "למה גם מי שלומד תורה כל היום זקוק להתבודדות.",
+              "droits_fr": "© Chaar Breslev 2016–2026 (breslev.org). Article protégé : seul un résumé est donné ici, l’article se lit sur le site.",
+              "droits_en": "© Shaar Breslev 2016–2026 (breslev.org). Protected article: only a summary is given here; the article is read on the site.",
+              "droits_he": "© שער ברסלב 2016–2026 (breslev.org). מאמר מוגן: כאן ניתן תקציר בלבד, והמאמר נקרא באתר.",
+              "autorisation": null,
+              "texte_integral": null,
+              "sources_citees": [],
+              "erreurs_relevees_fr": [],
+              "serie": "הפגישה",
+              "ordre": 14,
+              "statut_reference": "relevé sur le site"
+            },
+            {
+              "id": "art-pgisha-15",
+              "type": "article",
+              "titre": "הפגישה: שמור על קשר, או: מה הקשר בין הלוואות להתבודדות",
+              "auteur": null,
+              "site": "שער ברסלב (breslev.org)",
+              "date": "י״ב בכסלו תש״פ",
+              "url": "https://www.breslev.org/breslev-articles/%d7%94%d7%a4%d7%92%d7%99%d7%a9%d7%94-%d7%a9%d7%9e%d7%95%d7%a8-%d7%a2%d7%9c-%d7%a7%d7%a9%d7%a8-%d7%90%d7%95-%d7%9e%d7%94-%d7%94%d7%a7%d7%a9%d7%a8-%d7%91%d7%99%d7%9f-%d7%94%d7%9c%d7%95%d7%95%d7%90/",
+              "resume_fr": "Le bénéfice immédiat, en plus du progrès spirituel, pour qui tient ce rendez-vous chaque jour.",
+              "resume_en": "The immediate benefit, beyond spiritual progress, for whoever keeps this appointment every day.",
+              "resume_he": "התועלת המיידית, מעבר להתקדמות הרוחנית, למי ששומר על הפגישה הזאת בכל יום.",
+              "droits_fr": "© Chaar Breslev 2016–2026 (breslev.org). Article protégé : seul un résumé est donné ici, l’article se lit sur le site.",
+              "droits_en": "© Shaar Breslev 2016–2026 (breslev.org). Protected article: only a summary is given here; the article is read on the site.",
+              "droits_he": "© שער ברסלב 2016–2026 (breslev.org). מאמר מוגן: כאן ניתן תקציר בלבד, והמאמר נקרא באתר.",
+              "autorisation": null,
+              "texte_integral": null,
+              "sources_citees": [],
+              "erreurs_relevees_fr": [],
+              "serie": "הפגישה",
+              "ordre": 15,
+              "statut_reference": "relevé sur le site"
+            },
+            {
+              "id": "art-pgisha-16",
+              "type": "article",
+              "titre": "הפגישה: מי ביקש ממך לנסות לבד?",
+              "auteur": null,
+              "site": "שער ברסלב (breslev.org)",
+              "date": "י״ז בטבת תש״פ",
+              "url": "https://www.breslev.org/breslev-articles/%d7%94%d7%a4%d7%92%d7%99%d7%a9%d7%94-%d7%9e%d7%99-%d7%91%d7%99%d7%a7%d7%a9-%d7%9e%d7%9e%d7%9a-%d7%9c%d7%a0%d7%a1%d7%95%d7%aa-%d7%9c%d7%91%d7%93/",
+              "resume_fr": "Faire tout son possible, oui ; mais pourquoi tout porter seul ?",
+              "resume_en": "Doing everything one can, yes; but why carry it all alone?",
+              "resume_he": "לעשות את כל שביכולתו, כן; אבל למה לשאת הכול לבד?",
+              "droits_fr": "© Chaar Breslev 2016–2026 (breslev.org). Article protégé : seul un résumé est donné ici, l’article se lit sur le site.",
+              "droits_en": "© Shaar Breslev 2016–2026 (breslev.org). Protected article: only a summary is given here; the article is read on the site.",
+              "droits_he": "© שער ברסלב 2016–2026 (breslev.org). מאמר מוגן: כאן ניתן תקציר בלבד, והמאמר נקרא באתר.",
+              "autorisation": null,
+              "texte_integral": null,
+              "sources_citees": [],
+              "erreurs_relevees_fr": [],
+              "serie": "הפגישה",
+              "ordre": 16,
+              "statut_reference": "relevé sur le site"
+            },
+            {
+              "id": "art-pgisha-17",
+              "type": "article",
+              "titre": "הפגישה: הנשק האמיתי, וגם: האם שומעים אותי?",
+              "auteur": null,
+              "site": "שער ברסלב (breslev.org)",
+              "date": "כ״ג בטבת תש״פ",
+              "url": "https://www.breslev.org/breslev-articles/%d7%94%d7%a4%d7%92%d7%99%d7%a9%d7%94-%d7%94%d7%a0%d7%a9%d7%a7-%d7%94%d7%90%d7%9e%d7%99%d7%aa%d7%99-%d7%95%d7%92%d7%9d-%d7%94%d7%90%d7%9d-%d7%a9%d7%95%d7%9e%d7%a2%d7%99%d7%9d-%d7%90%d7%95%d7%aa/",
+              "resume_fr": "« Tout est entre les mains du Ciel » et la question que beaucoup se posent : suis-je entendu ?",
+              "resume_en": "“Everything is in the hands of Heaven”, and the question many ask themselves: am I heard?",
+              "resume_he": "״הכול בידי שמים״, והשאלה שרבים שואלים את עצמם: האם שומעים אותי?",
+              "droits_fr": "© Chaar Breslev 2016–2026 (breslev.org). Article protégé : seul un résumé est donné ici, l’article se lit sur le site.",
+              "droits_en": "© Shaar Breslev 2016–2026 (breslev.org). Protected article: only a summary is given here; the article is read on the site.",
+              "droits_he": "© שער ברסלב 2016–2026 (breslev.org). מאמר מוגן: כאן ניתן תקציר בלבד, והמאמר נקרא באתר.",
+              "autorisation": null,
+              "texte_integral": null,
+              "sources_citees": [],
+              "erreurs_relevees_fr": [],
+              "serie": "הפגישה",
+              "ordre": 17,
+              "statut_reference": "relevé sur le site"
+            },
+            {
+              "id": "art-pgisha-18",
+              "type": "article",
+              "titre": "הפגישה: מדריך מעשי להתבודדות (א)",
+              "auteur": null,
+              "site": "שער ברסלב (breslev.org)",
+              "date": null,
+              "url": "https://www.breslev.org/breslev-articles/%d7%94%d7%a4%d7%92%d7%99%d7%a9%d7%94-%d7%9e%d7%93%d7%a8%d7%99%d7%9a-%d7%9e%d7%a2%d7%a9%d7%99-%d7%9c%d7%94%d7%aa%d7%91%d7%95%d7%93%d7%93%d7%95%d7%aa-%d7%90/",
+              "resume_fr": "Ouvre la troisième partie de la série : guide pratique, comment, où, quand et combien de temps.",
+              "resume_en": "Opens the third part of the series: a practical guide, how, where, when, and for how long.",
+              "resume_he": "פותח את החלק השלישי בסדרה: מדריך מעשי, איך, איפה, מתי וכמה זמן.",
+              "droits_fr": "© Chaar Breslev 2016–2026 (breslev.org). Article protégé : seul un résumé est donné ici, l’article se lit sur le site.",
+              "droits_en": "© Shaar Breslev 2016–2026 (breslev.org). Protected article: only a summary is given here; the article is read on the site.",
+              "droits_he": "© שער ברסלב 2016–2026 (breslev.org). מאמר מוגן: כאן ניתן תקציר בלבד, והמאמר נקרא באתר.",
+              "autorisation": null,
+              "texte_integral": null,
+              "sources_citees": [],
+              "erreurs_relevees_fr": [],
+              "serie": "הפגישה",
+              "ordre": 18,
+              "statut_reference": "relevé sur le site"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tefilot",
+      "titre": {
+        "he": "לִקּוּטֵי תְּפִלּוֹת",
+        "fr": "Likoutei Tefilot",
+        "en": "Likutei Tefilot"
+      },
+      "sous_sections": [
+        {
+          "id": "tefilot-lt",
+          "titre": {
+            "he": "תְּפִלּוֹת לְפִי עִנְיָן",
+            "fr": "Prières par sujet",
+            "en": "Prayers by subject"
+          },
+          "entrees": [
+            {
+              "id": "src-lt-hitbodedut",
+              "type": "source",
+              "sujet": "hitbodedut",
+              "titre_he": "ההתבודדות — לפרש שיחתו",
+              "titre_fr": "Hitbodedout : dire sa parole",
+              "ref": "Likoutei Tefilot II, 22",
+              "ref_he": "לִקּוּטֵי תְּפִלּוֹת, חלק ב, תְּפִלָּה 22",
+              "ref_sefaria": "Likutei Tefilot, Volume II 22",
+              "url": "https://www.sefaria.org/Likutei_Tefilot%2C_Volume_II.22",
+              "edition": "lt",
+              "sur_la_torah": "Likoutei Moharan II, 25",
+              "paragraphes": [
+                "רִבּוֹנוֹ שֶׁל עוֹלָם, עָזְרֵנִי לְפָרֵשׁ כָּל שִׂיחָתִי לְפָנֶיךָ בְּכָל יוֹם וּבְכָל עֵת תָּמִיד. זַכֵּנִי וְהוֹשִׁיעֵנִי שֶׁאֶזְכֶּה לְהַרְבּוֹת בְּשִׂיחָה בֵּינִי לְבֵין קוֹנִי, עַד שֶׁאֶזְכֶּה לְבַלּוֹת רֹב הַיּוֹם וְהַלַּיְלָה עַל עִנְיָן זֶה כָּל יְמֵי חַיַּי.",
+                "וּתְרַחֵם עָלַי וְתִפְתַּח אֶת פִּי בְּכָל עֵת, וְתִשְׁלַח לִי דִּבּוּרִים אֲמִתִּיִּים וּקְדוֹשִׁים מִמְּעוֹן קָדְשְׁךָ מִן הַשָּׁמַיִם, לְהַעְתִּיר וּלְהִתְפַּלֵּל וּלְבַקֵּשׁ מִלְּפָנֶיךָ עַל נַפְשִׁי בְּכָל־עֵת בְּדִבּוּרִים חֲדָשִׁים.",
+                "וְתַעַזְרֵנִי תָמִיד לְהַרְבּוֹת בְּעֶתֶר, בְּדִבְרֵי רִצּוּי וּפִיּוּס וְטַעֲנוֹת וַאֲמַתְלָאוֹת נְכוֹנוֹת, בְּדִבְרֵי־חֵן וְתַחֲנוּנִים, בְּאֹפֶן שֶׁאֶזְכֶּה תָמִיד לְעוֹרֵר רַחֲמֶיךָ הָרַבִּים עָלַי שֶׁתּוֹשִׁיעֵנִי בְּכָל עֵת לְהִתְקָרֵב אֵלֶיךָ.",
+                "וְאֶזְכֶּה בְּכָל פַּעַם לַעֲלוֹת מִדַּרְגָא לְדַרְגָּא, לְהִתְקָרֵב אֵלֶיךָ בְּכָל עֵת בְּהִתְקָרְבוּת גָּדוֹל יוֹתֵר."
+              ],
+              "paragraphes_sans_nikkoud": [
+                "רבונו של עולם, עזרני לפרש כל שיחתי לפניך בכל יום ובכל עת תמיד. זכני והושיעני שאזכה להרבות בשיחה ביני לבין קוני, עד שאזכה לבלות רב היום והלילה על ענין זה כל ימי חיי.",
+                "ותרחם עלי ותפתח את פי בכל עת, ותשלח לי דבורים אמתיים וקדושים ממעון קדשך מן השמים, להעתיר ולהתפלל ולבקש מלפניך על נפשי בכל־עת בדבורים חדשים.",
+                "ותעזרני תמיד להרבות בעתר, בדברי רצוי ופיוס וטענות ואמתלאות נכונות, בדברי־חן ותחנונים, באפן שאזכה תמיד לעורר רחמיך הרבים עלי שתושיעני בכל עת להתקרב אליך.",
+                "ואזכה בכל פעם לעלות מדרגא לדרגא, להתקרב אליך בכל עת בהתקרבות גדול יותר."
+              ],
+              "statut_verif": "verifie_texte",
+              "note": "Extrait : paragraphes 2 à 5 de la prière. La leçon annoncée en tête (Likoutei Moharan II, 25) a été ouverte et vérifiée.",
+              "lecon_sur_le_sujet": "oui",
+              "lecon_mesure": "5 occurrences du sujet dans 2204 caractères de leçon"
+            },
+            {
+              "id": "src-lt-simcha",
+              "type": "source",
+              "sujet": "simcha",
+              "titre_he": "שמחה — להפך יגון לשמחה",
+              "titre_fr": "Joie : retourner la tristesse",
+              "ref": "Likoutei Tefilot II, 21",
+              "ref_he": "לִקּוּטֵי תְּפִלּוֹת, חלק ב, תְּפִלָּה 21",
+              "ref_sefaria": "Likutei Tefilot, Volume II 21",
+              "url": "https://www.sefaria.org/Likutei_Tefilot%2C_Volume_II.21",
+              "edition": "lt",
+              "sur_la_torah": "Likoutei Moharan II, 23",
+              "paragraphes": [
+                "שַׂמֵּחַ נֶפֶשׁ עַבְדֶּךָ כִּי אֵלֶיךָ יְהֹוָה נַפְשִׁי אֶשָּׂא. אָגִילָה וְאֶשְׂמְחָה בְּחַסְדֶּךָ אֲשֶׁר רָאִיתָ אֶת עָנְיִי יָדַעְתָּ בְּצָרוֹת נַפְשִׁי.",
+                "תַּשְׁמִיעֵנִי שָׂשׂוֹן וְשִׂמְחָה תָּגֵלְנָה עֲצָמוֹת דִּכִּיתָ. הָשִׁיבָה לִי שְׂשׂוֹן יִשְׁעֶךָ וְרוּחַ נְדִיבָה תִסְמְכֵנִי.",
+                "וְיִשְׂמְחוּ כָּל חוֹסֵי בָךְ לְעוֹלָם יְרַנֵּנוּ וְתָסֵךְ עָלֵימוֹ וְיַעַלְצוּ בְךָ אוֹהֲבֵי שְׁמֶךָ. אֶשְׂמְחָה וְאֶעֶלְצָה בָךְ, אֲזַמְּרָה שִׁמְךָ עֶלְיוֹן.",
+                "תּוֹדִיעֵנִי אֹרַח חַיִּים שֹׂבַע שְׂמָחוֹת אֶת פָּנֶיךָ, נְעִימוֹת בִּימִינְךָ נֶצַח.",
+                "בַּיהֹוָה תִּתְהַלֵּל נַפְשִׁי יִשְׁמְעוּ עֲנָוִים וְיִשְׂמָחוּ. יָרֹנּוּ וְיִשְׂמְחוּ חֲפֵצֵי צִדְקִי, וְיֹאמְרוּ תָמִיד יִגְדַּל יְהֹוָה הֶחָפֵץ שְׁלוֹם עַבְדּוֹ.",
+                "יָשִׂישׂוּ וְיִשְׂמְחוּ בְּךָ כָּל מְבַקְשֶׁיךָ, יֹאמְרוּ תָמִיד יִגְדַּל יְהֹוָה אוֹהֲבֵי תְּשׁוּעָתֶךָ.",
+                "וְצַדִּיקִים יִשְׂמְחוּ יַעַלְצוּ לִפְנֵי אֱלֹהִים וְיָשִׂישׂוּ בְשִׂמְחָה.",
+                "הֲלֹא אַתָּה תָּשׁוּב תְּחַיֵּינוּ וְעַמְּךָ יִשְׂמְחוּ בָךְ. שַׂבְּעֵנוּ בַבֹּקֶר חַסְדֶּךָ וּנְרַנְּנָה וְנִשְׂמְחָה בְּכָל יָמֵינוּ. שַׂמְּחֵנוּ כִּימוֹת עִנִּיתָנוּ שְׁנוֹת רָאִינוּ רָעָה."
+              ],
+              "paragraphes_sans_nikkoud": [
+                "שמח נפש עבדך כי אליך יהוה נפשי אשא. אגילה ואשמחה בחסדך אשר ראית את עניי ידעת בצרות נפשי.",
+                "תשמיעני ששון ושמחה תגלנה עצמות דכית. השיבה לי ששון ישעך ורוח נדיבה תסמכני.",
+                "וישמחו כל חוסי בך לעולם ירננו ותסך עלימו ויעלצו בך אוהבי שמך. אשמחה ואעלצה בך, אזמרה שמך עליון.",
+                "תודיעני ארח חיים שבע שמחות את פניך, נעימות בימינך נצח.",
+                "ביהוה תתהלל נפשי ישמעו ענוים וישמחו. ירנו וישמחו חפצי צדקי, ויאמרו תמיד יגדל יהוה החפץ שלום עבדו.",
+                "ישישו וישמחו בך כל מבקשיך, יאמרו תמיד יגדל יהוה אוהבי תשועתך.",
+                "וצדיקים ישמחו יעלצו לפני אלהים וישישו בשמחה.",
+                "הלא אתה תשוב תחיינו ועמך ישמחו בך. שבענו בבקר חסדך ונרננה ונשמחה בכל ימינו. שמחנו כימות עניתנו שנות ראינו רעה."
+              ],
+              "statut_verif": "verifie_texte",
+              "note": "Extrait : paragraphes 1 à 8 de la prière. La leçon annoncée en tête (Likoutei Moharan II, 23) a été ouverte et vérifiée.",
+              "lecon_sur_le_sujet": "oui",
+              "lecon_mesure": "43 occurrences du sujet dans 1096 caractères de leçon"
+            },
+            {
+              "id": "src-lt-uman",
+              "type": "source",
+              "sujet": "uman",
+              "titre_he": "ראש השנה אצל הצדיק",
+              "titre_fr": "Roch Hachana chez le tsadik",
+              "ref": "Likoutei Tefilot I, 76",
+              "ref_he": "לִקּוּטֵי תְּפִלּוֹת, חלק א, תְּפִלָּה 76",
+              "ref_sefaria": "Likutei Tefilot, Volume I 76",
+              "url": "https://www.sefaria.org/Likutei_Tefilot%2C_Volume_I.76",
+              "edition": "lt",
+              "sur_la_torah": "Likoutei Moharan I, 211",
+              "paragraphes": [
+                "לְרֹאשׁ־הַשָּׁנָה יְהִי רָצוֹן מִלְּפָנֶיךָ יְהֹוָה אֱלֹהֵינוּ וֵאלֹהֵי אֲבוֹתֵינוּ, שֶׁתְּזַכֵּנִי בְּרַחֲמֶיךָ הָרַבִּים לֵילֵךְ וְלִנְסֹעַ לְצַדִּיקִים אֲמִתִּיִּים עַל רֹאשׁ הַשָּׁנָה, וְלִהְיוֹת מְקֻשָּׁר תָּמִיד לְצַדִּיקִים אֲמִתִּיִּים, וְעַל־יְדֵי־זֶה אֶזְכֶּה לְקַדֵּשׁ אֶת דַּעְתִּי וּמַחֲשַׁבְתִּי בִּקְדֻשָּׁה גְּדוֹלָה.",
+                "וְתַחְמֹל עָלַי בְּחֶמְלָתְךָ הַגְּדוֹלָה, וְתִהְיֶה בְּעֶזְרִי וְתַצִּילֵנִי מִכָּל מִינֵי מַחֲשָׁבוֹת זָרוֹת וּמִכָּל מִינֵי פְּגַם הַדַּעַת שֶׁבָּעוֹלָם, וּתְחָנֵּנִי מֵאִתְּךָ חָכְמָה דֵּעָה בִּינָה וְהַשְׂכֵּל, וּתְזַכֵּנִי מְהֵרָה לִקְדֻשַּׁת הַמַּחֲשָׁבָה בִּשְׁלֵמוּת בֶּאֱמֶת.",
+                "וּבְרַחֲמֶיךָ הָרַבִּים תַּמְתִּיק וּתְבַטֵּל כָּל הַדִּינִים מֵעָלֵינוּ וּמֵעַל כָּל עַמְּךָ בֵּית־יִשְׂרָאֵל מֵעַתָּה וְעַד עוֹלָם.",
+                "וְנִזְכֶּה לְקַבֵּל קְדֻשַּׁת רֹאשׁ הַשָּׁנָה עַל־יְדֵי הַצַּדִּיקִים אֲמִתִּיִּים, וּלְתַקֵּן כָּל הַתִּקּוּנִים שֶׁצְּרִיכִין לְתַקֵּן בְּרֹאשׁ הַשָּׁנָה שֶׁהוּא מְקוֹר הַדִּינִים שֶׁל כָּל הַשָּׁנָה.",
+                "וְתִהְיֶה מַחֲשַׁבְתֵּנוּ קְדוֹשָׁה וּטְהוֹרָה תָמִיד, וּבִפְרָט בְּרֹאשׁ הַשָּׁנָה הַקָּדוֹשׁ. אָנָּא רַחוּם, בְּרַחֲמֶיךָ הָרַבִּים תְּרַחֵם עָלֵינוּ, וּתְזַכֵּנוּ וּתְחָנֵּנוּ אָז לִקְדֻשַּׁת הַמַּחֲשָׁבָה בְּיוֹתֵר, וְתִשְׁמְרֵנוּ וְתַצִּילֵנוּ שֶׁלֹּא יַעֲלֶה אָז עַל מַחֲשַׁבְתֵּנוּ שׁוּם מַחֲשָׁבָה זָרָה וְחִיצוֹנָה כְּלָל, רַק בְּשִׁמְךָ נָגִיל כָּל הַיּוֹם בְּאֵימָה וּבְיִרְאָה בִּקְדֻשָּׁה וּבְטָהֳרָה גְּדוֹלָה, בְּמַחֲשָׁבוֹת קְדוֹשׁוֹת וְזַכּוֹת וְצַחוֹת בְּתַכְלִית הַזַּכּוּת וְהַבְּהִירוּת, עַד שֶׁנִּזְכֶּה בְּכֹחַ הִתְקַשְּׁרוּת הַצַּדִּיקִים הָאֲמִתִּיִּים לְתַקֵּן וּלְבָרֵר כָּל הַבֵּרוּרִים בְּרֹאשׁ הַשָּׁנָה, לְבָרֵר כָּל נִיצוֹצוֹת הַקְּדֻשָּׁה מֵעִמְקֵי הַקְּלִפּוֹת, וּלְהַמְתִּיק וּלְבַטֵּל כָּל הַדִּינִים שֶׁבָּעוֹלָם מֵעָלֵינוּ וּמֵעַל כָּל עַמְּךָ בֵּית־יִשְׂרָאֵל,"
+              ],
+              "paragraphes_sans_nikkoud": [
+                "לראש־השנה יהי רצון מלפניך יהוה אלהינו ואלהי אבותינו, שתזכני ברחמיך הרבים לילך ולנסע לצדיקים אמתיים על ראש השנה, ולהיות מקשר תמיד לצדיקים אמתיים, ועל־ידי־זה אזכה לקדש את דעתי ומחשבתי בקדשה גדולה.",
+                "ותחמל עלי בחמלתך הגדולה, ותהיה בעזרי ותצילני מכל מיני מחשבות זרות ומכל מיני פגם הדעת שבעולם, ותחנני מאתך חכמה דעה בינה והשכל, ותזכני מהרה לקדשת המחשבה בשלמות באמת.",
+                "וברחמיך הרבים תמתיק ותבטל כל הדינים מעלינו ומעל כל עמך בית־ישראל מעתה ועד עולם.",
+                "ונזכה לקבל קדשת ראש השנה על־ידי הצדיקים אמתיים, ולתקן כל התקונים שצריכין לתקן בראש השנה שהוא מקור הדינים של כל השנה.",
+                "ותהיה מחשבתנו קדושה וטהורה תמיד, ובפרט בראש השנה הקדוש. אנא רחום, ברחמיך הרבים תרחם עלינו, ותזכנו ותחננו אז לקדשת המחשבה ביותר, ותשמרנו ותצילנו שלא יעלה אז על מחשבתנו שום מחשבה זרה וחיצונה כלל, רק בשמך נגיל כל היום באימה וביראה בקדשה ובטהרה גדולה, במחשבות קדושות וזכות וצחות בתכלית הזכות והבהירות, עד שנזכה בכח התקשרות הצדיקים האמתיים לתקן ולברר כל הברורים בראש השנה, לברר כל ניצוצות הקדשה מעמקי הקלפות, ולהמתיק ולבטל כל הדינים שבעולם מעלינו ומעל כל עמך בית־ישראל,"
+              ],
+              "statut_verif": "verifie_texte",
+              "note": "Extrait : paragraphes 1 à 5 de la prière. La leçon annoncée en tête (Likoutei Moharan I, 211) a été ouverte et vérifiée.",
+              "lecon_sur_le_sujet": "oui",
+              "lecon_mesure": "7 occurrences du sujet dans 464 caractères de leçon"
+            },
+            {
+              "id": "src-lt-kdusha",
+              "type": "source",
+              "sujet": "kdusha",
+              "titre_he": "קדושה — לעלות מקדושה לקדושה",
+              "titre_fr": "Sainteté : monter de sainteté en sainteté",
+              "ref": "Likoutei Tefilot I, 39",
+              "ref_he": "לִקּוּטֵי תְּפִלּוֹת, חלק א, תְּפִלָּה 39",
+              "ref_sefaria": "Likutei Tefilot, Volume I 39",
+              "url": "https://www.sefaria.org/Likutei_Tefilot%2C_Volume_I.39",
+              "edition": "lt",
+              "sur_la_torah": "Likoutei Moharan I, 39",
+              "paragraphes": [
+                "וְנִזְכֶּה לַעֲלוֹת בְּכָל פַּעַם מִקְּדֻשָּׁה לִקְדֻשָּׁה עֶלְיוֹנָה, עַד שֶׁנִּזְכֶּה לְהִכָּלֵל בִּקְדֻשָּׁתְךָ הָעֶלְיוֹנָה כִּרְצוֹנְךָ הַטּוֹב בֶּאֱמֶת.",
+                "וְנִזְכֶּה לְשַׁבֵּר כָּל תַּאֲווֹת הַבְּהֵמִיּוֹת, הֵן תַּאֲוַת הַמִּשְׁגָּל, הֵן תַּאֲוַת אֲכִילָה, הֵן כָּל הַתַּאֲווֹת, כֻּלָּם נִזְכֶּה לְשַׁבְּרָם וּלְבַטְּלָם לְגַמְרֵי מֵעָלֵינוּ וּמֵעַל גְּבוּלֵנוּ. וְתַמְשִׁיךְ עָלֵינוּ קְדֻשָּׁה וְטָהֳרָה מִמְּקוֹר כָּל הַקְּדֻשּׁוֹת, וְנִזְכֶּה לְהִתְקַדֵּשׁ בִּקְדֻשָּׁתְךָ הָעֶלְיוֹנָה תָמִיד, וְנָשׁוּב אֵלֶיךָ בֶּאֱמֶת, וְנִזְכֶּה לָסוּר מֵרָע לְגַמְרֵי וְלַעֲשׂוֹת רְצוֹנְךָ הַטּוֹב תָּמִיד: אָבִינוּ מַלְכֵּנוּ, רַחֵם עָלֵינוּ לְמַעַן שְׁמֶךָ, וְקַדְּשֵׁנוּ בִּקְדֻשָּׁתְךָ הָעֶלְיוֹנָה וְטַהֵר לִבֵּנוּ לְעָבְדְךָ בֶּאֱמֶת,"
+              ],
+              "paragraphes_sans_nikkoud": [
+                "ונזכה לעלות בכל פעם מקדשה לקדשה עליונה, עד שנזכה להכלל בקדשתך העליונה כרצונך הטוב באמת.",
+                "ונזכה לשבר כל תאוות הבהמיות, הן תאות המשגל, הן תאות אכילה, הן כל התאוות, כלם נזכה לשברם ולבטלם לגמרי מעלינו ומעל גבולנו. ותמשיך עלינו קדשה וטהרה ממקור כל הקדשות, ונזכה להתקדש בקדשתך העליונה תמיד, ונשוב אליך באמת, ונזכה לסור מרע לגמרי ולעשות רצונך הטוב תמיד: אבינו מלכנו, רחם עלינו למען שמך, וקדשנו בקדשתך העליונה וטהר לבנו לעבדך באמת,"
+              ],
+              "statut_verif": "verifie_texte",
+              "note": "Extrait : paragraphes 12 à 13 de la prière. La leçon annoncée en tête (Likoutei Moharan I, 39) a été ouverte et vérifiée.",
+              "lecon_sur_le_sujet": "partiel",
+              "lecon_mesure": "2 occurrences du sujet dans 1442 caractères de leçon"
+            },
+            {
+              "id": "src-lt-zera",
+              "type": "source",
+              "sujet": "zera",
+              "titre_he": "זרע של קיימא",
+              "titre_fr": "Zéra chel kayama : une descendance",
+              "ref": "Likoutei Tefilot I, 53",
+              "ref_he": "לִקּוּטֵי תְּפִלּוֹת, חלק א, תְּפִלָּה 53",
+              "ref_sefaria": "Likutei Tefilot, Volume I 53",
+              "url": "https://www.sefaria.org/Likutei_Tefilot%2C_Volume_I.53",
+              "edition": "lt",
+              "sur_la_torah": "Likoutei Moharan I, 53",
+              "paragraphes": [
+                "וְתִשְׁמַע תְּפִלָּתֵנוּ וְתַאֲזִין שַׁוְעָתֵנוּ, שֶׁיִּהְיוּ כָּל הָעֲקָרוֹת נִפְקָדוֹת לְטוֹבָה חִישׁ קַל מְהֵרָה, וְיוֹלִידוּ בְּרַחֲמֶיךָ בָּנִים חָיִּים וְקַיָּמִים, וְיִתְרַבּוּ עַמְּךָ בְּנֵי יִשְׂרָאֵל כְּחוֹל הַיָּם אֲשֶׁר לֹא יִמַּד וְלֹא יִסָּפֵר.",
+                "וּכְשֵׁם שֶׁגָּבְרוּ רַחֲמֶיךָ עַל אָבִינוּ הָרִאשׁוֹן אֶחָד הָיָה אַבְרָהָם אָבִינוּ וְאִשְׁתּוֹ שָׂרָה אִמֵּנוּ, אֲשֶׁר זְכַרְתָּם לְטוֹבָה וַתִּפְקְדֵם לְעֵת זִקְנוּתָם וְנָתַתָּ לָהֶם אֶת יִצְחָק וְהִבְטַחְתָּם לְהַרְבּוֹת זַרְעוֹ כְּכוֹכְבֵי הַשָּׁמַיִם, כֵּן יֶהֱמוּ נָא מֵעֶיךָ וְרַחֲמֶיךָ עַל כָּל עֲקָרוֹת עַמְּךָ בֵּית יִשְׂרָאֵל, אֲשֶׁר עֵינֵיהֶם תּוֹלוֹת אֵלֶיךָ לְבַד, שֶׁתִּתֵּן לָהֶם זֶרַע שֶׁל קַיָּמָא לַעֲבוֹדָתֶךָ וּלְיִרְאָתֶךָ.",
+                "רַחֵם עֲלֵיהֶם לְמַעַנְךָ וּפָקְדֵם לְטוֹבָה וּמַלֵּא מִשְׁאֲלוֹתָם בְּרַחֲמִים, וְתֵעָתֵר לָהֶם וְתִשְׁמַע תְּפִלָּתָם וְתִתֵּן לָהֶם הֵרָיוֹן חִישׁ קַל מְהֵרָה, וְיִזְכּוּ לְהוֹלִיד זֶרַע שֶׁל קַיָּמָא וְיִשְׂמְחוּ אֲבִיהֶם וְאִמָּם בָּהֶם, וְיִזְכּוּ לְגַדְּלָם לְתוֹרָה וּלְחֻפָּה וּלְמַעֲשִׂים טוֹבִים לְאֹרֶךְ יָמִים וְשָׁנִים טוֹבִים:"
+              ],
+              "paragraphes_sans_nikkoud": [
+                "ותשמע תפלתנו ותאזין שועתנו, שיהיו כל העקרות נפקדות לטובה חיש קל מהרה, ויולידו ברחמיך בנים חיים וקימים, ויתרבו עמך בני ישראל כחול הים אשר לא ימד ולא יספר.",
+                "וכשם שגברו רחמיך על אבינו הראשון אחד היה אברהם אבינו ואשתו שרה אמנו, אשר זכרתם לטובה ותפקדם לעת זקנותם ונתת להם את יצחק והבטחתם להרבות זרעו ככוכבי השמים, כן יהמו נא מעיך ורחמיך על כל עקרות עמך בית ישראל, אשר עיניהם תולות אליך לבד, שתתן להם זרע של קימא לעבודתך וליראתך.",
+                "רחם עליהם למענך ופקדם לטובה ומלא משאלותם ברחמים, ותעתר להם ותשמע תפלתם ותתן להם הריון חיש קל מהרה, ויזכו להוליד זרע של קימא וישמחו אביהם ואמם בהם, ויזכו לגדלם לתורה ולחפה ולמעשים טובים לארך ימים ושנים טובים:"
+              ],
+              "statut_verif": "verifie_texte",
+              "note": "Extrait : paragraphes 13 à 15 de la prière. La leçon annoncée en tête (Likoutei Moharan I, 53) a été ouverte et vérifiée.",
+              "lecon_sur_le_sujet": "oui",
+              "lecon_mesure": "13 occurrences du sujet dans 3178 caractères de leçon"
+            },
+            {
+              "id": "src-lt-parnassa",
+              "type": "source",
+              "sujet": "parnassa",
+              "titre_he": "פרנסה בכבוד",
+              "titre_fr": "Parnassa : gagner sa vie dignement",
+              "ref": "Likoutei Tefilot II, 17",
+              "ref_he": "לִקּוּטֵי תְּפִלּוֹת, חלק ב, תְּפִלָּה 17",
+              "ref_sefaria": "Likutei Tefilot, Volume II 17",
+              "url": "https://www.sefaria.org/Likutei_Tefilot%2C_Volume_II.17",
+              "edition": "lt",
+              "sur_la_torah": "Likoutei Moharan II, 16",
+              "paragraphes": [
+                "עֵינֵי כֹל אֵלֶיךָ יְשַׂבֵּרוּ וְאַתָּה נוֹתֵן לָהֶם אֶת אָכְלָם בְּעִתּוֹ, פּוֹתֵחַ אֶת יָדֶיךָ וּמַשְׂבִּיעַ לְכָל חַי רָצוֹן.",
+                "רִבּוֹנוֹ שֶׁל עוֹלָם, תֶּן לִי פַּרְנָסָה בְּכָבוֹד קֹדֶם שֶׁאֶצְטָרֵךְ לָהּ, בְּאֹפֶן שֶׁאֶזְכֶּה לָסוּר מֵרַע וְלַעֲשׂוֹת הַטּוֹב בְּעֵינֶיךָ תָמִיד, וְלִהְיוֹת כִּרְצוֹנְךָ הַטּוֹב בֶּאֱמֶת,",
+                "כִּי אַתָּה יוֹדֵעַ כַּמָּה הַפַּרְנָסָה מְבַלְבֶּלֶת אוֹתִי וּמוֹנַעַת אוֹתִי וּמַחְלֶשֶׁת דַּעְתִּי מִלְּהִתְחַזֵּק בַּעֲבוֹדָתֶךָ.",
+                "רִבּוֹנוֹ שֶׁל עוֹלָם, יָדַעְתִּי כִּי אֲנִי רָחוֹק מִפַּרְנָסָה בְּכָבוֹד מְאֹד מְאֹד, כִּי פָּגַמְתִּי נֶגְדְּךָ מְאֹד, הֲרֵעוֹתִי אֶת מַעֲשַׂי וְקִפַּחְתִּי אֶת פַּרְנָסָתִי.",
+                "אֲבָל בָּאתִי לְפָנֶיךָ מָלֵא רַחֲמִים, כְּעָנִי בַּפֶּתַח כְּדַל וְאֶבְיוֹן הַמַּחֲזִיר עַל הַפְּתָחִים, פּוֹרֵשׂ כַּפָּיו, שׁוֹאֵל וּמְבַקֵּשׁ מַתְּנַת חִנָּם וְנִדְבַת חֶסֶד,",
+                "שֶׁתְּחָנֵּנִי בְּרַחֲמֶיךָ הָרַבִּים לְבַד, בַּחֲסָדֶיךָ הָעֲצוּמִים לְבַד, וְתַזְמִין לִי פַּרְנָסָתִי מִן הַשָּׁמַיִם וְתִתֶּן לִי כָּל צְרָכַי וְכָל צָרְכֵי אַנְשֵׁי בֵיתִי וְכָל הַתְּלוּיִם בִּי וְכָל הַנִּלְוִים אֵלֵינוּ קֹדֶם שֶׁנִּצְטָרֵךְ לָהֶם, כִּי עֵינֵינוּ לְךָ לְבַד תְּלוּיוֹת, עֵינֵינוּ לְךָ לְבַד מְצַפּוֹת וּמְחַכּוֹת:",
+                "רִבּוֹנוֹ שֶׁל עוֹלָם, אַנְתְּ הוּא לְעֵלָּא מִן כָּל הָעִלּוֹת וְהַסִּבּוֹת, וְאַתָּה יָכוֹל לְסַבֵּב סִבּוֹת לְטוֹבָה בְּרַחֲמֶיךָ הָרַבִּים, בְּאֹפֶן שֶׁיַּגִּיעַ לָנוּ הַפַּרְנָסָה בְּנָקֵל בְּלִי שׁוּם בִּלְבּוּלִים וּבְלִי שׁוּם טִרְדּוֹת וִיגִיעוֹת, וּבְלִי שׁוּם סִבּוֹת עַל פִּי דֶרֶךְ הַטֶּבַע,"
+              ],
+              "paragraphes_sans_nikkoud": [
+                "עיני כל אליך ישברו ואתה נותן להם את אכלם בעתו, פותח את ידיך ומשביע לכל חי רצון.",
+                "רבונו של עולם, תן לי פרנסה בכבוד קדם שאצטרך לה, באפן שאזכה לסור מרע ולעשות הטוב בעיניך תמיד, ולהיות כרצונך הטוב באמת,",
+                "כי אתה יודע כמה הפרנסה מבלבלת אותי ומונעת אותי ומחלשת דעתי מלהתחזק בעבודתך.",
+                "רבונו של עולם, ידעתי כי אני רחוק מפרנסה בכבוד מאד מאד, כי פגמתי נגדך מאד, הרעותי את מעשי וקפחתי את פרנסתי.",
+                "אבל באתי לפניך מלא רחמים, כעני בפתח כדל ואביון המחזיר על הפתחים, פורש כפיו, שואל ומבקש מתנת חנם ונדבת חסד,",
+                "שתחנני ברחמיך הרבים לבד, בחסדיך העצומים לבד, ותזמין לי פרנסתי מן השמים ותתן לי כל צרכי וכל צרכי אנשי ביתי וכל התלוים בי וכל הנלוים אלינו קדם שנצטרך להם, כי עינינו לך לבד תלויות, עינינו לך לבד מצפות ומחכות:",
+                "רבונו של עולם, אנת הוא לעלא מן כל העלות והסבות, ואתה יכול לסבב סבות לטובה ברחמיך הרבים, באפן שיגיע לנו הפרנסה בנקל בלי שום בלבולים ובלי שום טרדות ויגיעות, ובלי שום סבות על פי דרך הטבע,"
+              ],
+              "statut_verif": "verifie_texte",
+              "note": "Extrait : paragraphes 1 à 7 de la prière. La leçon annoncée en tête (Likoutei Moharan II, 16) a été ouverte et vérifiée.",
+              "lecon_sur_le_sujet": "oui",
+              "lecon_mesure": "10 occurrences du sujet dans 3328 caractères de leçon"
+            },
+            {
+              "id": "src-lt-brit",
+              "type": "source",
+              "sujet": "brit",
+              "titre_he": "תיקון הברית",
+              "titre_fr": "Chmirat habrit : la garde de l’alliance",
+              "ref": "Likoutei Tefilot II, 42",
+              "ref_he": "לִקּוּטֵי תְּפִלּוֹת, חלק ב, תְּפִלָּה 42",
+              "ref_sefaria": "Likutei Tefilot, Volume II 42",
+              "url": "https://www.sefaria.org/Likutei_Tefilot%2C_Volume_II.42",
+              "edition": "lt",
+              "sur_la_torah": "Likoutei Moharan II, 83",
+              "paragraphes": [
+                "רִבּוֹנוֹ שֶׁל עוֹלָם, עָזְרֵנִי וְהוֹשִׁיעֵנִי מֵעַתָּה, וַעֲשֵׂה אֵת אֲשֶׁר תַּעֲשֶׂה בְּרַחֲמֶיךָ הָרַבִּים וּבַחֲסָדֶיךָ הַגְּדוֹלִים וְנִפְלְאוֹתֶיךָ הַנֶּעְלָמוֹת וּדְרָכֶיךָ הַנּוֹרָאִים, וְזַכֵּנִי מֵעַתָּה לִשְׁמֹר אֶת הַבְּרִית־קֹדֶשׁ בֶּאֱמֶת,",
+                "וְאֶזְכֶּה לָשׁוּב בִּתְשׁוּבָה שְׁלֵמָה בֶּאֱמֶת עַל הֶעָבַר, וְלִזְכּוֹת מֵעַתָּה לְתִקּוּן הַבְּרִית בֶּאֱמֶת, בְּכֹחַ וּזְכוּת הַצַּדִּיקִים אֲמִתִּיִּים אֲשֶׁר זָכוּ לְתִקּוּן הַבְּרִית בְּתַכְלִית הַשְּׁלֵמוּת:",
+                "רִבּוֹנוֹ שֶׁל עוֹלָם, מָלֵא רַחֲמִים, אַתָּה הוֹדַעְתָּנוּ שֶׁכָּל הַתִּקּוּנִים וְכָל הַתּוֹרָה כֻּלָּהּ וְכָל תִּקּוּן הָעוֹלָמוֹת, הַכֹּל תָּלוּי בְּתִקּוּן הַבְּרִית־קֹדֶשׁ שֶׁהוּא יְסוֹד הַכֹּל כַּמְבוֹאָר בְּכָל סִפְרֵי קֹדֶשׁ.",
+                "אֲבָל מִגֹּדֶל הַהִתְגַּבְּרוּת שֶׁהִתְגַּבֵּר עָלֵינוּ הַיֵּצֶר הָרָע מִנְעוּרֵנוּ פָּגַמְנוּ הַרְבֵּה בִּפְגַם הַבְּרִית, כָּל אֶחָד וְאֶחָד כְּפִי פְּגָמָיו כַּאֲשֶׁר יוֹדֵעַ כָּל אֶחָד וְאֶחָד בְּנַפְשׁוֹ (וּבִפְרָט וְכוּ'). עַל־כֵּן אֵין לִי עַתָּה שׁוּם דִּבּוּר אֵיךְ לְדַבֵּר בָּזֶה, נֶאֱלַמְתִּי דוּמִיָּה הֶחֱשֵׁיתִי מִטּוֹב וּכְאֵבִי נֶעְכָּר.",
+                "אַךְ כְּבָר הִזְהַרְתָּנוּ וְחִזַּקְתָּנוּ לָנֶצַח, לִזְעֹק וְלִצְעֹק אֵלֶיךָ תָמִיד, יִהְיֶה אֵיךְ שֶׁיִּהְיֶה.",
+                "עַל־כֵּן בָּאתִי לִשְׁטוֹחַ כַּפַּי לְרַחֲמֶיךָ וִישׁוּעָתֶךָ, שֶׁתַּעַזְרֵנִי וְתוֹשִׁיעֵנִי שֶׁאֶזְכֶּה מֵעַתָּה לְתִקּוּן הַבְּרִית בֶּאֱמֶת בִּשְׁלֵמוּת כִּרְצוֹנְךָ הַטּוֹב."
+              ],
+              "paragraphes_sans_nikkoud": [
+                "רבונו של עולם, עזרני והושיעני מעתה, ועשה את אשר תעשה ברחמיך הרבים ובחסדיך הגדולים ונפלאותיך הנעלמות ודרכיך הנוראים, וזכני מעתה לשמר את הברית־קדש באמת,",
+                "ואזכה לשוב בתשובה שלמה באמת על העבר, ולזכות מעתה לתקון הברית באמת, בכח וזכות הצדיקים אמתיים אשר זכו לתקון הברית בתכלית השלמות:",
+                "רבונו של עולם, מלא רחמים, אתה הודעתנו שכל התקונים וכל התורה כלה וכל תקון העולמות, הכל תלוי בתקון הברית־קדש שהוא יסוד הכל כמבואר בכל ספרי קדש.",
+                "אבל מגדל ההתגברות שהתגבר עלינו היצר הרע מנעורנו פגמנו הרבה בפגם הברית, כל אחד ואחד כפי פגמיו כאשר יודע כל אחד ואחד בנפשו (ובפרט וכו'). על־כן אין לי עתה שום דבור איך לדבר בזה, נאלמתי דומיה החשיתי מטוב וכאבי נעכר.",
+                "אך כבר הזהרתנו וחזקתנו לנצח, לזעק ולצעק אליך תמיד, יהיה איך שיהיה.",
+                "על־כן באתי לשטוח כפי לרחמיך וישועתך, שתעזרני ותושיעני שאזכה מעתה לתקון הברית באמת בשלמות כרצונך הטוב."
+              ],
+              "statut_verif": "verifie_texte",
+              "note": "Extrait : paragraphes 1 à 6 de la prière. La leçon annoncée en tête (Likoutei Moharan II, 83) a été ouverte et vérifiée.",
+              "lecon_sur_le_sujet": "non",
+              "lecon_mesure": "1 occurrence du sujet dans 4787 caractères de leçon"
+            },
+            {
+              "id": "src-lt-geula",
+              "type": "source",
+              "sujet": "geula",
+              "titre_he": "גאולה — ושפכי כמים לבך",
+              "titre_fr": "Guéoula : verser son cœur comme de l’eau",
+              "ref": "Likoutei Tefilot I, 143",
+              "ref_he": "לִקּוּטֵי תְּפִלּוֹת, חלק א, תְּפִלָּה 143",
+              "ref_sefaria": "Likutei Tefilot, Volume I 143",
+              "url": "https://www.sefaria.org/Likutei_Tefilot%2C_Volume_I.143",
+              "edition": "lt",
+              "sur_la_torah": "Likoutei Moharan I, 250",
+              "paragraphes": [
+                "וְנִזְכֶּה לְהִתְפַּלֵּל וּלְהִתְחַנֵּן לְפָנֶיךָ תָמִיד, וְנִשְׁתַּתֵּף עַצְמֵנוּ בְּצָרוֹת יִשְׂרָאֵל, וְנִתְפַּלֵּל וְנַעְתִּיר הַרְבֵּה תָמִיד בְּכָל יוֹם עַל צָרוֹת יִשְׂרָאֵל בְּלֵב נִשְׁבָּר וְנִדְכֶּה. וְנִשְׁפֹּךְ לִבֵּנוּ כַמַּיִם נוֹכַח פָּנֶיךָ יְהֹוָה, עַד אֲשֶׁר נוֹרִיד דְּמָעוֹת הַרְבֵּה לְפָנֶיךָ בֶּאֱמֶת. בִּבְכִי וּבְתַחֲנוּנִים אָבוֹא לְפָנֶיךָ.",
+                "וְנִזְכֶּה לְהַמְשִׁיךְ עַל־יְדֵי הַדְּמָעוֹת הַשְׁגָּחָתְךָ עָלֵינוּ, וְעַל־יְדֵי־זֶה תְּרַחֵם עָלֵינוּ מִן הַשָּׁמַיִם, וְתַשְׁגִּיחַ עָלֵינוּ בְּרַחֲמִים וּתְבַטֵּל מֵעָלֵינוּ כָּל הַצָּרוֹת וְכָל הַגְּזֵרוֹת, הֵן אוֹתָם שֶׁכְּבָר נִגְזְרוּ עָלֵינוּ, וְהֵן אוֹתָם שֶׁחֲפֵצִים לִגְזֹר חַס וְשָׁלוֹם, לֹא תְהֵא כָזֹאת בְּיִשְׂרָאֵל.",
+                "רַחֵם עָלֵינוּ לְמַעַן שְׁמֶךָ, כִּי אֵין לָנוּ עַל מִי לְהִשָּׁעֵן כִּי אִם עָלֶיךָ אָבִינוּ שֶׁבַּשָּׁמַיִם. אַתָּה הַטּוֹב בְּעֵינֶיךָ עֲשֵׂה עִמָּנוּ, וַאֲנַחְנוּ לֹא נֵדַע מַה נַּעֲשֶׂה כִּי עָלֶיךָ עֵינֵינוּ.",
+                "וְתֵן בְּלִבֵּנוּ שֶׁנָּשׁוּב כֻּלָּנוּ אֵלֶיךָ בֶּאֱמֶת חִישׁ קַל מְהֵרָה. לֵב טָהוֹר בְּרָא לִי אֱלֹהִים וְרוּחַ נָכוֹן חַדֵּשׁ בְּקִרְבִּי.",
+                "וּתְמַהֵר וְתָחִישׁ לְגָאֳלֵינוּ גְאֻלָּה שְׁלֵמָה וְתָבִיא לָנוּ אֶת מְשִׁיחַ צִדְקֵנוּ בִּמְהֵרָה בְּיָמֵינוּ, אָמֵן סֶלָה:"
+              ],
+              "paragraphes_sans_nikkoud": [
+                "ונזכה להתפלל ולהתחנן לפניך תמיד, ונשתתף עצמנו בצרות ישראל, ונתפלל ונעתיר הרבה תמיד בכל יום על צרות ישראל בלב נשבר ונדכה. ונשפך לבנו כמים נוכח פניך יהוה, עד אשר נוריד דמעות הרבה לפניך באמת. בבכי ובתחנונים אבוא לפניך.",
+                "ונזכה להמשיך על־ידי הדמעות השגחתך עלינו, ועל־ידי־זה תרחם עלינו מן השמים, ותשגיח עלינו ברחמים ותבטל מעלינו כל הצרות וכל הגזרות, הן אותם שכבר נגזרו עלינו, והן אותם שחפצים לגזר חס ושלום, לא תהא כזאת בישראל.",
+                "רחם עלינו למען שמך, כי אין לנו על מי להשען כי אם עליך אבינו שבשמים. אתה הטוב בעיניך עשה עמנו, ואנחנו לא נדע מה נעשה כי עליך עינינו.",
+                "ותן בלבנו שנשוב כלנו אליך באמת חיש קל מהרה. לב טהור ברא לי אלהים ורוח נכון חדש בקרבי.",
+                "ותמהר ותחיש לגאלינו גאלה שלמה ותביא לנו את משיח צדקנו במהרה בימינו, אמן סלה:"
+              ],
+              "statut_verif": "verifie_texte",
+              "note": "Extrait : paragraphes 39 à 43 de la prière. La leçon annoncée en tête (Likoutei Moharan I, 250) a été ouverte et vérifiée.",
+              "lecon_sur_le_sujet": "non",
+              "lecon_mesure": "0 occurrence du sujet dans 4185 caractères de leçon"
+            },
+            {
+              "id": "src-lt-zivug",
+              "type": "source",
+              "sujet": "zivug",
+              "titre_he": "זיווג — הדעת משדך כל השידוכים",
+              "titre_fr": "Zivoug : trouver son conjoint",
+              "ref": "Likoutei Tefilot II, 45",
+              "ref_he": "לִקּוּטֵי תְּפִלּוֹת, חלק ב, תְּפִלָּה 45",
+              "ref_sefaria": "Likutei Tefilot, Volume II 45",
+              "url": "https://www.sefaria.org/Likutei_Tefilot%2C_Volume_II.45",
+              "edition": "lt",
+              "sur_la_torah": "Likoutei Moharan II, 89",
+              "paragraphes": [
+                "אֵל בָּרוּךְ גְּדוֹל דֵּעָה, זַכֵּנוּ בְּרַחֲמֶיךָ הָרַבִּים וְגַלֵּה לָנוּ בַּחֲסָדֶיךָ הָעֲצוּמִים אֶת הַצַּדִּיק הָאֱמֶת שֶׁהוּא בַּעַל דַּעַת גָּדוֹל. זַכֵּנוּ לִמְצוֹא אוֹתוֹ וּלְהִתְקָרֵב אֵלָיו בֶּאֱמֶת, וְלִשְׁמוֹעַ תּוֹרָה מִפִּיו הַקָּדוֹשׁ,",
+                "וְרַחֵם עַל כָּל יִשְׂרָאֵל אֲשֶׁר קָשֶׁה לָהֶם לִמְצוֹא זִוּוּגָם (וּבִפְרָט עַל פְּלוֹנִי בֶּן פְּלוֹנִית), וַעֲזוֹר לָהֶם וְהוֹשִׁיעָה לָהֶם מְהֵרָה שֶׁיִּזְכּוּ כָל אֶחָד וְאֶחָד לִמְצוֹא זִוּוּגוֹ הָאֲמִתִּי הֶהָגוּן לוֹ מִן הַשָּׁמַיִם, חִישׁ קַל מְהֵרָה, בְּלִי שׁוּם עִכּוּב וּבְלִי שׁוּם צַעַר וְיִסּוּרִים כְּלָל.",
+                "כִּי אֵין אִתָּנוּ יוֹדֵעַ עַד מָה, שׁוּם עֵצָה וְתַחְבּוּלָה אֵיךְ לְבַקֵּשׁ הַזִּוּוּג לְכָל אֶחָד. כִּי אַתָּה יוֹדֵעַ כַּמָּה קָשֶׁה לָאָדָם לִמְצוֹא זִוּוּגוֹ הָאֲמִתִּי, כִּי כָל הַזִּוּוּגִים הֵם שְׁנֵי הֲפָכִים,",
+                "וּבִפְרָט כִּי לִפְעָמִים הֵם בְּהֵפֶךְ גָּדוֹל מְאֹד, אֲשֶׁר קָשֶׁה לְזַוְּגָן כִּקְרִיעַת יַם־סוּף, וְאִי אֶפְשָׁר לְחַבְּרָם וּלְזַוְּגָם כִּי אִם עַל־יְדֵי הַדַּעַת הָאֲמִתִּי הַמְשַׁדֵּךְ כָּל הַשִּׁדּוּכִים.",
+                "עַל־כֵּן צְרִיכִים לִשְׁמוֹעַ תּוֹרָה מִפִּי הַבַּר־דַּעַת הָאֲמִתִּי שֶׁהוּא מְחַדֵּשׁ חִדּוּשִׁים נִפְלָאִים בַּתּוֹרָה, וּמְחַבֵּר וּמְיַחֵד אַתְוָן רַבְרְבִין וְאַתְוָן זְעִירִין, וּמְקַשֵּׁר וּמְשַׁדֵּךְ דִּבְרֵי תוֹרָה מִמָּקוֹם לְמָקוֹם,",
+                "אֲשֶׁר עַל־יָדוֹ נִגְמָרִים כָּל הַשִּׁדּוּכִים שֶׁבָּעוֹלָם, בְּסוֹד: כִּי שִׂ' פְתֵי כֹ' הֵן יִ' שְׁמְרוּ דַּ' עַת וְ' תוֹרָה יְבַקְּשׁוּ מִפִּיהוּ רָאשֵׁי תֵיבוֹת 'שִׁידּוּךְ' ,",
+                "אֲבָל בַּעֲוֹנוֹתֵינוּ הָרַבִּים נֶעְלָם מֵאִתָּנוּ וְלֹא נֵדַע אֵיךְ לִמְצוֹא אֶת הַבַּעַל דַּעַת הַקָּדוֹשׁ הַזֶּה וְלִשְׁמוֹעַ תּוֹרָה מִפִּיו, וְעַתָּה מֵאַיִן יָבוֹא עֶזְרֵנוּ,",
+                "עַל־כֵּן עֵינֵינוּ תְלוּיוֹת אֵלֶיךָ לְבַד מָלֵא רַחֲמִים יוֹשֵׁב וּמְזַוֵּג זִוּוּגִים, שֶׁתַּחְמֹל עַל כָּל עַמְּךָ יִשְׂרָאֵל הַצְּרִיכִים לִמְצוֹא זִוּוּגָם (וּבִפְרָט וְכוּ'), וְתִשְׁלַח לְכָל אֶחָד מְהֵרָה זִוּוּגוֹ הֶהָגוּן לוֹ מִן הַשָּׁמַיִם בֶּאֱמֶת,"
+              ],
+              "paragraphes_sans_nikkoud": [
+                "אל ברוך גדול דעה, זכנו ברחמיך הרבים וגלה לנו בחסדיך העצומים את הצדיק האמת שהוא בעל דעת גדול. זכנו למצוא אותו ולהתקרב אליו באמת, ולשמוע תורה מפיו הקדוש,",
+                "ורחם על כל ישראל אשר קשה להם למצוא זווגם (ובפרט על פלוני בן פלונית), ועזור להם והושיעה להם מהרה שיזכו כל אחד ואחד למצוא זווגו האמתי ההגון לו מן השמים, חיש קל מהרה, בלי שום עכוב ובלי שום צער ויסורים כלל.",
+                "כי אין אתנו יודע עד מה, שום עצה ותחבולה איך לבקש הזווג לכל אחד. כי אתה יודע כמה קשה לאדם למצוא זווגו האמתי, כי כל הזווגים הם שני הפכים,",
+                "ובפרט כי לפעמים הם בהפך גדול מאד, אשר קשה לזוגן כקריעת ים־סוף, ואי אפשר לחברם ולזוגם כי אם על־ידי הדעת האמתי המשדך כל השדוכים.",
+                "על־כן צריכים לשמוע תורה מפי הבר־דעת האמתי שהוא מחדש חדושים נפלאים בתורה, ומחבר ומיחד אתון רברבין ואתון זעירין, ומקשר ומשדך דברי תורה ממקום למקום,",
+                "אשר על־ידו נגמרים כל השדוכים שבעולם, בסוד: כי ש' פתי כ' הן י' שמרו ד' עת ו' תורה יבקשו מפיהו ראשי תיבות 'שידוך' ,",
+                "אבל בעונותינו הרבים נעלם מאתנו ולא נדע איך למצוא את הבעל דעת הקדוש הזה ולשמוע תורה מפיו, ועתה מאין יבוא עזרנו,",
+                "על־כן עינינו תלויות אליך לבד מלא רחמים יושב ומזוג זווגים, שתחמל על כל עמך ישראל הצריכים למצוא זווגם (ובפרט וכו'), ותשלח לכל אחד מהרה זווגו ההגון לו מן השמים באמת,"
+              ],
+              "statut_verif": "verifie_texte",
+              "note": "Extrait : paragraphes 1 à 8 de la prière. La leçon annoncée en tête (Likoutei Moharan II, 89) a été ouverte et vérifiée.",
+              "lecon_sur_le_sujet": "oui",
+              "lecon_mesure": "4 occurrences du sujet dans 1432 caractères de leçon"
+            },
+            {
+              "id": "src-lt-refua",
+              "type": "source",
+              "sujet": "refua",
+              "titre_he": "רפואה שלמה",
+              "titre_fr": "Réfoua chelema : la guérison",
+              "ref": "Likoutei Tefilot I, 136",
+              "ref_he": "לִקּוּטֵי תְּפִלּוֹת, חלק א, תְּפִלָּה 136",
+              "ref_sefaria": "Likutei Tefilot, Volume I 136",
+              "url": "https://www.sefaria.org/Likutei_Tefilot%2C_Volume_I.136",
+              "edition": "lt",
+              "sur_la_torah": "Likoutei Moharan I, 213",
+              "paragraphes": [
+                "מָלֵא רַחֲמִים, רַחֵם עַל עַמְּךָ יִשְׂרָאֵל, וּבִפְרָט עַל כָּל עֲיָירוֹת יִשְׂרָאֵל אֲשֶׁר הוֹלְכִין וּמְסַבְּבִין בָּהֶם מִינֵי חֳלָאִים וּמַכְאוֹבִים רַחֲמָנָא לִצְלָן. רַחֵם עֲלֵיהֶם לְמַעַן שְׁמֶךָ, וֶאֱמֹר לַמַּלְאָךְ הֶרֶף יָדֶיךָ, וְיָשִׁיב חַרְבּוֹ אֶל נְדָנָהּ.",
+                "חוּס וַחֲמֹל עֲלֵיהֶם וְעַל כָּל שְׁאֵרִית עַמְּךָ בֵּית־יִשְׂרָאֵל, וְלֹא תִתֵּן הַמַּשְׁחִית לָבוֹא אֶל בָּתֵּיהֶם לִנְגֹּף, אוֹ לְהַזִּיק וּלְהַחֲלִישׁ חַס וְשָׁלוֹם.",
+                "רַחֵם רַחֵם, הַצֵּל הַצֵּל, בַּעַל הָרַחֲמִים, בַּעַל הַיְשׁוּעוֹת, בּוֹרֵא רְפוּאוֹת, נוֹרָא תְהִלּוֹת, אֲדוֹן הַנִּפְלָאוֹת,",
+                "זְכֹר לַעֲבָדֶיךָ אֲבוֹתֵינוּ וְרַבּוֹתֵינוּ הַצַּדִּיקִים הָאֲמִתִּיִּים שֶׁהָיוּ בְּכָל דּוֹר וָדוֹר מִימֵי אַבְרָהָם אָבִינוּ עַד הֵנָּה, לְמַעֲנָם וּלְמַעַן רַחֲמֶיךָ הָרַבִּים, רַחֵם עָלֵינוּ וְשָׁמְרֵנוּ וְהַצִּילֵנוּ, אוֹתָנוּ וְכָל עַמְּךָ בֵּית־יִשְׂרָאֵל מִכָּל מִינֵי חֳלָאִים וּמַכְאוֹבִים וּמֵחוּשִׁים, שֶׁלֹּא יָבוֹאוּ עַל שׁוּם אֶחָד מִיִּשְׂרָאֵל.",
+                "וְתִשְׁלַח מְהֵרָה רְפוּאָה שְׁלֵמָה מִן הַשָּׁמַיִם לְכָל אוֹתָם (מִיִּשְׂרָאֵל) אֲשֶׁר כְּבָר הִכִּיתָ אוֹתָם בְּאֵיזֶה חֹלִי אוֹ מַכְאוֹב, רַחֵם עֲלֵיהֶם וְרַפְּאֵם מְהֵרָה רְפוּאָה שְׁלֵמָה, רְפוּאַת הַנֶּפֶשׁ וּרְפוּאַת הַגּוּף,",
+                "אֵל נָא רְפָא נָא לָהֶם לְמַעַן שְׁמֶךָ (וּבִפְרָט לַחוֹלֶה פְּלוֹנִי בֶּן פְּלוֹנִית), כִּי אֵל מֶלֶךְ רוֹפֵא נֶאֱמָן וְרַחֲמָן אָתָּה. אֵל חַי וְקַיָּם, מְחַיֶּה חַיִּים, תֶּן לָנוּ חַיִּים וְנִחְיֶה וְלֹא נָמוּת, גְּאָלֵנוּ מִמָּוֶת פְּדֵנוּ מִשַּׁחַת."
+              ],
+              "paragraphes_sans_nikkoud": [
+                "מלא רחמים, רחם על עמך ישראל, ובפרט על כל עיירות ישראל אשר הולכין ומסבבין בהם מיני חלאים ומכאובים רחמנא לצלן. רחם עליהם למען שמך, ואמר למלאך הרף ידיך, וישיב חרבו אל נדנה.",
+                "חוס וחמל עליהם ועל כל שארית עמך בית־ישראל, ולא תתן המשחית לבוא אל בתיהם לנגף, או להזיק ולהחליש חס ושלום.",
+                "רחם רחם, הצל הצל, בעל הרחמים, בעל הישועות, בורא רפואות, נורא תהלות, אדון הנפלאות,",
+                "זכר לעבדיך אבותינו ורבותינו הצדיקים האמתיים שהיו בכל דור ודור מימי אברהם אבינו עד הנה, למענם ולמען רחמיך הרבים, רחם עלינו ושמרנו והצילנו, אותנו וכל עמך בית־ישראל מכל מיני חלאים ומכאובים ומחושים, שלא יבואו על שום אחד מישראל.",
+                "ותשלח מהרה רפואה שלמה מן השמים לכל אותם (מישראל) אשר כבר הכית אותם באיזה חלי או מכאוב, רחם עליהם ורפאם מהרה רפואה שלמה, רפואת הנפש ורפואת הגוף,",
+                "אל נא רפא נא להם למען שמך (ובפרט לחולה פלוני בן פלונית), כי אל מלך רופא נאמן ורחמן אתה. אל חי וקים, מחיה חיים, תן לנו חיים ונחיה ולא נמות, גאלנו ממות פדנו משחת."
+              ],
+              "statut_verif": "verifie_texte",
+              "note": "Extrait : paragraphes 2 à 7 de la prière. La leçon annoncée en tête (Likoutei Moharan I, 213) a été ouverte et vérifiée.",
+              "lecon_sur_le_sujet": "non",
+              "lecon_mesure": "0 occurrence du sujet dans 1134 caractères de leçon"
+            },
+            {
+              "id": "src-lt-hitbodedut-2",
+              "type": "source",
+              "sujet": "hitbodedut",
+              "titre_he": "הִתְבּוֹדְדוּת בַּשָּׂדֶה",
+              "titre_fr": "Hitbodedout : sortir au champ",
+              "ref": "Likoutei Tefilot II, 11",
+              "ref_he": "לִקּוּטֵי תְּפִלּוֹת, חלק ב, תְּפִלָּה 11",
+              "ref_sefaria": "Likutei Tefilot, Volume II 11",
+              "url": "https://www.sefaria.org/Likutei_Tefilot%2C_Volume_II.11",
+              "edition": "lt",
+              "sur_la_torah": "Likoutei Moharan II, 11",
+              "paragraphes": [
+                "לְכָה דוֹדִי נֵצֵא הַשָּׂדֶה נָלִינָה בַּכְּפָרִים, נַשְׁכִּימָה לַכְּרָמִים, נִרְאֶה אִם פָּרְחָה הַגֶּפֶן פִּתַּח הַסְּמָדַר הֵנֵצוּ הָרִמּוֹנִים, שָׁם אֶתֵּן אֶת דּוֹדַי לָךְ.",
+                "רִבּוֹנוֹ שֶׁל עוֹלָם, זַכֵּנִי לְהַרְבּוֹת בְּהִתְבּוֹדְדוּת תָּמִיד, וְאֶזְכֶּה לִהְיוֹת רָגִיל לָצֵאת בְּכָל יוֹם לַשָּׂדֶה בֵּין אִילָנוֹת וַעֲשָׂבִים וְכֹל שִׂיחַ הַשָּׂדֶה,",
+                "וְשָׁם אֶזְכֶּה לְהִתְבּוֹדֵד וּלְהַרְבּוֹת בְּשִׂיחָה זוֹ תְפִלָּה, בֵּינִי לְבֵין קוֹנִי, לָשׂוּחַ שָׁם כָּל אֲשֶׁר עִם לְבָבִי,",
+                "וְכֹל שִׂיחַ הַשָּׂדֶה וְכָל הָעֲשָׂבִים וְהָאִילָנוֹת וְכָל הַצְּמָחִים, כֻּלָּם יִתְעוֹרְרוּ לִקְרָאתִי, וְיַעֲלוּ וְיִתְּנוּ כֹּחָם וְחַיּוּתָם לְתוֹךְ דִּבְרֵי שִׂיחָתִי וּתְפִלָּתִי,",
+                "עַד שֶׁתִּהְיֶה תְפִלָּתִי וְשִׂיחָתִי נִשְׁלֶמֶת בְּתַכְלִית הַשְּׁלֵמוּת עַל־יְדֵי כָּל שִׂיחַ הַשָּׂדֶה, שֶׁיֻּכְלְלוּ כֻּלָּם עִם כָּל כֹּחוֹתָם וְחַיּוּתָם וְרוּחָנִיוּתָם עַד שָׁרְשָׁם הָעֶלְיוֹן, כֻּלָּם יֻכְלְלוּ בְּתוֹךְ תְּפִלָּתִי,",
+                "וְעַל־יְדֵי־זֶה אֶזְכֶּה לִפְתֹּחַ אֶת לִבִּי לְהַרְבּוֹת בִּתְפִלָּה וְתַחֲנוּנִים וּבְשִׂיחָה קְדוֹשָׁה לְפָנֶיךָ מָלֵא רַחֲמִים רַבִּים, וּלְפָנֶיךָ אֶשְׁפֹּךְ כָּל שִׂיחִי,"
+              ],
+              "paragraphes_sans_nikkoud": [
+                "לכה דודי נצא השדה נלינה בכפרים, נשכימה לכרמים, נראה אם פרחה הגפן פתח הסמדר הנצו הרמונים, שם אתן את דודי לך.",
+                "רבונו של עולם, זכני להרבות בהתבודדות תמיד, ואזכה להיות רגיל לצאת בכל יום לשדה בין אילנות ועשבים וכל שיח השדה,",
+                "ושם אזכה להתבודד ולהרבות בשיחה זו תפלה, ביני לבין קוני, לשוח שם כל אשר עם לבבי,",
+                "וכל שיח השדה וכל העשבים והאילנות וכל הצמחים, כלם יתעוררו לקראתי, ויעלו ויתנו כחם וחיותם לתוך דברי שיחתי ותפלתי,",
+                "עד שתהיה תפלתי ושיחתי נשלמת בתכלית השלמות על־ידי כל שיח השדה, שיכללו כלם עם כל כחותם וחיותם ורוחניותם עד שרשם העליון, כלם יכללו בתוך תפלתי,",
+                "ועל־ידי־זה אזכה לפתח את לבי להרבות בתפלה ותחנונים ובשיחה קדושה לפניך מלא רחמים רבים, ולפניך אשפך כל שיחי,"
+              ],
+              "statut_verif": "verifie_texte",
+              "note": "Extrait : paragraphes 1 à 6 de la prière. La leçon annoncée en tête (Likoutei Moharan II, 11, 1405 caractères) a été ouverte et vérifiée.",
+              "lecon_sur_le_sujet": "oui",
+              "lecon_mesure": "4 occurrences du sujet dans 834 caractères de leçon"
+            },
+            {
+              "id": "src-lt-simcha-2",
+              "type": "source",
+              "sujet": "simcha",
+              "titre_he": "נְקֻדּוֹת טוֹבוֹת",
+              "titre_fr": "Joie : chercher en soi les points bons",
+              "ref": "Likoutei Tefilot I, 89",
+              "ref_he": "לִקּוּטֵי תְּפִלּוֹת, חלק א, תְּפִלָּה 89",
+              "ref_sefaria": "Likutei Tefilot, Volume I 89",
+              "url": "https://www.sefaria.org/Likutei_Tefilot%2C_Volume_I.89",
+              "edition": "lt",
+              "sur_la_torah": "Likoutei Moharan I, 178",
+              "paragraphes": [
+                "כִּי כְבָר לִמַּדְתָּנוּ בְּרַחֲמֶיךָ הָרַבִּים עַל־יְדֵי צַדִּיקִים הַקְּדוֹשִׁים, שֶׁאֲפִלּוּ אִם הָאָדָם הוּא כְּמוֹ שֶׁהוּא, אֲפִלּוּ אִם עָשָׂה מַה שֶּׁעָשָׂה, וְגַם עַתָּה הוּא כְּמוֹ שֶׁהוּא. אַף־עַל־פִּי־כֵן בַּאֲשֶׁר הוּא שָׁם, הוּא מְחֻיָּב לְהַכְרִיחַ עַצְמוֹ בְּכָל הַכֹּחוֹת לְהַרְחִיק הָעַצְבוּת וּלְשַׂמֵּחַ אֶת נַפְשׁוֹ בְּכָל־עֵת,",
+                "עַל אֲשֶׁר זָכָה עַל כָּל פָּנִים לִהְיוֹת מִזֶּרַע יִשְׂרָאֵל. וְגַם צָרִיךְ לְחַפֵּשׂ וּלְבַקֵּשׁ וְלִמְצֹא בְּעַצְמוֹ נְקֻדּוֹת טוֹבוֹת מִכָּל הַמִּצְוֹת הָרַבּוֹת שֶׁזָּכָה לַעֲשׂוֹת מֵעוֹדוֹ.",
+                "כִּי כָל אֶחָד וְאֶחָד מִיִּשְׂרָאֵל יֵשׁ לוֹ מִצְוֹת רַבּוֹת, כִּי אֲפִלּוּ פּוֹשְׁעֵי יִשְׂרָאֵל מְלֵאִים מִצְוֹת כָּרִמּוֹן.",
+                "וּבָזֶה רָאוּי לִשְׂמֹחַ וְלָשׂוּשׂ הַרְבֵּה כָּל אֶחָד מִיִּשְׂרָאֵל, אֲפִלּוּ הַפָּחוּת שֶׁבַּפְּחוּתִים וְהַגָּרוּעַ שֶׁבַּגְּרוּעִים:",
+                "מָרָא דְעַלְמָא כֹּלָּא, אֲדוֹן הַנִּפְלָאוֹת, אָבִי אָב הָרַחֲמָן, אֲשֶׁר עֹז וְחֶדְוָה בִּמְקוֹמֶךָ. הֱיֵה בְּעֶזְרִי וְהוֹשִׁיעֵנִי, שֶׁאֶזְכֶּה לֶאֱסֹף וּלְקַבֵּץ כָּל חֶלְקֵי הַשִּׂמְחָה מִכָּל הַמִּצְוֹת וְהַנְּקֻדּוֹת טוֹבוֹת שֶׁזָּכִיתִי בְּרַחֲמֶיךָ מֵעוֹדִי עַד הַיּוֹם הַזֶּה,"
+              ],
+              "paragraphes_sans_nikkoud": [
+                "כי כבר למדתנו ברחמיך הרבים על־ידי צדיקים הקדושים, שאפלו אם האדם הוא כמו שהוא, אפלו אם עשה מה שעשה, וגם עתה הוא כמו שהוא. אף־על־פי־כן באשר הוא שם, הוא מחיב להכריח עצמו בכל הכחות להרחיק העצבות ולשמח את נפשו בכל־עת,",
+                "על אשר זכה על כל פנים להיות מזרע ישראל. וגם צריך לחפש ולבקש ולמצא בעצמו נקדות טובות מכל המצות הרבות שזכה לעשות מעודו.",
+                "כי כל אחד ואחד מישראל יש לו מצות רבות, כי אפלו פושעי ישראל מלאים מצות כרמון.",
+                "ובזה ראוי לשמח ולשוש הרבה כל אחד מישראל, אפלו הפחות שבפחותים והגרוע שבגרועים:",
+                "מרא דעלמא כלא, אדון הנפלאות, אבי אב הרחמן, אשר עז וחדוה במקומך. היה בעזרי והושיעני, שאזכה לאסף ולקבץ כל חלקי השמחה מכל המצות והנקדות טובות שזכיתי ברחמיך מעודי עד היום הזה,"
+              ],
+              "statut_verif": "verifie_texte",
+              "note": "Extrait : paragraphes 10 à 14 de la prière. La leçon annoncée en tête (Likoutei Moharan I, 178, 3411 caractères) a été ouverte et vérifiée.",
+              "lecon_sur_le_sujet": "oui",
+              "lecon_mesure": "39 occurrences du sujet dans 2111 caractères de leçon"
+            },
+            {
+              "id": "src-lt-uman-2",
+              "type": "source",
+              "sujet": "uman",
+              "titre_he": "הַקִּבּוּץ הַקָּדוֹשׁ",
+              "titre_fr": "Ouman : le rassemblement",
+              "ref": "Likoutei Tefilot II, 29",
+              "ref_he": "לִקּוּטֵי תְּפִלּוֹת, חלק ב, תְּפִלָּה 29",
+              "ref_sefaria": "Likutei Tefilot, Volume II 29",
+              "url": "https://www.sefaria.org/Likutei_Tefilot%2C_Volume_II.29",
+              "edition": "lt",
+              "sur_la_torah": "Likoutei Moharan II, 40",
+              "paragraphes": [
+                "לְרֹאשׁ־הַשָּׁנָה וְזַכֵּנוּ בְּרַחֲמֶיךָ הָרַבִּים וַחֲסָדֶיךָ הָעֲצוּמִים, שֶׁנִּזְכֶּה בְּכָל שָׁנָה וְשָׁנָה לִנְסֹעַ עַל רֹאשׁ־הַשָּׁנָה לְצַדִּיקִים אֲמִתִּיִּים,",
+                "וְאֶזְכֶּה לִהְיוֹת נִמְנָה גַם־כֵּן, בֵּין עַמְּךָ יִשְׂרָאֵל הַכְּשֵׁרִים וְהַתְּמִימִים הַמִּתְאַסְּפִים וּמִתְקַבְּצִים לְצַדִּיקִים אֲמִתִּיִּים עַל רֹאשׁ־הַשָּׁנָה,",
+                "כִּי אַתָּה לְבַד יוֹדֵעַ מַעֲלַת הַקִּבּוּץ שֶׁל עַמְּךָ יִשְׂרָאֵל בְּרֹאשׁ־הַשָּׁנָה לְצַדִּיקִים אֲמִתִּיִּים.",
+                "אַתָּה לְבַד יוֹדֵעַ כַּמָּה וְכַמָּה הִתְפָּאֲרוּת וְשַׁעֲשׁוּעִים גְּדוֹלִים וְנוֹרָאִים אֲשֶׁר אַתָּה מְקַבֵּל בְּכָל רֹאשׁ־הַשָּׁנָה וְרֹאשׁ־הַשָּׁנָה מֵהַקִּבּוּץ הַקָּדוֹשׁ שֶׁל עַמְּךָ יִשְׂרָאֵל אֵצֶל הַצַּדִּיקִים הָאֲמִתִּיִּים.",
+                "זַכֵּנוּ בְּרַחֲמֶיךָ הָרַבִּים וַחֲסָדֶיךָ הָעֲצוּמִים, שֶׁנִּהְיֶה אֲנַחְנוּ נִכְלָלִים גַּם־כֵּן בְּהַהִתְפָּאֲרוּת וְהַשַּׁעֲשׁוּעִים הָאֵלֶּה, וְאַל יִמְנָעֵנוּ מִזֶּה שׁוּם מוֹנֵעַ, וְאַל יְעַכְּבֵנוּ שׁוּם עִכּוּב, וְאַל יַטְרִידֵנוּ שׁוּם טִרְדָּא בָּעוֹלָם.",
+                "רַק נִזְכֶּה תָמִיד בְּכָל שָׁנָה וְשָׁנָה, לֵילֵךְ וְלָבֹא וּלְהִתְאַסֵּף אֶל הַקִּבּוּץ הַקָּדוֹשׁ וְהַנּוֹרָא שֶׁל עַמְּךָ יִשְׂרָאֵל הַכְּשֵׁרִים, הַמִּתְאַסְּפִים וּמִתְקַבְּצִים אֵצֶל הַצַּדִּיקִים הָאֲמִתִּיִּים בְּכָל רֹאשׁ־הַשָּׁנָה,"
+              ],
+              "paragraphes_sans_nikkoud": [
+                "לראש־השנה וזכנו ברחמיך הרבים וחסדיך העצומים, שנזכה בכל שנה ושנה לנסע על ראש־השנה לצדיקים אמתיים,",
+                "ואזכה להיות נמנה גם־כן, בין עמך ישראל הכשרים והתמימים המתאספים ומתקבצים לצדיקים אמתיים על ראש־השנה,",
+                "כי אתה לבד יודע מעלת הקבוץ של עמך ישראל בראש־השנה לצדיקים אמתיים.",
+                "אתה לבד יודע כמה וכמה התפארות ושעשועים גדולים ונוראים אשר אתה מקבל בכל ראש־השנה וראש־השנה מהקבוץ הקדוש של עמך ישראל אצל הצדיקים האמתיים.",
+                "זכנו ברחמיך הרבים וחסדיך העצומים, שנהיה אנחנו נכללים גם־כן בההתפארות והשעשועים האלה, ואל ימנענו מזה שום מונע, ואל יעכבנו שום עכוב, ואל יטרידנו שום טרדא בעולם.",
+                "רק נזכה תמיד בכל שנה ושנה, לילך ולבא ולהתאסף אל הקבוץ הקדוש והנורא של עמך ישראל הכשרים, המתאספים ומתקבצים אצל הצדיקים האמתיים בכל ראש־השנה,"
+              ],
+              "statut_verif": "verifie_texte",
+              "note": "Extrait : paragraphes 42 à 47 de la prière. La leçon annoncée en tête (Likoutei Moharan II, 40, 7152 caractères) a été ouverte et vérifiée.",
+              "lecon_sur_le_sujet": "oui",
+              "lecon_mesure": "13 occurrences du sujet dans 4349 caractères de leçon"
+            },
+            {
+              "id": "src-lt-kdusha-2",
+              "type": "source",
+              "sujet": "kdusha",
+              "titre_he": "קְדֻשַּׁת הָאֲכִילָה",
+              "titre_fr": "Sainteté : ce qui entre dans la bouche",
+              "ref": "Likoutei Tefilot I, 17",
+              "ref_he": "לִקּוּטֵי תְּפִלּוֹת, חלק א, תְּפִלָּה 17",
+              "ref_sefaria": "Likutei Tefilot, Volume I 17",
+              "url": "https://www.sefaria.org/Likutei_Tefilot%2C_Volume_I.17",
+              "edition": "lt",
+              "sur_la_torah": "Likoutei Moharan I, 17",
+              "paragraphes": [
+                "עַל כֵּן רַחֵם עָלֵינוּ לְמַעַנְךָ, וְעָזְרֵנוּ וְהוֹשִׁיעֵנוּ וּשְׁמֹר אֶת נַפְשֵׁנוּ, שֶׁנִּזְכֶּה לִהְיוֹת נִצּוֹלִים וּפְרוּשִׁים וּמֻבְדָּלִים לְגַמְרֵי מִכָּל מִינֵי מַאֲכָלוֹת אֲסוּרוֹת, מִנְּבֵלוֹת וּטְרֵפוֹת, מִשְּׁקָצִים וּמִרְמָשִׂים, מִבָּשָׂר בֶּחָלָב וּמִיֵּין נֶסֶךְ, מֵחֵלֶב וָדָם, מִגִּיד הַנָּשֶׁה וְאֵבֶר מִן הַחַי, וּמִפַּת שֶׁל עַכּוּ\"ם וּמִבִּשּׁוּלֵי עַכּוּ\"ם, וּמִשְּׁאָר כָּל מִינֵי מַאֲכָלוֹת אֲסוּרוֹת, מֵהֶם וּמִתַּעֲרוֹבוֹתֵיהֶם, וּמִמַּשֶּׁהוּ חָמֵץ בַּפֶּסַח. מִכֻּלָּם תִּשְׁמְרֵנוּ וְתַצִּילֵנוּ בְּרַחֲמֶיךָ הָעֲצוּמִים, שֶׁלֹּא יִכָּנְסוּ לְתוֹךְ פִּינוּ, וְלֹא יְטַמְּאוּ אֶת נַפְשׁוֹתֵינוּ, וְנִהְיֶה אֲנַחְנוּ וְצֶאֱצָאֵינוּ נְקִיִּים וּטְהוֹרִים וּמֻבְדָּלִים מֵהֶם לְגַמְרֵי, וּתְקַדְּשֵׁנוּ בִּקְדֻשָּׁתְךָ הָעֶלְיוֹנָה. וּתְקַיֵּים בָּנוּ מִקְרָא שֶׁכָּתוּב, וִהְיִיתֶם לִי קְדוֹשִׁים, כִּי קָדוֹשׁ אָנִי.",
+                "חוּס וַחֲמֹל עָלֵינוּ, וּפְדֵנוּ וְהַצִּילֵנוּ וּמַלְּטֵנוּ מִכָּל מִינֵי טוּמְאוֹת וּמִכָּל הַדְּבָרִים הַמְשַׁקְּצִין אֶת הַנֶּפֶשׁ, וְקַדְּשֵׁנוּ בְּכָל מִינֵי קְדֻשּׁוֹת. וְעָזְרֵנוּ וְזַכֵּנוּ לַאֲכִילָה דִקְדֻשָּׁה בִּשְׁלֵמוּת בֶּאֱמֶת כָּרָאוּי לְאִישׁ יִשְׂרְאֵלִי, וְנִזְכֶּה לְהַשְׁלִים פְּגָמֵי הַמִּזְבֵּחַ דִּקְדֻשָׁה, עַל־יְדֵי אֲכִילָתֵנוּ בִּקְדֻשָּׁה וּבְטָהֳרָה, עַד שֶׁיִּהְיֶה הַשֻּׁלְחָן שֶׁלָּנוּ מְכַפֵּר כַּמִּזְבֵּחַ. וּתְזַכֵּנוּ בְּרַחֲמֶיךָ הָרַבִּים לֶאֱמוּנָה שְׁלֵמָה בֶּאֱמֶת, וְתִתֶּן לָנוּ כֹּחַ וְשֵׂכֶל דִּקְדֻשָּׁה לְהַכְנִיעַ וּלְבַטֵּל כָּל מִינֵי אֱמוּנוֹת כָּזְבִיּוֹת, וּלְהָשִׁיב וּלְהַחֲזִיר אֶת כָּל הַתּוֹעִים בֶּאֱמוּנוֹת כָּזְבִיּוֹת שֶׁיָּשׁוּבוּ כֻּלָּם לֶאֱמוּנָתְךָ הַקְּדוֹשָׁה:"
+              ],
+              "paragraphes_sans_nikkoud": [
+                "על כן רחם עלינו למענך, ועזרנו והושיענו ושמר את נפשנו, שנזכה להיות נצולים ופרושים ומבדלים לגמרי מכל מיני מאכלות אסורות, מנבלות וטרפות, משקצים ומרמשים, מבשר בחלב ומיין נסך, מחלב ודם, מגיד הנשה ואבר מן החי, ומפת של עכו\"ם ומבשולי עכו\"ם, ומשאר כל מיני מאכלות אסורות, מהם ומתערובותיהם, וממשהו חמץ בפסח. מכלם תשמרנו ותצילנו ברחמיך העצומים, שלא יכנסו לתוך פינו, ולא יטמאו את נפשותינו, ונהיה אנחנו וצאצאינו נקיים וטהורים ומבדלים מהם לגמרי, ותקדשנו בקדשתך העליונה. ותקיים בנו מקרא שכתוב, והייתם לי קדושים, כי קדוש אני.",
+                "חוס וחמל עלינו, ופדנו והצילנו ומלטנו מכל מיני טומאות ומכל הדברים המשקצין את הנפש, וקדשנו בכל מיני קדשות. ועזרנו וזכנו לאכילה דקדשה בשלמות באמת כראוי לאיש ישראלי, ונזכה להשלים פגמי המזבח דקדשה, על־ידי אכילתנו בקדשה ובטהרה, עד שיהיה השלחן שלנו מכפר כמזבח. ותזכנו ברחמיך הרבים לאמונה שלמה באמת, ותתן לנו כח ושכל דקדשה להכניע ולבטל כל מיני אמונות כזביות, ולהשיב ולהחזיר את כל התועים באמונות כזביות שישובו כלם לאמונתך הקדושה:"
+              ],
+              "statut_verif": "verifie_texte",
+              "note": "Extrait : paragraphes 22 à 23 de la prière. La leçon annoncée en tête (Likoutei Moharan I, 17, 37318 caractères) a été ouverte et vérifiée.",
+              "lecon_sur_le_sujet": "partiel",
+              "lecon_mesure": "12 occurrences du sujet dans 22649 caractères de leçon"
+            },
+            {
+              "id": "src-lt-zera-2",
+              "type": "source",
+              "sujet": "zera",
+              "titre_he": "לִפְקֹד עֲקָרוֹת",
+              "titre_fr": "Zéra chel kayama : que les stériles soient visités",
+              "ref": "Likoutei Tefilot I, 60",
+              "ref_he": "לִקּוּטֵי תְּפִלּוֹת, חלק א, תְּפִלָּה 60",
+              "ref_sefaria": "Likutei Tefilot, Volume I 60",
+              "url": "https://www.sefaria.org/Likutei_Tefilot%2C_Volume_I.60",
+              "edition": "lt",
+              "sur_la_torah": "Likoutei Moharan I, 60",
+              "paragraphes": [
+                "וְנִזְכֶּה שֶׁיִּהְיוּ דִבּוּרֵינוּ בִּקְדֻשָּׁה גְּדוֹלָה, עַד שֶׁיִּהְיֶה לָנוּ כֹחַ לִפְקֹד עֲקָרוֹת בְּדִבּוּרֵינוּ, וְיִהְיוּ כְּלֵי הַדִּבּוּר סְמוּכִים לִכְלֵי הַהוֹלָדָה. וְנִזְכֶּה לִפְעֹל עַל־יְדֵי דִבּוּרֵינוּ בִּקְדֻשָּׁה הוֹלָדוֹת קְדוֹשׁוֹת, וְיִתְרַבּוּ עַמְּךָ יִשְׂרָאֵל כַּחוֹל אֲשֶׁר עַל שְׂפַת הַיָּם, וּכְכוֹכְבֵי הַשָּׁמַיִם לָרֹב, וְלֹא יִהְיֶה בָּנוּ עָקָר וַעֲקָרָה, וְתִפְקֹד לְכָל חֲשׂוּכֵי בָּנִים בְּזֶרַע שֶׁל קַיָּמָא לַעֲבוֹדָתֶךָ וּלְיִרְאָתֶךָ. וְעַל־יְדֵי־זֶה נִזְכֶּה שֶׁיִּתְגַּלֶּה יִרְאָה שְׁלֵמָה, יִרְאָה גְּדוֹלָה בָּעוֹלָם,"
+              ],
+              "paragraphes_sans_nikkoud": [
+                "ונזכה שיהיו דבורינו בקדשה גדולה, עד שיהיה לנו כח לפקד עקרות בדבורינו, ויהיו כלי הדבור סמוכים לכלי ההולדה. ונזכה לפעל על־ידי דבורינו בקדשה הולדות קדושות, ויתרבו עמך ישראל כחול אשר על שפת הים, וככוכבי השמים לרב, ולא יהיה בנו עקר ועקרה, ותפקד לכל חשוכי בנים בזרע של קימא לעבודתך וליראתך. ועל־ידי־זה נזכה שיתגלה יראה שלמה, יראה גדולה בעולם,"
+              ],
+              "statut_verif": "verifie_texte",
+              "note": "Extrait : paragraphe 84 à 84 de la prière. La leçon annoncée en tête (Likoutei Moharan I, 60, 44424 caractères) a été ouverte et vérifiée.",
+              "lecon_sur_le_sujet": "oui",
+              "lecon_mesure": "57 occurrences du sujet dans 27561 caractères de leçon"
+            },
+            {
+              "id": "src-lt-parnassa-2",
+              "type": "source",
+              "sujet": "parnassa",
+              "titre_he": "פַּרְנָסָה וְשׂבַע",
+              "titre_fr": "Parnassa : le rassasiement",
+              "ref": "Likoutei Tefilot I, 47",
+              "ref_he": "לִקּוּטֵי תְּפִלּוֹת, חלק א, תְּפִלָּה 47",
+              "ref_sefaria": "Likutei Tefilot, Volume I 47",
+              "url": "https://www.sefaria.org/Likutei_Tefilot%2C_Volume_I.47",
+              "edition": "lt",
+              "sur_la_torah": "Likoutei Moharan I, 47",
+              "paragraphes": [
+                "אָבִינוּ מַלְכֵּנוּ אַדִּירֵנוּ בּוֹרְאֵנוּ גּוֹאֲלֵנוּ יוֹצְרֵנוּ קְדוֹשֵׁנוּ קְדוֹשׁ יַעֲקֹב רוֹעֵנוּ רוֹעֵה יִשְׂרָאֵל, עָזְרֵנוּ וְהוֹשִׁיעֵנוּ בְּרַחֲמֶיךָ הָרַבִּים וּבַחֲסָדֶיךָ הַגְּדוֹלִים, שֶׁנִּזְכֶּה לְבַטֵּל וּלְשַׁבֵּר תַּאֲוַת אֲכִילָה מֵאִתָּנוּ לְגַמְרֵי, וְנִסְתַּפֵּק בַּמֻּעָט לֶאֱכֹל מְעַט כְּדֵי חִיּוּנִי בְצִמְצוּם וּבְדִקְדּוּק גָּדוֹל וְלִשְׂבֹּעַ מִמֶּנּוּ,",
+                "וְתָסִיר וּתְגָרֵשׁ וּתְבַטֵּל הָרְעָבוֹן מִקִּרְבֵּנוּ. וְתַעַזְרֵנוּ לְהַחֲיוֹת עַצְמֵנוּ וּלְהַשְׂבִּיעַ נַפְשֵׁנוּ בַּאֲכִילָה מֻעֶטֶת, וְאֶזְכֶּה לְדַקְדֵּק בַּאֲכִילָתִי מִכַּזַּיִת וְעַד כַּבֵיצָה, וּמְעַט אֲכִילָתִי יִהְיֶה בִּקְדֻשָּׁה וּבְטָהֳרָה גְּדוֹלָה בֶּאֱמֶת כִּרְצוֹנְךָ הַטּוֹב.",
+                "וּתְזַכֵּנִי שֶׁאַמְשִׁיךְ מְזוֹנוֹתַי וּפַרְנָסָתִי וְכָל הַשְׁפָּעוֹת טוֹבוֹת מֵאֶרֶץ יִשְׂרָאֵל, שֶׁהִיא אֶרֶץ הַקְּדוֹשָׁה אֶרֶץ הַחַיִּים, שֶׁשָּׁם שֹׁרֶשׁ כָּל הַהַשְׁפָּעוֹת וְכָל הַבְּרָכוֹת:"
+              ],
+              "paragraphes_sans_nikkoud": [
+                "אבינו מלכנו אדירנו בוראנו גואלנו יוצרנו קדושנו קדוש יעקב רוענו רועה ישראל, עזרנו והושיענו ברחמיך הרבים ובחסדיך הגדולים, שנזכה לבטל ולשבר תאות אכילה מאתנו לגמרי, ונסתפק במעט לאכל מעט כדי חיוני בצמצום ובדקדוק גדול ולשבע ממנו,",
+                "ותסיר ותגרש ותבטל הרעבון מקרבנו. ותעזרנו להחיות עצמנו ולהשביע נפשנו באכילה מעטת, ואזכה לדקדק באכילתי מכזית ועד כביצה, ומעט אכילתי יהיה בקדשה ובטהרה גדולה באמת כרצונך הטוב.",
+                "ותזכני שאמשיך מזונותי ופרנסתי וכל השפעות טובות מארץ ישראל, שהיא ארץ הקדושה ארץ החיים, ששם שרש כל ההשפעות וכל הברכות:"
+              ],
+              "statut_verif": "verifie_texte",
+              "note": "Extrait : paragraphes 1 à 3 de la prière. La leçon annoncée en tête (Likoutei Moharan I, 47, 16665 caractères) a été ouverte et vérifiée.",
+              "lecon_sur_le_sujet": "oui",
+              "lecon_mesure": "29 occurrences du sujet dans 10374 caractères de leçon"
+            },
+            {
+              "id": "src-lt-brit-2",
+              "type": "source",
+              "sujet": "brit",
+              "titre_he": "צְדָקָה — תִּקּוּן הַבְּרִית",
+              "titre_fr": "Chmirat habrit : la tsedaka qui répare",
+              "ref": "Likoutei Tefilot I, 152",
+              "ref_he": "לִקּוּטֵי תְּפִלּוֹת, חלק א, תְּפִלָּה 152",
+              "ref_sefaria": "Likutei Tefilot, Volume I 152",
+              "url": "https://www.sefaria.org/Likutei_Tefilot%2C_Volume_I.152",
+              "edition": "lt",
+              "sur_la_torah": "Likoutei Moharan I, 264",
+              "paragraphes": [
+                "מָרוֹם וְקָדוֹשׁ, פּוֹעֵל גְּבוּרוֹת, עוֹשֶׂה חֲדָשׁוֹת, בַּעַל מִלְחָמוֹת, זוֹרֵעַ צְדָקוֹת, מַצְמִיחַ יְשׁוּעוֹת, עוֹשֶׂה צְדָקוֹת עִם כָּל בָּשָׂר וְרוּחַ,",
+                "עֲשֵׂה עִמִּי צְדָקָה וָחֶסֶד, וְזַכֵּנִי לִתֵּן צְדָקָה הַרְבֵּה לַעֲנִיִּים הֲגוּנִים, בְּאֹפֶן שֶׁיִּהְיֶה לִי תִקּוּן גָּדוֹל לִפְגָם הַבְּרִית שֶׁפָּגַמְתִּי נֶגְדְּךָ בְּלִי שִׁעוּר.",
+                "רִבּוֹנוֹ שֶׁל עוֹלָם, אַתָּה יוֹדֵעַ כַּמָּה וְכַמָּה הִרְחַקְתִּי הַשֶּׁפַע מֵהַקְּדֻשָּׁה עַל־יְדֵי פְּגָם הַבְּרִית וְהִמְשַׁכְתִּי לְמָקוֹם שֶׁהִמְשַׁכְתִּי רַחֲמָנָא לִצְלָן, לִמְקוֹמוֹת אֲשֶׁר לֹא נִתַּן לְהִזָּכֵר, וּפָגַמְתִּי כְּמוֹ שֶׁפָּגַמְתִּי אֲשֶׁר אִי אֶפְשָׁר לְשַׁעֵר, אֲשֶׁר הַתִּקּוּן לָזֶה הוּא צְדָקָה לַעֲנִיִּים הֲגוּנִים דַּוְקָא, שֶׁעַל־יְדֵי־זֶה חוֹזְרִים וּמַמְשִׁיכִים הַשֶּׁפַע אֶל הַקְּדֻשָּׁה,"
+              ],
+              "paragraphes_sans_nikkoud": [
+                "מרום וקדוש, פועל גבורות, עושה חדשות, בעל מלחמות, זורע צדקות, מצמיח ישועות, עושה צדקות עם כל בשר ורוח,",
+                "עשה עמי צדקה וחסד, וזכני לתן צדקה הרבה לעניים הגונים, באפן שיהיה לי תקון גדול לפגם הברית שפגמתי נגדך בלי שעור.",
+                "רבונו של עולם, אתה יודע כמה וכמה הרחקתי השפע מהקדשה על־ידי פגם הברית והמשכתי למקום שהמשכתי רחמנא לצלן, למקומות אשר לא נתן להזכר, ופגמתי כמו שפגמתי אשר אי אפשר לשער, אשר התקון לזה הוא צדקה לעניים הגונים דוקא, שעל־ידי־זה חוזרים וממשיכים השפע אל הקדשה,"
+              ],
+              "statut_verif": "verifie_texte",
+              "note": "Extrait : paragraphes 1 à 3 de la prière. La leçon annoncée en tête (Likoutei Moharan I, 264, 828 caractères) a été ouverte et vérifiée.",
+              "lecon_sur_le_sujet": "oui",
+              "lecon_mesure": "3 occurrences du sujet dans 506 caractères de leçon"
+            },
+            {
+              "id": "src-lt-geula-2",
+              "type": "source",
+              "sujet": "geula",
+              "titre_he": "מָשִׁיחַ צִדְקֵנוּ",
+              "titre_fr": "Guéoula : hâter la délivrance",
+              "ref": "Likoutei Tefilot I, 142",
+              "ref_he": "לִקּוּטֵי תְּפִלּוֹת, חלק א, תְּפִלָּה 142",
+              "ref_sefaria": "Likutei Tefilot, Volume I 142",
+              "url": "https://www.sefaria.org/Likutei_Tefilot%2C_Volume_I.142",
+              "edition": "lt",
+              "sur_la_torah": "Likoutei Moharan I, 247",
+              "paragraphes": [
+                "וְיִכְָמְרוּ רַחֲמֶיךָ עַל בָּנֶיךָ וְתָבִיא לָנוּ אֶת מְשִׁיחַ צִדְקֵנוּ מְהֵרָה וְיִגְאָלֵנוּ גְאֻלָּה שְׁלֵמָה, גְּאֻלַּת עוֹלָם, וְאָז יְתַקֵּן לָנוּ אֶת בְּחִינַת הַתֵּיק\"וֹ בְּתַכְלִית הַתִּקּוּ\"ן בְּתַכְלִית הַשְּׁלֵמוּת, וְיִהְיֶה נִמְשַׁךְ הָאוֹת נוּ\"ן מֵהַקִּנּוֹ\"ת לְתֵיק\"וֹ וְיִהְיֶה נַעֲשָׂה מִתֵּיק\"וֹ תִקּוּ\"ן. וְיִתְבַּטְּלוּ כָּל הַקִּנּוֹת מִן הָעוֹלָם וְיִתְהַפְּכוּ הַקִּנּוֹ\"ת לְתִקּוּ\"ן",
+                "מָלֵא רַחֲמִים בַּעַל הַיְּשׁוּעוֹת, בַּעַל הַנֶּחָמוֹת, נַחֲמֵנוּ נָא מִכָּל צָרוֹתֵינוּ וְעָזְרֵנוּ בְּכָל עִנְיָנֵינוּ וַחֲפָצֵינוּ, וּפְרוֹס עָלֵינוּ סֻכַּת שְׁלוֹמֶךָ וְתַקְּנֵנוּ בְּעֵצָה טוֹבָה מִלְּפָנֶיךָ וְהוֹשִׁיעֵנוּ מְהֵרָה לְמַעַן שְׁמֶךָ,"
+              ],
+              "paragraphes_sans_nikkoud": [
+                "ויכמרו רחמיך על בניך ותביא לנו את משיח צדקנו מהרה ויגאלנו גאלה שלמה, גאלת עולם, ואז יתקן לנו את בחינת התיק\"ו בתכלית התקו\"ן בתכלית השלמות, ויהיה נמשך האות נו\"ן מהקנו\"ת לתיק\"ו ויהיה נעשה מתיק\"ו תקו\"ן. ויתבטלו כל הקנות מן העולם ויתהפכו הקנו\"ת לתקו\"ן",
+                "מלא רחמים בעל הישועות, בעל הנחמות, נחמנו נא מכל צרותינו ועזרנו בכל ענינינו וחפצינו, ופרוס עלינו סכת שלומך ותקננו בעצה טובה מלפניך והושיענו מהרה למען שמך,"
+              ],
+              "statut_verif": "verifie_texte",
+              "note": "Extrait : paragraphes 21 à 22 de la prière. La leçon annoncée en tête (Likoutei Moharan I, 247, 532 caractères) a été ouverte et vérifiée.",
+              "lecon_sur_le_sujet": "non",
+              "lecon_mesure": "1 occurrence du sujet dans 319 caractères de leçon"
+            },
+            {
+              "id": "src-lt-zivug-2",
+              "type": "source",
+              "sujet": "zivug",
+              "titre_he": "זִוּוּג הָהָגוּן מִן הַשָּׁמַיִם",
+              "titre_fr": "Zivoug : le conjoint destiné",
+              "ref": "Likoutei Tefilot II, 2",
+              "ref_he": "לִקּוּטֵי תְּפִלּוֹת, חלק ב, תְּפִלָּה 2",
+              "ref_sefaria": "Likutei Tefilot, Volume II 2",
+              "url": "https://www.sefaria.org/Likutei_Tefilot%2C_Volume_II.2",
+              "edition": "lt",
+              "sur_la_torah": "Likoutei Moharan II, 2",
+              "paragraphes": [
+                "וּתְרַחֵם עָלֵינוּ וְעַל כָּל עַמְּךָ יִשְׂרָאֵל, וְתַזְמִין לְבָנֵינוּ וְלִבְנוֹתֵינוּ זִוּוּגָם הֶהָגוּן לָהֶם מִן הַשָּׁמַיִם, וְלֹא יִתְחַלְּפוּ הַזִּוּוּגִים חָלִילָה בַּעֲוֹנוֹתֵינוּ, רַק כָּל אֶחָד יִזְכֶּה לִמְצֹא זִוּוּגוֹ הֶהָגוּן לוֹ מִן הַשָּׁמַיִם, (וּבִפְרָט לִפְלוֹנִי בֶּן פְּלוֹנִית),",
+                "וְתַנְחֵנוּ בְּדֶרֶךְ הָאֱמֶת תָּמִיד, וְנִזְכֶּה לַעֲשׂוֹת שִׁדּוּכִים טוֹבִים וַהֲגוּנִים בֶּאֱמֶת כִּרְצוֹנְךָ הַטּוֹב, כְּמוֹ שֶׁכָּתוּב, וּמֵיְהֹוָה אִשָּׁה מַשְׂכָּלֶת:"
+              ],
+              "paragraphes_sans_nikkoud": [
+                "ותרחם עלינו ועל כל עמך ישראל, ותזמין לבנינו ולבנותינו זווגם ההגון להם מן השמים, ולא יתחלפו הזווגים חלילה בעונותינו, רק כל אחד יזכה למצא זווגו ההגון לו מן השמים, (ובפרט לפלוני בן פלונית),",
+                "ותנחנו בדרך האמת תמיד, ונזכה לעשות שדוכים טובים והגונים באמת כרצונך הטוב, כמו שכתוב, ומיהוה אשה משכלת:"
+              ],
+              "statut_verif": "verifie_texte",
+              "note": "Extrait : paragraphes 54 à 55 de la prière. La leçon annoncée en tête (Likoutei Moharan II, 2, 23976 caractères) a été ouverte et vérifiée.",
+              "lecon_sur_le_sujet": "non",
+              "lecon_mesure": "1 occurrence du sujet dans 14998 caractères de leçon"
+            },
+            {
+              "id": "src-lt-zivug-3",
+              "type": "source",
+              "sujet": "zivug",
+              "titre_he": "כַּוָּנוֹת אֱלוּל — וְהַזִּוּוּג",
+              "titre_fr": "Zivoug : le secret d’Eloul",
+              "ref": "Likoutei Tefilot II, 44",
+              "ref_he": "לִקּוּטֵי תְּפִלּוֹת, חלק ב, תְּפִלָּה 44",
+              "ref_sefaria": "Likutei Tefilot, Volume II 44",
+              "url": "https://www.sefaria.org/Likutei_Tefilot%2C_Volume_II.44",
+              "edition": "lt",
+              "sur_la_torah": "Likoutei Moharan II, 87",
+              "paragraphes": [
+                "וּבִזְכוּת אַבְרָהָם אָבִינוּ עָלָיו הַשָּׁלוֹם, שֶׁרָמַז הַסּוֹד הַזֶּה שֶׁל כַּוָּנַת אֱלוּל בְּעֵת שֶׁשָּׁלַח אֶת אֱלִיעֶזֶר עַבְדּוֹ לְבַקֵּשׁ הַזִּוּוּג שֶׁל יִצְחָק בְּנוֹ,",
+                "וּבִזְכוּת הַצַּדִּיקִים שֶׁגִּלּוּ הַסּוֹד הַנּוֹרָא הַזֶּה, תָּגֵן עֲלֵיהֶם וְעָלֵינוּ וְעַל זַרְעֵנוּ, וּתְרַחֵם עַל כָּל יִשְׂרָאֵל עַמֶּךָ, וְתָשִׂים שָׁלוֹם בֵּין כָּל יִשְׂרָאֵל וּבִפְרָט בֵּין אִישׁ לְאִשְׁתּוֹ (וּבִפְרָט וְכוּ'),",
+                "וְתַעֲזֹר לְכָל יִשְׂרָאֵל הַצְּרִיכִים לִמְצֹא זִוּוּגָם שֶׁיִּזְכֶּה כָּל אֶחָד לִמְצוֹא זִוּוּגוֹ בֶּאֱמֶת מְהֵרָה, וְתִהְיֶה כִּרְצוֹנוֹ וְלֹא תִהְיֶה מְנַגֶּדֶת כְּנֶגְדּוֹ כְּלָל,",
+                "רַק תַּהֲפוֹךְ רְצוֹנָהּ אֵלָיו בְּשָׁלוֹם וְאַהֲבָה בֶּאֱמֶת, בְּלִי עָרְמָה וּמִרְמָה, וּבְלִי שׁוּם שִׂנְאָה וְשִׁנּוּי רָצוֹן בַּלֵב כְּלָל, וְיִתְנַהֲגוּ בִּקְדֻשָּׁה וּבְטָהֳרָה, וְיֵצְאוּ מֵהֶם דּוֹרוֹת רַבִּים, בָּנִים וּבָנוֹת חָיִּים וְקַיָּמִים, עוֹשֵׂי רְצוֹנְךָ בֶּאֱמֶת, וְיַעַסְקוּ בְּתוֹרָתְךָ וַעֲבוֹדָתְךָ בֶּאֱמֶת כָּל יְמֵיהֶם לְעוֹלָם,",
+                "וִיגַלּוּ וִיפַרְסְמוּ וְיוֹדִיעוּ אֱלָהוּתְךָ וּמֶמְשַׁלְתְּךָ בָּעוֹלָם כְּמוֹ שֶׁכָּתוּב: דּוֹר לְדוֹר יְשַׁבַּח מַעֲשֶׂיךָ וּגְבוּרוֹתֶיךָ יַגִּידוּ:"
+              ],
+              "paragraphes_sans_nikkoud": [
+                "ובזכות אברהם אבינו עליו השלום, שרמז הסוד הזה של כונת אלול בעת ששלח את אליעזר עבדו לבקש הזווג של יצחק בנו,",
+                "ובזכות הצדיקים שגלו הסוד הנורא הזה, תגן עליהם ועלינו ועל זרענו, ותרחם על כל ישראל עמך, ותשים שלום בין כל ישראל ובפרט בין איש לאשתו (ובפרט וכו'),",
+                "ותעזר לכל ישראל הצריכים למצא זווגם שיזכה כל אחד למצוא זווגו באמת מהרה, ותהיה כרצונו ולא תהיה מנגדת כנגדו כלל,",
+                "רק תהפוך רצונה אליו בשלום ואהבה באמת, בלי ערמה ומרמה, ובלי שום שנאה ושנוי רצון בלב כלל, ויתנהגו בקדשה ובטהרה, ויצאו מהם דורות רבים, בנים ובנות חיים וקימים, עושי רצונך באמת, ויעסקו בתורתך ועבודתך באמת כל ימיהם לעולם,",
+                "ויגלו ויפרסמו ויודיעו אלהותך וממשלתך בעולם כמו שכתוב: דור לדור ישבח מעשיך וגבורותיך יגידו:"
+              ],
+              "statut_verif": "verifie_texte",
+              "lecon_sur_le_sujet": "oui",
+              "lecon_mesure": "8 occurrences du sujet dans 2133 caractères de leçon",
+              "note": "Extrait : paragraphes 41 à 45 de la prière — le secret d'Eloul rattaché à Avraham envoyant Éliézer chercher l'épouse d'Its'hak. Ajoutée à la demande du propriétaire, après qu'a été signalé que le paragraphe 44 demande « תְּהַפֵּךְ רְצוֹנָהּ אֵלָיו » — que la volonté de l'épouse se tourne vers lui. Le texte est reproduit tel qu'il est imprimé : on ne réécrit pas une prière pour l'adoucir, on dit ce qu'elle contient."
+            },
+            {
+              "id": "src-lt-refua-2",
+              "type": "source",
+              "sujet": "refua",
+              "titre_he": "רְפוּאַת הַנֶּפֶשׁ וְהַגּוּף",
+              "titre_fr": "Réfoua chelema : de l’âme et du corps",
+              "ref": "Likoutei Tefilot I, 41",
+              "ref_he": "לִקּוּטֵי תְּפִלּוֹת, חלק א, תְּפִלָּה 41",
+              "ref_sefaria": "Likutei Tefilot, Volume I 41",
+              "url": "https://www.sefaria.org/Likutei_Tefilot%2C_Volume_I.41",
+              "edition": "lt",
+              "sur_la_torah": "Likoutei Moharan I, 41",
+              "paragraphes": [
+                "וְתִשְׁלַח רְפוּאָה שְׁלֵמָה לְחוֹלֵי עַמֶּךָ (וּבִפְרָט לִפְלוֹנִי בֶּן פְּלוֹנִית וְכוּ'), אֵל נָא רְפָא נָא לוֹ, וְהַעֲלֵה אֲרוּכָה וּמַרְפֵּא לְכָל תַּחֲלוּאֵיהֶם וּלְכָל מַכְאוֹבֵיהֶם, וּתְשִׁיבֵם לְאֵיתָנֵיהֶם בְּקָרוֹב, וְתִשְׁלַח לָהֶם מְהֵרָה רְפוּאָה שְׁלֵמָה מִן הַשָּׁמַיִם, רְפוּאַת הַנֶּפֶשׁ וּרְפוּאַת הַגּוּף, כִּי אֵל מֶלֶךְ רוֹפֵא נֶאֱמָן וְרַחֲמָן אָתָּה."
+              ],
+              "paragraphes_sans_nikkoud": [
+                "ותשלח רפואה שלמה לחולי עמך (ובפרט לפלוני בן פלונית וכו'), אל נא רפא נא לו, והעלה ארוכה ומרפא לכל תחלואיהם ולכל מכאוביהם, ותשיבם לאיתניהם בקרוב, ותשלח להם מהרה רפואה שלמה מן השמים, רפואת הנפש ורפואת הגוף, כי אל מלך רופא נאמן ורחמן אתה."
+              ],
+              "statut_verif": "verifie_texte",
+              "note": "Extrait : paragraphe 27 à 27 de la prière. La leçon annoncée en tête (Likoutei Moharan I, 41, 4933 caractères) a été ouverte et vérifiée.",
+              "lecon_sur_le_sujet": "non",
+              "lecon_mesure": "0 occurrence du sujet dans 3114 caractères de leçon"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
