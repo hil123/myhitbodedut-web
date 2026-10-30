@@ -1,0 +1,673 @@
+{
+ "_meta": {
+  "source": "GeoNames (www.geonames.org), CC-BY 4.0, via geonamescache 3.0.2 (cities15000.json)",
+  "licence": "CC-BY 4.0 : attribution « GeoNames » affichée dans les réglages",
+  "altitude": "absente de la source : 0, le profil calcule au niveau de la mer",
+  "outil": "tools/villes_construction.py"
+ },
+ "villes": [
+  {
+   "id": 281184,
+   "nom": {
+    "he": "ירושלים",
+    "fr": "Jérusalem",
+    "en": "Jerusalem"
+   },
+   "pays": "IL",
+   "latitude": 31.76904,
+   "longitude": 35.21633,
+   "altitude": 0,
+   "fuseau": "Asia/Jerusalem"
+  },
+  {
+   "id": 295514,
+   "nom": {
+    "he": "בני ברק",
+    "fr": "Bné Brak",
+    "en": "Bnei Brak"
+   },
+   "pays": "IL",
+   "latitude": 32.08074,
+   "longitude": 34.8338,
+   "altitude": 0,
+   "fuseau": "Asia/Jerusalem"
+  },
+  {
+   "id": 293397,
+   "nom": {
+    "he": "תל אביב",
+    "fr": "Tel Aviv",
+    "en": "Tel Aviv"
+   },
+   "pays": "IL",
+   "latitude": 32.08088,
+   "longitude": 34.78057,
+   "altitude": 0,
+   "fuseau": "Asia/Jerusalem"
+  },
+  {
+   "id": 294801,
+   "nom": {
+    "he": "חיפה",
+    "fr": "Haïfa",
+    "en": "Haifa"
+   },
+   "pays": "IL",
+   "latitude": 32.81303,
+   "longitude": 34.99928,
+   "altitude": 0,
+   "fuseau": "Asia/Jerusalem"
+  },
+  {
+   "id": 293100,
+   "nom": {
+    "he": "צפת",
+    "fr": "Safed",
+    "en": "Safed"
+   },
+   "pays": "IL",
+   "latitude": 32.96465,
+   "longitude": 35.496,
+   "altitude": 0,
+   "fuseau": "Asia/Jerusalem"
+  },
+  {
+   "id": 293322,
+   "nom": {
+    "he": "טבריה",
+    "fr": "Tibériade",
+    "en": "Tiberias"
+   },
+   "pays": "IL",
+   "latitude": 32.79396,
+   "longitude": 35.53152,
+   "altitude": 0,
+   "fuseau": "Asia/Jerusalem"
+  },
+  {
+   "id": 294071,
+   "nom": {
+    "he": "נתניה",
+    "fr": "Netanya",
+    "en": "Netanya"
+   },
+   "pays": "IL",
+   "latitude": 32.33291,
+   "longitude": 34.85992,
+   "altitude": 0,
+   "fuseau": "Asia/Jerusalem"
+  },
+  {
+   "id": 295629,
+   "nom": {
+    "he": "אשדוד",
+    "fr": "Ashdod",
+    "en": "Ashdod"
+   },
+   "pays": "IL",
+   "latitude": 31.79213,
+   "longitude": 34.64966,
+   "altitude": 0,
+   "fuseau": "Asia/Jerusalem"
+  },
+  {
+   "id": 295530,
+   "nom": {
+    "he": "באר שבע",
+    "fr": "Beer-Sheva",
+    "en": "Beersheba"
+   },
+   "pays": "IL",
+   "latitude": 31.25181,
+   "longitude": 34.7913,
+   "altitude": 0,
+   "fuseau": "Asia/Jerusalem"
+  },
+  {
+   "id": 293918,
+   "nom": {
+    "he": "פתח תקווה",
+    "fr": "Petah Tikva",
+    "en": "Petah Tikva"
+   },
+   "pays": "IL",
+   "latitude": 32.08707,
+   "longitude": 34.88747,
+   "altitude": 0,
+   "fuseau": "Asia/Jerusalem"
+  },
+  {
+   "id": 282926,
+   "nom": {
+    "he": "מודיעין",
+    "fr": "Modiin",
+    "en": "Modiin"
+   },
+   "pays": "IL",
+   "latitude": 31.89385,
+   "longitude": 35.01504,
+   "altitude": 0,
+   "fuseau": "Asia/Jerusalem"
+  },
+  {
+   "id": 293788,
+   "nom": {
+    "he": "רמת גן",
+    "fr": "Ramat Gan",
+    "en": "Ramat Gan"
+   },
+   "pays": "IL",
+   "latitude": 32.08227,
+   "longitude": 34.81065,
+   "altitude": 0,
+   "fuseau": "Asia/Jerusalem"
+  },
+  {
+   "id": 293703,
+   "nom": {
+    "he": "ראשון לציון",
+    "fr": "Rishon LeZion",
+    "en": "Rishon LeZion"
+   },
+   "pays": "IL",
+   "latitude": 31.97102,
+   "longitude": 34.78939,
+   "altitude": 0,
+   "fuseau": "Asia/Jerusalem"
+  },
+  {
+   "id": 295548,
+   "nom": {
+    "he": "בת ים",
+    "fr": "Bat Yam",
+    "en": "Bat Yam"
+   },
+   "pays": "IL",
+   "latitude": 32.02379,
+   "longitude": 34.75185,
+   "altitude": 0,
+   "fuseau": "Asia/Jerusalem"
+  },
+  {
+   "id": 294068,
+   "nom": {
+    "he": "נתיבות",
+    "fr": "Netivot",
+    "en": "Netivot"
+   },
+   "pays": "IL",
+   "latitude": 31.42305,
+   "longitude": 34.58911,
+   "altitude": 0,
+   "fuseau": "Asia/Jerusalem"
+  },
+  {
+   "id": 295277,
+   "nom": {
+    "he": "אילת",
+    "fr": "Eilat",
+    "en": "Eilat"
+   },
+   "pays": "IL",
+   "latitude": 29.55805,
+   "longitude": 34.94821,
+   "altitude": 0,
+   "fuseau": "Asia/Jerusalem"
+  },
+  {
+   "id": 2988507,
+   "nom": {
+    "he": "פריז",
+    "fr": "Paris",
+    "en": "Paris"
+   },
+   "pays": "FR",
+   "latitude": 48.85341,
+   "longitude": 2.3488,
+   "altitude": 0,
+   "fuseau": "Europe/Paris"
+  },
+  {
+   "id": 2976043,
+   "nom": {
+    "he": "סרסל",
+    "fr": "Sarcelles",
+    "en": "Sarcelles"
+   },
+   "pays": "FR",
+   "latitude": 48.99739,
+   "longitude": 2.37821,
+   "altitude": 0,
+   "fuseau": "Europe/Paris"
+  },
+  {
+   "id": 2995469,
+   "nom": {
+    "he": "מרסיי",
+    "fr": "Marseille",
+    "en": "Marseille"
+   },
+   "pays": "FR",
+   "latitude": 43.29695,
+   "longitude": 5.38107,
+   "altitude": 0,
+   "fuseau": "Europe/Paris"
+  },
+  {
+   "id": 2996944,
+   "nom": {
+    "he": "ליון",
+    "fr": "Lyon",
+    "en": "Lyon"
+   },
+   "pays": "FR",
+   "latitude": 45.74906,
+   "longitude": 4.84789,
+   "altitude": 0,
+   "fuseau": "Europe/Paris"
+  },
+  {
+   "id": 2990440,
+   "nom": {
+    "he": "ניס",
+    "fr": "Nice",
+    "en": "Nice"
+   },
+   "pays": "FR",
+   "latitude": 43.70313,
+   "longitude": 7.26608,
+   "altitude": 0,
+   "fuseau": "Europe/Paris"
+  },
+  {
+   "id": 2973783,
+   "nom": {
+    "he": "שטרסבורג",
+    "fr": "Strasbourg",
+    "en": "Strasbourg"
+   },
+   "pays": "FR",
+   "latitude": 48.58392,
+   "longitude": 7.74553,
+   "altitude": 0,
+   "fuseau": "Europe/Paris"
+  },
+  {
+   "id": 2972315,
+   "nom": {
+    "he": "טולוז",
+    "fr": "Toulouse",
+    "en": "Toulouse"
+   },
+   "pays": "FR",
+   "latitude": 43.60426,
+   "longitude": 1.44367,
+   "altitude": 0,
+   "fuseau": "Europe/Paris"
+  },
+  {
+   "id": 2800866,
+   "nom": {
+    "he": "בריסל",
+    "fr": "Bruxelles",
+    "en": "Brussels"
+   },
+   "pays": "BE",
+   "latitude": 50.85045,
+   "longitude": 4.34878,
+   "altitude": 0,
+   "fuseau": "Europe/Brussels"
+  },
+  {
+   "id": 2803138,
+   "nom": {
+    "he": "אנטוורפן",
+    "fr": "Anvers",
+    "en": "Antwerp"
+   },
+   "pays": "BE",
+   "latitude": 51.22047,
+   "longitude": 4.40026,
+   "altitude": 0,
+   "fuseau": "Europe/Brussels"
+  },
+  {
+   "id": 2660646,
+   "nom": {
+    "he": "זנבה",
+    "fr": "Genève",
+    "en": "Geneva"
+   },
+   "pays": "CH",
+   "latitude": 46.20222,
+   "longitude": 6.14569,
+   "altitude": 0,
+   "fuseau": "Europe/Zurich"
+  },
+  {
+   "id": 2657896,
+   "nom": {
+    "he": "ציריך",
+    "fr": "Zurich",
+    "en": "Zurich"
+   },
+   "pays": "CH",
+   "latitude": 47.36667,
+   "longitude": 8.55,
+   "altitude": 0,
+   "fuseau": "Europe/Zurich"
+  },
+  {
+   "id": 2643743,
+   "nom": {
+    "he": "לונדון",
+    "fr": "Londres",
+    "en": "London"
+   },
+   "pays": "GB",
+   "latitude": 51.50853,
+   "longitude": -0.12574,
+   "altitude": 0,
+   "fuseau": "Europe/London"
+  },
+  {
+   "id": 2643123,
+   "nom": {
+    "he": "מנצ'סטר",
+    "fr": "Manchester",
+    "en": "Manchester"
+   },
+   "pays": "GB",
+   "latitude": 53.48095,
+   "longitude": -2.23743,
+   "altitude": 0,
+   "fuseau": "Europe/London"
+  },
+  {
+   "id": 3173435,
+   "nom": {
+    "he": "מילאנו",
+    "fr": "Milan",
+    "en": "Milan"
+   },
+   "pays": "IT",
+   "latitude": 45.46427,
+   "longitude": 9.18951,
+   "altitude": 0,
+   "fuseau": "Europe/Rome"
+  },
+  {
+   "id": 3169070,
+   "nom": {
+    "he": "רומא",
+    "fr": "Rome",
+    "en": "Rome"
+   },
+   "pays": "IT",
+   "latitude": 41.89193,
+   "longitude": 12.51133,
+   "altitude": 0,
+   "fuseau": "Europe/Rome"
+  },
+  {
+   "id": 2950159,
+   "nom": {
+    "he": "ברלין",
+    "fr": "Berlin",
+    "en": "Berlin"
+   },
+   "pays": "DE",
+   "latitude": 52.52437,
+   "longitude": 13.41053,
+   "altitude": 0,
+   "fuseau": "Europe/Berlin"
+  },
+  {
+   "id": 690688,
+   "nom": {
+    "he": "אומן",
+    "fr": "Ouman",
+    "en": "Uman"
+   },
+   "pays": "UA",
+   "latitude": 48.7501,
+   "longitude": 30.21944,
+   "altitude": 0,
+   "fuseau": "Europe/Kyiv"
+  },
+  {
+   "id": 703448,
+   "nom": {
+    "he": "קייב",
+    "fr": "Kiev",
+    "en": "Kyiv"
+   },
+   "pays": "UA",
+   "latitude": 50.45466,
+   "longitude": 30.5238,
+   "altitude": 0,
+   "fuseau": "Europe/Kyiv"
+  },
+  {
+   "id": 524901,
+   "nom": {
+    "he": "מוסקבה",
+    "fr": "Moscou",
+    "en": "Moscow"
+   },
+   "pays": "RU",
+   "latitude": 55.75204,
+   "longitude": 37.61781,
+   "altitude": 0,
+   "fuseau": "Europe/Moscow"
+  },
+  {
+   "id": 2553604,
+   "nom": {
+    "he": "קזבלנקה",
+    "fr": "Casablanca",
+    "en": "Casablanca"
+   },
+   "pays": "MA",
+   "latitude": 33.58831,
+   "longitude": -7.61138,
+   "altitude": 0,
+   "fuseau": "Africa/Casablanca"
+  },
+  {
+   "id": 5128581,
+   "nom": {
+    "he": "ניו יורק",
+    "fr": "New York",
+    "en": "New York"
+   },
+   "pays": "US",
+   "latitude": 40.71427,
+   "longitude": -74.00597,
+   "altitude": 0,
+   "fuseau": "America/New_York"
+  },
+  {
+   "id": 5100280,
+   "nom": {
+    "he": "לייקווד (ניו ג'רזי)",
+    "fr": "Lakewood (New Jersey)",
+    "en": "Lakewood (New Jersey)"
+   },
+   "pays": "US",
+   "latitude": 40.09789,
+   "longitude": -74.21764,
+   "altitude": 0,
+   "fuseau": "America/New_York"
+  },
+  {
+   "id": 5368361,
+   "nom": {
+    "he": "לוס אנגלס",
+    "fr": "Los Angeles",
+    "en": "Los Angeles"
+   },
+   "pays": "US",
+   "latitude": 34.05223,
+   "longitude": -118.24368,
+   "altitude": 0,
+   "fuseau": "America/Los_Angeles"
+  },
+  {
+   "id": 4164138,
+   "nom": {
+    "he": "מיאמי",
+    "fr": "Miami",
+    "en": "Miami"
+   },
+   "pays": "US",
+   "latitude": 25.77427,
+   "longitude": -80.19366,
+   "altitude": 0,
+   "fuseau": "America/New_York"
+  },
+  {
+   "id": 4887398,
+   "nom": {
+    "he": "שיקגו",
+    "fr": "Chicago",
+    "en": "Chicago"
+   },
+   "pays": "US",
+   "latitude": 41.85003,
+   "longitude": -87.65005,
+   "altitude": 0,
+   "fuseau": "America/Chicago"
+  },
+  {
+   "id": 4347778,
+   "nom": {
+    "he": "בולטימור",
+    "fr": "Baltimore",
+    "en": "Baltimore"
+   },
+   "pays": "US",
+   "latitude": 39.29038,
+   "longitude": -76.61219,
+   "altitude": 0,
+   "fuseau": "America/New_York"
+  },
+  {
+   "id": 6077243,
+   "nom": {
+    "he": "מונטריאול",
+    "fr": "Montréal",
+    "en": "Montreal"
+   },
+   "pays": "CA",
+   "latitude": 45.50884,
+   "longitude": -73.58781,
+   "altitude": 0,
+   "fuseau": "America/Toronto"
+  },
+  {
+   "id": 6167865,
+   "nom": {
+    "he": "טורונטו",
+    "fr": "Toronto",
+    "en": "Toronto"
+   },
+   "pays": "CA",
+   "latitude": 43.70643,
+   "longitude": -79.39864,
+   "altitude": 0,
+   "fuseau": "America/Toronto"
+  },
+  {
+   "id": 3530597,
+   "nom": {
+    "he": "מקסיקו סיטי",
+    "fr": "Mexico",
+    "en": "Mexico City"
+   },
+   "pays": "MX",
+   "latitude": 19.42847,
+   "longitude": -99.12766,
+   "altitude": 0,
+   "fuseau": "America/Mexico_City"
+  },
+  {
+   "id": 3703443,
+   "nom": {
+    "he": "פנמה סיטי",
+    "fr": "Panama",
+    "en": "Panama City"
+   },
+   "pays": "PA",
+   "latitude": 8.9936,
+   "longitude": -79.51973,
+   "altitude": 0,
+   "fuseau": "America/Panama"
+  },
+  {
+   "id": 3448439,
+   "nom": {
+    "he": "סאו פאולו",
+    "fr": "São Paulo",
+    "en": "São Paulo"
+   },
+   "pays": "BR",
+   "latitude": -23.5475,
+   "longitude": -46.63611,
+   "altitude": 0,
+   "fuseau": "America/Sao_Paulo"
+  },
+  {
+   "id": 3435910,
+   "nom": {
+    "he": "בואנוס איירס",
+    "fr": "Buenos Aires",
+    "en": "Buenos Aires"
+   },
+   "pays": "AR",
+   "latitude": -34.61315,
+   "longitude": -58.37723,
+   "altitude": 0,
+   "fuseau": "America/Argentina/Buenos_Aires"
+  },
+  {
+   "id": 993800,
+   "nom": {
+    "he": "יוהנסבורג",
+    "fr": "Johannesburg",
+    "en": "Johannesburg"
+   },
+   "pays": "ZA",
+   "latitude": -26.20227,
+   "longitude": 28.04363,
+   "altitude": 0,
+   "fuseau": "Africa/Johannesburg"
+  },
+  {
+   "id": 2158177,
+   "nom": {
+    "he": "מלבורן",
+    "fr": "Melbourne",
+    "en": "Melbourne"
+   },
+   "pays": "AU",
+   "latitude": -37.814,
+   "longitude": 144.96332,
+   "altitude": 0,
+   "fuseau": "Australia/Melbourne"
+  },
+  {
+   "id": 2147714,
+   "nom": {
+    "he": "סידני",
+    "fr": "Sydney",
+    "en": "Sydney"
+   },
+   "pays": "AU",
+   "latitude": -33.86785,
+   "longitude": 151.20732,
+   "altitude": 0,
+   "fuseau": "Australia/Sydney"
+  }
+ ]
+}
