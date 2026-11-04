@@ -1,0 +1,258 @@
+{
+ "_meta": {
+  "date": "2026-10-19",
+  "outil": "proposition 2 de la feuille de route : une invitation par temps de la hitbodedout guidée, selon le sujet choisi. « autre » n'en a pas : le temps garde son invitation générale.",
+  "temps": [
+   "sihah",
+   "harata",
+   "bakasha",
+   "torah",
+   "hodaa"
+  ]
+ },
+ "sujets": {
+  "emotions": {
+   "sihah": {
+    "fr": "Dites-Lui ce que vous ressentez en ce moment, sans rien arranger.",
+    "en": "Tell Him what you feel right now, without tidying it up.",
+    "he": "ספרו לו מה אתם מרגישים עכשיו, בלי לייפות."
+   },
+   "harata": {
+    "fr": "Y a-t-il une réaction d’aujourd’hui que vous regrettez ?",
+    "en": "Is there a reaction from today that you regret?",
+    "he": "האם יש תגובה מהיום שאתם מתחרטים עליה?"
+   },
+   "bakasha": {
+    "fr": "Demandez un cœur apaisé, et la force de ne pas vous laisser emporter.",
+    "en": "Ask for a calm heart, and the strength not to be carried away.",
+    "he": "בקשו לב רגוע, וכוח לא להיסחף."
+   },
+   "torah": {
+    "fr": "Reprenez un enseignement sur la joie et demandez de le vivre aujourd’hui.",
+    "en": "Take a teaching on joy and ask to live it today.",
+    "he": "קחו תורה על שמחה ובקשו לחיות אותה היום."
+   },
+   "hodaa": {
+    "fr": "Remerciez pour un moment de paix, même bref, dans votre journée.",
+    "en": "Give thanks for a moment of peace in your day, however brief.",
+    "he": "הודו על רגע של שלווה ביום הזה, גם אם היה קצר."
+   }
+  },
+  "gratitude": {
+   "sihah": {
+    "fr": "Racontez-Lui tout ce qui a été bon aujourd’hui, jusqu’aux petites choses.",
+    "en": "Tell Him everything that was good today, down to the small things.",
+    "he": "ספרו לו כל מה שהיה טוב היום, עד הדברים הקטנים."
+   },
+   "harata": {
+    "fr": "Y a-t-il un bienfait que vous avez reçu sans le voir ?",
+    "en": "Is there a kindness you received without noticing it?",
+    "he": "האם יש טובה שקיבלתם ולא שמתם לב אליה?"
+   },
+   "bakasha": {
+    "fr": "Demandez des yeux qui voient le bien, chaque jour.",
+    "en": "Ask for eyes that see the good, every day.",
+    "he": "בקשו עיניים שרואות את הטוב, בכל יום."
+   },
+   "torah": {
+    "fr": "Prenez un verset de louange et faites-en votre merci.",
+    "en": "Take a verse of praise and make it your thanks.",
+    "he": "קחו פסוק של שבח ועשו ממנו את התודה שלכם."
+   },
+   "hodaa": {
+    "fr": "Dites merci encore, pour ce que vous avez déjà dit, et pour le reste.",
+    "en": "Say thank you again, for what you already said and for the rest.",
+    "he": "אמרו שוב תודה, על מה שכבר אמרתם ועל כל השאר."
+   }
+  },
+  "decisions": {
+   "sihah": {
+    "fr": "Posez devant Lui la question qui vous occupe, telle qu’elle est.",
+    "en": "Lay the question that occupies you before Him, as it is.",
+    "he": "הניחו לפניו את השאלה שמעסיקה אתכם, כמו שהיא."
+   },
+   "harata": {
+    "fr": "Une décision passée vous pèse-t-elle encore ?",
+    "en": "Does a past decision still weigh on you?",
+    "he": "האם החלטה מהעבר עדיין מכבידה עליכם?"
+   },
+   "bakasha": {
+    "fr": "Demandez la clarté, et la paix avec ce qui sera décidé.",
+    "en": "Ask for clarity, and peace with whatever is decided.",
+    "he": "בקשו בהירות, ושלווה עם מה שיוחלט."
+   },
+   "torah": {
+    "fr": "Reprenez un conseil de la Torah qui touche votre question.",
+    "en": "Take a counsel from the Torah that touches your question.",
+    "he": "קחו עצה מן התורה שנוגעת לשאלה שלכם."
+   },
+   "hodaa": {
+    "fr": "Remerciez pour les portes qui se sont déjà ouvertes.",
+    "en": "Give thanks for the doors that have already opened.",
+    "he": "הודו על הדלתות שכבר נפתחו."
+   }
+  },
+  "famille": {
+   "sihah": {
+    "fr": "Parlez-Lui de chacun des vôtres, par son nom.",
+    "en": "Speak to Him of each of your family, by name.",
+    "he": "דברו איתו על כל אחד מבני המשפחה, בשמו."
+   },
+   "harata": {
+    "fr": "Y a-t-il un mot ou un geste envers un proche que vous regrettez ?",
+    "en": "Is there a word or gesture toward someone close that you regret?",
+    "he": "האם יש מילה או מעשה כלפי אדם קרוב שאתם מתחרטים עליהם?"
+   },
+   "bakasha": {
+    "fr": "Demandez le chalom bayit, et la patience pour le construire.",
+    "en": "Ask for peace at home, and the patience to build it.",
+    "he": "בקשו שלום בית, ואת הסבלנות לבנות אותו."
+   },
+   "torah": {
+    "fr": "Reprenez un enseignement sur le respect et la bonté, et demandez de le vivre chez vous.",
+    "en": "Take a teaching on respect and kindness, and ask to live it at home.",
+    "he": "קחו תורה על כבוד וחסד, ובקשו לחיות אותה בבית."
+   },
+   "hodaa": {
+    "fr": "Remerciez pour chacun d’eux, avec ce qu’il est.",
+    "en": "Give thanks for each of them, as they are.",
+    "he": "הודו על כל אחד מהם, כמו שהוא."
+   }
+  },
+  "zivoug": {
+   "sihah": {
+    "fr": "Dites-Lui ce que vous espérez, et ce qui vous fait peur.",
+    "en": "Tell Him what you hope for, and what frightens you.",
+    "he": "ספרו לו למה אתם מקווים, וממה אתם חוששים."
+   },
+   "harata": {
+    "fr": "Y a-t-il quelque chose en vous qui ferme la porte ?",
+    "en": "Is there something in you that closes the door?",
+    "he": "האם יש בכם משהו שסוגר את הדלת?"
+   },
+   "bakasha": {
+    "fr": "Demandez le zivoug qui vous est destiné, au bon moment, avec simplicité.",
+    "en": "Ask for the match meant for you, at the right time, simply.",
+    "he": "בקשו את הזיווג שלכם, בזמן הנכון, בפשטות."
+   },
+   "torah": {
+    "fr": "Reprenez une prière pour le zivoug et dites-la avec vos mots.",
+    "en": "Take a prayer for a match and say it in your own words.",
+    "he": "קחו תפילה על זיווג ואמרו אותה במילים שלכם."
+   },
+   "hodaa": {
+    "fr": "Remerciez pour ce qu’Il vous prépare, avant même de le voir.",
+    "en": "Give thanks for what He is preparing for you, even before you see it.",
+    "he": "הודו על מה שהוא מכין לכם, עוד לפני שאתם רואים."
+   }
+  },
+  "parnassa": {
+   "sihah": {
+    "fr": "Expliquez-Lui où en est votre parnassa, sans rien cacher.",
+    "en": "Explain to Him where your livelihood stands, hiding nothing.",
+    "he": "הסבירו לו מה מצב הפרנסה שלכם, בלי להסתיר."
+   },
+   "harata": {
+    "fr": "Y a-t-il de l’inquiétude qui a pris la place de la confiance ?",
+    "en": "Has worry taken the place of trust anywhere?",
+    "he": "האם הדאגה תפסה את מקום הביטחון?"
+   },
+   "bakasha": {
+    "fr": "Demandez une parnassa honnête et suffisante, et la confiance qu’elle vient de Lui.",
+    "en": "Ask for an honest, sufficient livelihood, and trust that it comes from Him.",
+    "he": "בקשו פרנסה בכבוד ובשפע, וביטחון שהיא באה ממנו."
+   },
+   "torah": {
+    "fr": "Reprenez un enseignement sur le bita’hon et faites-en une prière.",
+    "en": "Take a teaching on trust in Hashem and make it a prayer.",
+    "he": "קחו תורה על ביטחון ועשו ממנה תפילה."
+   },
+   "hodaa": {
+    "fr": "Remerciez pour ce que vous avez aujourd’hui, à manger et un toit.",
+    "en": "Give thanks for what you have today, food and a roof.",
+    "he": "הודו על מה שיש לכם היום, אוכל וקורת גג."
+   }
+  },
+  "avoda": {
+   "sihah": {
+    "fr": "Dites-Lui où vous en êtes dans votre service, honnêtement.",
+    "en": "Tell Him honestly where you stand in your service of Him.",
+    "he": "ספרו לו בכנות איפה אתם עומדים בעבודת השם."
+   },
+   "harata": {
+    "fr": "Quelle mitsva avez-vous laissée passer ces derniers jours ?",
+    "en": "Which mitsva have you let slip these last days?",
+    "he": "איזו מצווה החמצתם בימים האחרונים?"
+   },
+   "bakasha": {
+    "fr": "Demandez de vous rapprocher de Lui, un pas à la fois.",
+    "en": "Ask to come closer to Him, one step at a time.",
+    "he": "בקשו להתקרב אליו, צעד אחר צעד."
+   },
+   "torah": {
+    "fr": "Prenez ce que vous avez étudié aujourd’hui et demandez de l’accomplir.",
+    "en": "Take what you learned today and ask to fulfil it.",
+    "he": "קחו את מה שלמדתם היום ובקשו לקיים אותו."
+   },
+   "hodaa": {
+    "fr": "Remerciez pour chaque mitsva que vous avez pu faire.",
+    "en": "Give thanks for every mitsva you were able to do.",
+    "he": "הודו על כל מצווה שזכיתם לעשות."
+   }
+  },
+  "difficultes": {
+   "sihah": {
+    "fr": "Racontez-Lui la difficulté, depuis le début, comme à un père.",
+    "en": "Tell Him the difficulty from the beginning, as to a father.",
+    "he": "ספרו לו את הקושי מההתחלה, כמו לאבא."
+   },
+   "harata": {
+    "fr": "Y a-t-il une part de cette difficulté qui dépend de vous ?",
+    "en": "Is there a part of this difficulty that depends on you?",
+    "he": "האם יש חלק מהקושי שתלוי בכם?"
+   },
+   "bakasha": {
+    "fr": "Demandez la délivrance, et la force de tenir jusque-là.",
+    "en": "Ask for deliverance, and the strength to hold on until then.",
+    "he": "בקשו ישועה, וכוח להחזיק מעמד עד אז."
+   },
+   "torah": {
+    "fr": "Reprenez un enseignement sur l’émouna dans l’épreuve et faites-en une prière.",
+    "en": "Take a teaching on faith in hardship and make it a prayer.",
+    "he": "קחו תורה על אמונה בזמן קושי ועשו ממנה תפילה."
+   },
+   "hodaa": {
+    "fr": "Remerciez pour ce qui tient encore debout, malgré tout.",
+    "en": "Give thanks for what still stands, despite everything.",
+    "he": "הודו על מה שעדיין עומד, למרות הכול."
+   }
+  },
+  "croissance": {
+   "sihah": {
+    "fr": "Dites-Lui quelle personne vous voulez devenir.",
+    "en": "Tell Him who you want to become.",
+    "he": "ספרו לו איזה אדם אתם רוצים להיות."
+   },
+   "harata": {
+    "fr": "Quel trait de caractère vous a fait trébucher aujourd’hui ?",
+    "en": "Which trait of character made you stumble today?",
+    "he": "איזו מידה הכשילה אתכם היום?"
+   },
+   "bakasha": {
+    "fr": "Demandez de l’aide pour un seul pas, petit et précis.",
+    "en": "Ask for help with one step, small and precise.",
+    "he": "בקשו עזרה בצעד אחד, קטן ומדויק."
+   },
+   "torah": {
+    "fr": "Reprenez un enseignement sur les middot et demandez de le vivre.",
+    "en": "Take a teaching on character and ask to live it.",
+    "he": "קחו תורה על מידות ובקשו לחיות אותה."
+   },
+   "hodaa": {
+    "fr": "Remerciez pour le chemin déjà parcouru.",
+    "en": "Give thanks for the road already travelled.",
+    "he": "הודו על הדרך שכבר עברתם."
+   }
+  }
+ }
+}

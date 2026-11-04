@@ -1,0 +1,223 @@
+<!doctype html>
+<!--
+  Règles de confidentialité de l'application Android (31/10, Google Play,
+  PUBLICATION_PLAY_STORE.md § 6.1). Page statique, sans script ni ressource
+  extérieure, copiée telle quelle dans le site par build.mjs et ouverte depuis
+  les réglages de l'application (#fr, #en, #he).
+
+  Chaque phrase décrit le code : Store.kt (stockage), res/xml/backup_rules.xml
+  et data_extraction_rules.xml (sauvegarde), SuiviVol.kt (OpenSky), RouteVol.kt
+  (adsbdb), ChoixLieu.kt et VolActivity.kt (localisation), GateService.kt et
+  Divulgation.kt (barrière). Toute évolution de ces fichiers se reporte ici.
+
+  Éditeur : MyHitbodedut Team ; contact : myhitbodedut26@gmail.com (02/11), le même que sur la fiche Play.
+-->
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <title>MyHitbodedut — Règles de confidentialité · Privacy policy · מדיניות פרטיות</title>
+  <style>
+    :root { color-scheme: light dark; --encre: #1b2a24; --doux: #4d5d56; --fond: #f4f7f2; --trait: #cfd9d2; --lien: #1f6b4f; }
+    @media (prefers-color-scheme: dark) { :root { --encre: #e6eee9; --doux: #a9b8b0; --fond: #101a16; --trait: #2c3b34; --lien: #7fd1ad; } }
+    body { margin: 0; background: var(--fond); color: var(--encre); font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+    main { max-width: 46rem; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+    nav { display: flex; gap: 1rem; flex-wrap: wrap; padding-bottom: 1rem; border-bottom: 1px solid var(--trait); }
+    a { color: var(--lien); }
+    section { padding-top: 1.5rem; border-bottom: 1px solid var(--trait); padding-bottom: 1.5rem; }
+    h1 { font-size: 1.5rem; line-height: 1.25; margin: 0 0 .25rem; }
+    h2 { font-size: 1.1rem; margin: 1.5rem 0 .5rem; }
+    p, li { overflow-wrap: anywhere; }
+    .date { color: var(--doux); margin-top: 0; }
+    [dir="rtl"] { text-align: right; }
+  </style>
+</head>
+<body>
+<main>
+  <nav aria-label="Langue · Language · שפה">
+    <a href="#fr" hreflang="fr">Français</a>
+    <a href="#en" hreflang="en">English</a>
+    <a href="#he" hreflang="he" lang="he">עברית</a>
+  </nav>
+
+  <!-- ===================================================================== -->
+  <section id="fr" lang="fr">
+    <h1>MyHitbodedut — Règles de confidentialité</h1>
+    <p class="date">Mise à jour : 2 novembre 2026. S’applique à l’application Android MyHitbodedut (com.myhitbodedut), éditions complète et légère, publiée par MyHitbodedut Team (ci-après « le développeur »).</p>
+
+    <h2>En bref</h2>
+    <ul>
+      <li>Ni compte, ni publicité, ni outil d’analyse d’audience, ni rapport d’erreur envoyé.</li>
+      <li>Le développeur ne reçoit aucune de vos données : il n’a pas de serveur pour cette application.</li>
+      <li>Tout ce que vous saisissez reste sur votre téléphone, sauf ce que vous choisissez vous-même d’exporter ou de partager, et les deux services de vol décrits plus bas, utilisés seulement quand vous les sollicitez.</li>
+    </ul>
+
+    <h2>Ce qui est gardé sur le téléphone</h2>
+    <p>L’application enregistre ses données dans son espace privé sur l’appareil (les préférences privées d’Android, « SharedPreferences »), en deux fichiers :</p>
+    <ul>
+      <li><strong>les réglages</strong> : horaires, rappels, apparence, langue, le lieu choisi pour les zmanim (une ville de la liste, ou les coordonnées de « Ma position »), les détails d’un vol saisi, et, dans l’édition complète, la liste des applications choisies pour la barrière du matin ;</li>
+      <li><strong>le journal</strong> : vos séances, vos notes et votre prénom.</li>
+    </ul>
+    <p>Ils sont effacés quand vous désinstallez l’application, ou par Réglages → « Réinitialiser l’application ».</p>
+
+    <h2>Sauvegarde et transfert d’appareil</h2>
+    <ul>
+      <li><strong>Sauvegarde dans le nuage d’Android</strong> (si vous l’avez activée dans Android, sur votre compte Google) : seul le fichier des réglages y est inclus. <strong>Le journal, les notes et le prénom en sont exclus.</strong> Cette sauvegarde est faite par Android pour votre compte ; le développeur n’y a pas accès.</li>
+      <li><strong>Transfert d’appareil</strong> (de l’ancien téléphone au nouveau, par câble ou en local) : les réglages <strong>et</strong> le journal, notes et prénom compris, pour ne pas perdre votre historique en changeant de téléphone.</li>
+    </ul>
+
+    <h2>Export, import et partage</h2>
+    <p>Seulement si vous le demandez : Réglages → « Exporter » écrit un fichier JSON à l’endroit que vous choisissez. Il contient le journal, les notes, le prénom, les réglages, les jours exemptés et la liste des applications de la barrière ; il ne contient pas la position. L’application ne l’envoie nulle part ; ce que vous en faites ensuite vous appartient. « Importer » relit un tel fichier. De même, partager une journée en image passe par le menu de partage d’Android, à votre initiative.</p>
+
+    <h2>Localisation</h2>
+    <ul>
+      <li><strong>Position approximative</strong> : demandée seulement si vous choisissez « Ma position » au lieu d’une ville. Elle sert, sur l’appareil, à calculer les zmanim et la direction de Jérusalem. L’application ne l’envoie jamais. Elle est gardée dans les réglages (voir la sauvegarde ci-dessus).</li>
+      <li><strong>Position exacte</strong> : demandée seulement dans l’écran « Zmanim en vol », quand vous touchez « Position réelle (GPS) ». Un relevé GPS recale la route du vol sur l’appareil ; il est gardé avec les détails du vol.</li>
+    </ul>
+
+    <h2>La barrière du matin (édition complète)</h2>
+    <p>Si vous l’activez, la barrière utilise deux accès spéciaux d’Android, chacun expliqué avant d’ouvrir les réglages d’Android :</p>
+    <ul>
+      <li><strong>Accès aux données d’utilisation</strong> : pour savoir quelle application est affichée au premier plan, pendant la plage horaire que vous avez fixée et tant que la pratique du jour n’est pas faite. Seule la dernière application ouverte est retenue, en mémoire ; aucun historique n’est gardé ni envoyé.</li>
+      <li><strong>Affichage par-dessus les autres applications</strong> : pour afficher l’écran « Je suis avec Hachem » devant les applications que vous avez choisies.</li>
+    </ul>
+    <p>Vous coupez la barrière à tout moment : Réglages → interrupteur « Je suis avec Hachem ». Vous pouvez aussi retirer ces accès dans les réglages d’Android.</p>
+
+    <h2>Les vols (édition complète seulement)</h2>
+    <p>L’édition légère n’a pas accès à Internet. L’édition complète ne s’y connecte que si vous activez l’interrupteur « Services en ligne : route du vol et suivi en direct » de l’écran « Zmanim en vol », <strong>désactivé par défaut</strong>. Tant qu’il est éteint, rien ne quitte le téléphone. Allumé, la connexion n’a lieu que dans deux cas, toujours en HTTPS, et toujours à votre toucher :</p>
+    <ul>
+      <li><strong>Suivi en direct, via OpenSky Network</strong> (opensky-network.org) : lancé par un bouton. Le téléphone envoie seulement un carré de coordonnées d’environ 10 degrés de côté autour de la position estimée de l’avion, chaque coordonnée arrondie au dixième de degré. Le numéro de vol n’est pas envoyé : l’avion est cherché dans la réponse, sur le téléphone.</li>
+      <li><strong>Route d’un numéro de vol, via adsbdb</strong> (api.adsbdb.com) : quand vous touchez la loupe à côté du numéro de vol (elle n’apparaît que services en ligne activés). Le téléphone envoie le numéro de vol saisi (et, s’il le faut, le code de la compagnie qu’il contient), rien d’autre.</li>
+    </ul>
+    <p>Comme pour toute connexion à Internet, ces services voient l’adresse IP de votre connexion. Leur propre politique de confidentialité s’applique à ce qu’ils reçoivent. Les liens vers des sites (Sefaria, par exemple) s’ouvrent dans votre navigateur, seulement si vous les touchez.</p>
+
+    <h2>Enfants</h2>
+    <p>L’application s’adresse aux adultes et ne collecte sciemment aucune donnée d’enfant ; elle n’en collecte d’ailleurs de personne.</p>
+
+    <h2>Modifications et contact</h2>
+    <p>Toute modification de ces règles sera publiée sur cette page, avec sa date. Pour toute question sur ces règles ou sur vos données, écrivez à MyHitbodedut Team : <a href="mailto:myhitbodedut26@gmail.com">myhitbodedut26@gmail.com</a>.</p>
+    <p>Dédicace : une demande de dédicace s’écrit dans votre propre messagerie, adressée à cette même adresse, avec le nom que vous indiquez ; l’application n’envoie rien elle-même et ne garde rien de cette demande.</p>
+  </section>
+
+  <!-- ===================================================================== -->
+  <section id="en" lang="en">
+    <h1>MyHitbodedut — Privacy policy</h1>
+    <p class="date">Last updated: 2 November 2026. Applies to the MyHitbodedut Android app (com.myhitbodedut), full and light editions, published by MyHitbodedut Team (“the developer”).</p>
+
+    <h2>In short</h2>
+    <ul>
+      <li>No account, no ads, no audience analytics, no error reports sent.</li>
+      <li>The developer receives none of your data: there is no server for this app.</li>
+      <li>Everything you enter stays on your phone, except what you yourself choose to export or share, and the two flight services described below, used only when you ask for them.</li>
+    </ul>
+
+    <h2>What is kept on the phone</h2>
+    <p>The app stores its data in its private space on the device (Android private preferences, “SharedPreferences”), in two files:</p>
+    <ul>
+      <li><strong>settings</strong>: times, reminders, appearance, language, the place chosen for the zmanim (a city from the list, or the coordinates of “My location”), the details of a flight you entered, and, in the full edition, the list of apps chosen for the morning gate;</li>
+      <li><strong>the journal</strong>: your sessions, your notes and your first name.</li>
+    </ul>
+    <p>They are erased when you uninstall the app, or with Settings → “Reset the app”.</p>
+
+    <h2>Backup and device transfer</h2>
+    <ul>
+      <li><strong>Android cloud backup</strong> (if you turned it on in Android, on your Google account): only the settings file is included. <strong>The journal, notes and first name are excluded.</strong> This backup is made by Android for your account; the developer has no access to it.</li>
+      <li><strong>Device transfer</strong> (from the old phone to the new one, by cable or locally): the settings <strong>and</strong> the journal, notes and first name included, so that you do not lose your history when changing phones.</li>
+    </ul>
+
+    <h2>Export, import and sharing</h2>
+    <p>Only if you ask: Settings → “Export” writes a JSON file where you choose. It contains the journal, notes, first name, settings, exempt days and the list of gate apps; it does not contain your location. The app sends it nowhere; what you do with it afterwards is up to you. “Import” reads such a file back. Likewise, sharing a day as an image goes through Android’s share menu, at your initiative.</p>
+
+    <h2>Location</h2>
+    <ul>
+      <li><strong>Approximate location</strong>: requested only if you choose “My location” instead of a city. It is used, on the device, to compute the zmanim and the direction of Jerusalem. The app never sends it. It is kept in the settings (see backup above).</li>
+      <li><strong>Precise location</strong>: requested only on the “Zmanim in flight” screen, when you tap “Real position (GPS)”. A GPS reading adjusts the flight route on the device; it is kept with the flight details.</li>
+    </ul>
+
+    <h2>The morning gate (full edition)</h2>
+    <p>If you turn it on, the gate uses two special Android permissions, each explained before Android settings open:</p>
+    <ul>
+      <li><strong>Usage access</strong>: to know which app is shown in the foreground, during the time window you set and until the practice of the day is done. Only the last app opened is kept, in memory; no history is stored or sent.</li>
+      <li><strong>Display over other apps</strong>: to show the “I am with Hashem” screen in front of the apps you chose.</li>
+    </ul>
+    <p>You can turn the gate off at any time: Settings → “I am with Hashem” switch. You can also remove these permissions in Android settings.</p>
+
+    <h2>Flights (full edition only)</h2>
+    <p>The light edition has no Internet access. The full edition connects only if you turn on the “Online services: flight route and live tracking” switch on the “Zmanim in flight” screen, which is <strong>off by default</strong>. While it is off, nothing leaves the phone. When it is on, a connection happens only in two cases, always over HTTPS, and always when you tap:</p>
+    <ul>
+      <li><strong>Live tracking, via OpenSky Network</strong> (opensky-network.org): started with a button. The phone sends only a box of coordinates about 10 degrees wide around the estimated position of the aircraft, each coordinate rounded to a tenth of a degree. The flight number is not sent: the aircraft is looked for in the answer, on the phone.</li>
+      <li><strong>Route of a flight number, via adsbdb</strong> (api.adsbdb.com): when you tap the magnifier next to the flight number (it only appears once online services are on). The phone sends the flight number you entered (and, if needed, the airline code it contains), nothing else.</li>
+    </ul>
+    <p>As with any Internet connection, these services see the IP address of your connection. Their own privacy policies apply to what they receive. Links to websites (Sefaria, for example) open in your browser, only if you tap them.</p>
+
+    <h2>Children</h2>
+    <p>The app is intended for adults and does not knowingly collect data from children; it collects none from anyone.</p>
+
+    <h2>Changes and contact</h2>
+    <p>Any change to this policy will be published on this page, with its date. For any question about this policy or your data, write to MyHitbodedut Team: <a href="mailto:myhitbodedut26@gmail.com">myhitbodedut26@gmail.com</a>.</p>
+    <p>Dedication: a dedication request is written in your own mail app, addressed to this same address, with the name you enter; the app sends nothing itself and keeps nothing of the request.</p>
+  </section>
+
+  <!-- ===================================================================== -->
+  <section id="he" lang="he" dir="rtl">
+    <h1>MyHitbodedut — מדיניות פרטיות</h1>
+    <p class="date">עודכן: 2 בנובמבר 2026. חלה על אפליקציית Android ‏MyHitbodedut‏ (com.myhitbodedut), במהדורה המלאה ובמהדורה הקלה, שמפרסם ‏MyHitbodedut Team‏ (להלן „המפתח”).</p>
+
+    <h2>בקצרה</h2>
+    <ul>
+      <li>אין חשבון, אין פרסומות, אין כלי ניתוח קהל, ולא נשלחים דיווחי שגיאות.</li>
+      <li>המפתח אינו מקבל שום נתון שלכם: אין לאפליקציה הזו שרת.</li>
+      <li>כל מה שתזינו נשאר בטלפון שלכם, מלבד מה שתבחרו בעצמכם לייצא או לשתף, ושני שירותי הטיסה המתוארים למטה, שמופעלים רק כשתבקשו.</li>
+    </ul>
+
+    <h2>מה נשמר בטלפון</h2>
+    <p>האפליקציה שומרת את הנתונים שלה באזור הפרטי שלה במכשיר (ההעדפות הפרטיות של Android, ‏SharedPreferences), בשני קבצים:</p>
+    <ul>
+      <li><strong>ההגדרות</strong>: שעות, תזכורות, מראה, שפה, המקום שנבחר לזמנים (עיר מהרשימה, או הקואורדינטות של „המיקום שלי”), פרטי טיסה שהזנתם, ובמהדורה המלאה, רשימת האפליקציות שנבחרו למחסום הבוקר;</li>
+      <li><strong>היומן</strong>: ההתבודדויות שלכם, ההערות שלכם והשם הפרטי שלכם.</li>
+    </ul>
+    <p>הם נמחקים כשמסירים את האפליקציה, או דרך הגדרות ← „איפוס האפליקציה”.</p>
+
+    <h2>גיבוי והעברה למכשיר חדש</h2>
+    <ul>
+      <li><strong>גיבוי הענן של Android</strong> (אם הפעלתם אותו ב־Android, בחשבון Google שלכם): רק קובץ ההגדרות נכלל בו. <strong>היומן, ההערות והשם הפרטי אינם נכללים.</strong> את הגיבוי הזה עושה Android עבור החשבון שלכם; למפתח אין אליו גישה.</li>
+      <li><strong>העברה למכשיר חדש</strong> (מהטלפון הישן לחדש, בכבל או ברשת המקומית): ההגדרות <strong>וגם</strong> היומן, כולל ההערות והשם הפרטי, כדי שלא תאבדו את ההיסטוריה שלכם כשתחליפו טלפון.</li>
+    </ul>
+
+    <h2>ייצוא, ייבוא ושיתוף</h2>
+    <p>רק אם תבקשו: הגדרות ← „ייצוא” כותב קובץ JSON במקום שתבחרו. הוא מכיל את היומן, ההערות, השם הפרטי, ההגדרות, הימים הפטורים ורשימת האפליקציות של המחסום; הוא אינו מכיל את המיקום. האפליקציה אינה שולחת אותו לשום מקום; מה שתעשו בו אחר כך נתון בידיכם. „ייבוא” קורא קובץ כזה בחזרה. כך גם שיתוף יום כתמונה עובר דרך תפריט השיתוף של Android, ביוזמתכם.</p>
+
+    <h2>מיקום</h2>
+    <ul>
+      <li><strong>מיקום משוער</strong>: מתבקש רק אם תבחרו „המיקום שלי” במקום עיר. הוא משמש, במכשיר, לחישוב הזמנים ולכיוון ירושלים. האפליקציה לעולם אינה שולחת אותו. הוא נשמר בהגדרות (ראו גיבוי למעלה).</li>
+      <li><strong>מיקום מדויק</strong>: מתבקש רק במסך „זמנים בטיסה”, כשתגעו ב„מיקום אמיתי (GPS)”. קריאת GPS מתקנת את מסלול הטיסה במכשיר; היא נשמרת עם פרטי הטיסה.</li>
+    </ul>
+
+    <h2>מחסום הבוקר (מהדורה מלאה)</h2>
+    <p>אם תפעילו אותו, המחסום משתמש בשתי הרשאות מיוחדות של Android, וכל אחת מהן מוסברת לפני שנפתחות הגדרות Android:</p>
+    <ul>
+      <li><strong>גישה לנתוני שימוש</strong>: כדי לדעת איזו אפליקציה מוצגת בחזית, בשעות שקבעתם וכל עוד ההתבודדות של היום לא נעשתה. רק האפליקציה האחרונה שנפתחה נשמרת, בזיכרון; שום היסטוריה לא נשמרת ולא נשלחת.</li>
+      <li><strong>הצגה מעל אפליקציות אחרות</strong>: כדי להציג את מסך „אני עם השם” לפני האפליקציות שבחרתם.</li>
+    </ul>
+    <p>אפשר לכבות את המחסום בכל רגע: הגדרות ← המתג „אני עם השם”. אפשר גם לבטל את ההרשאות האלה בהגדרות של Android.</p>
+
+    <h2>טיסות (מהדורה מלאה בלבד)</h2>
+    <p>למהדורה הקלה אין גישה לאינטרנט. המהדורה המלאה מתחברת רק אם תפעילו את המתג „שירותים מקוונים: מסלול הטיסה ומעקב בזמן אמת” במסך „זמנים בטיסה”, שהוא <strong>כבוי כברירת מחדל</strong>. כל עוד הוא כבוי, שום דבר לא יוצא מהטלפון. כשהוא פעיל, החיבור נעשה רק בשני מקרים, תמיד ב־HTTPS, ותמיד בנגיעה שלכם:</p>
+    <ul>
+      <li><strong>מעקב בזמן אמת, דרך OpenSky Network</strong> (opensky-network.org): מתחיל בלחיצה על כפתור. הטלפון שולח רק ריבוע קואורדינטות ברוחב של כ־10 מעלות סביב המיקום המשוער של המטוס, וכל קואורדינטה מעוגלת לעשירית מעלה. מספר הטיסה אינו נשלח: המטוס מאותר בתשובה, בטלפון.</li>
+      <li><strong>מסלול של מספר טיסה, דרך adsbdb</strong> (api.adsbdb.com): כשתגעו בזכוכית המגדלת ליד מספר הטיסה (היא מופיעה רק כשהשירותים המקוונים פעילים). הטלפון שולח את מספר הטיסה שהזנתם (ואם צריך, את קוד חברת התעופה שבתוכו), ותו לא.</li>
+    </ul>
+    <p>כמו בכל חיבור לאינטרנט, השירותים האלה רואים את כתובת ה־IP של החיבור שלכם. מדיניות הפרטיות שלהם חלה על מה שהם מקבלים. קישורים לאתרים (Sefaria, למשל) נפתחים בדפדפן שלכם, רק אם תגעו בהם.</p>
+
+    <h2>ילדים</h2>
+    <p>האפליקציה מיועדת למבוגרים ואינה אוספת ביודעין נתונים של ילדים; היא אינה אוספת נתונים מאף אחד.</p>
+
+    <h2>שינויים ויצירת קשר</h2>
+    <p>כל שינוי במדיניות הזו יפורסם בדף הזה, עם התאריך שלו. לכל שאלה על המדיניות הזו או על הנתונים שלכם, כתבו ל־‏MyHitbodedut Team‏: <span dir="ltr"><a href="mailto:myhitbodedut26@gmail.com">myhitbodedut26@gmail.com</a></span>.</p>
+    <p>הקדשה: בקשת הקדשה נכתבת בתוכנת הדואר שלכם, אל אותה כתובת, עם השם שאתם כותבים; האפליקציה לא שולחת דבר בעצמה ואינה שומרת דבר מהבקשה.</p>
+  </section>
+</main>
+</body>
+</html>
